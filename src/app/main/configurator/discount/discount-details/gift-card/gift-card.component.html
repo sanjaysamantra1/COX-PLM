@@ -1,0 +1,115 @@
+<div class="row">
+    <div class="col-md-12">
+        <!--<form #discountForm="ngForm" (ngSubmit)="onSubmit(discountForm)" class="form-horizontal">-->
+        <mat-accordion close-others="oneAtATime">
+            <mat-expansion-panel class="form-divider panel-no-background">
+                <mat-expansion-panel-header>
+                    Gift Card Details
+                </mat-expansion-panel-header>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label">
+                                <input type="checkbox" name="active" value="" [(ngModel)]="addEditDiscountSubmitData.discountGift.included" #includedVal="ngModel"
+                                    [checked]="addEditDiscountSubmitData.discountGift.included" [disabled]="viewMode" (change)="updateSubmitData('included', addEditDiscountSubmitData.discountGift.included)"> Gift card Included
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label">Gift Card Amount</label>
+                            <div class="col-xs-7">
+                                <input type="text" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discountGift.giftcardAmount" name="giftcardAmount" #GiftcardAmount="ngModel"
+                                    *ngIf="addEditMode" (change)="updateSubmitData('giftcardAmount', addEditDiscountSubmitData.discountGift.giftcardAmount)">
+                                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discountGift.giftcardAmount }}</p>
+                                <!--<div *ngIf="GiftCardAmounts.invalid && (GiftCardAmounts.dirty || GiftCardAmounts.touched)" class="input-error">
+                                    <div *ngIf="GiftCardAmounts.errors.required">
+                                        giftCardAmount is required!
+                                    </div>
+                                </div>-->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label">Gift Card ID (Vendor Discount)</label>
+                            <div class="col-xs-7">
+                                <input type="text" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discountGift.discountMapGiftId" name="discountMapGiftId" #DiscountMapGiftId="ngModel"
+                                    *ngIf="addEditMode" (change)="updateSubmitData('discountMapGiftId', addEditDiscountSubmitData.discountGift.discountMapGiftId)">
+                                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discountGift.discountMapGiftId }}</p>
+                                <!--<div *ngIf="GiftCardID.invalid && (GiftCardID.dirty || GiftCardID.touched)" class="input-error">
+                                    <div *ngIf="GiftCardID.errors.required">
+                                        GiftCard ID is required!
+                                    </div>
+                                </div>-->
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-xs-5 control-label">Validation Tool Status</label>
+                            <div class="col-xs-7">
+                                <div>
+                                    <angular2-multiselect *ngIf="addEditMode" name="replacingDiscountDropDown" [data]="giftValidationStatusDropDownList" [(ngModel)]="giftValidationStatusSelectedItems"
+                                        #intakeRequestTypeVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('validationStatusId', giftValidationStatusSelectedItems, 'single')"
+                                        (onDeSelect)="onItemDeSelect('validationStatusId', giftValidationStatusSelectedItems, 'single')" (onSelectAll)="onSelectAll('validationStatusId', giftValidationStatusSelectedItems, 'single')"
+                                        (onDeSelectAll)="onDeSelectAll('validationStatusId', giftValidationStatusSelectedItems, 'single')">
+                                    </angular2-multiselect>
+                                    <p *ngIf="viewMode">
+                                        <span *ngFor="let validationTool of utilitiesService.getSelectedItemsObject(masterData, 'GIFT_VALIDATION_STATUS', addEditDiscountSubmitData.discountGift.validationStatusId); let i = index;">
+                                            {{validationTool.itemName}}
+                                            <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'GIFT_VALIDATION_STATUS', addEditDiscountSubmitData.discountGift.validationStatusId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'GIFT_VALIDATION_STATUS', addEditDiscountSubmitData.discountGift.validationStatusId).length))">,</span>
+                                        </span>
+                                    </p>
+                                </div>
+
+                                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discountGift.validationStatusId }}</p>
+
+                                <!--<div *ngIf="validationStatusIdVal.invalid && (validationStatusIdVal.dirty || validationStatusIdVal.touched)" class="input-error">
+                  <div *ngIf="validationToolStatusVal.errors.required">
+                    Validation Tool Status is required
+                  </div>
+                </div>-->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+                            <label class="col-xs-5 control-label">Validation Tool Notes</label>
+                            <div class="col-xs-7">
+                                <textarea id="notes" name="notes" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discountGift.notes" #notes="ngModel"
+                                    *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('notes', addEditDiscountSubmitData.discountGift.notes)" rows="3" i style="height: auto;"></textarea>
+                                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discountGift.notes }}</p>
+                                <!--<div *ngIf="DiscountChanges.invalid && (DiscountChanges.dirty || DiscountChanges.touched)" class="input-error">
+                  <div *ngIf="DiscountChanges.errors.required">
+                    IT Discount Changes is required.
+                  </div>
+                </div>-->
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+        <!--</form>-->
+    </div>
+</div>

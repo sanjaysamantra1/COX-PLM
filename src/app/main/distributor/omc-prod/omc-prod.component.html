@@ -1,0 +1,126 @@
+<div class="row" >
+  <div class="col-md-12">
+     <h1 class="page-header">Offer Production </h1>
+  </div>
+  <div class="col-md-12">
+     <ul class="breadcrumb">
+        <li><a href="#" ng-click="redirectTo('dashboard')">Home</a></li>
+        <li><a href="#" ng-click="redirectTo('dashboard')">PLM Work Flow</a></li>
+        <li><a href="#" ng-click="redirectTo('distributor')">Distributor</a></li>
+        <li class="active">Offer Production </li>
+     </ul>
+  </div>
+</div>
+ 
+<div class="row" ng-controller="distributorOffersController" >
+  <div class="col-md-12"  >
+     <div class="table-responsive" >
+        <table class="table table-bordered table-striped table-hover">
+           <thead>
+              <tr>
+                 <th>Select Release</th>
+                  <th width=5%>Release ID</th>
+                  <th width=5%>Intake ID</th>
+                  <th width=5%>Offer ID</th>
+                 <th>Name</th>
+                 <th>Type</th>
+                 <th>Description</th>
+                  <th width=10%>Category</th>
+                  <th width=8%>Start Date</th>
+                  <th width=8%>End Date</th>
+                 <th>OMC Status</th>
+                 <th>Pinpoint Status</th>               
+              </tr>
+           </thead>
+           <tbody>
+            <tr>
+                 <td class="text-center"><input id="checkbox" type="checkbox" /></td>
+                 <td>XXXX</td>
+                 <td>XXXXX</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                <td></td>
+                <td></td>
+                 <td></td>
+                 <td></td>
+                  <td></td>
+                 <td></td>
+                 
+              </tr>
+                <tr>
+               <td></td>
+                 <td></td>
+                <td></td>
+                 <td>101</td>
+                 <td>1P Quick Connect Pref 100 CHSI</td>
+                 <td>1P CHSI</td>
+                 <td>Pref 100 CHSI, EQ rental, first mo free, $54.99 mo. 2-12</td>
+                 <td>01-Base Offer</td>
+                 <td>06-28-2017</td>
+                 <td>07-23-2017</td>
+                  <td><button class="btn btn-success btn-md"></button></td>
+                  <td><button class="btn btn-success btn-md"></button></td>
+              
+              </tr>
+                 <tr>
+               <td></td>
+              <td></td>
+               <td></td>
+                 <td>102</td>
+                 <td>3P Quick Connect CTV/Pref 100 CHSI/Ess CHL</td>
+                 <td>3P VIDEO/CHSI/CHL</td>
+                 <td>CTV, Pref 100 CHSI, Ess CHL, EQ rental, $55 first m., $109.99 mo. 2-12</td>
+                 <td>01-Base Offer</td>
+                 <td>06-28-2017</td>
+                 <td>07-23-2017</td>
+                  <td><button class="btn btn-success btn-md"></button></td>
+                  <td><button class="btn btn-success btn-md"></button></td>
+                 
+              </tr>
+                 <tr>
+                 <td class="text-center"><input id="checkbox" type="checkbox" /></td>
+                 <td>YYYY</td>
+                 <td>YYYY</td>
+                  <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                  <td></td>
+                   <td></td>
+                  <td></td>
+               <td></td>
+                 
+              </tr>        
+                <tr>
+                  <td></td>
+                 <td></td>
+                <td></td>
+                 <td>289</td>
+                 <td>4P Quick Connect CTV/Pref 100 CHSI/Ess CHL/Premium Phone</td>
+                 <td>4P VIDEO/CHSI/CHL/PhoneP CHSI</td>
+                 <td>CTV, Pref 100 CHSI, Ess CHL, Phone, EQ rental, $55 first m., $109.99 mo. 2-12</td>
+                 <td>01-Base Offer</td>
+                 <td>06-28-2017</td>
+                 <td>07-23-2017</td>
+                  <td><button class="btn btn-success btn-md"></button></td>
+                  <td><button class="btn btn-success btn-md"></button></td>
+                 
+              </tr>        
+           </tbody>
+        </table>
+     </div>
+  </div>
+    <div class="col-md-12">
+                  <!--  <pagination-controls class="pull-right" (pageChange)="page = $event" id="ConfiguratorProjectList"
+                        maxSize="5"
+                        directionLinks="true"
+                        autoHide="true">
+                    </pagination-controls> -->
+                </div>
+  <div class="col-md-12 margin-bot-15" >
+     <button type="submit" ng-click="rleaseToTestSubmit()" class="btn btn-primary pull-right ">Submit for OMC </button>
+     <button type="submit" class="btn btn-primary pull-right margin-right-20" ng-click="redirectTo('dashboard')">Submit for Pinpoint</button>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-md-12">
+     <h1 class="page-header">Discounts</h1>
+  </div>
+  <div class="col-md-12">
+     <ul class="breadcrumb">
+        <li><a href="#" ng-click="redirectTo('dashboard')">Home</a></li>
+        <li><a href="#" ng-click="redirectTo('dashboard')">PLM Work Flow</a></li>
+        <li><a href="#" ng-click="redirectTo('distributor')">Distributor</a></li>
+        <li class="active">Discounts</li>
+     </ul>
+  </div>
+</div>
+<div class="row" ng-controller="distributorDiscountsController">
+  <div class="col-md-12">
+     <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+           <thead>
+              <tr>
+                 <th>Project Code</th>
+                 <th>Offer ID</th>
+                 <th>Discount ID</th>
+                 <th>PSU</th>
+                 <th>Discount Name</th>
+                 <th>Discount Description</th>
+                 <th>Discount Start Date</th>
+                 <th>Discount End Date</th>
+                 <th>Status</th>
+                 <th>#</th>
+              </tr>
+           </thead>
+           <tbody>
+              <tr ng-repeat="discount in discounts">
+                 <td rowspan="1">ProjectCode</td>
+                 <td>OfferID</td>
+                 <td>DiscountID</td>
+                 <td>PSU</td>
+                 <td>DiscountName</td>
+                 <td>DiscountDescription</td>
+                 <td>DiscountStratDate</td>
+                 <td>DiscountEndDate</td>
+                 <td>Status</td>
+                 <td>
+                    <input id="chk1" type="checkbox" ng-model="discount.Status" 
+                       ng-false-value="'new'" ng-true-value="'Icoms Release'" ng-click="enableICOMSPublish()" />
+                 </td>
+              </tr>
+           </tbody>
+        </table>
+     </div>
+  </div>
+  <div  class="col-md-12 margin-bot-15" ng-controller="distributorDiscountsController">
+     <a ng-click="moveToICOMS()" class="btn btn-primary pull-right" ng-disabled="disableICOMSPublish">ICOMS PUBLISH</a>
+     <button type="submit" class="btn btn-primary pull-left" ng-click="redirectTo('dashboard')">Back</button>
+  </div>
+</div>

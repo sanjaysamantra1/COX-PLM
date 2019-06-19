@@ -1,0 +1,110 @@
+[
+	{
+		"ProjectCode": "GTM2B2017_1",
+		"ProjectType": "New Offer Creation",
+		"ProjectCategoery": "Base Offer",
+		"Market": ["San Diego"],
+		"Status": "Ready for Release",
+		"StartDate": "01/10/2018",
+		"EndDate": "01/20/2018",
+		"AssignedTo": "requestor1@cox.com",
+		"ProjectDetails": "Project Details",
+		"LatestUpdatedDate" : "01/01/2018",
+		"icon1": "",
+		"icon2": "",
+		"MarketsView": {
+			"Market": [
+				{
+					"Marketing Offer id": "MO_01",
+					"Marketing Offer Status": "Requested", 
+					"Marketing Detail": "Marketing Offer Details",
+					"Offer": "Offer1",
+					"Offer Detail" : "Offer Details",
+					"OfferStatus": "WIP",
+					"Last Updated Date": "",
+					"Sites" : ["Orange Country", "Las Vegas", "Palos Verdes"], 
+					"Discount Code": [
+						{
+							"Discount Code" : "Discount 01", 
+							"Details": "Discount Detail", 
+							"Discount Status" : "Pending"
+						},
+						{		
+							"Discount Code": "Discount 02",
+							"Details": "Discount Detail",
+							"Discount Status": "Pending"
+						},
+						{
+							"Discount Code": "Product 01",
+							"Details": "Product Detail",
+							"Discount Status": "Completed"
+						},
+						{
+							"Discount Code": "Product 02",
+							"Details": "Product Detail",
+							"Discount Status": "Completed"
+						}
+					]
+				},
+				{
+					"Marketing Offer id": "MO_02",
+					"Marketing Offer Status": "WIP",
+					"Marketing Detail": "Marketing Offer Details",
+					"Offer": "Offer2",
+					"Offer Detail": "Offer Detail",
+					"OfferStatus": "WIP",
+					"Last Updated Date": "",
+					"Sites": ["Santa Barbara", "Northen Virginia", "San Diego"],
+					"Discount Code": [
+						{
+							"Discount Code": "Discount 04",
+							"Details": "Discount Detail",
+							"Discount Status": "Pending"
+						},
+						{
+							"Discount Code": "Product 01",
+							"Details": "Product Detail",
+							"Discount Status": "Pending"
+						}
+					]
+				},
+				{
+					"Marketing Offer id": "MO_03",
+					"Marketing Offer Status": "WIP",
+					"Marketing Detail": "Marketing Offer Details",
+					"Offer": "Offer3",
+					"Offer Detail": "Offer Detail",
+					"OfferStatus": "Completed",
+					"Last Updated Date": "",
+					"Sites": ["Phoneix", "Connecticut"],
+					"Discount Code": [
+						{
+							"Discount Code": "Product",
+							"Details": "Product Detail",
+							"Discount Status": "Pending"
+						}
+					]
+				},
+				{
+					"Marketing Offer id": "MO_04",
+					"Marketing Offer Status": "WIP",
+					"Marketing Detail": "Marketing Offer Details",
+					"Offer": "Offer3",
+					"Offer Detail": "Offer Detail",
+					"OfferStatus": "Completed",
+					"Last Updated Date": "",
+					"Sites": ["Rhode Island"],
+					"Discount Code": [
+						{
+							"Discount Code": "Discount",
+							"Details": "Discount Detail",
+							"Discount Status": "Pending"
+						}
+					]
+				}
+			]
+		}
+	}
+
+]
+

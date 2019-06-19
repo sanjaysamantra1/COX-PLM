@@ -1,0 +1,251 @@
+{
+	"discount": {
+		"discountId": 33,
+		"createdByUser": "Test User",
+		"createdDate": "2018-04-01T18:30:00.000Z",
+		"description": "Test Description",
+		"discountCode": "A12908021",
+		"endDate": "2018-04-01T18:30:00.000Z",
+		"modifiedDate": "2018-04-01T18:30:00.000Z",
+		"notes": "Test Notes",
+		"startDate": "2018-04-01T18:30:00.000Z",
+		"version": "1.0",
+		"sites": [
+			333,
+			476,
+			334
+		],
+		"projectCode": "PRO_107",
+		"type": null,
+		"status": 1001,
+		"parentCampaignId": 14,
+		"replacingCampaignId": 16,
+		"failedSelfInstalledCredit": "Test Failed Self",
+		"endDateLastChange": "2018-04-01T18:30:00.000Z",
+		"selfInstallIncentive": "Test Failed Self",
+		"active": true,
+		"future": false,
+		"projectId": 675,
+		"reviewBeforeExpirationStatusId": 671,
+		"discountIcoms": null,
+		"discountGift": {
+			"discountMapGiftId": 32,
+			"giftcardAmount": "TEST DATA",
+			"included": true,
+			"cardId": null,
+			"notes": "Test Validation Notes",
+			"validationStatusId": 209
+		},
+		"discMapDescrBuild": {
+			"descrBuildId": 32,
+			"amount": "99.99",
+			"formula": null,
+			"dataTierIds": [
+				141,
+				142
+			],
+			"phoneTierIds": [
+				160,
+				165
+			],
+			"hmLifeTierIds": [
+				170,
+				171
+			],
+			"equipmentIds": [
+				191,
+				192
+			],
+			"installIds": [
+				207,
+				208
+			],
+			"videoTierIds": [
+				116,
+				117
+			],
+			"ancillaryFeatureIds": [
+				174,
+				175
+			],
+			"discountId": null,
+			"discountTypeId": 667
+		},
+		"discMapOscar": {
+			"oscarId": 360,
+			"discountId": null,
+			"statusId": 141,
+			"createdDate": null,
+			"financeBucketProgCdId": 363,
+			"salesAdvise": "Test CC Sales Advice",
+			"adviceFormula": null,
+			"saRequired": true,
+			"mrktId": 559
+		},
+		"discMapOnline": {
+			"discOnlineMapId": 7,
+			"disclaimer": "Test Disclaimer",
+			"ecomPromoCode": "Test ECOM Promo Code",
+			"savingsSticker": "Test Savings Sticker",
+			"uptierValues": "Test Uptier Values",
+			"onlineStatusId": 540
+		},
+		"discMappingEntity": {
+			"mappingId": 6,
+			"discountId": 10,
+			"discount": 10,
+			"marketName": "Test Market Name",
+			"mrc": 20,
+			"numberOfPsu": 10,
+			"primaryDuration": 20,
+			"psuRequired": "10",
+			"retailRate": 20,
+			"secondryDuration": 30,
+			"secondryStepupAmount": 10,
+			"financeBucketCdId": 240,
+			"programNmId": 251,
+			"customerTargetId": 265,
+			"campaignTypeId": 142,
+			"campaignSubTypeId": 142,
+			"minDataTierId": 142,
+			"minPhoneTierId": 142,
+			"minHomeLifeTierId": 142,
+			"productId": 327,
+			"saTypeRequiredId": 313,
+			"installIncludeId": 321,
+			"offerFamilyId": 215,
+			"minVideoTierId": 142
+		},
+		"discMapPreRequisite": {
+			"preReqId": 6,
+			"cmpgnCdAIncIfOne": "Test Cmpn CDA Inc If One",
+			"cmpgnCdDExcIfAny": "Test Cmpn CDA Exc If One",
+			"cmpgnCdNumOfDays": "Test Cmpn CD Num of Days",
+			"cmpgnLongDescr": "Test Cmpn Long Description",
+			"curntSrvcAIncIfOne":"Test Current service A Inc of One",
+			"curntSrvcBIncIfAll": "Test curntSrvcBIncIfAll",
+			"curntSrvcCIncIfAtlst": "Test curntSrvcCIncIfAtlst",
+			"curntSrvcCOfThese": "Test curntSrvcCOfThese",
+			"curntSrvcDExcIfAny": "Test curntSrvcDExcIfAny",
+			"curntSrvcEExcIfAll": "Test curntSrvcEExcIfAll",
+			"curntSrvcFExcIfAtlst": "Test curntSrvcFExcIfAtlst",
+			"curntSrvcFOfThese": "Test curntSrvcFOfThese",
+			"icomsAccessList1": "Test icomsAccessList1\nicomsAccessList1",
+			"icomsAccessList2": "Test icomsAccessList2\nicomsAccessList2\n\nicomsAccessList2",
+			"icomsAccessList3": "Test icomsAccessList3",
+			"icomsAccessList4": "Test icomsAccessList4",
+			"icomsAccessList5": "Test icomsAccessList5",
+			"icomsAccessList6": "Test icomsAccessList6",
+			"instlSrvcAIncIfOne": "Test instlSrvcAIncIfOne",
+			"instlSrvcBIncIfAll": "Test instlSrvcBIncIfAll",
+			"instlSrvcCIncIfAtlst": "Test instlSrvcCIncIfAtlst",
+			"instlSrvcCOfThese": "Test instlSrvcCOfThese",
+			"instlSrvcDExcIfAny": "Test instlSrvcDExcIfAny",
+			"instlSrvcEExcIfAll": "Test instlSrvcEExcIfAll",
+			"instlSrvcFExcIfAtlst": "Test instlSrvcFExcIfAtlst",
+			"instlSrvcFOfThese": "Test instlSrvcFOfThese",
+			"mrktIdAIncIfOne": "Test mrktIdAIncIfOne",
+			"mrktIdDExcIfAny": "Test mrktIdDExcIfAny",
+			"otherInsrct": "Test otherInsrct",
+			"plgInstlAIncIfOne": "Test plgInstlAIncIfOne",
+			"plgInstlBIncIfAll": "Test plgInstlBIncIfAll",
+			"plgInstlDExcIfAny": "Test plgInstlDExcIfAny",
+			"plgRetnAIncIfOne": "Test plgRetnAIncIfOne",
+			"plgRetnDExcIfAny": "Test plgRetnDExcIfAny",
+			"retnSrvcAIncIfOne": "Test retnSrvcAIncIfOne",
+			"retnSrvcBIncIfAll": "Test retnSrvcBIncIfAll",
+			"retnSrvcCIncIfAtlst": "Test retnSrvcCIncIfAtlst",
+			"retnSrvcCOfThese": "Test retnSrvcCOfThese",
+			"retnSrvcDExcIfAny": "Test retnSrvcDExcIfAny",
+			"retnSrvcEExcIfAll": "Test retnSrvcEExcIfAll",
+			"retnSrvcFExcIfAtlst": "Test retnSrvcFExcIfAtlst",
+			"retnSrvcFOfThese": "Test retnSrvcFOfThese",
+			"discountId": "Test curntSrvcCIncIfAtlst",
+			"preReqIcomsDataBlob": null,
+			"teCodes": []
+		},
+		"discMapMainPage": {
+			"mainPageId": 6,
+			"mpMarkets": null,
+			"mpNotes": "Test MP Notes",
+			"mpOffer": "Test MP Offer",
+			"mpOfferDetailsRestrict": "Test MP Offer Details Restrict",
+			"mpSalesChannel": "Test MP Sales Channel",
+			"showMainpageFlg": true,
+			"mpOfferProductId": 373,
+			"mpTargetedAudienceId": 495,
+			"mpInstallationTprId": 509,
+			"mpNewExistingId": 368,
+			"mpOfferTypeId": 406,
+			"discountId": null,
+			"channelIds": [
+				636,
+				637,
+				638
+			],
+			"tacticIds": [
+				744,
+				746
+			]
+		},
+		"discMapPriceMethod": {
+			"priceMethodId": 5,
+			"methodId": 300,
+			"methodAttributes": [
+				{
+					"methodAttrId": 4,
+					"methodAttrValue": "Y"
+				},
+				{
+					"methodAttrId": 5,
+					"methodAttrValue": "10"
+				},
+				{
+					"methodAttrId": 6,
+					"methodAttrValue": "N"
+				}
+			]
+		},
+		"pricingRules": [
+			{
+				"codepricingRulesId": 6,
+				"absorb": "yes",
+				"activeService": "yes",
+				"amtFrstBundleDiscount": 10,
+				"amtMinReqPricingCatg": 20,
+				"bundleDiscount": true,
+				"campaignDollarOff": 30,
+				"fixedPricing": 40,
+				"minRequirmnt": true,
+				"numOccurnceDiscount": 10,
+				"numOfMnths": 10,
+				"other": "Test Other",
+				"pricebookChrgIcomscodeDesc": "101 - 101-Cox TV Starter - 2018 T1 Price Book - 01-07-2018 - 12-31-2018",
+				"pricebookChrgReltdIcomscode": null,
+				"pricebookEndDate": "12-31-2018",
+				"pricebookStartDate": "01-07-2018",
+				"presentationCodeId": 553,
+				"pricingCategoryName": 546,
+				"priceBookId": 306,
+				"pricingRuleSites": [
+					{
+						"amount": 12.33,
+						"site": "ORG",
+						"siteId": 333
+					},
+					{
+						"amount": 14.33,
+						"site": "LAS",
+						"siteId": 476
+					},
+					{
+						"amount": 14.33,
+						"site": "PAL",
+						"siteId": 334
+					}
+				]
+			}
+		]
+	},
+	"file": {}
+}

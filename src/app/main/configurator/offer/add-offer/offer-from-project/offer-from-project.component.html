@@ -1,0 +1,144 @@
+  <!-- First Section Starts here -->
+  <mat-expansion-panel class="form-divider panel-no-background" *ngIf="showOfferInformation">
+    <mat-expansion-panel-header>
+       Offer form: <span>{{offerFromProject.projectCode}}</span>
+    </mat-expansion-panel-header>
+    <div class="row">
+       <div class="col-md-12">
+          <form class="form-horizontal">
+             <div class="row">
+                <div class="col-md-6">
+                   <div class="form-group">
+                      <label class="col-sm-5 control-label">Project Code</label>
+                      <div class="col-xs-7">
+                         <div class="label-des">{{offerFromProject.projectCode}}</div>
+                      </div>
+                   </div>
+                   <div class="form-group">
+                      <label class="col-xs-5 control-label">Offer Type</label>
+                      <div class="col-xs-7">
+                         <div class="label-des">{{offerFromProject.offerType}}</div>
+                      </div>
+                   </div>
+                   <div class="form-group">
+                      <label class="col-xs-5 control-label">Offer Start Date</label>
+                      <div class="col-xs-7">
+                         <div class="label-des">{{offerFromProject.offerStartDate}}</div>
+                      </div>
+                   </div>
+                   <!-- <div class="form-group">
+                        <label class="col-xs-5 control-label">Offer Name</label>
+                        <div class="col-xs-7">
+                            <div class="label-des">{{offerFromProject.offerName}}</div>
+                        </div>
+                    </div> -->
+                    <div class="form-group">
+                        <label class="col-xs-5 control-label">Offer Description</label>
+                        <div class="col-xs-7">
+                            <div class="label-des">{{offerFromProject.offerDescription}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="col-xs-5 control-label">Offer ID</label>
+                        <div class="col-xs-7">
+                            <div class="label-des">{{offerFromProject.offerId}}</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-5 control-label">Bundle</label>
+                        <div class="col-xs-7">
+                            <div class="label-des">{{offerFromProject.bundleType}}</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-5 control-label">Offer End Date</label>
+                        <div class="col-xs-7">
+                            <div class="label-des">{{offerFromProject.offerEndDate}}</div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-md-12"></div>
+                <div class="col-sm-12" style="background:#337ab7;color:#FDFDFE; margin-bottom:20px;">
+                   <div class="col-md-6">
+                      <h5>PSU</h5>
+                   </div>
+                   <div class="col-md-6">
+                      <h5>PSU Detail</h5>
+                   </div>
+                </div>
+                <div class="col-md-6">
+                   <div class="form-group">
+                      <label class="col-sm-5 control-label">DATA</label>
+                      <div class="col-xs-7">
+                         <div class="label-des">NO TIER</div>
+                      </div>
+                   </div>
+                   <div class="form-group">
+                      <label class="col-xs-5 control-label">PHONE</label>
+                      <div class="col-xs-7">
+                         <div class="label-des">C2C</div>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-md-6">
+                   <div class="form-group">
+                      <label class="col-sm-5 control-label">VIDEO</label>
+                      <div class="col-xs-7">
+                         <div class="label-des">OTHER</div>
+                      </div>
+                   </div>
+                   <div class="form-group">
+                      <label class="col-xs-5 control-label">HOME LIFE</label>
+                      <div class="col-xs-7">
+                         <div class="label-des">SEASONAL</div>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-sm-12" style="background:#337ab7;color:#FDFDFE; margin-bottom:20px;">
+                   <div class="col-md-12">
+                      <h5>Specifications</h5>
+                   </div>
+                </div>
+                <div class="col-md-6">
+                   <div class="form-group">
+                      <label class="col-sm-5 control-label">Price</label>
+                      <div class="col-xs-7">
+                         <div class="label-des">${{offerFromProject.price}}</div>
+                      </div>
+                   </div>
+                   <div class="form-group">
+                      <label class="col-xs-5 control-label">Discount Type</label>
+                      <div class="col-xs-7">
+                         <div class="label-des">{{offerFromProject.discountType}}</div>
+                      </div>
+                   </div>
+                   <!-- <div class="form-group">
+                      <label class="col-xs-5 control-label">Discount Duration </label>
+                      <div class="col-xs-7">
+                         <div class="label-des">{{offerFromProject.discountDuration}}</div>
+                      </div>
+                   </div> -->
+                </div>
+                <div class="col-md-6">
+                   <div class="form-group">
+                      <label class="col-sm-5 control-label">Price Spec</label>
+                      <div class="col-xs-7">
+                         <div class="label-des">{{offerFromProject.priceSpec}}</div>
+                      </div>
+                   </div>
+                   <div class="form-group">
+                      <label class="col-xs-5 control-label">Discount Value</label>
+                      <div class="col-xs-7">
+                         <div class="label-des">${{offerFromProject.discountValue}}</div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </form>
+       </div>
+    </div>
+ </mat-expansion-panel>
+ <!-- First Section ends here -->

@@ -1,0 +1,8 @@
+{
+	"email" : "user@cox.com", 
+	"roleId" : 111,
+	"firstName" : "userFirstName",
+	"lastName" : "userLastName",
+	"statusId" : 1,
+	"workGroupId" : ["1","2","3"]
+}

@@ -1,0 +1,269 @@
+<div>
+      <div class="row">
+            <div class="col-md-12">
+                  <h1 class="page-header">ICOMS</h1>
+            </div>
+            <div class="col-md-12">
+                  <ul class="breadcrumb">
+                        <li>
+                              <a href="#" ng-click="redirectTo('dashboard')">Home</a>
+                        </li>
+                        <li>
+                              <a href="#" ng-click="redirectTo('dashboard')">PLM Work Flow</a>
+                        </li>
+                        <li>
+                              <a href="#" ng-click="redirectTo('dashboard')">Technology Systems</a>
+                        </li>
+                        <li class="active">ICOMS</li>
+                  </ul>
+            </div>
+      </div>
+      <div class="row">
+            <div class="col-md-12" *ngIf="submitFailed">
+                  <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" aria-label="close" title="close" click="hideStatus()">×</a>
+                        User Updated Failed
+                  </div>
+            </div>
+      </div>
+      <div class="row">
+            <div class="col-md-12" *ngIf="exportXlSuccess">
+                  <div class="alert alert-success">
+                        <a class="close" data-dismiss="alert" aria-label="close" title="close" click="hideStatus()">×</a>
+                        Export and Download Success
+                  </div>
+            </div>
+      </div>
+      <div class="row">
+            <div class="col-md-12" *ngIf="exportXlFailed">
+                  <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" aria-label="close" title="close" click="hideStatus()">×</a>
+                        Export and Download Failed
+                  </div>
+            </div>
+      </div>
+      <div class="row">
+            <div class="col-md-12">
+                  <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                              <thead>
+                                    <tr>
+                                          <th style="width:45px;min-width:45px;">
+                                                <button type="button" class="btn btn-primary btn-xs" (click)="toggleSearchIcon()">
+                                                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                                </button>
+                                          </th>
+                                          <th>Select for Export</th>
+                                          <th>
+                                                <div (click)="sort('discountId')">Discount ID
+                                                      <span class="glyphicon sort-icon" *ngIf="key =='discountId'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                                </div>
+                                                <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByDiscountId" [(ngModel)]="filterByDiscountId"
+                                                      (keyup)="updateFilterContext('filterByDiscountIdSearchObj', 'discountId', filterByDiscountId)"
+                                                      placeholder="By Discount ID">
+                                          </th>
+                                          <th>
+                                                <div (click)="sort('discountCode')">Discount Code
+                                                      <span class="glyphicon sort-icon" *ngIf="key =='discountCode'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                                </div>
+                                                <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByDiscountCode" [(ngModel)]="filterByDiscountCode"
+                                                      (keyup)="updateFilterContext('filterByDiscountCodeSearchObj', 'discountCode', filterByDiscountCode)"
+                                                      placeholder="By Discount Code">
+                                          </th>
+                                          <th>
+                                                <div (click)="sort('description')">Description
+                                                      <span class="glyphicon sort-icon" *ngIf="key =='description'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                                </div>
+                                                <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByDescription" [(ngModel)]="filterByDescription"
+                                                      (keyup)="updateFilterContext('filterByDescriptionSearchObj', 'discountCode', filterByDescription)"
+                                                      placeholder="By Description">
+                                          </th>
+                                          <th>
+                                                <div (click)="sort('version')">Version
+                                                      <span class="glyphicon sort-icon" *ngIf="key =='version'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                                </div>
+                                                <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByVersion" [(ngModel)]="filterByVersion" (keyup)="updateFilterContext('filterByVersionSearchObj', 'version', filterByVersion)"
+                                                      placeholder="By Version">
+                                          </th>
+                                          <th>
+                                                <div (click)="sort('icomsStatus')">ICOMS Status
+                                                      <span class="glyphicon sort-icon" *ngIf="key =='icomsStatus'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                                </div>
+                                                <select [hidden]="!showSearch" class="seacrh-input" [(ngModel)]="filterByICOMSStatus" (change)="updateFilterContext('filterByICOMSStatusSearchObj', 'icomsStatusId', filterByICOMSStatus)">
+                                                      <option value="">Select One</option>
+                                                      <option *ngFor="let status of icomStatusMasterData" value={{status.key}}>
+                                                            {{status.value}}
+                                                      </option>
+                                                </select>
+                                          </th>
+                                          <th>
+                                                <div (click)="sort('offerSeries')">Offer Series
+                                                      <span class="glyphicon sort-icon" *ngIf="key =='offerSeries'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                                </div>
+                                                <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByOfferSeries" [(ngModel)]="filterByOfferSeries"
+                                                      (keyup)="updateFilterContext('filterByOfferSeriesSearchObj', 'offerSeries', filterByOfferSeries)"
+                                                      placeholder="By Offer Series">
+                                          </th>
+                                          <th>
+                                                <div (click)="sort('icomsAssignedTo')">ICOMS Assigned To
+                                                      <span class="glyphicon sort-icon" *ngIf="key =='icomsAssignedTo'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                                </div>
+                                                <select [hidden]="!showSearch" class="seacrh-input" [(ngModel)]="filterByICOMSAssignedTo" (change)="updateFilterContext('filterByICOMSAssignedToSearchObj', 'assignedTo', filterByICOMSAssignedTo)">
+                                                      <option value="">Select One</option>
+                                                      <option *ngFor="let user of usersMasterData" value={{user.firstname}}>
+                                                            {{user.firstname}}
+                                                      </option>
+                                                </select>
+                                          </th>
+                                          <th>
+                                                <div (click)="sort('peerReviewedBy')">Peer Reviewed By
+                                                      <span class="glyphicon sort-icon" *ngIf="key =='peerReviewedBy'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                                </div>
+                                                <select [hidden]="!showSearch" class="seacrh-input" [(ngModel)]="filterByPeerReviewedBy" (change)="updateFilterContext('filterByPeerReviewedBySearchObj', 'peerReviewBy', filterByPeerReviewedBy)">
+                                                      <option value="">Select One</option>
+                                                      <option *ngFor="let user of usersMasterData" value={{user.firstname}}>
+                                                            {{user.firstname}}
+                                                      </option>
+                                                </select>
+                                          </th>
+                                          <th>
+                                                <div (click)="sort('discountCodeChanges')">Discount Code Changes
+                                                      <span class="glyphicon sort-icon" *ngIf="key =='discountCodeChanges'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                                </div>
+                                                <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByDiscountCodeChanges" [(ngModel)]="filterByDiscountCodeChanges"
+                                                      (keyup)="updateFilterContext('filterByDiscountCodeChangesSearchObj', 'discountCodeChanges', filterByDiscountCodeChanges)"
+                                                      placeholder="By Discount Code Changes">
+                                          </th>
+                                          <th>
+                                                <div (click)="sort('startDate')">Start Date
+                                                      <span class="glyphicon sort-icon" *ngIf="key =='startDate'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                                </div>
+                                                <div [hidden]="!showSearch">
+                                                      <mat-form-field class="input-group">
+                                                            <input matInput [matDatepicker]="startDate" class="form-control" [(ngModel)]="filterByStartDate" (ngModelChange)="updateFilterContext('filterByStartDateSearchObj', 'startDate', filterByStartDate)"
+                                                                  name="filterByStartDate">
+                                                            <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                                                            <mat-datepicker #startDate></mat-datepicker>
+                                                      </mat-form-field>
+                                                </div>
+                                          </th>
+                                          <th>
+                                                <div (click)="sort('endDate')">End Date
+                                                      <span class="glyphicon sort-icon" *ngIf="key =='endDate'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                                </div>
+                                                <div [hidden]="!showSearch">
+                                                      <mat-form-field class="input-group">
+                                                            <input matInput [matDatepicker]="endDate" class="form-control" [(ngModel)]="filterByEndDate" (ngModelChange)="updateFilterContext('filterByEndDateSearchObj', 'endDate', filterByEndDate)"
+                                                                  name="filterByEndDate">
+                                                            <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+                                                            <mat-datepicker #endDate></mat-datepicker>
+                                                      </mat-form-field>
+                                                </div>
+                                          </th>
+                                          <th>
+                                                <div (click)="sort('pricingMethod')">Pricing Method
+                                                      <span class="glyphicon sort-icon" *ngIf="key =='pricingMethod'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                                </div>
+                                                <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByPricingMethod" [(ngModel)]="filterByPricingMethod"
+                                                      (keyup)="updateFilterContext('filterByPricingMethodSearchObj', 'priceMethodId', filterByPricingMethod)"
+                                                      placeholder="By Pricing Method">
+                                          </th>
+                                          <th>
+                                                <div (click)="sort('discountCDStatus')">Discount CD Status
+                                                      <span class="glyphicon sort-icon" *ngIf="key =='discountCDStatus'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                                </div>
+                                                <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByDiscountCDStatus" [(ngModel)]="filterByDiscountCDStatus"
+                                                      (keyup)="updateFilterContext('filterByDiscountCDStatusSearchObj', 'discountCodeStatusId', filterByDiscountCDStatus)"
+                                                      placeholder="By Discount CD Status">
+                                          </th>
+                                          <th>
+                                                <div (click)="sort('dateCreated')">Date Created
+                                                      <span class="glyphicon sort-icon" *ngIf="key =='dateCreated'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                                </div>
+                                                <div [hidden]="!showSearch">
+                                                      <mat-form-field class="input-group">
+                                                            <input matInput [matDatepicker]="createdDate" class="form-control" [(ngModel)]="filterByDateCreated" (ngModelChange)="updateFilterContext('filterByDateCreatedSearchObj', 'createdDate', filterByDateCreated)"
+                                                                  name="filterByDateCreated">
+                                                            <mat-datepicker-toggle matSuffix [for]="createdDate"></mat-datepicker-toggle>
+                                                            <mat-datepicker #createdDate></mat-datepicker>
+                                                      </mat-form-field>
+                                                </div>
+                                          </th>
+                                          <th>
+                                                <div (click)="sort('intakeRequestID')">Intake Request ID
+                                                      <span class="glyphicon sort-icon" *ngIf="key =='intakeRequestID'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                                </div>
+                                                <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByIntakeRequestID" [(ngModel)]="filterByIntakeRequestID"
+                                                      (keyup)="updateFilterContext('filterByIntakeRequestIDSearchObj', 'projectCode', filterByIntakeRequestID)"
+                                                      placeholder="By Intake Request ID">
+                                          </th>
+                                    </tr>
+                              </thead>
+                              <tbody>
+                                    <tr *ngFor="let items of icomsUserList | sharedFilter : filterByDiscountIdSearchObj | sharedFilter : filterByDiscountCodeSearchObj | sharedFilter : filterByDescriptionSearchObj | sharedFilter : filterByVersionSearchObj | sharedFilter : filterByICOMSStatusSearchObj | sharedFilter : filterByOfferSeriesSearchObj | sharedFilter : filterByICOMSAssignedToSearchObj | sharedFilter : filterByPeerReviewedBySearchObj | sharedFilter : filterByDiscountCodeChangesSearchObj | sharedFilter : filterByStartDateSearchObj | sharedFilter : filterByEndDateSearchObj | sharedFilter : filterByPricingMethodSearchObj | sharedFilter : filterByDiscountCDStatusSearchObj | sharedFilter : filterByDateCreatedSearchObj | sharedFilter : filterByIntakeRequestIDSearchObj | orderBy: key : reverse | paginate: {itemsPerPage: 5, currentPage:page, id: 'icomsList'}; let i = index">
+                                          <td></td>
+                                          <td>
+                                                <input type="checkbox" name="userListCheckbox" class="checkthis" [(ngModel)]="items.checked" (change)='enableDisableUpdateButton(items.checked)'
+                                                />
+                                          </td>
+                                          <td>{{items.discountId}}</td>
+                                          <td>{{items.discountCode}}</td>
+                                          <td>{{items.description}}</td>
+                                          <td>{{items.version}}</td>
+                                          <td>
+                                                <select class="seacrh-input" [(ngModel)]="items.icomsStatusId">
+                                                      <option value="">Select One</option>
+                                                      <option *ngFor="let status of icomStatusMasterData" value={{status.key}}>
+                                                            {{status.value}}
+                                                      </option>
+                                                </select>
+                                          </td>
+                                          <td>
+                                                <input type="text" class="form-control" [(ngModel)]="items.offerSeries" />
+                                          </td>
+                                          <td>
+                                                <select class="seacrh-input" [(ngModel)]="items.assignedTo">
+                                                      <option value="">Select One</option>
+                                                      <option *ngFor="let user of usersMasterData" value={{user.userId}}>
+                                                            {{user.firstname}}
+                                                      </option>
+                                                </select>
+                                          </td>
+                                          <td>
+                                                <select class="seacrh-input" [(ngModel)]="items.peerReviewBy">
+                                                      <option value="">Select One</option>
+                                                      <option *ngFor="let user of usersMasterData" value={{user.userId}}>
+                                                            {{user.firstname}}
+                                                      </option>
+                                                </select>
+                                          </td>
+                                          <td>
+                                                <textarea class="form-control" rows="3">{{items.discountCodeChanges}}
+                        </textarea>
+                                          </td>
+                                          <td>{{items.startDate | date:'MM/dd/yyyy'}}</td>
+                                          <td>{{items.endDate | date:'MM/dd/yyyy'}}</td>
+                                          <td>{{items.priceMethodId}}</td>
+                                          <td>{{items.discountCodeStatusName}}</td>
+                                          <td>{{items.createdDate | date:'MM/dd/yyyy'}}</td>
+                                          <td>{{items.projectCode}}</td>
+                                    </tr>
+                              </tbody>
+                        </table>
+                  </div>
+            </div>
+      </div>
+      <div class="row">
+            <div class="col-md-12">
+                  <pagination-controls class="pull-right" (pageChange)="page = $event" id="icomsList" maxSize="5" directionLinks="true" autoHide="true">
+                  </pagination-controls>
+            </div>
+      </div>
+      <div class="row">
+            <div class="col-md-12 margin-bot-15">
+                  <!-- <button type="button" class="btn btn-primary pull-right" (click)="submitIcomsUpdate()">Submit</button> -->
+                  <button type="button" class="btn btn-primary pull-right" (click)="updateIcomsUsersData()" [disabled]="updateUsersChecked">Submit</button>
+                  <button type="button" class="btn btn-primary pull-left" (click)="exportIcomsUsersData()" [disabled]="updateUsersChecked">Export and Download</button>
+            </div>
+      </div>
+</div>

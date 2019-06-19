@@ -1,0 +1,18 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" (click)="onNoClick()">&times;</button>
+        <h4 class="modal-title">Warning</h4>
+        </div>
+        <div class="modal-body">
+            <p>
+                Intake Request Form is modified. All data's will be lost if you exit.<br>
+                Do you want to continue?
+            </p>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="moveToProjectList()">Ok</button>
+        <button type="button" class="btn btn-primary" (click)="cancelExit()">Cancel</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,180 @@
+<nav id="navbar" class="sidebar navbar-collapse collapse" [ngClass]="{sidebarPushRight: isActive}">
+    <div class="navbar-default sidebar">
+        <div class="sidebar-nav nav-pad">
+            
+            <ul class="nav in" id="side-menu">
+                <li class="profile-section">
+                 
+                     <div class="arrow-sidenav-collapse" (click)="toggleSidebar()">
+                         <i class="fa fa-bars"></i>
+                     </div>
+                    <div class="profile-element nav-link-text">
+                        <i class="fa fa-user fa-3x"></i>
+                    </div>
+                    <strong class="profile-des nav-link-text">
+                        <p>Welcome {{currentUser}}</p>
+                        <a (click)="onLoggedout()">
+                                <span class="fa fa-power-off"></span> <span class="top-menu-text">Logout</span></a>
+                        <!-- <button type="button" class="btn btn-primary">Logout</button>-->
+                    </strong>
+                </li>
+                <li matTooltip="PLM Home">
+                    <a [routerLinkActive]="['router-link-active']" routerLink="/dashboard" ng-click="redirectTo('dashboard')" class="plmHome">
+                        <span class="fa fa-home"></span> 
+                        <span class="nav-link-text"> PLM Home</span>
+                    </a>
+                </li>
+     
+                <li title="PLM Work Flow">
+                    <a class="accordion-heading" data-toggle="collapse" data-target="#workflowNav" aria-expanded="fasle" (click)="sidebarExpand()">
+                        <span class="nav-header-primary"> 
+                            <i class="fa fa fa-sitemap"></i> 
+                            <span class="nav-link-text">PLM Work Flow</span>
+                        </span>
+                    </a>
+                    <ul class="sidenav-second-level nav nav-list collapse" id="workflowNav"> 
+                        <li *ngIf="show_sidebar_plmWorkFlow_requestor">
+                            <a [routerLinkActive]="['router-link-active']" [routerLink]="['/plm-work-flow/requestor']" class="requestor">
+                                <i class="fa fa-folder-open fa-fw"></i> Requestor</a>
+                        </li>
+
+                        <li *ngIf="show_sidebar_plmWorkFlow_configurator">
+                            <a [routerLinkActive]="['router-link-active']" class="accordion-heading configurator" data-toggle="collapse" data-target="#configuratorNav" aria-expanded="fasle" (click)="sidebarExpand()">
+                                <span class="nav-header-primary"> 
+                                    <i class="fa fa-cogs fa-fw"></i> Configurator
+                                </span>
+                            </a>
+                             <ul class="sidenav-third-level nav nav-list collapse" id="configuratorNav">
+                                <li *ngIf="show_sidebar_plmWorkFlow_configurator_offers">
+                                  <a class="config-offers" [routerLinkActive]="['router-link-active']" [routerLink]="['/plm-work-flow/configurator/offer/project-list']">
+                                    <i class="fa fa-gift fa-fw"></i> Offers<span></span>
+                                  </a>
+                                </li>
+                                <li *ngIf="show_sidebar_plmWorkFlow_configurator_discounts">
+                                  <a class="config-discounts" [routerLinkActive]="['router-link-active']" [routerLink]="['/plm-work-flow/configurator/discount/project-list']">
+                                    <i class="fa fa-tags fa-fw"></i> Discounts<span></span>
+                                  </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li *ngIf="show_sidebar_plmWorkFlow_distributor">
+                            <a class="accordion-heading distributor" data-toggle="collapse" data-target="#distributorNav" aria-expanded="fasle" (click)="sidebarExpand()">
+                                <span class="nav-header-primary"> 
+                                    <i class="fa fa-user fa-fw"></i> Distributor
+                                </span>
+                            </a>
+                            <ul class="sidenav-third-level nav nav-list collapse" id="distributorNav"> 
+                                <li *ngIf="show_sidebar_plmWorkFlow_distributor_omcTestQueue">
+                                  <a class="distributor-offers" ui-sref [routerLinkActive]="['router-link-active']" [routerLink]="['/plm-work-flow/distributor/omc-test']">
+                                  <i class="fa fa-gift fa-fw"></i> Offer Testing <span></span></a>
+                                </li>
+                                <li *ngIf="show_sidebar_plmWorkFlow_distributor_omcProdQueue">
+                                  <a class="distributor-discounts" ui-sref [routerLinkActive]="['router-link-active']" [routerLink]="['/plm-work-flow/distributor/omc-prod']">
+                                  <i class="fa fa-tags fa-fw"></i> Offer Production<span></span></a>
+                                </li>
+                                <li *ngIf="show_sidebar_plmWorkFlow_distributor_products">
+                                  <a class="distributor-products" ui-sref [routerLinkActive]="['router-link-active']" [routerLink]="['/plm-work-flow/distributor/product']">
+                                  <i class="fa fa-product-hunt fa-fw"></i> Products<span></span></a>
+                                </li>
+                                <li *ngIf="show_sidebar_plmWorkFlow_distributor_discounts">
+                                  <a class="distributor-discounts" ui-sref [routerLinkActive]="['router-link-active']" [routerLink]="['/plm-work-flow/distributor/discount']">
+                                  <i class="fa fa-tags fa-fw"></i> Discounts<span></span></a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li *ngIf="show_sidebar_plmWorkFlow_configurator">
+                          <a class="accordion-heading" data-toggle="collapse" data-target="#techNav" aria-expanded="fasle" (click)="sidebarExpand()">
+                            <span class="nav-header-primary"> 
+                                <i class="fa fa-cloud fa-fw"></i> Technology Systems
+                            </span>
+                          </a>
+                          <ul class="sidenav-third-level nav nav-list collapse" id="techNav">
+                                <li *ngIf="show_sidebar_plmWorkFlow_technologySystems_uatUsers">
+                                  <a class="distributor-products" ui-sref [routerLinkActive]="['router-link-active']" [routerLink]="['/plm-work-flow/technology-systems/omc-uat-users']">
+                                  <i class="fa fa-product-hunt fa-fw"></i> UAT USERs <span></span></a>
+                                </li>
+                               <li *ngIf="show_sidebar_plmWorkFlow_configurator">
+                                    <a class="icoms" ui-sref [routerLinkActive]="['router-link-active']" [routerLink]="['/plm-work-flow/technology-systems/icoms']">
+                                        <i class="fa fa-pie-chart fa-fw"></i> ICOMS
+                                        <span></span>
+                                    </a>
+                                </li>
+                                <li *ngIf="show_sidebar_plmWorkFlow_technologySystems_omc">
+                                    <a class="omc" ui-sref [routerLinkActive]="['router-link-active']" [routerLink]="['/plm-work-flow/technology-systems/omc']">
+                                        <i class="fa fa-bars fa-fw"></i> OMC
+                                        <span></span>
+                                    </a>
+                                </li>
+                                <li *ngIf="show_sidebar_plmWorkFlow_technologySystems_pinPoint">
+                                    <a class="pin-point" ui-sref [routerLinkActive]="['router-link-active']" [routerLink]="['/plm-work-flow/technology-systems/pin-point']">
+                                        <i class="fa fa-thumb-tack fa-fw"></i> PinPoint
+                                        <span></span>
+                                    </a>
+                                </li>
+                                <li *ngIf="show_sidebar_plmWorkFlow_technologySystems_eCOM">
+                                    <a class="e-com" ui-sref [routerLinkActive]="['router-link-active']" [routerLink]="['/plm-work-flow/technology-systems/e-com']">
+                                        <i class="fa fa-shopping-cart fa-fw"></i> E-COM
+                                        <span></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </li>
+                <li title="Business Catalog" tooltip *ngIf="show_sidebar_businessCatalog">
+                  <a class="accordion-heading" data-toggle="collapse" data-target="#businessCatNav" aria-expanded="false" (click)="sidebarExpand()">
+                    <span class="nav-header-primary"> 
+                        <i class="fa fa-briefcase fa-fw"></i> 
+                        <span class="nav-link-text">Business Catalog</span>
+                    </span>
+                  </a>
+                  <ul class="sidenav-second-level nav nav-list collapse" id="businessCatNav">
+                    <li *ngIf="show_sidebar_businessCatalog_offer">
+                      <a class="business-offers" ui-sref [routerLinkActive]="['router-link-active']" [routerLink]="['/business-catalog/offers']">
+                      <i class="fa fa-gift fa-fw"></i> Offers<span></span></a>
+                    </li>
+                    <li *ngIf="show_sidebar_businessCatalog_products">
+                      <a class="business-products" ui-sref [routerLinkActive]="['router-link-active']" [routerLink]="['/business-catalog/products']">
+                      <i class="fa fa-product-hunt fa-fw"></i> Products<span></span></a>
+                    </li>
+                    <li *ngIf="show_sidebar_businessCatalog_discounts">
+                      <a class="business-discounts" ui-sref [routerLinkActive]="['router-link-active']" [routerLink]="['/business-catalog/discounts']">
+                      <i class="fa fa-tags fa-fw"></i> Discounts<span></span></a>
+                    </li>
+                 </ul>
+                </li> 
+                <li title="User Admin" tooltip *ngIf="show_sidebar_userAdmin">
+                  <a class="accordion-heading" data-toggle="collapse" data-target="#userAdminNav" aria-expanded="false" (click)="sidebarExpand()">
+                    <span class="nav-header-primary"> 
+                        <i class="fa fa-lock fa-fw"></i> 
+                        <span class="nav-link-text">User Admin</span>
+                    </span>
+                  </a>
+                  <ul class="sidenav-second-level nav nav-list collapse" id="userAdminNav">
+                    <li *ngIf="show_sidebar_userAdmin_addUser">
+                      <a class="new-user" ui-sref [routerLinkActive]="['router-link-active']" [routerLink]="['/user-admin/add-user']">
+                       <i class="fa fa-user-plus fa-fw"></i> Add New User<span></span></a>
+                    </li>
+                    <li *ngIf="show_sidebar_userAdmin_userViewModify">
+                      <a class="search-user" ui-sref [routerLinkActive]="['router-link-active']" [routerLink]="['/user-admin/search-user']">
+                      <i class="fa fa-search fa-fw"></i> User View/Modify<span></span></a>
+                    </li>
+                 </ul>
+                </li>
+                <!--<li title="Report" tooltip>
+                  <a class="report" ui-sref [routerLinkActive]="['router-link-active']" [routerLink]="['/report']">
+                      <i class="fa fa-bar-chart fa-fw"></i> 
+                      <span class="nav-link-text">Report</span>
+                  </a>
+                </li>-->
+               
+            </ul>
+            
+        </div>
+        <!-- /.sidebar-collapse -->
+    </div>
+</nav>
+

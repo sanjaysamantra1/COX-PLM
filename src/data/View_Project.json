@@ -1,0 +1,328 @@
+{
+    "actionResult": null,
+    "actionStatus": "SUCCESS",
+    "projectCode": "PRO_1517397615991",
+    "projectMasterModel": {
+        "projectCode": "PRO_1517397615991",
+        "projectType": "1",
+        "projectTypeName": "New Offer Creation",
+        "projectDesc": "Description 1",
+        "projectStartDt": "2018-07-01T18:30:00.000Z",
+        "projectEndDt": "2018-07-09T18:30:00.000Z",
+        "market": [
+            1,
+            2,
+            3
+        ],
+        "status": "Submitted for Configurator",
+        "statusName": "Submitted for Configurator",
+        "assignedTo": "Nitin",
+        "processId": 1,
+        "siteMap": {
+            "1": "One",
+            "2": "Two"
+        }
+    },
+    "mrktingOfferModel": [
+        {
+            "moId": "MO1",
+            "createdBy": "Theeran",
+            "createdDate": "2018-07-01T18:30:00.000Z",
+            "description": "Test",
+            "discValue": "1",
+            "endDate": "2018-07-09T18:30:00.000Z",
+            "modifiedDate": "2018-07-09T18:30:00.000Z",
+            "offerType": "test",
+            "price": 44.99,
+            "priceSpec": "12 + 12",
+            "startDate": "2018-07-01T18:30:00.000Z",
+            "supplementaryRule": "Test Supplementary Rules",
+            "moProductDataModel": [
+                {
+                    "prodDataId": "1",
+                    "prodDetail": "Data",
+                    "psuType": "2P",
+                    "mrktingOfferTxnDetModel": {},
+                    "psuTypeMasterModel": {
+                        "psuTypeId": "1",
+                        "psuName": "2P",
+                        "description": "PSU 2P Type Master Model"
+                    }
+                }
+            ],
+            "bundleMasterModel": {
+                "bndlId": "1",
+                "bndlName": "Test Bundle Name"
+            },
+            "currencyMasterModel": {
+                "currencyId": "1",
+                "currencyName": "Test Currency Name"
+            },
+            "mktOffrDiscountMasterModel": {
+                "discTypeId": "1",
+                "discTypeName": "Test Disc Type"
+            },
+            "projectMasterModel": {
+                "projectCode": "PRO_1517397615991",
+                "projectType": "1",
+                "projectTypeName": "New Offer Creation",
+                "projectDesc": "Description 1",
+                "projectStartDt": "2018-07-01T18:30:00.000Z",
+                "projectEndDt": "2018-07-09T18:30:00.000Z",
+                "market": [
+                    1,
+                    2,
+                    3
+                ],
+                "status": "Submitted for Configurator",
+                "statusName": "Submitted for Configurator",
+                "assignedTo": "Nitin",
+                "processId": 1,
+                "siteMap": {
+                    "1": "One",
+                    "2": "Two"
+                }
+            }
+        },
+        {
+            "moId": "MO2",
+            "createdBy": "Theeran",
+            "createdDate": "2018-07-01T18:30:00.000Z",
+            "description": "Test",
+            "discValue": "1",
+            "endDate": "2018-07-09T18:30:00.000Z",
+            "modifiedDate": "2018-07-09T18:30:00.000Z",
+            "offerType": "test",
+            "price": 44.99,
+            "priceSpec": "12 + 12",
+            "startDate": "2018-07-01T18:30:00.000Z",
+            "supplementaryRule": "Test Supplementary Rules",
+            "moProductDataModel": [
+                {
+                    "prodDataId": "1",
+                    "prodDetail": "Data",
+                    "psuType": "2P",
+                    "mrktingOfferTxnDetModel": {},
+                    "psuTypeMasterModel": {
+                        "psuTypeId": "1",
+                        "psuName": "2P",
+                        "description": "2P PSU Type Master Model"
+                    }
+                }
+            ],
+            "bundleMasterModel": {
+                "bndlId": "1",
+                "bndlName": "Test Bundle Name"
+            },
+            "currencyMasterModel": {
+                "currencyId": "1",
+                "currencyName": "Test Currency Name"
+            },
+            "mktOffrDiscountMasterModel": {
+                "discTypeId": "1",
+                "discTypeName": "Test Disc Type"
+            },
+            "projectMasterModel": {
+                "projectCode": "PRO_1517397615991",
+                "projectType": "1",
+                "projectTypeName": "New Offer Creation",
+                "projectDesc": "Description 1",
+                "projectStartDt": "2018-07-01T18:30:00.000Z",
+                "projectEndDt": "2018-07-09T18:30:00.000Z",
+                "market": [
+                    1,
+                    2,
+                    3
+                ],
+                "status": "Submitted for Configurator",
+                "statusName": "Submitted for Configurator",
+                "assignedTo": "Nitin",
+                "processId": 1,
+                "siteMap": {
+                    "1": "One",
+                    "2": "Two"
+                }
+            }
+        },
+        {
+            "moId": "MO3",
+            "createdBy": "Theeran",
+            "createdDate": "2018-07-01T18:30:00.000Z",
+            "description": "Test",
+            "discValue": "1",
+            "endDate": "2018-07-09T18:30:00.000Z",
+            "modifiedDate": "2018-07-09T18:30:00.000Z",
+            "offerType": "test",
+            "price": 44.99,
+            "priceSpec": "12 + 12",
+            "startDate": "2018-07-01T18:30:00.000Z",
+            "supplementaryRule": "Test Supplementary Rules",
+            "moProductDataModel": [
+                {
+                    "prodDataId": "1",
+                    "prodDetail": "Data",
+                    "psuType": "2P",
+                    "mrktingOfferTxnDetModel": {},
+                    "psuTypeMasterModel": {
+                        "psuTypeId": "1",
+                        "psuName": "2P",
+                        "description": "PSU 2P Type Master Model"
+                    }
+                }
+            ],
+            "bundleMasterModel": {
+                "bndlId": "1",
+                "bndlName": "Test Bundle Name"
+            },
+            "currencyMasterModel": {
+                "currencyId": "1",
+                "currencyName": "Test Currency Name"
+            },
+            "mktOffrDiscountMasterModel": {
+                "discTypeId": "1",
+                "discTypeName": "Test Disc Type"
+            },
+            "projectMasterModel": {
+                "projectCode": "PRO_1517397615991",
+                "projectType": "1",
+                "projectTypeName": "New Offer Creation",
+                "projectDesc": "Description 1",
+                "projectStartDt": "2018-07-01T18:30:00.000Z",
+                "projectEndDt": "2018-07-09T18:30:00.000Z",
+                "market": [
+                    1,
+                    2,
+                    3
+                ],
+                "status": "Submitted for Configurator",
+                "statusName": "Submitted for Configurator",
+                "assignedTo": "Nitin",
+                "processId": 1,
+                "siteMap": {
+                    "1": "One",
+                    "2": "Two"
+                }
+            }
+        },
+        {
+            "moId": "MO4",
+            "createdBy": "Theeran",
+            "createdDate": "2018-07-01T18:30:00.000Z",
+            "description": "Test",
+            "discValue": "1",
+            "endDate": "2018-07-09T18:30:00.000Z",
+            "modifiedDate": "2018-07-09T18:30:00.000Z",
+            "offerType": "test",
+            "price": 44.99,
+            "priceSpec": "12 + 12",
+            "startDate": "2018-07-01T18:30:00.000Z",
+            "supplementaryRule": "Test Supplementary Rules",
+            "moProductDataModel": [
+                {
+                    "prodDataId": "1",
+                    "prodDetail": "Data",
+                    "psuType": "2P",
+                    "mrktingOfferTxnDetModel": {},
+                    "psuTypeMasterModel": {
+                        "psuTypeId": "1",
+                        "psuName": "2P",
+                        "description": "2P PSU Type Master Model"
+                    }
+                }
+            ],
+            "bundleMasterModel": {
+                "bndlId": "1",
+                "bndlName": "Test Bundle Name"
+            },
+            "currencyMasterModel": {
+                "currencyId": "1",
+                "currencyName": "Test Currency Name"
+            },
+            "mktOffrDiscountMasterModel": {
+                "discTypeId": "1",
+                "discTypeName": "Test Disc Type"
+            },
+            "projectMasterModel": {
+                "projectCode": "PRO_1517397615991",
+                "projectType": "1",
+                "projectTypeName": "New Offer Creation",
+                "projectDesc": "Description 1",
+                "projectStartDt": "2018-07-01T18:30:00.000Z",
+                "projectEndDt": "2018-07-09T18:30:00.000Z",
+                "market": [
+                    1,
+                    2,
+                    3
+                ],
+                "status": "Submitted for Configurator",
+                "statusName": "Submitted for Configurator",
+                "assignedTo": "Nitin",
+                "processId": 1,
+                "siteMap": {
+                    "1": "One",
+                    "2": "Two"
+                }
+            }
+        },
+        {
+            "moId": "MO5",
+            "createdBy": "Theeran",
+            "createdDate": "2018-07-01T18:30:00.000Z",
+            "description": "Test",
+            "discValue": "1",
+            "endDate": "2018-07-09T18:30:00.000Z",
+            "modifiedDate": "2018-07-09T18:30:00.000Z",
+            "offerType": "test",
+            "price": 44.99,
+            "priceSpec": "12 + 12",
+            "startDate": "2018-07-01T18:30:00.000Z",
+            "supplementaryRule": "Test Supplementary Rules",
+            "moProductDataModel": [
+                {
+                    "prodDataId": "1",
+                    "prodDetail": "Data",
+                    "psuType": "2P",
+                    "mrktingOfferTxnDetModel": {},
+                    "psuTypeMasterModel": {
+                        "psuTypeId": "1",
+                        "psuName": "2P",
+                        "description": "2P PSU Type Master Model"
+                    }
+                }
+            ],
+            "bundleMasterModel": {
+                "bndlId": "1",
+                "bndlName": "Test Bundle Name"
+            },
+            "currencyMasterModel": {
+                "currencyId": "1",
+                "currencyName": "Test Currency Name"
+            },
+            "mktOffrDiscountMasterModel": {
+                "discTypeId": "1",
+                "discTypeName": "Test Disc Type"
+            },
+            "projectMasterModel": {
+                "projectCode": "PRO_1517397615991",
+                "projectType": "1",
+                "projectTypeName": "New Offer Creation",
+                "projectDesc": "Description 1",
+                "projectStartDt": "2018-07-01T18:30:00.000Z",
+                "projectEndDt": "2018-07-09T18:30:00.000Z",
+                "market": [
+                    1,
+                    2,
+                    3
+                ],
+                "status": "Submitted for Configurator",
+                "statusName": "Submitted for Configurator",
+                "assignedTo": "Nitin",
+                "processId": 1,
+                "siteMap": {
+                    "1": "One",
+                    "2": "Two"
+                }
+            }
+        }
+    ]
+}

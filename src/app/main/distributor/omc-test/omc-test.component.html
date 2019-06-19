@@ -1,0 +1,139 @@
+<div class="row" >
+  <div class="col-md-12">
+     <h1 class="page-header">Offer Testing </h1>
+  </div>
+  <div class="col-md-12">
+     <ul class="breadcrumb">
+        <li><a href="#" ng-click="redirectTo('dashboard')">Home</a></li>
+        <li><a href="#" ng-click="redirectTo('dashboard')">PLM Work Flow</a></li>
+        <li><a href="#" ng-click="redirectTo('distributor')">Distributor</a></li>
+        <li class="active">Offer Testing </li>
+     </ul>
+  </div>
+</div>
+
+<div id="OfferTesting" class="table-responsive">
+    <table id="tableSearchResults" class="table table-bordered table-striped table-hover">
+       <thead>
+          <tr>
+            <th>Select Release</th>
+            <th width="5%">Release ID</th>
+            <th width="5%">Intake ID</th>
+            <th width="5%">Offer ID</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th width="7%">Category</th>
+            <th width="8%">Start Date</th>
+            <th width="8%">End Date</th>
+            <th>OMC Status</th>
+            <th>Pinpoint Status</th>
+            <th width="8%">Test Sites (Drop down with multi select list of sites)</th>
+            <th width="7%">UAT Test Status</th>
+            <th>UAT Comments</th>
+          </tr>
+       </thead>
+       <tbody>
+          <tr class="accordion-toggle" data-toggle="collapse" data-parent="#OfferTesting" data-target=".one">
+             <td class="text-center"><input id="checkbox" type="checkbox" /></td>
+             <td>XXXX</td>
+             <td>XXXXX</td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td>
+                <select id="status" name="status" class="form-control">
+                    <option value="" selected>Select</option>
+                </select>
+            </td>
+            <td><textarea id="test" name="test" class="form-control" rows="2" cols="25"></textarea></td>
+             <!--<td><i class="indicator glyphicon glyphicon-chevron-up pull-right"></i></td>-->
+          </tr>
+          <tr class="accordion-body collapse one">
+            	<td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>101</td>
+                <td>1P Quick Connect Pref 100 CHSI</td>
+                <td>1P CHSI</td>
+                <td>Pref 100 CHSI, EQ rental, first mo free, $54.99 mo. 2-12</td>
+                <td>01-Base Offer</td>
+                <td>06-28-2017</td>
+                <td>07-23-2017</td>
+                <td><button class="btn btn-success btn-md"></button></td>
+                <td><button class="btn btn-success btn-md"></button></td>
+                <td>
+                <select id="status" name="status" class="form-control">
+                    <option value="" selected>Select</option>
+                </select>
+                </td>
+                <td>
+                <select id="status" name="status" class="form-control">
+                    <option value="" selected>Select</option>
+                </select>
+                </td>
+                <td><textarea id="test" name="test" class="form-control" rows="2" cols="25"></textarea></td>
+          </tr>
+          <tr class="accordion-toggle" data-toggle="collapse" data-parent="#OfferTesting" data-target=".two">
+            <td class="text-center"><input id="checkbox" type="checkbox" /></td>
+            <td>YYYY</td>
+            <td>YYYY</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+            <select id="status" name="status" class="form-control">
+                <option value="" selected>Select</option>
+            </select>
+            </td>
+            <td><textarea id="test" name="test" class="form-control" rows="2" cols="25"></textarea></td>
+            <!-- <td><i class="indicator glyphicon glyphicon-chevron-up pull-right"></i></td> -->
+         </tr>
+         <tr class="accordion-body collapse two">
+            	<td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>101</td>
+                <td>1P Quick Connect Pref 100 CHSI</td>
+                <td>1P CHSI</td>
+                <td>Pref 100 CHSI, EQ rental, first mo free, $54.99 mo. 2-12</td>
+                <td>01-Base Offer</td>
+                <td>06-28-2017</td>
+                <td>07-23-2017</td>
+                <td><button class="btn btn-success btn-md"></button></td>
+                <td><button class="btn btn-success btn-md"></button></td>
+                <td>
+                <select id="status" name="status" class="form-control">
+                    <option value="" selected>Select</option>
+                </select>
+                </td>
+                <td>
+                <select id="status" name="status" class="form-control">
+                    <option value="" selected>Select</option>
+                </select>
+                </td>
+                <td><textarea id="test" name="test" class="form-control" rows="2" cols="25"></textarea></td>
+          </tr>
+       </tbody>
+    </table>
+ </div>
+ <div class="row">
+    <div class="col-md-12 margin-bot-15">
+        <button type="submit" ng-click="rleaseToTestSubmit()" class="btn btn-primary pull-right ">Submit for OMC </button>
+        <button type="submit" class="btn btn-primary pull-right margin-right-20" ng-click="redirectTo('dashboard')">Submit for Pinpoint</button>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+{
+    "requestor" : {
+        "count" : 6
+    },
+    "configurator" : {
+        "count" : 6
+    },
+    "distributor" : {
+        "count" : 6
+    },
+    "icoms" : {
+        "count" : 6
+    },
+    "omc" : {
+        "count" : 6
+    },
+    "pinpoint" : {
+        "count" : 6
+    },
+    "ecom" : {
+        "count" : 6
+    }
+}

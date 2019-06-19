@@ -1,0 +1,872 @@
+<!-- Seventh Section Starts here -->
+ <mat-expansion-panel class="form-divider panel-no-background">
+  <mat-expansion-panel-header>
+      Pinpoint Decision Attributes 
+  </mat-expansion-panel-header>
+  <div class="row">
+        <div class="form-group">
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Pricing Pinpoint Status</label>
+           <div class="col-sm-7"> <select class="form-control" name="status" [(ngModel)]="offerPricingPinPointInfo.status" (change)="updateSubmitData('status', offerPricingPinPointInfo.status)">
+              <option value="">Select Status</option>
+              <option *ngFor="let status of offerFormDropDown.PINPOINT_STATUS; let i= index;" [value]="status.key">{{ status.value }}</option>
+           </select>
+             </div>
+        </div>
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Is Base Offer</label>
+           <div class="col-sm-7"> <input type="checkbox" value="" name="inbaseofferFlag" [(ngModel)]="offerPricingPinPointInfo.inbaseofferFlag" [checked]="offerPricingPinPointInfo.inbaseofferFlag == 'Y'" (change)="updateSubmitData('inbaseofferFlag', offerPricingPinPointInfo.inbaseofferFlag)">
+             </div>
+        </div>
+  </div>
+  </div>
+<div class="row margin-top-20">
+        <div class="form-group">
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Channels Label</label>
+           <div class="col-sm-7"> <select class="form-control" name="status" [(ngModel)]="offerPricingPinPointInfo.status" (change)="updateSubmitData('status', offerPricingPinPointInfo.status)">
+              <option value="">Select Status</option>
+              <option *ngFor="let status of offerFormDropDown.PINPOINT_STATUS; let i= index;" [value]="status.key">{{ status.value }}</option>
+           </select>
+             </div>
+        </div>
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">OMC Offer ID</label>
+           <div class="col-sm-7">   <input type="text" class="form-control" name="omcOfferId" [(ngModel)]="offerPricingPinPointInfo.omcOfferId" (change)="updateSubmitData('omcOfferId', offerPricingPinPointInfo.omcOfferId)">
+             </div>
+        </div>
+  </div>
+  </div>
+<div class="row margin-top-20">
+        <div class="form-group">
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Addon Type</label>
+           <div class="col-sm-7"> <select class="form-control" name="addonType" [(ngModel)]="offerPricingPinPointInfo.addonType" (change)="updateSubmitData('addonType', offerPricingPinPointInfo.addonType)">
+              <option value="">Select Addon</option>
+              <option *ngFor="let addon of offerFormDropDown.ADDON_TYPE; let i= index;" [value]="addon.key">{{ addon.value }}</option>
+           </select>
+             </div>
+        </div>
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Mandatory Flag</label>
+           <div class="col-sm-7">   <input type="checkbox" value="" name="mandatoryflag" [(ngModel)]="offerPricingPinPointInfo.mandatoryflag" [checked]="offerPricingPinPointInfo.mandatoryflag == 'Y'" (change)="updateSubmitData('mandatoryflag', offerPricingPinPointInfo.mandatoryflag)">
+    
+             </div>
+        </div>
+  </div>
+  </div>
+<div class="row margin-top-20">
+        <div class="form-group">
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Adjusted MRC</label>
+           <div class="col-sm-7">   <input type="text" class="form-control" name="adjustedmrc" [(ngModel)]="offerPricingPinPointInfo.adjustedmrc" (change)="updateSubmitData('adjustedmrc', offerPricingPinPointInfo.adjustedmrc)">
+             </div>
+        </div>
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Estimated MRC</label>
+           <div class="col-sm-7">    <input type="text" class="form-control" name="estimatedmrc" [(ngModel)]="offerPricingPinPointInfo.estimatedmrc" (change)="updateSubmitData('estimatedmrc', offerPricingPinPointInfo.estimatedmrc)">
+    
+             </div>
+        </div>
+  </div>
+  </div>
+<div class="row margin-top-20">
+        <div class="form-group">
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Any Premium</label>
+           <div class="col-sm-7">    <input type="checkbox" value="" name="anyPremium">
+             </div>
+        </div>
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Any Pak</label>
+           <div class="col-sm-7">    <input type="text" class="form-control" name="anyPak">
+    
+             </div>
+        </div>
+  </div>
+  </div>
+ <div class="row margin-top-20">
+        <div class="form-group">
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Receiver</label>
+           <div class="col-sm-7">     <select class="form-control" name="receiver" [(ngModel)]="offerPricingPinPointInfo.receiver" (change)="updateSubmitData('receiver', offerPricingPinPointInfo.receiver)">
+              <option value="">Select Offer</option>
+              <option value="102">N</option>
+              <option value="101">Y</option>
+           </select>
+             </div>
+        </div>
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">DVR</label>
+           <div class="col-sm-7">     <select class="form-control" name="dvr" [(ngModel)]="offerPricingPinPointInfo.dvr" (change)="updateSubmitData('dvr', offerPricingPinPointInfo.dvr)">
+              <option value="">Select One</option>
+              <option *ngFor="let dvr of offerFormDropDown.DVR; let i= index;" [value]="dvr.key">{{ dvr.value }}</option>
+           </select>
+    
+             </div>
+        </div>
+  </div>
+  </div>
+<div class="row margin-top-20">
+        <div class="form-group">
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">DVR Optional</label>
+           <div class="col-sm-7">     <select class="form-control" name="dvrOptional">
+              <option value="">Select Offer</option>
+              <option>ANY</option>
+              <option>NONE</option>
+           </select>
+             </div>
+        </div>
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Data Equip</label>
+           <div class="col-sm-7">     <select class="form-control" name="dataEquip" [(ngModel)]="offerPricingPinPointInfo.dataEquip" (change)="updateSubmitData('dataEquip', offerPricingPinPointInfo.dataEquip)">
+              <option value="">Select One</option>
+              <option *ngFor="let dataequip of offerFormDropDown.DATAEQUIP; let i= index;" [value]="dataequip.key">{{ dataequip.value }}</option>
+           </select>
+             </div>
+        </div>
+  </div>
+  </div>
+<div class="row margin-top-20">
+        <div class="form-group">
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Data Equip Optional</label>
+           <div class="col-sm-7">   <select class="form-control" name="dataEquipOptional">
+              <option>Select Offer</option>
+              <option>ANY</option>
+              <option>NONE</option>
+           </select>
+             </div>
+        </div>
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Video Equip</label>
+           <div class="col-sm-7">    <select class="form-control" name="videoEquip" [(ngModel)]="offerPricingPinPointInfo.videoEquip" (change)="updateSubmitData('videoEquip', offerPricingPinPointInfo.videoEquip)">
+              <option value="">Select One</option>
+              <option *ngFor="let videoequip of offerFormDropDown.VIDEOEQUIP; let i= index;" [value]="videoequip.key">{{ videoequip.value }}</option>
+           </select>
+    
+             </div>
+        </div>
+  </div>
+  </div>
+<div class="row margin-top-20">
+        <div class="form-group">
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">HomeLife Installation Type</label>
+           <div class="col-sm-7">       <select class="form-control" name="baseofrHmlife" [(ngModel)]="offerPricingPinPointInfo.baseofrHmlife" (change)="updateSubmitData('baseofrHmlife', offerPricingPinPointInfo.baseofrHmlife)">
+              <option>Select Offer</option>
+              <option>ADVANCED</option>
+              <option>ADVANCED TV LATINO</option>
+              <option>ADVANCED TV PAQUETE LATINO</option>
+              <option>ANY TIER</option>
+              <option>C2C</option>
+              <option>CDT ECONOMY</option>
+           </select>
+             </div>
+        </div>
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Phone Installation Type</label>
+           <div class="col-sm-7">      <select class="form-control" name="phoneInstalType" [(ngModel)]="offerPricingPinPointInfo.phoneInstalType" (change)="updateSubmitData('phoneInstalType', offerPricingPinPointInfo.phoneInstalType)">
+              <option>Select Offer</option>
+              <option>NONE</option>
+              <option>SELF</option>
+              <option>PRO</option>
+              <option>ANY</option>
+           </select>
+    
+             </div>
+        </div>
+  </div>
+  </div>
+<div class="row margin-top-20">
+        <div class="form-group">
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Data Installation Type</label>
+           <div class="col-sm-7">     <select class="form-control" name="dataInstalType" [(ngModel)]="offerPricingPinPointInfo.dataInstalType" (change)="updateSubmitData('dataInstalType', offerPricingPinPointInfo.dataInstalType)">
+              <option>Select Offer</option>
+              <option>NONE</option>
+              <option>SELF</option>
+              <option>PRO</option>
+              <option>ANY</option>
+           </select>
+             </div>
+        </div>
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Video Installation Type</label>
+           <div class="col-sm-7">      <select class="form-control" name="videoInstalType" [(ngModel)]="offerPricingPinPointInfo.videoInstalType" (change)="updateSubmitData('videoInstalType', offerPricingPinPointInfo.videoInstalType)">
+              <option>Select Offer</option>
+              <option>NONE</option>
+              <option>SELF</option>
+              <option>PRO</option>
+              <option>ANY</option>
+           </select>
+    
+             </div>
+        </div>
+  </div>
+  </div>
+<div class="row margin-top-20">
+        <div class="form-group">
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Installation Optional</label>
+           <div class="col-sm-7">   <select class="form-control" name="instalOptnlId" [(ngModel)]="offerPricingPinPointInfo.instalOptnlId" (change)="updateSubmitData('instalOptnlId', offerPricingPinPointInfo.instalOptnlId)">
+              <option>Select Offer</option>
+              <option>ANY</option>
+              <option>NONE</option>
+           </select>
+             </div>
+        </div>
+             
+  </div>
+  </div>
+<hr/>
+<div class="row margin-top-20">
+        <div class="form-group">
+             <div class="col-md-4">
+                  <label class="col-sm-5 control-label">BaseOffer Homelife Eligiblity</label>
+           <div class="col-sm-7">     <select multiple class="form-control" name="baseofrHmlife" [(ngModel)]="offerPricingPinPointInfo.baseofrHmlife" (change)="updateSubmitData('baseofrHmlife', offerPricingPinPointInfo.baseofrHmlife)">
+              <option>Select Offer</option>
+              <option>ADVANCED</option>
+              <option>ADVANCED TV LATINO</option>
+              <option>ADVANCED TV PAQUETE LATINO</option>
+              <option>ANY TIER</option>
+              <option>C2C</option>
+              <option>CDT ECONOMY</option>
+           </select>
+             </div>
+        </div>
+             <div class="col-md-4">
+                  <label class="col-sm-5 control-label">Customer Homelife Eligibility Inclusion      </label>
+           <div class="col-sm-7">     <select multiple class="form-control" name="Customer">
+              <option>Select Offer</option>
+              <option>ADVANCED</option>
+              <option>ADVANCED TV LATINO</option>
+              <option>ADVANCED TV PAQUETE LATINO</option>
+              <option>ANY TIER</option>
+              <option>C2C</option>
+              <option>CDT ECONOMY</option>
+           </select>
+    
+             </div>
+        </div>
+            <div class="col-md-4">
+                  <label class="col-sm-5 control-label">Customer Homelife Eligibility Exclusion   </label>
+           <div class="col-sm-7">    <select multiple class="form-control" name="Customer">
+              <option>Select Offer</option>
+              <option>ADVANCED</option>
+              <option>ADVANCED TV LATINO</option>
+              <option>ADVANCED TV PAQUETE LATINO</option>
+              <option>ANY TIER</option>
+              <option>C2C</option>
+              <option>CDT ECONOMY</option>
+           </select>
+    
+             </div>
+        </div>
+  </div>
+  </div>
+<div class="row margin-top-20">
+        <div class="form-group">
+             <div class="col-md-4">
+                  <label class="col-sm-5 control-label">BaseOffer Video Eligiblity</label>
+           <div class="col-sm-7">    <select multiple class="form-control" name="baseofrVideo" [(ngModel)]="offerPricingPinPointInfo.baseofrVideo" (change)="updateSubmitData('baseofrVideo', offerPricingPinPointInfo.baseofrVideo)">
+              <option>Select Offer</option>
+              <option>ADVANCED</option>
+              <option>ADVANCED TV LATINO</option>
+              <option>ADVANCED TV PAQUETE LATINO</option>
+              <option>ANY TIER</option>
+              <option>C2C</option>
+              <option>CDT ECONOMY</option>
+           </select>
+             </div>
+        </div>
+             <div class="col-md-4">
+                  <label class="col-sm-5 control-label">Customer Video Eligibility Inclusion</label>
+           <div class="col-sm-7">    <select multiple class="form-control" name="baseofrVideo" [(ngModel)]="offerPricingPinPointInfo.baseofrVideo" (change)="updateSubmitData('baseofrVideo', offerPricingPinPointInfo.baseofrVideo)">
+              <option>Select Offer</option>
+              <option>ADVANCED</option>
+              <option>ADVANCED TV LATINO</option>
+              <option>ADVANCED TV PAQUETE LATINO</option>
+              <option>ANY TIER</option>
+              <option>C2C</option>
+              <option>CDT ECONOMY</option>
+           </select>
+    
+             </div>
+        </div>
+            <div class="col-md-4">
+                  <label class="col-sm-5 control-label">Customer Video Eligibility Exclusion </label>
+           <div class="col-sm-7">    <select multiple class="form-control" name="baseofrVideo" [(ngModel)]="offerPricingPinPointInfo.baseofrVideo" (change)="updateSubmitData('baseofrVideo', offerPricingPinPointInfo.baseofrVideo)">
+              <option>Select Offer</option>
+              <option>ADVANCED</option>
+              <option>ADVANCED TV LATINO</option>
+              <option>ADVANCED TV PAQUETE LATINO</option>
+              <option>ANY TIER</option>
+              <option>C2C</option>
+              <option>CDT ECONOMY</option>
+           </select>
+    
+             </div>
+        </div>
+  </div>
+  </div>
+<div class="row margin-top-20">
+        <div class="form-group">
+             <div class="col-md-4">
+                  <label class="col-sm-5 control-label">BaseOffer Phone Eligiblity</label>
+           <div class="col-sm-7">   <select multiple class="form-control" name="baseofrPhone" [(ngModel)]="offerPricingPinPointInfo.baseofrPhone" (change)="updateSubmitData('baseofrPhone', offerPricingPinPointInfo.baseofrPhone)">
+              <option>Select Offer</option>
+              <option>ADVANCED</option>
+              <option>ADVANCED TV LATINO</option>
+              <option>ADVANCED TV PAQUETE LATINO</option>
+              <option>ANY TIER</option>
+              <option>C2C</option>
+              <option>CDT ECONOMY</option>
+           </select>
+             </div>
+        </div>
+             <div class="col-md-4">
+                  <label class="col-sm-5 control-label">Customer Phone Eligibility Inclusion </label>
+           <div class="col-sm-7">   <select multiple class="form-control" name="baseofrPhone" [(ngModel)]="offerPricingPinPointInfo.baseofrPhone" (change)="updateSubmitData('baseofrPhone', offerPricingPinPointInfo.baseofrPhone)">
+              <option>Select Offer</option>
+              <option>ADVANCED</option>
+              <option>ADVANCED TV LATINO</option>
+              <option>ADVANCED TV PAQUETE LATINO</option>
+              <option>ANY TIER</option>
+              <option>C2C</option>
+              <option>CDT ECONOMY</option>
+           </select>
+    
+             </div>
+        </div>
+            <div class="col-md-4">
+                  <label class="col-sm-5 control-label">Customer Phone Eligibility Exclusion </label>
+           <div class="col-sm-7">    <select multiple class="form-control" name="baseofrPhone" [(ngModel)]="offerPricingPinPointInfo.baseofrPhone" (change)="updateSubmitData('baseofrPhone', offerPricingPinPointInfo.baseofrPhone)">
+              <option>Select Offer</option>
+              <option>ADVANCED</option>
+              <option>ADVANCED TV LATINO</option>
+              <option>ADVANCED TV PAQUETE LATINO</option>
+              <option>ANY TIER</option>
+              <option>C2C</option>
+              <option>CDT ECONOMY</option>
+           </select>
+    
+             </div>
+        </div>
+  </div>
+  </div>
+<div class="row margin-top-20">
+        <div class="form-group">
+             <div class="col-md-4">
+                  <label class="col-sm-5 control-label">BaseOffer Data Eligiblity</label>
+           <div class="col-sm-7">  <select multiple class="form-control" name="baseofrData" [(ngModel)]="offerPricingPinPointInfo.baseofrData" (change)="updateSubmitData('baseofrData', offerPricingPinPointInfo.baseofrData)">
+              <option>Select Offer</option>
+              <option>ADVANCED</option>
+              <option>ADVANCED TV LATINO</option>
+              <option>ADVANCED TV PAQUETE LATINO</option>
+              <option>ANY TIER</option>
+              <option>C2C</option>
+              <option>CDT ECONOMY</option>
+           </select>
+             </div>
+        </div>
+             <div class="col-md-4">
+                  <label class="col-sm-5 control-label">Customer Data Eligibility Inclusion</label>
+           <div class="col-sm-7">    <select multiple class="form-control" name="baseofrData" [(ngModel)]="offerPricingPinPointInfo.baseofrData" (change)="updateSubmitData('baseofrData', offerPricingPinPointInfo.baseofrData)">
+              <option>Select Offer</option>
+              <option>ADVANCED</option>
+              <option>ADVANCED TV LATINO</option>
+              <option>ADVANCED TV PAQUETE LATINO</option>
+              <option>ANY TIER</option>
+              <option>C2C</option>
+              <option>CDT ECONOMY</option>
+           </select>
+    
+             </div>
+        </div>
+            <div class="col-md-4">
+                  <label class="col-sm-5 control-label">Customer Data Eligibility Exclusion</label>
+           <div class="col-sm-7">   <select multiple class="form-control" name="baseofrData" [(ngModel)]="offerPricingPinPointInfo.baseofrData" (change)="updateSubmitData('baseofrData', offerPricingPinPointInfo.baseofrData)">
+              <option>Select Offer</option>
+              <option>ADVANCED</option>
+              <option>ADVANCED TV LATINO</option>
+              <option>ADVANCED TV PAQUETE LATINO</option>
+              <option>ANY TIER</option>
+              <option>C2C</option>
+              <option>CDT ECONOMY</option>
+           </select>
+    
+             </div>
+        </div>
+  </div>
+  </div>
+<hr/>
+<div class="row margin-top-20">
+        <div class="form-group">
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Discount Code Include List</label>
+           <div class="col-sm-7">      <select class="form-control" name="campnCodeInclude" [(ngModel)]="offerPricingPinPointInfo.campnCodeInclude" (change)="updateSubmitData('campnCodeInclude', offerPricingPinPointInfo.campnCodeInclude)">
+              <option>Select Offer</option>
+              <option>10REMOTE</option>
+              <option>A2134CI0X</option>
+              <option>A2152CS24</option>
+              <option>A2152CS24C</option>
+              <option>A2152PA24</option>
+              <option>A2161CA36</option>
+              <option>A2161CC24</option>
+              <option>A3133TX12</option>
+              <option>A3153CI0X</option>
+              <option>A3153DX12</option>
+           </select>
+             </div>
+        </div>
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Campagin Code Exclude List</label>
+           <div class="col-sm-7">       <select class="form-control" name="campnCodeExclude" [(ngModel)]="offerPricingPinPointInfo.campnCodeExclude" (change)="updateSubmitData('campnCodeExclude', offerPricingPinPointInfo.campnCodeExclude)">
+              <option>Select Offer</option>
+              <option>10REMOTE</option>
+              <option>A2134CI0X</option>
+              <option>A2152CS24</option>
+              <option>A2152CS24C</option>
+              <option>A2152PA24</option>
+              <option>A2161CA36</option>
+              <option>A2161CC24</option>
+              <option>A3133TX12</option>
+              <option>A3153CI0X</option>
+              <option>A3153DX12</option>
+           </select>
+    
+             </div>
+        </div>
+  </div>
+  </div>
+<div class="row margin-top-20">
+        <div class="form-group">
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Rate Group Exclusion List</label>
+           <div class="col-sm-7">    <input type="text" class="form-control" name="ratefrpExclusion" [(ngModel)]="offerPricingPinPointInfo.ratefrpExclusion" (change)="updateSubmitData('ratefrpExclusion', offerPricingPinPointInfo.ratefrpExclusion)">
+             
+             </div>
+        </div>
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">StaticIntent List</label>
+           <div class="col-sm-7">      <select class="form-control" name="staticintentlist" [(ngModel)]="offerPricingPinPointInfo.staticintentlist" (change)="updateSubmitData('staticintentlist', offerPricingPinPointInfo.staticintentlist)">
+              <option>Select Offer</option>
+              <option>NEWSUBSCRIBER_NEWSERVICE</option>
+           </select>
+             </div>
+        </div>
+  </div>
+  </div>
+<div class="row margin-top-20">
+        <div class="form-group">
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Static SubIntent List</label>
+           <div class="col-sm-7">     <select class="form-control" name="subStaticintentlist" [(ngModel)]="offerPricingPinPointInfo.subStaticintentlist" (change)="updateSubmitData('subStaticintentlist', offerPricingPinPointInfo.subStaticintentlist)">
+              <option>Select Offer</option>
+              <option>NEWSERVICE</option>
+           </select>
+             </div>
+        </div>
+           
+  </div>
+  </div>
+<div class="row margin-top-20">
+        <div class="form-group">
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Agent Type List</label>
+           <div class="col-sm-7">     <input type="text" class="form-control" name="Agenttypelist" />
+             </div>
+        </div>
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Proactive Code</label>
+           <div class="col-sm-7">     <input type="text" class="form-control" name="Proactivecode" />
+    
+             </div>
+        </div>
+  </div>
+  </div>
+<div class="row margin-top-20">
+        <div class="form-group">
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Proactive Offer </label>
+           <div class="col-sm-7">    <input type="checkbox"   name="Proactiveoffer" />
+    
+             </div>
+        </div>
+             
+  </div>
+  </div>
+<div class="row margin-top-20">
+        <div class="form-group">
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Offer Level TE Code</label>
+           <div class="col-sm-7">     <select multiple class="form-control" >
+              <option>Select Offer</option>
+              <option>EIOAA</option>
+              <option>HV1116</option>
+              <option>CM1116</option>
+              <option>BU11161</option>
+              <option>BU11162</option>
+              <option>BU11163</option>
+              <option>BU11164</option>
+              <option>BU11165</option>
+              <option>MB1116</option>
+           </select>
+             </div>
+        </div>
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">PY Label</label>
+           <div class="col-sm-7">     <input type="text" class="form-control" >
+    
+             </div>
+        </div>
+  </div>
+  </div>
+<div class="row margin-top-20">
+        <div class="form-group">
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">PY Launch Mode</label>
+           <div class="col-sm-7">    <select class="form-control" name="pylaunch" >
+              <option>Select Offer</option>
+              <option>EDIT</option>
+           </select>
+             </div>
+        </div>
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Billing  Eliigibility</label>
+           <div class="col-sm-7">      <select class="form-control" name="billingeligibility">
+              <option>Select Offer</option>
+              <option>NONE</option>
+              <option>SELF</option>
+              <option>PRO</option>
+              <option>ANY</option>
+           </select>
+    
+             </div>
+        </div>
+  </div>
+  </div>
+<div class="row margin-top-20">
+        <div class="form-group">
+             <div class="col-md-6">
+                  <label class="col-sm-5 control-label">Cox Complete Care</label>
+           <div class="col-sm-7">     <select class="form-control" name="coxcomplete" >
+              <option>Select Offer</option>
+              <option>NONE</option>
+              <option>SELF</option>
+              <option>PRO</option>
+              <option>ANY</option>
+           </select>
+             </div>
+        </div>
+             
+  </div>
+  </div>
+  <!-- <div id="fourth-section">
+     <div class="row">
+        <div class="form-group col-md-4">
+           <label>Pricing Pinpoint Status</label>
+           <select class="form-control" name="status" [(ngModel)]="offerPricingPinPointInfo.status" (change)="updateSubmitData('status', offerPricingPinPointInfo.status)">
+              <option value="">Select Status</option>
+              <option *ngFor="let status of offerFormDropDown.PINPOINT_STATUS; let i= index;" [value]="status.key">{{ status.value }}</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4" style="margin-top:29px;">
+           <label class="checkbox-inline">
+               <input type="checkbox" value="" name="inbaseofferFlag" [(ngModel)]="offerPricingPinPointInfo.inbaseofferFlag" [checked]="offerPricingPinPointInfo.inbaseofferFlag == 'Y'" (change)="updateSubmitData('inbaseofferFlag', offerPricingPinPointInfo.inbaseofferFlag)">In Base Offer
+            </label>
+        </div>
+        <div class="form-group col-md-4">
+           <label>Channels Label </label>
+           <select class="form-control" name="channelsLabel" [(ngModel)]="offerPricingPinPointInfo.channelsLabel" (change)="updateSubmitData('channelsLabel', offerPricingPinPointInfo.channelsLabel)">
+              <option value="">Select Channel</option>
+              <option *ngFor="let channel of offerFormDropDown.CHANNELSLABEL; let i= index;" [value]="channel.key">{{ channel.value }}</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>OMC Offer ID</label>
+           <input type="text" class="form-control" name="omcOfferId" [(ngModel)]="offerPricingPinPointInfo.omcOfferId" (change)="updateSubmitData('omcOfferId', offerPricingPinPointInfo.omcOfferId)">
+        </div>
+        <div class="form-group col-md-4">
+           <label>Addon Type</label>
+           <select class="form-control" name="addonType" [(ngModel)]="offerPricingPinPointInfo.addonType" (change)="updateSubmitData('addonType', offerPricingPinPointInfo.addonType)">
+              <option value="">Select Addon</option>
+              <option *ngFor="let addon of offerFormDropDown.ADDON_TYPE; let i= index;" [value]="addon.key">{{ addon.value }}</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4" style="margin-top:29px;">
+           <label class="checkbox-inline">
+               <input type="checkbox" value="" name="mandatoryflag" [(ngModel)]="offerPricingPinPointInfo.mandatoryflag" [checked]="offerPricingPinPointInfo.mandatoryflag == 'Y'" (change)="updateSubmitData('mandatoryflag', offerPricingPinPointInfo.mandatoryflag)">MandatoryFlag
+           </label>
+        </div>
+        <div class="form-group col-md-4" style="clear: both;">
+           <label>Estimated MRC</label>
+           <input type="text" class="form-control" name="estimatedmrc" [(ngModel)]="offerPricingPinPointInfo.estimatedmrc" (change)="updateSubmitData('estimatedmrc', offerPricingPinPointInfo.estimatedmrc)">
+        </div>
+        <div class="form-group col-md-4">
+            <label>AdjustedMRC</label>
+            <input type="text" class="form-control" name="adjustedmrc" [(ngModel)]="offerPricingPinPointInfo.adjustedmrc" (change)="updateSubmitData('adjustedmrc', offerPricingPinPointInfo.adjustedmrc)">
+         </div>
+        <div class="form-group col-md-4" style="margin-top:29px;">
+           <label class="checkbox-inline">
+               <input type="checkbox" value="" name="anypremiumFlag" [(ngModel)]="offerPricingPinPointInfo.anypremiumFlag" [checked]="offerPricingPinPointInfo.anypremiumFlag == 'Y'" (change)="updateSubmitData('anypremiumFlag', offerPricingPinPointInfo.anypremiumFlag)">AnyPremium
+           </label>
+           <label class="checkbox-inline">
+               <input type="checkbox" value="" name="anypakFlag" [(ngModel)]="offerPricingPinPointInfo.anypakFlag" [checked]="offerPricingPinPointInfo.anypakFlag == 'Y'" (change)="updateSubmitData('anypakFlag', offerPricingPinPointInfo.anypakFlag)">AnyPak
+           </label>
+        </div>
+        <div class="form-group col-md-4" style="clear: both;">
+           <label>Receiver</label>
+           <select class="form-control" name="receiver" [(ngModel)]="offerPricingPinPointInfo.receiver" (change)="updateSubmitData('receiver', offerPricingPinPointInfo.receiver)">
+              <option value="">Select Offer</option>
+              <option value="102">N</option>
+              <option value="101">Y</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>DVR</label>
+           <select class="form-control" name="dvr" [(ngModel)]="offerPricingPinPointInfo.dvr" (change)="updateSubmitData('dvr', offerPricingPinPointInfo.dvr)">
+              <option value="">Select One</option>
+              <option *ngFor="let dvr of offerFormDropDown.DVR; let i= index;" [value]="dvr.key">{{ dvr.value }}</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>DVR Optional</label>
+           <select class="form-control" name="dvrOptional">
+              <option value="">Select Offer</option>
+              <option>ANY</option>
+              <option>NONE</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>Data Equip</label>
+           <select class="form-control" name="dataEquip" [(ngModel)]="offerPricingPinPointInfo.dataEquip" (change)="updateSubmitData('dataEquip', offerPricingPinPointInfo.dataEquip)">
+              <option value="">Select One</option>
+              <option *ngFor="let dataequip of offerFormDropDown.DATAEQUIP; let i= index;" [value]="dataequip.key">{{ dataequip.value }}</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>Data Equip Optional</label>
+           <select class="form-control" name="dataEquipOptional">
+              <option>Select Offer</option>
+              <option>ANY</option>
+              <option>NONE</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>DVR Optional</label>
+           <select class="form-control">
+              <option>Select Offer</option>
+              <option>ANY</option>
+              <option>NONE</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>Video Equip</label>
+           <select class="form-control" name="videoEquip" [(ngModel)]="offerPricingPinPointInfo.videoEquip" (change)="updateSubmitData('videoEquip', offerPricingPinPointInfo.videoEquip)">
+              <option value="">Select One</option>
+              <option *ngFor="let videoequip of offerFormDropDown.VIDEOEQUIP; let i= index;" [value]="videoequip.key">{{ videoequip.value }}</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>Home LifeInstallation Type</label>
+           <select class="form-control" name="hmlifeInstalType" [(ngModel)]="offerPricingPinPointInfo.hmlifeInstalType" (change)="updateSubmitData('hmlifeInstalType', offerPricingPinPointInfo.hmlifeInstalType)">
+              <option>Select Offer</option>
+              <option>NONE</option>
+              <option>SELF</option>
+              <option>PRO</option>
+              <option>ANY</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>Phone Installation Type</label>
+           <select class="form-control" name="phoneInstalType" [(ngModel)]="offerPricingPinPointInfo.phoneInstalType" (change)="updateSubmitData('phoneInstalType', offerPricingPinPointInfo.phoneInstalType)">
+              <option>Select Offer</option>
+              <option>NONE</option>
+              <option>SELF</option>
+              <option>PRO</option>
+              <option>ANY</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>Data Installation Type</label>
+           <select class="form-control" name="dataInstalType" [(ngModel)]="offerPricingPinPointInfo.dataInstalType" (change)="updateSubmitData('dataInstalType', offerPricingPinPointInfo.dataInstalType)">
+              <option>Select Offer</option>
+              <option>NONE</option>
+              <option>SELF</option>
+              <option>PRO</option>
+              <option>ANY</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>Video Installation Type</label>
+           <select class="form-control" name="videoInstalType" [(ngModel)]="offerPricingPinPointInfo.videoInstalType" (change)="updateSubmitData('videoInstalType', offerPricingPinPointInfo.videoInstalType)">
+              <option>Select Offer</option>
+              <option>NONE</option>
+              <option>SELF</option>
+              <option>PRO</option>
+              <option>ANY</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label> Installation Optional</label>
+           <select class="form-control" name="instalOptnlId" [(ngModel)]="offerPricingPinPointInfo.instalOptnlId" (change)="updateSubmitData('instalOptnlId', offerPricingPinPointInfo.instalOptnlId)">
+              <option>Select Offer</option>
+              <option>ANY</option>
+              <option>NONE</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>Base Offer HomeLife Eligibility</label>
+           <select class="form-control" name="baseofrHmlife" [(ngModel)]="offerPricingPinPointInfo.baseofrHmlife" (change)="updateSubmitData('baseofrHmlife', offerPricingPinPointInfo.baseofrHmlife)">
+              <option>Select Offer</option>
+              <option>ADVANCED</option>
+              <option>ADVANCED TV LATINO</option>
+              <option>ADVANCED TV PAQUETE LATINO</option>
+              <option>ANY TIER</option>
+              <option>C2C</option>
+              <option>CDT ECONOMY</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>Base Offer Video Eligibility</label>
+           <select class="form-control" name="baseofrVideo" [(ngModel)]="offerPricingPinPointInfo.baseofrVideo" (change)="updateSubmitData('baseofrVideo', offerPricingPinPointInfo.baseofrVideo)">
+              <option>Select Offer</option>
+              <option>ADVANCED</option>
+              <option>ADVANCED TV LATINO</option>
+              <option>ADVANCED TV PAQUETE LATINO</option>
+              <option>ANY TIER</option>
+              <option>C2C</option>
+              <option>CDT ECONOMY</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>Base Offer Phone Eligibility</label>
+           <select class="form-control" name="baseofrPhone" [(ngModel)]="offerPricingPinPointInfo.baseofrPhone" (change)="updateSubmitData('baseofrPhone', offerPricingPinPointInfo.baseofrPhone)">
+              <option>Select Offer</option>
+              <option>ADVANCED</option>
+              <option>ADVANCED TV LATINO</option>
+              <option>ADVANCED TV PAQUETE LATINO</option>
+              <option>ANY TIER</option>
+              <option>C2C</option>
+              <option>CDT ECONOMY</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>Base Offer Data Eligibility</label>
+           <select class="form-control" name="baseofrData" [(ngModel)]="offerPricingPinPointInfo.baseofrData" (change)="updateSubmitData('baseofrData', offerPricingPinPointInfo.baseofrData)">
+              <option>Select Offer</option>
+              <option>ADVANCED</option>
+              <option>ADVANCED TV LATINO</option>
+              <option>ADVANCED TV PAQUETE LATINO</option>
+              <option>ANY TIER</option>
+              <option>C2C</option>
+              <option>CDT ECONOMY</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>Campaign Code IncludeList</label>
+           <select class="form-control" name="campnCodeInclude" [(ngModel)]="offerPricingPinPointInfo.campnCodeInclude" (change)="updateSubmitData('campnCodeInclude', offerPricingPinPointInfo.campnCodeInclude)">
+              <option>Select Offer</option>
+              <option>10REMOTE</option>
+              <option>A2134CI0X</option>
+              <option>A2152CS24</option>
+              <option>A2152CS24C</option>
+              <option>A2152PA24</option>
+              <option>A2161CA36</option>
+              <option>A2161CC24</option>
+              <option>A3133TX12</option>
+              <option>A3153CI0X</option>
+              <option>A3153DX12</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>Campaign Code ExcludeList</label>
+           <select class="form-control" name="campnCodeExclude" [(ngModel)]="offerPricingPinPointInfo.campnCodeExclude" (change)="updateSubmitData('campnCodeExclude', offerPricingPinPointInfo.campnCodeExclude)">
+              <option>Select Offer</option>
+              <option>10REMOTE</option>
+              <option>A2134CI0X</option>
+              <option>A2152CS24</option>
+              <option>A2152CS24C</option>
+              <option>A2152PA24</option>
+              <option>A2161CA36</option>
+              <option>A2161CC24</option>
+              <option>A3133TX12</option>
+              <option>A3153CI0X</option>
+              <option>A3153DX12</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>Rate Group ExclusionList</label>
+           <select class="form-control" name="ratefrpExclusion" [(ngModel)]="offerPricingPinPointInfo.ratefrpExclusion" (change)="updateSubmitData('ratefrpExclusion', offerPricingPinPointInfo.ratefrpExclusion)">
+              <option>Select Offer</option>
+              <option>ANY</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>Static IntentList</label>
+           <select class="form-control" name="staticintentlist" [(ngModel)]="offerPricingPinPointInfo.staticintentlist" (change)="updateSubmitData('staticintentlist', offerPricingPinPointInfo.staticintentlist)">
+              <option>Select Offer</option>
+              <option>NEWSUBSCRIBER_NEWSERVICE</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>Static SubIntentList</label>
+           <select class="form-control" name="subStaticintentlist" [(ngModel)]="offerPricingPinPointInfo.subStaticintentlist" (change)="updateSubmitData('subStaticintentlist', offerPricingPinPointInfo.subStaticintentlist)">
+              <option>Select Offer</option>
+              <option>NEWSERVICE</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>Agent TypeList</label>
+           <input type="text" class="form-control" name="agenttypelist" [(ngModel)]="offerPricingPinPointInfo.agenttypelist"  (change)="updateSubmitData('agenttypelist', offerPricingPinPointInfo.agenttypelist)">
+        </div>
+        <div class="form-group col-md-4" style="margin-top:29px;">
+           <label class="checkbox-inline">
+               <input type="checkbox" value="" name="proactiveofferFlag" [(ngModel)]="offerPricingPinPointInfo.proactiveofferFlag" [checked]="offerPricingPinPointInfo.proactiveofferFlag == 'Y'" (change)="updateSubmitData('proactiveofferFlag', offerPricingPinPointInfo.proactiveofferFlag)">ProactiveOffer
+            </label>
+           <label class="checkbox-inline">
+               <input type="checkbox" value="" name="prismrestrictedFlag" [(ngModel)]="offerPricingPinPointInfo.prismrestrictedFlag" [checked]="offerPricingPinPointInfo.prismrestrictedFlag == 'Y'" (change)="updateSubmitData('prismrestrictedFlag', offerPricingPinPointInfo.prismrestrictedFlag)">PrismRestricted
+            </label>
+        </div>
+        <div class="form-group col-md-4">
+           <label>Proactive Code</label>
+           <input type="text" class="form-control" name="proactivecode" [(ngModel)]="offerPricingPinPointInfo.proactivecode" (change)="updateSubmitData('proactivecode', offerPricingPinPointInfo.proactivecode)">
+        </div>
+        <div class="form-group col-md-4">
+           <label>Prism Code List</label>
+           <input type="text" class="form-control" name="prismcodelist" [(ngModel)]="offerPricingPinPointInfo.prismcodelist" (change)="updateSubmitData('prismcodelist', offerPricingPinPointInfo.prismcodelist)">
+        </div>
+        <div class="form-group col-md-4">
+           <label>
+           Offer Level TECode</label>
+           <select class="form-control" name="ofrlevelTecode" [(ngModel)]="offerPricingPinPointInfo.ofrlevelTecode" (change)="updateSubmitData('ofrlevelTecode', offerPricingPinPointInfo.ofrlevelTecode)">
+              <option>Select Offer</option>
+              <option>EIOAA</option>
+              <option>HV1116</option>
+              <option>CM1116</option>
+              <option>BU11161</option>
+              <option>BU11162</option>
+              <option>BU11163</option>
+              <option>BU11164</option>
+              <option>BU11165</option>
+              <option>MB1116</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>PyLabel</label>
+           <input type="text" class="form-control" name="pylabel" [(ngModel)]="offerPricingPinPointInfo.pylabel" (change)="updateSubmitData('pylabel', offerPricingPinPointInfo.pylabel)" >
+        </div>
+        <div class="form-group col-md-4">
+           <label>PyLaunchMode</label>
+           <select class="form-control" name="paymode" [(ngModel)]="offerPricingPinPointInfo.paymode" (change)="updateSubmitData('paymode', offerPricingPinPointInfo.paymode)">
+              <option>Select Offer</option>
+              <option>EDIT</option>
+           </select>
+        </div>
+     </div>
+  </div> -->
+</mat-expansion-panel>
+<!-- Seventh Section ends here -->

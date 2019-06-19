@@ -1,0 +1,79 @@
+ <!-- Sixth Section Starts here -->
+ <mat-expansion-panel class="form-divider panel-no-background">
+  <mat-expansion-panel-header>
+     Eligibility Rules
+  </mat-expansion-panel-header>
+  <div id="sixth-section">
+     <div class="row form-group">
+      <div class="col-md-4">
+        <mat-form-field class="example-full-width">
+          <input type="text" class="form-control" name="productList" placeholder="Select One" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto" [(ngModel)]="currentEligiblityRule"
+          (ngModelChange)="onSelectEligiblityRules(currentEligiblityRule)" [disabled]="tdDisabled">
+          <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let option2 of filteredOptions2 | async" [value]="option2">
+                  {{ option2 }}
+              </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+      <div class="col-md-12">
+         <span class="text_error" *ngIf="isEligiblityRulesExists">Eligiblity Rule is already added!</span>
+      </div>
+     </div>
+     <div class="row">
+        <div class="col-md-12">
+           <div class="table-responsive">
+              <table class="table table-bordered">
+                 <thead>
+                    <tr>
+                       <th>ID</th>
+                       <th style="width:90px;">Primary</th>
+                       <th style="width:90px;">Secondary</th>
+                       <th>Rule</th>
+                       <th>Description</th>
+                       <th>Syntax</th>
+                       <th>Remove</th>
+                    </tr>
+                 </thead>
+                 <tbody>
+                    <tr *ngFor="let rule of eligiblityRulesAssociate; let i= index;">
+                       <td>{{ rule.eligiId }}</td>
+                       <td><input type="checkbox" value=""></td>
+                       <td><input type="checkbox" value=""></td>
+                       <td>{{ rule.rule }}</td>
+                       <td>{{ rule.description }}</td>
+                       <td>{{ rule.ruleSyntax }}</td>
+                       <td><i class="fa fa-remove" (click)="removeEligiblityRules(i)"></i></td>
+                    </tr>
+                 </tbody>
+              </table>
+           </div>
+        </div>
+          
+     </div>
+  </div>
+    <div class="row">
+                  <div class="col-md-12"> 
+                     <div class="form-group">
+                <label class="col-sm-2 control-label  pad-right-0">Eligibility Rule Primary Formula        </label>
+                <div class="col-xs-3">
+                  <input type="text" class="form-control" id="primary" />
+  
+                </div>
+                  </div> 
+              </div>
+                </div> 
+            <div class="row margin-top-20">
+                  <div class="col-md-12"> 
+               <div class="form-group">
+                <label class="col-sm-2 control-label pad-right-0">Eligibility Rule Primary Formula         </label>
+                <div class="col-xs-3">
+                  <input type="text" class="form-control" id="secondary"/>
+  
+                </div>
+                  </div>  
+               </div>
+          </div>
+              
+    </mat-expansion-panel>
+<!-- Sixth Section ends here -->

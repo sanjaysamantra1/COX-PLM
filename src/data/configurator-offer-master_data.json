@@ -1,0 +1,574 @@
+{
+  "actionResult": null,
+  "actionStatus": null,
+  "commonMasterData": [
+    {
+      "name": "Market",
+      "records": [
+        {
+          "key": 1,
+          "value": "Orange County"
+        },
+        {
+          "key": 2,
+          "value": "Las Vegas"
+        },
+        {
+          "key": 3,
+          "value": "Palos Verdes"
+        },
+        {
+          "key": 4,
+          "value": "Santa Barbara"
+        },
+        {
+          "key": 5,
+          "value": "Northern Virginia"
+        },
+        {
+          "key": 6,
+          "value": "San Diego"
+        },
+        {
+          "key": 7,
+          "value": "Phoenix"
+        },
+        {
+          "key": 8,
+          "value": "Connecticut"
+        },
+        {
+          "key": 9,
+          "value": "Rhode Island"
+        },
+        {
+          "key": 10,
+          "value": "Cleveland"
+        },
+        {
+          "key": 11,
+          "value": "Hampton Roads"
+        },
+        {
+          "key": 12,
+          "value": "Roanoke"
+        },
+        {
+          "key": 13,
+          "value": "Kansas"
+        },
+        {
+          "key": 14,
+          "value": "New Orleans"
+        },
+        {
+          "key": 15,
+          "value": "Baton Rouge"
+        },
+        {
+          "key": 16,
+          "value": "Tulsa"
+        },
+        {
+          "key": 17,
+          "value": "Omaha"
+        },
+        {
+          "key": 18,
+          "value": "Gainesville"
+        },
+        {
+          "key": 19,
+          "value": "Pensacola"
+        },
+        {
+          "key": 20,
+          "value": "Oklahoma City"
+        },
+        {
+          "key": 21,
+          "value": "Macon"
+        }
+      ]
+    },
+    {
+      "name": "PINPOINT_STATUS",
+      "records": [
+        {
+          "key": 101,
+          "value": "In Progress"
+        },
+        {
+          "key": 102,
+          "value": "Ready to Export"
+        },
+        {
+          "key": 103,
+          "value": "Ready to Re-Export"
+        },
+        {
+          "key": 104,
+          "value": "Export Complete"
+        },
+        {
+          "key": 105,
+          "value": "Do Not Enter"
+        }
+      ]
+    },
+    {
+      "name": "CHANNELSLABEL",
+      "records": [
+        {
+          "key": 106,
+          "value": "CALLCENTER"
+        },
+        {
+          "key": 107,
+          "value": "WEB"
+        },
+        {
+          "key": 108,
+          "value": "CARE"
+        },
+        {
+          "key": 109,
+          "value": "RETAIL"
+        }
+      ]
+    },
+    {
+      "name": "ADDON_TYPE",
+      "records": [
+        {
+          "key": 110,
+          "value": "CLOSER"
+        },
+        {
+          "key": 111,
+          "value": "BOOSTER"
+        },
+        {
+          "key": 112,
+          "value": "ANCILLARY"
+        }
+      ]
+    },
+    {
+      "name": "DVR",
+      "records": [
+        {
+          "key": 113,
+          "value": "2-TUNER"
+        },
+        {
+          "key": 114,
+          "value": "6-TUNER"
+        },
+        {
+          "key": 115,
+          "value": "ANY"
+        },
+        {
+          "key": 116,
+          "value": "NONE"
+        }
+      ]
+    },
+    {
+      "name": "DATAEQUIP",
+      "records": [
+        {
+          "key": 117,
+          "value": "GATEWAY"
+        },
+        {
+          "key": 118,
+          "value": "MODEM"
+        },
+        {
+          "key": 119,
+          "value": "NONE"
+        }
+      ]
+    },
+    {
+      "name": "VIDEOEQUIP",
+      "records": [
+        {
+          "key": 120,
+          "value": "CLIENT"
+        },
+        {
+          "key": 121,
+          "value": "HOST"
+        },
+        {
+          "key": 122,
+          "value": "WHOLE HOME"
+        }
+      ]
+    },
+    {
+      "name": "PSU_INSTL_TYPE",
+      "records": [
+        {
+          "key": 123,
+          "value": "NONE"
+        },
+        {
+          "key": 124,
+          "value": "SELF"
+        },
+        {
+          "key": 125,
+          "value": "PRO"
+        },
+        {
+          "key": 126,
+          "value": "ANY"
+        }
+      ]
+    },
+    {
+      "name": "PSU_BASE_OFFER_ELIGI",
+      "records": [
+        {
+          "key": 127,
+          "value": "ADVANCED"
+        },
+        {
+          "key": 128,
+          "value": "ADVANCED TV LATINO"
+        },
+        {
+          "key": 129,
+          "value": "ADVANCED TV PAQUETE LATINO"
+        },
+        {
+          "key": 130,
+          "value": "ANY TIER"
+        },
+        {
+          "key": 131,
+          "value": "C2C"
+        },
+        {
+          "key": 132,
+          "value": "CDT ECONOMY"
+        },
+        {
+          "key": 133,
+          "value": "CONTOUR FLEX ECONOMY"
+        },
+        {
+          "key": 134,
+          "value": "CONTOUR FLEX ECONOMY LATINO"
+        },
+        {
+          "key": 135,
+          "value": "CONTOUR FLEX LATINO"
+        },
+        {
+          "key": 136,
+          "value": "CONTOUR FLEX STARTER"
+        },
+        {
+          "key": 137,
+          "value": "CONTOUR FLEX STARTER APP ONLY"
+        },
+        {
+          "key": 138,
+          "value": "CONTOUR TV"
+        },
+        {
+          "key": 139,
+          "value": "CONTOUR TV LATINO"
+        },
+        {
+          "key": 140,
+          "value": "CONTOUR TV PREFERRED"
+        },
+        {
+          "key": 141,
+          "value": "CONTOUR TV PREFERRED LATINO"
+        },
+        {
+          "key": 142,
+          "value": "CONTOUR TV PREMIER"
+        },
+        {
+          "key": 143,
+          "value": "CONTOUR TV ULTIMATE"
+        },
+        {
+          "key": 144,
+          "value": "CONTOUR TV ULTIMATE LATINO"
+        },
+        {
+          "key": 145,
+          "value": "CONTROL"
+        },
+        {
+          "key": 146,
+          "value": "ECONOMY"
+        },
+        {
+          "key": 147,
+          "value": "ECONOMY PLUS"
+        },
+        {
+          "key": 148,
+          "value": "EL MIX"
+        },
+        {
+          "key": 149,
+          "value": "ESSENTIALS"
+        },
+        {
+          "key": 150,
+          "value": "ESSENTIALS 30"
+        },
+        {
+          "key": 151,
+          "value": "FLEX WATCH LATINO"
+        },
+        {
+          "key": 152,
+          "value": "FLEXWATCH"
+        },
+        {
+          "key": 153,
+          "value": "GIGABIT"
+        },
+        {
+          "key": 154,
+          "value": "HOME AUTOMATION"
+        },
+        {
+          "key": 155,
+          "value": "LINE CC"
+        },
+        {
+          "key": 156,
+          "value": "MONITOR"
+        },
+        {
+          "key": 157,
+          "value": "NO TIER"
+        },
+        {
+          "key": 158,
+          "value": "PREFERRED"
+        },
+        {
+          "key": 159,
+          "value": "PREFERRED 100"
+        },
+        {
+          "key": 160,
+          "value": "PREMIER"
+        },
+        {
+          "key": 161,
+          "value": "PROTECT"
+        },
+        {
+          "key": 162,
+          "value": "SEASONAL"
+        },
+        {
+          "key": 163,
+          "value": "STARTER"
+        },
+        {
+          "key": 164,
+          "value": "STARTER 10"
+        },
+        {
+          "key": 165,
+          "value": "STARTER PLUS"
+        },
+        {
+          "key": 166,
+          "value": "TV ECONOMY LATINO"
+        },
+        {
+          "key": 167,
+          "value": "ULTIMATE"
+        }
+      ]
+    },
+    {
+      "name": "RATEGRP_EXCLUSIONLIST",
+      "records": [
+        {
+          "key": 168,
+          "value": "ANY"
+        }
+      ]
+    },
+    {
+      "name": "STATICINTENTLIST",
+      "records": [
+        {
+          "key": 169,
+          "value": "NEWSUBSCRIBER_NEWSERVICE"
+        }
+      ]
+    },
+    {
+      "name": "STATICSUBINTENTLIST",
+      "records": [
+        {
+          "key": 170,
+          "value": "NEWSERVICE"
+        }
+      ]
+    },
+    {
+      "name": "PAYLAUNCHMODE",
+      "records": [
+        {
+          "key": 171,
+          "value": "Edit"
+        }
+      ]
+    },
+    {
+      "name": "ECOM_PINPOINT_STATUS",
+      "records": [
+        {
+          "key": 172,
+          "value": "Need to Enter"
+        },
+        {
+          "key": 173,
+          "value": "Entered"
+        },
+        {
+          "key": 174,
+          "value": "Do not need to enter"
+        }
+      ]
+    },
+    {
+      "name": "BUNDLE_MASTER",
+      "records": [
+        {
+          "key": 1,
+          "value": "Bronze"
+        },
+        {
+          "key": 2,
+          "value": "Silver"
+        },
+        {
+          "key": 3,
+          "value": "Gold"
+        }
+      ]
+    },
+    {
+      "name": "OFFER_CATEGORY_MASTER",
+      "records": [
+        {
+          "key": 9,
+          "value": "BASE"
+        },
+        {
+          "key": 10,
+          "value": "ADDON"
+        },
+        {
+          "key": 11,
+          "value": "INSTALLATION"
+        },
+        {
+          "key": 12,
+          "value": "EQUIPMENT"
+        },
+        {
+          "key": 13,
+          "value": "SRO"
+        },
+        {
+          "key": 14,
+          "value": "$OFF"
+        },
+        {
+          "key": 15,
+          "value": "GIFTCARD"
+        },
+        {
+          "key": 1,
+          "value": "00-Rack Rate"
+        },
+        {
+          "key": 2,
+          "value": "01-Base Offer"
+        },
+        {
+          "key": 3,
+          "value": "02-Base Uptier"
+        },
+        {
+          "key": 4,
+          "value": "03-Booster-Closer"
+        },
+        {
+          "key": 5,
+          "value": "04-Add On"
+        },
+        {
+          "key": 6,
+          "value": "05-Equipment"
+        },
+        {
+          "key": 7,
+          "value": "06-Installation"
+        },
+        {
+          "key": 8,
+          "value": "07-OTC-SRO"
+        }
+      ]
+    },
+    {
+      "name": "STATUS_MASTER",
+      "records": [
+        {
+          "key": 7,
+          "value": "NEW"
+        },
+        {
+          "key": 8,
+          "value": "Drft"
+        }
+      ]
+    }
+  ],
+  "discountResponse": {
+    "actionResult": null,
+    "actionStatus": null,
+    "discounts": [
+      {
+        "discountId": "1",
+        "name": "Name 1",
+        "type": "TYPE 1"
+      }
+    ]
+  },
+  "productResponse": {
+    "actionResult": null,
+    "actionStatus": null,
+    "products": [
+      {
+        "prodId": "1",
+        "name": "Name 1",
+        "type": "Type 1",
+        "psu": "Psu 1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,237 @@
+<div class="row">
+    <div class="col-md-12">
+        <!--<form #discountForm="ngForm" (ngSubmit)="onSubmit(discountForm)" class="form-horizontal">-->
+        <mat-accordion close-others="oneAtATime">
+            <mat-expansion-panel class="form-divider panel-no-background">
+                <mat-expansion-panel-header>
+                    Pricing Rules
+                </mat-expansion-panel-header>
+                <div class="row">
+                    <div class="col-md-12" *ngIf="noSitesExist" style="color: red;">
+                        Please Select Markets!!!
+                    </div>
+                    <div class="col-md-12" *ngIf="noAmountExist" style="color: red;">
+                        Please Add Amount to Description Builder!!!
+                    </div>
+                    <div class="col-md-12" *ngIf="noPricingMethod" style="color: red;">
+                        Please select Pricing Method!!!
+                    </div>
+                    <!-- <div class="col-md-12" *ngIf="noPercentOfNormalRate" style="color: red;">
+                        Please specify Percent of Normal Rate!!!
+                    </div> -->
+                </div>
+
+                <div class="table-responsive campaign-code padd-bot-120" *ngIf="showPricingRules">
+                    <table class="table table-bordered table-min-width">
+                        <thead>
+                            <tr>
+                                <th style="min-width:220px;">Pricing Category Name</th>
+                                <th style="min-width:200px;">Statement Presentation Code</th>
+                                <th style="min-width:550px;">Price Book - ICOMS Code</th>
+                                <th style="min-width:100px;">Minimum Requirement</th>
+                                <th style="min-width:100px;">Bundle Discount</th>
+                                <th style="min-width:100px;">Amount to add to first bundle discount</th>
+                                <th style="min-width:100px;">Price Book - Start Date</th>
+                                <th style="min-width:100px;">Price Book - End Date</th>
+                                <th style="min-width:100px;"># of Occurances to discount</th>
+                                <th style="min-width:100px;"># of Months</th>
+                                <th style="min-width:50px;">Active Service</th>
+                                <th style="min-width:50px;">Absorb</th>
+                                <th style="min-width:100px;">Other</th>
+                                <th style="min-width:100px;">Fixed Pricing</th>
+                                <th style="min-width:100px;">Amount to add to min req in this Pricing Category</th>
+                                <th style="min-width:100px;">Discount Dollar Off</th>
+                                <th *ngFor="let market of marketsSelected; let i = index;" style="min-width:100px;">
+                                    {{ market.code }}
+                                </th>
+                             </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let pricingRule of pricingRulesList; let i = index;">
+                                <td>
+                                    <angular2-multiselect *ngIf="addEditMode" name="pricingRuleVal" [data]="pricingRule.pricingCategoryDropDownList" [(ngModel)]="pricingRule.pricingCategorySelectedItems"
+                                        #pricingRuleVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('pricingCategoryName', pricingRule.pricingCategorySelectedItems, 'single', i)"
+                                        (onDeSelect)="onItemDeSelect('pricingCategoryName', pricingRule.pricingCategorySelectedItems, 'single', i)"
+                                        (onSelectAll)="onSelectAll('pricingCategoryName', pricingRule.pricingCategorySelectedItems, 'single', i)"
+                                        (onDeSelectAll)="onDeSelectAll('pricingCategoryName', pricingRule.pricingCategorySelectedItems, 'single', i)"
+                                        (ngModelChange)="modifyPricingCategoryName('pricingCategoryName', i, pricingRule.pricingCategorySelectedItems)">
+                                    </angular2-multiselect>
+                                    <p *ngIf="viewMode">
+                                        <span *ngFor="let pricingRuleVal of pricingRule.pricingCategorySelectedItems; let i = index;">
+                                            {{ pricingRuleVal.itemName }}
+                                            <span *ngIf="((pricingRule.pricingCategorySelectedItems.length > 0) && (i+1 != pricingRule.pricingCategorySelectedItems.length))">,</span>
+                                        </span>
+                                    </p>
+                                </td>
+                                <td>
+                                    <angular2-multiselect *ngIf="addEditMode" name="pricingRuleVal" [data]="pricingRule.statementPresentationCodeDropDownList"
+                                        [(ngModel)]="pricingRule.statementPresentationCodeSelectedItems" #pricingRuleVal="ngModel"
+                                        [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('presentationCodeId', pricingRule.statementPresentationCodeSelectedItems, 'single', i)"
+                                        (onDeSelect)="onItemDeSelect('presentationCodeId', pricingRule.statementPresentationCodeSelectedItems, 'single', i)"
+                                        (onSelectAll)="onSelectAll('presentationCodeId', pricingRule.statementPresentationCodeSelectedItems, 'single', i)"
+                                        (onDeSelectAll)="onDeSelectAll('presentationCodeId', pricingRule.statementPresentationCodeSelectedItems, 'single', i)"
+                                        (ngModelChange)="modifyPricingRules('presentationCodeId', i, pricingRule.statementPresentationCodeSelectedItems)">
+                                    </angular2-multiselect>
+                                    <p *ngIf="viewMode">
+                                        <span *ngFor="let pricingRuleVal of pricingRule.statementPresentationCodeSelectedItems; let i = index;">
+                                            {{ pricingRuleVal.itemName }}
+                                            <span *ngIf="((pricingRule.statementPresentationCodeSelectedItems.length > 0) && (i+1 != pricingRule.statementPresentationCodeSelectedItems.length))">,</span>
+                                        </span>
+                                    </p>
+                                </td>
+                                <td>
+                                    <angular2-multiselect *ngIf="addEditMode" name="pricingRuleVal" [data]="pricingRule.priceBookICOMSCodeDropDownList"
+                                        [(ngModel)]="pricingRule.priceBookICOMSCodeSelectedItems" #pricingRuleVal="ngModel"
+                                        [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('pricebookChrgIcomscodeDesc', pricingRule.priceBookICOMSCodeSelectedItems, 'single', i)"
+                                        (onDeSelect)="onItemDeSelect('pricebookChrgIcomscodeDesc', pricingRule.priceBookICOMSCodeSelectedItems, 'single', i)"
+                                        (onSelectAll)="onSelectAll('pricebookChrgIcomscodeDesc', pricingRule.priceBookICOMSCodeSelectedItems, 'single', i)"
+                                        (onDeSelectAll)="onDeSelectAll('pricebookChrgIcomscodeDesc', pricingRule.priceBookICOMSCodeSelectedItems, 'single', i)"
+                                        (ngModelChange)="updateICOMSCodeChange('pricebookChrgIcomscodeDesc', i, pricingRule.priceBookICOMSCodeSelectedItems)">
+                                    </angular2-multiselect>
+                                    <p *ngIf="viewMode">
+                                        <span *ngFor="let pricingRuleVal of pricingRule.priceBookICOMSCodeSelectedItems; let i = index;">
+                                            {{ pricingRuleVal.itemName }}
+                                            <span *ngIf="((pricingRule.priceBookICOMSCodeSelectedItems.length > 0) && (i+1 != pricingRule.priceBookICOMSCodeSelectedItems.length))">,</span>
+                                        </span>
+                                    </p>
+                                </td>
+                                <td style="text-align:center;">
+                                    <input type="checkbox" name="minRequirmnt" value="" [(ngModel)]="pricingRule.minRequirmnt" #activeVal="ngModel"
+                                        [checked]="pricingRule.minRequirmnt" [disabled]="viewMode" (change)="updateMinRequirement('minRequirmnt',i, pricingRule.minRequirmnt)">
+                                </td>
+                                <td style="text-align:center;">
+                                    <input type="checkbox" name="bundleDiscount" value="" [(ngModel)]="pricingRule.bundleDiscount" #activeVal="ngModel"
+                                        [checked]="pricingRule.bundleDiscount" [disabled]="viewMode" (change)="updateBundleDiscount('bundleDiscount',i, pricingRule.bundleDiscount)">
+                                </td>
+                                <td>
+                                    <input type="text" id="amtFrstBundleDiscount" name="amtFrstBundleDiscount" class="form-control" [(ngModel)]="pricingRule.amtFrstBundleDiscount"
+                                        *ngIf="addEditMode" (change)="updateFirstBundleDiscountAmount('amtFrstBundleDiscount',i, pricingRule.amtFrstBundleDiscount)"
+                                        #amtFrstBundleDiscount="ngModel">
+                                    <p *ngIf="viewMode">{{ pricingRule.amtFrstBundleDiscount }}</p>
+                                </td>
+                                <td>
+                                    {{ pricingRule.pricebookStartDate }}
+                                </td>
+                                <td>
+                                    {{ pricingRule.pricebookStartDate }}
+                                </td>
+                                <td>
+                                    <input type="text" id="numOccurnceDiscount" name="numOccurnceDiscount" class="form-control" [(ngModel)]="pricingRule.numOccurnceDiscount"
+                                        *ngIf="addEditMode" (change)="updateSubmitData('numOccurnceDiscount',i, pricingRule.numOccurnceDiscount)"
+                                        #numOccurnceDiscount="ngModel">
+                                    <p *ngIf="viewMode">{{ pricingRule.numOccurnceDiscount }}</p>
+                                </td>
+                                <td>
+                                    <input type="text" id="numOfMnths" name="numOfMnths" class="form-control" [(ngModel)]="pricingRule.numOfMnths"
+                                        *ngIf="addEditMode" (change)="updateSubmitData('numOfMnths',i, pricingRule.numOfMnths)"
+                                        #numOfMnths="ngModel">
+                                    <p *ngIf="viewMode">{{ pricingRule.numOfMnths }}</p>
+                                </td>
+                                <td>
+                                    <select id="activeService" name="activeService" class="form-control" [(ngModel)]="pricingRule.activeService"
+                                        *ngIf="addEditMode" (change)="updateSubmitData('activeService',i, pricingRule.activeService)">
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                    <p *ngIf="viewMode">{{ pricingRule.activeService }}</p>
+                                </td>
+                                <td>
+                                    <select id="absorb" name="absorb" class="form-control" [(ngModel)]="pricingRule.absorb"
+                                        *ngIf="addEditMode" (change)="updateSubmitData('absorb',i, pricingRule.absorb)">
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                    <p *ngIf="viewMode">{{ pricingRule.absorb }}</p>
+                                </td>
+                                <td>
+                                    <input type="text" id="other" name="other" class="form-control" [(ngModel)]="pricingRule.other"
+                                        *ngIf="addEditMode" (change)="updateSubmitData('other',i, pricingRule.other)"
+                                        #other="ngModel">
+                                    <p *ngIf="viewMode">{{ pricingRule.other }}</p>
+                                </td>
+                                <td>
+                                    <input type="text" id="fixedPricing" name="fixedPricing" class="form-control" [(ngModel)]="pricingRule.fixedPricing"
+                                        *ngIf="addEditMode" (change)="updateFixedPricing('fixedPricing',i, pricingRule.fixedPricing)"
+                                        #fixedPricing="ngModel">
+                                    <p *ngIf="viewMode">{{ pricingRule.fixedPricing }}</p>
+                                </td>
+                                <td>
+                                    <input type="text" id="amtMinReqPricingCatg" name="amtMinReqPricingCatg" class="form-control" [(ngModel)]="pricingRule.amtMinReqPricingCatg"
+                                        *ngIf="addEditMode" (change)="updateAmntMinReqPricingCatg('amtMinReqPricingCatg',i, pricingRule.amtMinReqPricingCatg)"
+                                        #amtMinReqPricingCatg="ngModel">
+                                    <p *ngIf="viewMode">{{ pricingRule.amtMinReqPricingCatg }}</p>
+                                </td>
+                                <td>
+                                    <input type="text" id="campaignDollarOff" name="campaignDollarOff" class="form-control" [(ngModel)]="pricingRule.campaignDollarOff"
+                                        *ngIf="addEditMode" (change)="updateCmpgnDollarOff('campaignDollarOff',i, pricingRule.campaignDollarOff)"
+                                        #campaignDollarOff="ngModel">
+                                    <p *ngIf="viewMode">{{ pricingRule.campaignDollarOff }}</p>
+                                </td>
+                                <td *ngFor="let market of pricingRule.pricingRuleSites; let i = index;">
+                                    <input type="text" id="sitePrice" name="sitePrice" class="form-control" [(ngModel)]="market.amount"
+                                        *ngIf="addEditMode" 
+                                        #sitePrice="ngModel" [disabled]="true" (change)="getTotalSitePricing(market.site)">
+                                    <p *ngIf="viewMode">{{ market.amount }}</p>
+                                </td>
+                            </tr>
+                            <tr></tr>
+                        </tbody>
+                        <tbody style="border-top:1px solid #413d3d;">
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td style="text-align: center;"> Total </td>
+                                <td></td>
+                                <td></td>
+                                <td>{{ totalAmntToFirstBundleDiscount }}</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>{{ totalFixedPricing }}</td>
+                                <td>{{ totalAmnToMinReqPricingCategory }}</td>
+                                <td>{{ totalDiscountDollarOff }}</td>
+                                <td *ngFor="let market of marketsSelected; let i = index;">
+                                    {{ totalSiteAmount[market.code] }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </mat-expansion-panel>
+        </mat-accordion>
+        <!--</form>-->
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Non Editable Field</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <span class="bold">Price Book ICOMS Code Charge - Price Book - End Date</span> is a Lookup field. Lookup fields are not
+                    editable.
+                </p>
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default modal-button" data-dismiss="modal">Ok</button>
+            </div>
+        </div>
+
+    </div>
+</div>

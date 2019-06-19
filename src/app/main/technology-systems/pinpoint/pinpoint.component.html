@@ -1,0 +1,196 @@
+<div class="row">
+  <div class="col-md-12">
+     <h1 class="page-header">PinPoint</h1>
+  </div>
+  <div class="col-md-12">
+     <ul class="breadcrumb">
+        <li><a href="#" ng-click="redirectTo('dashboard')">Home</a></li>
+        <li><a href="#" ng-click="redirectTo('dashboard')">PLM Work Flow</a></li>
+        <li><a href="#" ng-click="">Technology Systems</a></li>
+        <li class="active">PinPoint</li>
+     </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+     <div class="panel panel-primary">
+        <div class="panel-heading">Search Project</div>
+        <div class="panel-body">
+           <form class="form-horizontal">
+              <div class="row">
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label class="col-sm-5 control-label">Project Code</label>
+                       <div class="col-xs-7">
+                          <input type="text" class="form-control" value="GTM2B2017_1" disabled="true">
+                       </div>
+                    </div>
+                    <div class="form-group">
+                       <label class="col-xs-5 control-label">Project Type</label>
+                       <div class="col-xs-7">
+                          <select class="form-control">
+                             <option selected="selected">Project for New Offer</option>
+                             <option>2</option>
+                             <option>3</option>
+                             <option>4</option>
+                             <option>5</option>
+                          </select>
+                       </div>
+                    </div>
+                    <div class="form-group">
+                       <label class="col-xs-5 control-label">Project Start Date</label>
+                       <div class="col-xs-7">
+                          <input type="date" class="form-control">
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label class="col-xs-5 control-label">Project Name</label>
+                       <div class="col-xs-7">
+                          <input type="text" class="form-control">
+                       </div>
+                    </div>
+                    <div class="form-group">
+                       <label class="col-xs-5 control-label">Project Name</label>
+                       <div class="col-xs-7">
+                          <input type="text" value="Active" class="form-control">
+                       </div>
+                    </div>
+                    <div class="form-group">
+                       <label class="col-xs-5 control-label">Project End Date</label>
+                       <div class="col-xs-7">
+                          <input type="date" class="form-control">
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-md-12">
+                    <button ng-click="requestorProcesses()" type="button" class="btn btn-primary pull-right">Search</button>
+                    <button ng-click="requestorProcesses()" type="button" class="btn btn-primary pull-right margin-right-10">Clear</button>
+                 </div>
+              </div>
+           </form>
+        </div>
+     </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+     <div class="table-responsive">
+        <table class="table table-bordred table-striped">
+           <thead>
+             <tr>
+              <th></th>
+              <th>Project Code</th>
+              <th>Project Name</th>
+              <th>Project Type</th>
+              <th>Status</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th></th>
+            </tr>
+           </thead>
+           <tbody>
+              <tr>
+                 <td><input type="checkbox" class="checkthis" /></td>
+                 <td>GTM2B2017_1</td>
+                 <td>Project Name test</td>
+                 <td>Project Type test</td>
+                 <td>Active</td>
+                 <td>20-Nov-2017</td>
+                 <td>30-Nov-2017</td>
+                 <td>
+                    <button class="btn btn-primary btn-xs">Update</button>
+                 </td>
+              </tr>
+           </tbody>
+        </table>
+     </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+     <form class="form-horizontal">
+        <div class="panel panel-primary">
+           <div class="panel-heading">
+              <div class="panel-title">Detailed Info</div>
+           </div>
+           <div class="panel-body">
+              <div class="row">
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label class="col-sm-5 control-label">Project Code</label>
+                       <div class="col-xs-7">
+                          <div class="label-des">GTM2B2017_4</div>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-md-12"></div>
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label class="col-xs-5 control-label">Project Type</label>
+                       <div class="col-xs-7">
+                          <div class="label-des">Offer</div>
+                       </div>
+                    </div>
+                    <div class="form-group">
+                       <label class="col-xs-5 control-label">Project  Description</label>
+                       <div class="col-xs-7">
+                          <div class="label-des">Configuration pending with Pin-Point</div>
+                       </div>
+                    </div>
+                    <div class="form-group">
+                       <label class="col-xs-5 control-label">Project  Start Date</label>
+                       <div class="col-xs-7">
+                          <div class="label-des">24-Nov-17</div>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label class="col-xs-5 control-label">Project Name</label>
+                       <div class="col-xs-7">
+                          <div class="label-des">OFF_0101</div>
+                       </div>
+                    </div>
+                    <div class="form-group">
+                       <label class="col-xs-5 control-label">Customer Segment</label>
+                       <div class="col-xs-7">
+                          <div class="label-des">Test Segment</div>
+                       </div>
+                    </div>
+                    <div class="form-group">
+                       <label class="col-xs-5 control-label">Project End Date</label>
+                       <div class="col-xs-7">
+                          <div class="label-des">30-Nov-17</div>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-sm-12"></div>
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label class="col-xs-5 control-label">OMC Status </label>
+                       <div class="col-xs-7">
+                          <input type="text" id="" value="PIN POINT PASS/OMC FAILED" class="form-control">
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-sm-12"></div>
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label for="description" class="col-xs-5 control-label">Description</label>
+                       <div class="col-xs-7">
+                          <textarea class="form-control" rows="5" id="description"></textarea>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </form>
+  </div>
+  <div class="col-md-12 margin-bot-15">
+     <button type="button" class="btn btn-primary pull-right" ng-click="submitICOMS()">Submit</button>
+     <button type="submit" class="btn btn-primary pull-left" ng-click="redirectTo('dashboard')">Back</button>
+  </div>
+</div>

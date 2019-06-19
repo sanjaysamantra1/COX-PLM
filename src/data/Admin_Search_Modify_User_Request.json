@@ -1,0 +1,12 @@
+{
+	"requests" : [{
+		"userid" : "1",
+		"statusid" :"2",
+		"roleid" :"1",
+		"firstname" :"userFirstName",
+		"lastname" : "userLastName",
+		"email" :"user1@cox.com",
+		"workGroupId": "2"
+
+	}]
+}

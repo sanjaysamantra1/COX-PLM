@@ -1,0 +1,26 @@
+{
+    "actionResult": null,
+    "actionStatus": "SUCCESS",
+    "projectCode": null,
+    "projectMasterModel": {
+        "projectCode": "PRO_1519133984077",
+        "projectType": "2",
+        "projectTypeName": null,
+        "projectDesc": "Update Description",
+        "projectStartDt": "2018-02-01T18:30:00.000Z",
+        "projectEndDt": "2018-02-01T18:30:00.000Z",
+        "market": null,
+        "status": "1002",
+        "statusName": null,
+        "assignedTo": null,
+        "processId": 1,
+        "siteMap": null
+    },
+    "mrktingOfferModel":null,
+    "mrktingOfferModelMap": {
+		"1P": [],
+		"2P": [],
+		"3P": [],
+		"4P": []
+	}
+}

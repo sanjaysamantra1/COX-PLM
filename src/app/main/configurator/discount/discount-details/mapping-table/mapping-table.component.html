@@ -1,0 +1,542 @@
+<div class="row">
+  <div class="col-md-12">
+    <!--<form #discountForm="ngForm" (ngSubmit)="onSubmit(discountForm)" class="form-horizontal">-->
+    <mat-accordion close-others="oneAtATime">
+      <mat-expansion-panel class="form-divider panel-no-background">
+        <mat-expansion-panel-header>
+          Mapping Table </mat-expansion-panel-header>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Offer Family</label>
+              <div class="col-xs-7">
+                <angular2-multiselect *ngIf="addEditMode" name="offerFamily" [data]="offerFamilyDropDownList" [(ngModel)]="offerFamilySelectedItems"
+                  #offerFamilyVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('offerFamilyId', offerFamilySelectedItems, 'single')"
+                  (onDeSelect)="onItemDeSelect('offerFamilyId', offerFamilySelectedItems, 'single')"
+                  (onSelectAll)="onSelectAll('offerFamilyId', offerFamilySelectedItems, 'single')"
+                  (onDeSelectAll)="onDeSelectAll('offerFamilyId', offerFamilySelectedItems, 'single')">
+                </angular2-multiselect>
+                <p *ngIf="viewMode">
+                    <span *ngFor="let offerFamily of utilitiesService.getSelectedItemsObject(masterData, 'OFFER_FAMILY', addEditDiscountSubmitData.discMappingEntity.offerFamilyId); let i = index;">
+                        {{offerFamily.itemName}}
+                        <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'OFFER_FAMILY', addEditDiscountSubmitData.discMappingEntity.offerFamilyId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'OFFER_FAMILY', addEditDiscountSubmitData.discMappingEntity.offerFamilyId).length))">,</span>
+                    </span>
+                </p>
+
+                <!--<div *ngIf="offerFamilyVal.invalid && (offerFamilyVal.dirty || offerFamilyVal.touched)" class="input-error">
+                  <div *ngIf="offerFamilyVal.errors.required">
+                   Offer Family is required
+                  </div>
+                </div>-->
+
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Finance Bucket CD</label>
+              <div class="col-xs-7">
+                <angular2-multiselect *ngIf="addEditMode" name="financeBucketCD" [data]="financeBucketCDDropDownList" [(ngModel)]="financeBucketCDSelectedItems"
+                  #financeBucketVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('financeBucketCdId', financeBucketCDSelectedItems, 'single')"
+                  (onDeSelect)="onItemDeSelect('financeBucketCdId', financeBucketCDSelectedItems, 'single')"
+                  (onSelectAll)="onSelectAll('financeBucketCdId', financeBucketCDSelectedItems, 'single')"
+                  (onDeSelectAll)="onDeSelectAll('financeBucketCdId', financeBucketCDSelectedItems, 'single')">
+                </angular2-multiselect>
+                <p *ngIf="viewMode">
+                    <span *ngFor="let financeBucket of utilitiesService.getSelectedItemsObject(masterData, 'FINANCE_BUCKET_CD', addEditDiscountSubmitData.discMappingEntity.financeBucketCdId); let i = index;">
+                        {{financeBucket.itemName}}
+                        <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'FINANCE_BUCKET_CD', addEditDiscountSubmitData.discMappingEntity.financeBucketCdId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'FINANCE_BUCKET_CD', addEditDiscountSubmitData.discMappingEntity.financeBucketCdId).length))">,</span>
+                    </span>
+                </p>
+
+                <!--<div *ngIf="financeBucketCDVal.invalid && (financeBucketCDVal.dirty || financeBucketCDVal.touched)" class="input-error">
+                  <div *ngIf="financeBucketCDVal.errors.required">
+                   Finance Bucket CD is required
+                  </div>
+                </div>-->
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-xs-5 control-label">Program NM</label>
+              <div class="col-xs-7">
+                <angular2-multiselect *ngIf="addEditMode" name="programNM" [data]="programNMDropDownList" [(ngModel)]="programNMSelectedItems"
+                  #programNMVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('programNmId', programNMSelectedItems, 'single')"
+                  (onDeSelect)="onItemDeSelect('programNmId', programNMSelectedItems, 'single')"
+                  (onSelectAll)="onSelectAll('programNmId', programNMSelectedItems, 'single')"
+                  (onDeSelectAll)="onDeSelectAll('programNmId', programNMSelectedItems, 'single')">
+                </angular2-multiselect>
+                <p *ngIf="viewMode">
+                    <span *ngFor="let programNM of utilitiesService.getSelectedItemsObject(masterData, 'PROGRAM_NM', addEditDiscountSubmitData.discMappingEntity.programNmId); let i = index;">
+                        {{programNM.itemName}}
+                        <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'PROGRAM_NM', addEditDiscountSubmitData.discMappingEntity.programNmId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'PROGRAM_NM', addEditDiscountSubmitData.discMappingEntity.programNmId).length))">,</span>
+                    </span>
+                </p>
+                <!--<div *ngIf="programNMVal.invalid && (programNMVal.dirty || programNMVal.touched)" class="input-error">
+                  <div *ngIf="programNMVal.errors.required">
+                   Program NM is required
+                  </div>
+                </div>-->
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-xs-5 control-label">Customer Target</label>
+              <div class="col-xs-7">
+                <angular2-multiselect *ngIf="addEditMode" name="customTarget" [data]="custmerTargetDownList" [(ngModel)]="custmerTargetSelectedItems"
+                  #customTargetVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('customerTargetId', custmerTargetSelectedItems, 'single')"
+                  (onDeSelect)="onItemDeSelect('customerTargetId', custmerTargetSelectedItems, 'single')"
+                  (onSelectAll)="onSelectAll('customerTargetId', custmerTargetSelectedItems, 'single')"
+                  (onDeSelectAll)="onDeSelectAll('customerTargetId', custmerTargetSelectedItems, 'single')">
+                </angular2-multiselect>
+                <p *ngIf="viewMode">
+                    <span *ngFor="let customTarget of utilitiesService.getSelectedItemsObject(masterData, 'CUSTOMER_TARGET', addEditDiscountSubmitData.discMappingEntity.customerTargetId); let i = index;">
+                        {{customTarget.itemName}}
+                        <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'CUSTOMER_TARGET', addEditDiscountSubmitData.discMappingEntity.customerTargetId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'CUSTOMER_TARGET', addEditDiscountSubmitData.discMappingEntity.customerTargetId).length))">,</span>
+                    </span>
+                </p>
+
+                <!--<div *ngIf="custmerTargetVal.invalid && (custmerTargetVal.dirty || custmerTargetVal.touched)" class="input-error">
+                  <div *ngIf="custmerTargetVal.errors.required">
+                   Customer Targe is required
+                  </div>
+                </div>-->
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Discount Type</label>
+              <div class="col-xs-7">
+                <angular2-multiselect *ngIf="addEditMode" name="discountType" [data]="discountTypeDownList" [(ngModel)]="discountTypeSelectedItems"
+                  #discountTypeVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('campaignTypeId', discountTypeSelectedItems, 'single')"
+                  (onDeSelect)="onItemDeSelect('campaignTypeId', discountTypeSelectedItems, 'single')"
+                  (onSelectAll)="onSelectAll('campaignTypeId', discountTypeSelectedItems, 'single')"
+                  (onDeSelectAll)="onDeSelectAll('campaignTypeId', discountTypeSelectedItems, 'single')">
+                </angular2-multiselect>
+                <p *ngIf="viewMode">
+                    <span *ngFor="let discountType of utilitiesService.getSelectedItemsObject(masterData, 'DISCOUNT_TYPE', addEditDiscountSubmitData.discMappingEntity.campaignTypeId); let i = index;">
+                        {{discountType.itemName}}
+                        <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'DISCOUNT_TYPE', addEditDiscountSubmitData.discMappingEntity.campaignTypeId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'DISCOUNT_TYPE', addEditDiscountSubmitData.discMappingEntity.campaignTypeId).length))">,</span>
+                    </span>
+                </p>
+                <!--<div *ngIf="campaignTypeVal.invalid && (campaignTypeVal.dirty || campaignTypeVal.touched)" class="input-error">
+                  <div *ngIf="campaignTypeVal.errors.required">
+                   Campaign Type is required
+                  </div>
+                </div>-->
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Discount SubType</label>
+              <div class="col-xs-7">
+                <angular2-multiselect *ngIf="addEditMode" name="discountSubType" [data]="discountSubTypeDownList" [(ngModel)]="discountSubTypeSelectedItems"
+                  #discountSubTypeVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('campaignSubTypeId', discountSubTypeSelectedItems, 'single')"
+                  (onDeSelect)="onItemDeSelect('campaignSubTypeId', discountSubTypeSelectedItems, 'single')"
+                  (onSelectAll)="onSelectAll('campaignSubTypeId', discountSubTypeSelectedItems, 'single')"
+                  (onDeSelectAll)="onDeSelectAll('campaignSubTypeId', discountSubTypeSelectedItems, 'single')">
+                </angular2-multiselect>
+                <p *ngIf="viewMode">
+                    <span *ngFor="let discountSubType of utilitiesService.getSelectedItemsObject(masterData, 'DISCOUNT_SUB_TYPE', addEditDiscountSubmitData.discMappingEntity.campaignSubTypeId); let i = index;">
+                        {{discountSubType.itemName}}
+                        <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'DISCOUNT_SUB_TYPE', addEditDiscountSubmitData.discMappingEntity.campaignSubTypeId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'DISCOUNT_SUB_TYPE', addEditDiscountSubmitData.discMappingEntity.campaignSubTypeId).length))">,</span>
+                    </span>
+                </p>
+                <!--<div *ngIf="campaignSubTypeVal.invalid && (campaignSubTypeVal.dirty || campaignSubTypeVal.touched)" class="input-error">
+                  <div *ngIf="campaignSubTypeVal.errors.required">
+                   Campaign SubType is required
+                  </div>
+                </div>-->
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Min Video Tier</label>
+              <div class="col-xs-7">
+                <angular2-multiselect *ngIf="addEditMode" name="minVideoTier" [data]="minVideoTireDownList" [(ngModel)]="minVideoTireSelectedItems"
+                  #minVideoTierVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('minVideoTierId', minVideoTireSelectedItems, 'single')"
+                  (onDeSelect)="onItemDeSelect('minVideoTierId', minVideoTireSelectedItems, 'single')"
+                  (onSelectAll)="onSelectAll('minVideoTierId', minVideoTireSelectedItems, 'single')"
+                  (onDeSelectAll)="onDeSelectAll('minVideoTierId', minVideoTireSelectedItems, 'single')">
+                </angular2-multiselect>
+                <p *ngIf="viewMode">
+                    <span *ngFor="let minVideoTier of utilitiesService.getSelectedItemsObject(masterData, 'MIN_VIDEO_TIER', addEditDiscountSubmitData.discMappingEntity.minVideoTierId); let i = index;">
+                        {{minVideoTier.itemName}}
+                        <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'MIN_VIDEO_TIER', addEditDiscountSubmitData.discMappingEntity.minVideoTierId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'MIN_VIDEO_TIER', addEditDiscountSubmitData.discMappingEntity.minVideoTierId).length))">,</span>
+                    </span>
+                </p>
+                <!--<div *ngIf="minVideoTierVal.invalid && (minVideoTierVal.dirty || minVideoTierVal.touched)" class="input-error">
+                  <div *ngIf="minVideoTierVal.errors.required">
+                   Min Video Tier is required
+                  </div>
+                </div>-->
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-xs-5 control-label">Min Data Tier </label>
+              <div class="col-xs-7">
+                <angular2-multiselect *ngIf="addEditMode" name="minDataTier" [data]="minDataTireDownList" [(ngModel)]="minDataTireSelectedItems"
+                  #minDataTierVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('minDataTierId', minDataTireSelectedItems, 'single')"
+                  (onDeSelect)="onItemDeSelect('minDataTierId', minDataTireSelectedItems, 'single')"
+                  (onSelectAll)="onSelectAll('minDataTierId', minDataTireSelectedItems, 'single')"
+                  (onDeSelectAll)="onDeSelectAll('minDataTierId', minDataTireSelectedItems, 'single')">
+                </angular2-multiselect>
+                <p *ngIf="viewMode">
+                    <span *ngFor="let minDataTier of utilitiesService.getSelectedItemsObject(masterData, 'MIN_DATA_TIER', addEditDiscountSubmitData.discMappingEntity.minDataTierId); let i = index;">
+                        {{minDataTier.itemName}}
+                        <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'MIN_DATA_TIER', addEditDiscountSubmitData.discMappingEntity.minDataTierId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'MIN_DATA_TIER', addEditDiscountSubmitData.discMappingEntity.minDataTierId).length))">,</span>
+                    </span>
+                </p>
+                <!--<div *ngIf="minDataTierVal.invalid && (minDataTierVal.dirty || minDataTierVal.touched)" class="input-error">
+                  <div *ngIf="minDataTierVal.errors.required">
+                   Min Data Tier is required
+                  </div>
+                </div>-->
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Min Phone Tier</label>
+              <div class="col-xs-7">
+                <angular2-multiselect *ngIf="addEditMode" name="minPhoneTier" [data]="minPhoneTireDownList" [(ngModel)]="minPhoneTireSelectedItems"
+                  #minPhoneTierVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('minPhoneTierId', minPhoneTireSelectedItems, 'single')"
+                  (onDeSelect)="onItemDeSelect('minPhoneTierId', minPhoneTireSelectedItems, 'single')"
+                  (onSelectAll)="onSelectAll('minPhoneTierId', minPhoneTireSelectedItems, 'single')"
+                  (onDeSelectAll)="onDeSelectAll('minPhoneTierId', minPhoneTireSelectedItems, 'single')">
+                </angular2-multiselect>
+                <p *ngIf="viewMode">
+                    <span *ngFor="let minPhoneTier of utilitiesService.getSelectedItemsObject(masterData, 'MIN_PHONE_TIER', addEditDiscountSubmitData.discMappingEntity.minPhoneTierId); let i = index;">
+                        {{minPhoneTier.itemName}}
+                        <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'MIN_PHONE_TIER', addEditDiscountSubmitData.discMappingEntity.minPhoneTierId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'MIN_PHONE_TIER', addEditDiscountSubmitData.discMappingEntity.minPhoneTierId).length))">,</span>
+                    </span>
+                </p>
+
+                <!--<div *ngIf="minPhoneTierVal.invalid && (minPhoneTierVal.dirty || minPhoneTierVal.touched)" class="input-error">
+                  <div *ngIf="minPhoneTierVal.errors.required">
+                   Min Phone Tier is required
+                  </div>
+                </div>-->
+
+              </div>
+
+            </div>
+
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Min HomeLife Tiers</label>
+              <div class="col-xs-7">
+                <angular2-multiselect *ngIf="addEditMode" name="minHomeLifeTier" [data]="minHomeLifeTireDownList" [(ngModel)]="minHomeLifeTireSelectedItems"
+                  #minHomeLifeTierVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('minHomeLifeTierId', minHomeLifeTireSelectedItems, 'single')"
+                  (onDeSelect)="onItemDeSelect('minHomeLifeTierId', minHomeLifeTireSelectedItems, 'single')"
+                  (onSelectAll)="onSelectAll('minHomeLifeTierId', minHomeLifeTireSelectedItems, 'single')"
+                  (onDeSelectAll)="onDeSelectAll('minHomeLifeTierId', minHomeLifeTireSelectedItems, 'single')">
+                </angular2-multiselect>
+                <p *ngIf="viewMode">
+                    <span *ngFor="let minHomeLifeTier of utilitiesService.getSelectedItemsObject(masterData, 'MIN_HOME_LIFE_TIER', addEditDiscountSubmitData.discMappingEntity.minHomeLifeTierId); let i = index;">
+                        {{minHomeLifeTier.itemName}}
+                        <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'MIN_HOME_LIFE_TIER', addEditDiscountSubmitData.discMappingEntity.minHomeLifeTierId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'MIN_HOME_LIFE_TIER', addEditDiscountSubmitData.discMappingEntity.minHomeLifeTierId).length))">,</span>
+                    </span>
+                </p>
+
+                <!--<div *ngIf="minHomeLifeTierVal.invalid && (minHomeLifeTierVal.dirty || minHomeLifeTierVal.touched)" class="input-error">
+                  <div *ngIf="minHomeLifeTierVal.errors.required">
+                   Min HomeLife Tiers is required
+                  </div>
+                </div>-->
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Product</label>
+              <div class="col-xs-7">
+                <angular2-multiselect *ngIf="addEditMode" name="product" [data]="productDownList" [(ngModel)]="productSelectedItems"
+                  #productVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('productId', productSelectedItems, 'single')"
+                  (onDeSelect)="onItemDeSelect('productId', productSelectedItems, 'single')"
+                  (onSelectAll)="onSelectAll('productId', productSelectedItems, 'single')"
+                  (onDeSelectAll)="onDeSelectAll('productId', productSelectedItems, 'single')">
+                </angular2-multiselect>
+                <p *ngIf="viewMode">
+                    <span *ngFor="let product of utilitiesService.getSelectedItemsObject(masterData, 'PRODUCT', addEditDiscountSubmitData.discMappingEntity.productId); let i = index;">
+                        {{product.itemName}}
+                        <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'PRODUCT', addEditDiscountSubmitData.discMappingEntity.productId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'PRODUCT', addEditDiscountSubmitData.discMappingEntity.productId).length))">,</span>
+                    </span>
+                </p>
+                <!--<div *ngIf="productVal.invalid && (productVal.dirty || productVal.touched)" class="input-error">
+                           <div *ngIf="productVal.errors.required">
+                            product is required
+                           </div>
+                           </div>-->
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">PSU Required</label>
+              <div class="col-xs-7">
+                <input type="text" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMappingEntity.psuRequired" name="psuRequired" #PsuRequired="ngModel"
+                  *ngIf="addEditMode" (change)="updateSubmitData('psuRequired', addEditDiscountSubmitData.discMappingEntity.psuRequired)">
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMappingEntity.psuRequired }}</p>
+                <!--<div *ngIf="pSURequired.invalid && (pSURequired.dirty || pSURequired.touched)" class="input-error">
+                  <div *ngIf="pSURequired.errors.required">
+                    PSU Required is required
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+
+          <!--<div class="col-md-6">
+              <div class="form-group"
+                <label class="col-sm-5 control-label">Secondary Duration</label>
+                <div class="col-xs-7">
+                  <input type="text" class="form-control">
+                </div>
+
+              </div>
+            </div>-->
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Number Of PSU</label>
+              <div class="col-xs-7">
+                <input type="text" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMappingEntity.numberOfPsu" name="NumberOfPSU" #numberOfPSU="ngModel"
+                  *ngIf="addEditMode" (change)="updateSubmitData('numberOfPsu', addEditDiscountSubmitData.discMappingEntity.numberOfPsu)">
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMappingEntity.numberOfPsu }}</p>
+                <!--<div *ngIf="numberOfPSU.invalid && (numberOfPSU.dirty || numberOfPSU.touched)" class="input-error">
+                           <div *ngIf="numberOfPSU.errors.required">
+                             Number Of PSU is required
+                           </div>
+                           </div>-->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Primary Duration</label>
+              <div class="col-xs-7">
+                <input type="text" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMappingEntity.primaryDuration" name="primaryDuration" #PrimaryDuration="ngModel"
+                  *ngIf="addEditMode" (change)="updateSubmitData('primaryDuration', addEditDiscountSubmitData.discMappingEntity.primaryDuration)">
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMappingEntity.primaryDuration }}</p>
+                <!--<div *ngIf="primaryDuration.invalid && (primaryDuration.dirty || primaryDuration.touched)" class="input-error">
+                           <div *ngIf="primaryDuration.errors.required">
+                             Primary Duration is required
+                           </div>
+                           </div>-->
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Secondary Duration</label>
+              <div class="col-xs-7">
+                <input type="text" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMappingEntity.secondryDuration" name="SecondryDuration" #secondryDuration="ngModel"
+                  *ngIf="addEditMode" (change)="updateSubmitData('secondryDuration', addEditDiscountSubmitData.discMappingEntity.secondryDuration)">
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMappingEntity.secondryDuration }}</p>
+                <!--<input type="date" class="form-control" required [(ngModel)]="mappingTable.secondryDuration" name="secondryDuration" #SecondryDuration="ngModel">-->
+                <!--<div *ngIf="secondaryDuration.invalid && (secondaryDuration.dirty || secondaryDuration.touched)" class="input-error">
+                           <div *ngIf="secondaryDuration.errors.required">
+                             Secondary Duration is required
+                           </div>
+                           </div>-->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Secondary Step Up Amount</label>
+              <div class="col-xs-7">
+                <input type="text" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMappingEntity.secondryStepupAmount" name="secondryStepupAmount"
+                  #SecondryStepupAmount="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('secondryStepupAmount', addEditDiscountSubmitData.discMappingEntity.secondryStepupAmount)">
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMappingEntity.secondryStepupAmount }}</p>
+                <!--<div *ngIf="secondaryStepUP.invalid && (secondaryStepUP.dirty || secondaryStepUP.touched)" class="input-error">
+                           <div *ngIf="secondaryStepUP.errors.required">
+                             Secondary Step UP Amount is required
+                           </div>
+                           </div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Retail Rate</label>
+              <div class="col-xs-7">
+                <input type="text" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMappingEntity.retailRate" name="retailRate" #RetailRate="ngModel"
+                  *ngIf="addEditMode" (change)="updateSubmitData('retailRate', addEditDiscountSubmitData.discMappingEntity.retailRate)">
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMappingEntity.retailRate }}</p>
+                <!--<div *ngIf="retailRate.invalid && (retailRate.dirty || retailRate.touched)" class="input-error">
+                           <div *ngIf="retailRate.errors.required">
+                             Retail Rate is required
+                           </div>
+                           </div>-->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">MRC</label>
+              <div class="col-xs-7">
+                <input type="text" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMappingEntity.mrc" name="mrc" #Mrc="ngModel" *ngIf="addEditMode"
+                  (change)="updateSubmitData('mrc', addEditDiscountSubmitData.discMappingEntity.mrc)">
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMappingEntity.mrc }}</p>
+                <!--<div *ngIf="mrc.invalid && (mrc.dirty || mrc.touched)" class="input-error">
+                           <div *ngIf="mrc.errors.required">
+                             MRC is required
+                           </div>
+                           </div>-->
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Discount</label>
+              <div class="col-xs-7">
+                <input type="text" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMappingEntity.discount" name="discount" #Discount="ngModel"
+                  *ngIf="addEditMode" (change)="updateSubmitData('discount', addEditDiscountSubmitData.discMappingEntity.discount)">
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMappingEntity.discount }}</p>
+                <!--<div *ngIf="discount.invalid && (discount.dirty || discount.touched)" class="input-error">
+                           <div *ngIf="discount.errors.required">
+                             discount is required
+                           </div>
+                           </div>-->
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">SA Type Required</label>
+              <div class="col-xs-7">
+                <angular2-multiselect *ngIf="addEditMode" name="saTypeRequired" [data]="saTypeRequiredDownList" [(ngModel)]="saTypeRequiredSelectedItems"
+                  #saTypeRequiredVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('saTypeRequiredId', saTypeRequiredSelectedItems, 'single')"
+                  (onDeSelect)="onItemDeSelect('saTypeRequiredId', saTypeRequiredSelectedItems, 'single')"
+                  (onSelectAll)="onSelectAll('saTypeRequiredId', saTypeRequiredSelectedItems, 'single')"
+                  (onDeSelectAll)="onDeSelectAll('saTypeRequiredId', saTypeRequiredSelectedItems, 'single')">
+                </angular2-multiselect>
+                <p *ngIf="viewMode">
+                    <span *ngFor="let saTypeRequired of utilitiesService.getSelectedItemsObject(masterData, 'SA_TYPE_REQUIRED', addEditDiscountSubmitData.discMappingEntity.saTypeRequiredId); let i = index;">
+                        {{saTypeRequired.itemName}}
+                        <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'SA_TYPE_REQUIRED', addEditDiscountSubmitData.discMappingEntity.saTypeRequiredId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'SA_TYPE_REQUIRED', addEditDiscountSubmitData.discMappingEntity.saTypeRequiredId).length))">,</span>
+                    </span>
+                </p>
+                <!--<div *ngIf="saTypeRequiredVal.invalid && (saTypeRequiredVal.dirty || saTypeRequiredVal.touched)" class="input-error">
+                           <div *ngIf="saTypeRequiredVal.errors.required">
+                           SA Type Required is required
+                           </div>
+                           </div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Install Included</label>
+              <div class="col-xs-7">
+                <angular2-multiselect *ngIf="addEditMode" name="installInclude" [data]="installIncludedDownList" [(ngModel)]="installIncludedSelectedItems"
+                  #installIncludeVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('installIncludeId', installIncludedSelectedItems, 'single')"
+                  (onDeSelect)="onItemDeSelect('installIncludeId', installIncludedSelectedItems, 'single')"
+                  (onSelectAll)="onSelectAll('installIncludeId', installIncludedSelectedItems, 'single')"
+                  (onDeSelectAll)="onDeSelectAll('installIncludeId', installIncludedSelectedItems, 'single')">
+                </angular2-multiselect>
+                <p *ngIf="viewMode">
+                    <span *ngFor="let installInclude of utilitiesService.getSelectedItemsObject(masterData, 'INSTALL_INCLUDED', addEditDiscountSubmitData.discMappingEntity.installIncludeId); let i = index;">
+                        {{installInclude.itemName}}
+                        <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'INSTALL_INCLUDED', addEditDiscountSubmitData.discMappingEntity.installIncludeId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'INSTALL_INCLUDED', addEditDiscountSubmitData.discMappingEntity.installIncludeId).length))">,</span>
+                    </span>
+                </p>
+                <!--<div *ngIf="installIncludedVal.invalid && (installIncludedVal.dirty || installIncludedVal.touched)" class="input-error">
+                           <div *ngIf="installIncludedVal.errors.required">
+                            Install Included is required
+                           </div>
+                           </div>-->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Market Name</label>
+              <div class="col-xs-7">
+                <input type="text" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMappingEntity.marketName" *ngIf="addEditMode" name="marketName"
+                  #MarketName="ngModel" 
+                  (change)="updateSubmitData('marketName', addEditDiscountSubmitData.discMappingEntity.marketName)">
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMappingEntity.marketName }}</p>
+                <!--<div *ngIf="marketName.invalid && (marketName.dirty || marketName.touched)" class="input-error">
+                       <div *ngIf="marketName.errors.required">
+                         Market Name is required
+                       </div>
+                     </div>-->
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!--<div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Market Name</label>
+              <div class="col-xs-7">
+                <input type="text" class="form-control" required [(ngModel)]="mappingTable.marketName" name="marketName" #MarketName="ngModel">
+                <div *ngIf="marketName.invalid && (marketName.dirty || marketName.touched)" class="input-error">
+                  <div *ngIf="marketName.errors.required">
+                    Market Name is required
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>-->
+     </mat-expansion-panel>
+    </mat-accordion>
+    <!--</form>-->
+  </div>
+</div>

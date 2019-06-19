@@ -1,0 +1,848 @@
+<div class="row">
+  <div class="col-md-12">
+    <!--<form #discountForm="ngForm" (ngSubmit)="onSubmit(discountForm)" class="form-horizontal">-->
+    <mat-accordion close-others="oneAtATime">
+      <mat-expansion-panel class="form-divider panel-no-background">
+        <mat-expansion-panel-header>
+          Prerequisites
+        </mat-expansion-panel-header>
+        <div class="row">
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Install Services-A.Include If One</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+                <textarea cols=35 rows=3 id="instlSrvcAIncIfOne" name="instlSrvcAIncIfOne" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.instlSrvcAIncIfOne"
+                  #instlSrvcAIncIfOne="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('instlSrvcAIncIfOne', addEditDiscountSubmitData.discMapPreRequisite.instlSrvcAIncIfOne)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.instlSrvcAIncIfOne }}</p>
+                <!--<div *ngIf="InstallServices.invalid && (InstallServices.dirty || InstallServices.touched)" class="input-error">
+                  <div *ngIf="InstallServices.errors.required">
+                    InstallServices C-Include is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Install Services-B.Include if all</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+                <textarea type="text" id="instlSrvcBIncIfAll" name="instlSrvcBIncIfAll" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.instlSrvcBIncIfAll"
+                  #instlSrvcBIncIfAll="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('instlSrvcBIncIfAll', addEditDiscountSubmitData.discMapPreRequisite.instlSrvcBIncIfAll)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.instlSrvcBIncIfAll }}</p>
+                <!-- <div *ngIf="InstallServices.invalid && (InstallServices.dirty || InstallServices.touched)" class="input-error">
+                  <div *ngIf="InstallServices.errors.required">
+                    InstallServices C-Include is required.
+                  </div>
+                </div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Install Services-C.Include if at least</label>
+              <div class="col-xs-7">
+                <!--  <textarea id="row-1" cols=35 rows=3></textarea>-->
+                <textarea cols=35 rows=3 id="instlSrvcCIncIfAtlst" name="instlSrvcCIncIfAtlst" class="form-control input-width" required
+                  [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.instlSrvcCIncIfAtlst" #instlSrvcCIncIfAtlst="ngModel"
+                  *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('instlSrvcCIncIfAtlst', addEditDiscountSubmitData.discMapPreRequisite.instlSrvcCIncIfAtlst)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.instlSrvcCIncIfAtlst }}</p>
+                <!--<div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Install Services-C.of these</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+                <textarea cols=35 rows=3 id="instlSrvcCOfThese" name="instlSrvcCOfThese" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.instlSrvcCOfThese"
+                  #instlSrvcCOfThese="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('instlSrvcCOfThese', addEditDiscountSubmitData.discMapPreRequisite.instlSrvcCOfThese)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.instlSrvcCOfThese }}</p>
+                <!-- <div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Install Services-D.Exclude if any</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+                <textarea cols=35 rows=3 id="instlSrvcDExcIfAny" name="instlSrvcDExcIfAny" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.instlSrvcDExcIfAny"
+                  #instlSrvcDExcIfAny="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('instlSrvcDExcIfAny', addEditDiscountSubmitData.discMapPreRequisite.instlSrvcDExcIfAny)"></textarea>
+
+                <p *ngIf="viewMode">{{addEditDiscountSubmitData.discMapPreRequisite.instlSrvcDExcIfAny }}</p>
+
+                <!--<div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Install Services-E.Exclude if all</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+                <textarea id="row-1" cols=35 rows=3 class="form-control" id="instlSrvcEExcIfAll" name="instlSrvcEExcIfAll" class="form-control"
+                  required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.instlSrvcEExcIfAll" #instlSrvcEExcIfAll="ngModel"
+                  *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('instlSrvcEExcIfAll', addEditDiscountSubmitData.discMapPreRequisite.instlSrvcEExcIfAll)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.instlSrvcEExcIfAll }}</p>
+                <!-- <div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Install Services-F. Exclude if at least</label>
+              <div class="col-xs-7">
+                <input type="text" id="instlSrvcFExcIfAtlst" name="instlSrvcFExcIfAtlst" class="form-control input-width" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.instlSrvcFExcIfAtlst"
+                  #instlSrvcFExcIfAtlst="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('instlSrvcFExcIfAtlst', addEditDiscountSubmitData.discMapPreRequisite.instlSrvcFExcIfAtlst)">
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.instlSrvcFExcIfAtlst }}</p>
+                <!--<div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Install Services-F.of these</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+
+                <textarea cols=35 rows=3 id="instlSrvcFOfThese" name="instlSrvcFOfThese" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.instlSrvcFOfThese"
+                  #instlSrvcFOfThese="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('instlSrvcFOfThese', addEditDiscountSubmitData.discMapPreRequisite.instlSrvcFOfThese)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.instlSrvcFOfThese }}</p>
+                <!-- <div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <hr/>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Current Services-A.Include If One</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+                <textarea cols=35 rows=3 id="curntSrvcAIncIfOne" name="curntSrvcAIncIfOne" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.curntSrvcAIncIfOne"
+                  #curntSrvcAIncIfOne="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('curntSrvcAIncIfOne', addEditDiscountSubmitData.discMapPreRequisite.curntSrvcAIncIfOne)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.curntSrvcAIncIfOne }}</p>
+                <!--<div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Current Services-B.Include if all</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+                <textarea cols=35 rows=3 id="curntSrvcBIncIfAll" name="curntSrvcBIncIfAll" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.curntSrvcBIncIfAll"
+                  #curntSrvcBIncIfAll="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('curntSrvcBIncIfAll', addEditDiscountSubmitData.discMapPreRequisite.curntSrvcBIncIfAll)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.curntSrvcBIncIfAll }}</p>
+                <!--<div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Current Services-C.Include if at least</label>
+              <div class="col-xs-7">
+                <!-- <textarea id="row-1" cols=35 rows=3></textarea>-->
+                <input type="text" id="curntSrvcCIncIfAtlst" name="curntSrvcCIncIfAtlst" class="form-control input-width" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.curntSrvcCIncIfAtlst"
+                  #curntSrvcCIncIfAtlst="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('curntSrvcCIncIfAtlst', addEditDiscountSubmitData.discMapPreRequisite.curntSrvcCIncIfAtlst)">
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.curntSrvcCIncIfAtlst }}</p>
+
+                <!--<div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Current Services-C.of these</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+                <textarea cols=35 rows=3 id="curntSrvcCOfThese" name="curntSrvcCOfThese" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.curntSrvcCOfThese"
+                  #curntSrvcCOfThese="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('curntSrvcCOfThese', addEditDiscountSubmitData.discMapPreRequisite.curntSrvcCOfThese)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.curntSrvcCOfThese }}</p>
+
+
+                <!--<div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Current Services-D.Exclude if any</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+                <textarea cols=35 rows=3 id="curntSrvcDExcIfAny" name="curntSrvcDExcIfAny" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.curntSrvcDExcIfAny"
+                  #curntSrvcDExcIfAny="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('curntSrvcDExcIfAny', addEditDiscountSubmitData.discMapPreRequisite.curntSrvcDExcIfAny)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.curntSrvcDExcIfAny }}</p>
+                <!--<div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Current Services-E.Exclude if all</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+                <textarea cols=35 rows=3 id="curntSrvcEExcIfAll" name="curntSrvcEExcIfAll" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.curntSrvcEExcIfAll"
+                  #curntSrvcEExcIfAll="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('curntSrvcEExcIfAll', addEditDiscountSubmitData.discMapPreRequisite.curntSrvcEExcIfAll)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.curntSrvcEExcIfAll }}</p>
+                <!-- <div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Current Services-F. Exclude if at least</label>
+              <div class="col-xs-7">
+                <input type="text" id="curntSrvcFExcIfAtlst" name="curntSrvcFExcIfAtlst" class="form-control input-width" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.curntSrvcFExcIfAtlst"
+                  #curntSrvcFExcIfAtlst="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('curntSrvcFExcIfAtlst', addEditDiscountSubmitData.discMapPreRequisite.curntSrvcFExcIfAtlst)">
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.curntSrvcFExcIfAtlst }}</p>
+                <!--<div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Current Services-F.of these</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+                <textarea cols=35 rows=3 id="curntSrvcFOfThese" name="curntSrvcFOfThese" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.curntSrvcFOfThese"
+                  #curntSrvcFOfThese="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('curntSrvcFOfThese', addEditDiscountSubmitData.discMapPreRequisite.curntSrvcFOfThese)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.curntSrvcFOfThese }}</p>
+                <!--<div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <hr/>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Retention Services-A.Include If One</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+                <textarea cols=35 rows=3 id="retnSrvcAIncIfOne" name="retnSrvcAIncIfOne" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.retnSrvcAIncIfOne"
+                  #retnSrvcAIncIfOne="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('retnSrvcAIncIfOne', addEditDiscountSubmitData.discMapPreRequisite.retnSrvcAIncIfOne)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.retnSrvcAIncIfOne }}</p>
+                <!--  <div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Retention Services-B.Include if all</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+
+                <textarea id="row-1" cols=35 rows=3 id="retnSrvcBIncIfAll" name="retnSrvcBIncIfAll" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.retnSrvcBIncIfAll"
+                  #retnSrvcBIncIfAll="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('retnSrvcBIncIfAll', addEditDiscountSubmitData.discMapPreRequisite.retnSrvcBIncIfAll)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.retnSrvcBIncIfAll }}</p>
+                <!--<div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Retention Services-C.Include if at least</label>
+              <div class="col-xs-7">
+                <input type="text" id="retnSrvcCIncIfAtlst" name="retnSrvcCIncIfAtlst" class="form-control input-width" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.retnSrvcCIncIfAtlst"
+                  #retnSrvcCIncIfAtlst="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('retnSrvcCIncIfAtlst', addEditDiscountSubmitData.discMapPreRequisite.retnSrvcCIncIfAtlst)">
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.retnSrvcCIncIfAtlst }}</p>
+
+                <!--<div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Retention Services-C.of these</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+                <textarea cols=35 rows=3 id="retnSrvcCOfThese" name="retnSrvcCOfThese" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.retnSrvcCOfThese"
+                  #retnSrvcCOfThese="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('retnSrvcCOfThese', addEditDiscountSubmitData.discMapPreRequisite.retnSrvcCOfThese)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.retnSrvcCOfThese }}</p>
+                <!-- <div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Retention Services-D.Exclude if any</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+                <textarea cols=35 rows=3 id="retnSrvcDExcIfAny" name="retnSrvcDExcIfAny" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.retnSrvcDExcIfAny"
+                  #retnSrvcDExcIfAny="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('retnSrvcDExcIfAny', addEditDiscountSubmitData.discMapPreRequisite.retnSrvcDExcIfAny)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.retnSrvcDExcIfAny }}</p>
+                <!-- <div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Retention Services-E.Exclude if all</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+                <textarea cols=35 rows=3 id="retnSrvcEExcIfAll" name="retnSrvcEExcIfAll" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.retnSrvcEExcIfAll"
+                  #retnSrvcEExcIfAll="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('retnSrvcEExcIfAll', addEditDiscountSubmitData.discMapPreRequisite.retnSrvcEExcIfAll)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.retnSrvcEExcIfAll }}</p>
+                <!--<div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Retention Services-F. Exclude if at least</label>
+              <div class="col-xs-7">
+                <input type="text" id="retnSrvcFExcIfAtlst" name="retnSrvcFExcIfAtlst" class="form-control input-width" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.retnSrvcFExcIfAtlst"
+                  #retnSrvcFExcIfAtlst="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('retnSrvcFExcIfAtlst', addEditDiscountSubmitData.discMapPreRequisite.retnSrvcFExcIfAtlst)">
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.retnSrvcFExcIfAtlst }}</p>
+
+                <!--<div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Retention Services-F.of these</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+
+                <textarea cols=35 rows=3 id="retnSrvcFOfThese" name="retnSrvcFOfThese" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.retnSrvcFOfThese"
+                  #retnSrvcFOfThese="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('retnSrvcFOfThese', addEditDiscountSubmitData.discMapPreRequisite.retnSrvcFOfThese)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.retnSrvcFOfThese }}</p>
+                <!-- <div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">SA Install-A.Include If One</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+                <textarea cols=35 rows=3 id="plgInstlAIncIfOne" name="plgInstlAIncIfOne" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.plgInstlAIncIfOne"
+                  #plgInstlAIncIfOne="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('plgInstlAIncIfOne', addEditDiscountSubmitData.discMapPreRequisite.plgInstlAIncIfOne)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.plgInstlAIncIfOne }}</p>
+
+                <!-- <div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">SA Install-B.Include If All</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+                <textarea cols=35 rows=3 id="plgInstlBIncIfAll" name="plgInstlBIncIfAll" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.plgInstlBIncIfAll"
+                  #plgInstlBIncIfAll="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('plgInstlBIncIfAll', addEditDiscountSubmitData.discMapPreRequisite.plgInstlBIncIfAll)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.plgInstlBIncIfAll }}</p>
+                <!--<div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">SA Install-D.Exclude if any</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+                <textarea cols=35 rows=3 id="plgInstlDExcIfAny" name="plgInstlDExcIfAny" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.plgInstlDExcIfAny"
+                  #plgInstlDExcIfAny="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('plgInstlDExcIfAny', addEditDiscountSubmitData.discMapPreRequisite.plgInstlDExcIfAny)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.plgInstlDExcIfAny }}</p>
+                <!--<div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">SA Retention-A.Include If One</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+
+                <textarea cols=35 rows=3 id="plgRetnAIncIfOne" name="plgRetnAIncIfOne" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.plgRetnAIncIfOne"
+                  #plgRetnAIncIfOne="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('plgRetnAIncIfOne', addEditDiscountSubmitData.discMapPreRequisite.plgRetnAIncIfOne)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.plgRetnAIncIfOne }}</p>
+                <!--<div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">SA Retention-D.Exclude If Any</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+
+                <textarea cols=35 rows=3 id="plgRetnDExcIfAny" name="plgRetnDExcIfAny" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.plgRetnDExcIfAny"
+                  #plgRetnDExcIfAny="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('plgRetnDExcIfAny', addEditDiscountSubmitData.discMapPreRequisite.plgRetnDExcIfAny)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.plgRetnDExcIfAny }}</p>
+                <!--<div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <hr/>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Marketing ID-A.Include If One</label>
+              <div class="col-xs-7">
+                <!--<textarea id="row-1" cols=35 rows=3 class="form-control"></textarea>-->
+                <textarea cols=35 rows=3 id="mrktIdAIncIfOne" name="mrktIdAIncIfOne" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.mrktIdAIncIfOne"
+                  #mrktIdAIncIfOne="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('mrktIdAIncIfOne', addEditDiscountSubmitData.discMapPreRequisite.mrktIdAIncIfOne)"></textarea>
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.mrktIdAIncIfOne }}</p>
+                <!--<div *ngIf="InstallServicesF.invalid && (InstallServicesF.dirty || InstallServicesF.touched)" class="input-error">
+                  <div *ngIf="InstallServicesF.errors.required">
+                    InstallServices F-Exclude is required.
+                  </div>
+                </div>-->
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Marketing ID-D.Exclude if any</label>
+              <div class="col-xs-7">
+                <input type="text" id="mrktIdDExcIfAny" name="mrktIdDExcIfAny" class="form-control input-width" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.mrktIdDExcIfAny"
+                  #mrktIdDExcIfAny="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('mrktIdDExcIfAny', addEditDiscountSubmitData.discMapPreRequisite.mrktIdDExcIfAny)">
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.mrktIdDExcIfAny }}</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Discount code -number of days</label>
+              <div class="col-xs-7">
+                <input type="text" id="cmpgnCdNumOfDays" name="cmpgnCdNumOfDays" class="form-control input-width" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.cmpgnCdNumOfDays"
+                  #cmpgnCdNumOfDays="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('cmpgnCdNumOfDays', addEditDiscountSubmitData.discMapPreRequisite.cmpgnCdNumOfDays)">
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.cmpgnCdNumOfDays }}</p>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Discount code- A inculude if one</label>
+              <div class="col-xs-7">
+                <textarea cols=35 rows=3 id="cmpgnCdAIncIfOne" name="cmpgnCdAIncIfOne" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.cmpgnCdAIncIfOne"
+                  #cmpgnCdAIncIfOne="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('cmpgnCdAIncIfOne', addEditDiscountSubmitData.discMapPreRequisite.cmpgnCdAIncIfOne)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.cmpgnCdAIncIfOne }}</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Discount code- D exclude if any</label>
+              <div class="col-xs-7">
+                <textarea cols=35 rows=3 id="cmpgnCdDExcIfAny" name="instlSrvcFExcIfAtlst" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.cmpgnCdDExcIfAny"
+                  #cmpgnCdDExcIfAny="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('cmpgnCdDExcIfAny', addEditDiscountSubmitData.discMapPreRequisite.cmpgnCdDExcIfAny)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.cmpgnCdDExcIfAny }}</p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <hr/>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Other Instructions</label>
+              <div class="col-xs-7">
+                <textarea cols=35 rows=3 id="otherInsrct" name="instlSrvcFExcIfAtlst" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.otherInsrct"
+                  #otherInsrct="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('otherInsrct', addEditDiscountSubmitData.discMapPreRequisite.otherInsrct)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.otherInsrct }}</p>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label"> Discount long Instruction</label>
+              <div class="col-xs-7">
+                <input type="text" id="cmpgnLongDescr" name="cmpgnLongDescr" class="form-control input-width" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.cmpgnLongDescr"
+                  #cmpgnLongDescr="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('cmpgnLongDescr', addEditDiscountSubmitData.discMapPreRequisite.cmpgnLongDescr)">
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.cmpgnLongDescr }}</p>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+        <hr/>
+        <div class="row">
+          <div class="col-md-2">
+            <div class="form-group">
+
+              <div class="col-xs-12">
+                <label class="col-sm-12  control-label">ICOMS Access list 1</label>
+                <textarea cols=15 rows=12 id="icomsAccessList1" name="icomsAccessList1" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.icomsAccessList1"
+                  #icomsAccessList1="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('icomsAccessList1', addEditDiscountSubmitData.discMapPreRequisite.icomsAccessList1)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.icomsAccessList1 }}</p>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <div class="col-xs-12">
+                <label class="col-sm-12 control-label">ICOMS Access list 2</label>
+
+                <textarea cols=15 rows=12 id="icomsAccessList2" name="icomsAccessList2" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.icomsAccessList2"
+                  #icomsAccessList2="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('icomsAccessList2', addEditDiscountSubmitData.discMapPreRequisite.icomsAccessList2)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.icomsAccessList2 }}</p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <div class="form-group">
+              <div class="col-xs-12">
+                <label class="col-sm-12  control-label">ICOMS Access list 3</label>
+
+                <textarea cols=15 rows=12 id="icomsAccessList3" name="icomsAccessList3" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.icomsAccessList3"
+                  #icomsAccessList3="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('icomsAccessList3', addEditDiscountSubmitData.discMapPreRequisite.icomsAccessList3)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.icomsAccessList3 }}</p>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+
+              <div class="col-xs-12">
+                <label class="col-sm-12  control-label">ICOMS Access list 4</label>
+                <textarea cols=15 rows=12 id="icomsAccessList4" name="icomsAccessList4" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.icomsAccessList4"
+                  #icomsAccessList4="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('icomsAccessList4', addEditDiscountSubmitData.discMapPreRequisite.icomsAccessList4)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.icomsAccessList4 }}</p>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <div class="col-xs-12">
+                <label class="col-sm-12 control-label">ICOMS Access list 5</label>
+                <textarea cols=15 rows=12 id="icomsAccessList5" name="icomsAccessList5" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.icomsAccessList5"
+                  #icomsAccessList5="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('icomsAccessList5', addEditDiscountSubmitData.discMapPreRequisite.icomsAccessList5)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.icomsAccessList5 }}</p>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+
+              <div class="col-xs-12">
+                <label class="col-sm-12  control-label">ICOMS Access list 6</label>
+                <textarea cols=15 rows=12 id="icomsAccessList6" name="icomsAccessList6" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapPreRequisite.icomsAccessList6"
+                  #icomsAccessList6="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('icomsAccessList6', addEditDiscountSubmitData.discMapPreRequisite.icomsAccessList6)"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapPreRequisite.icomsAccessList6 }}</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <hr/>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="table-responsive">
+              <div class="col-xs-3">New CC to Link</div>
+              <div class="col-xs-6">
+                <b>More</b>
+                <i class="arrow down"></i>
+              </div>
+              <div class="col-xs-3">CC to tec Links</div>
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div>
+              <div class="table-responsive padd-bot-150">
+                <table id="" class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+
+                      <th class="col-xs-3">
+                        TE Code - Code
+                      </th>
+                      <th class="col-xs-3">
+                        TE Code - Description
+                      </th>
+                      <th class="col-xs-3">
+                        TE Code - Owner
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let teCode of teCodeList; let i = index;">
+                      <td class="col-xs-3">
+                        <angular2-multiselect *ngIf="addEditMode" name="teCode" text="Select One" [data]="teCode.teCodeDropDownList" [(ngModel)]="teCode.tecodeSelectedItems" #teCodeVal="ngModel"
+                          [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('teCodes', teCode.tecodeSelectedItems, 'single')"
+                          (onDeSelect)="onItemDeSelect('teCodes', teCode.tecodeSelectedItems, 'single')" (onSelectAll)="onSelectAll('teCodes', teCode.tecodeSelectedItems, 'single')"
+                          (onDeSelectAll)="onDeSelectAll('teCodes', teCode.tecodeSelectedItems, 'single')" 
+                          (ngModelChange)="updateTECodeValue('teCodes', i, teCode.tecodeSelectedItems)">
+                        </angular2-multiselect>
+                        <p *ngIf="viewMode">
+                          <span *ngFor="let teCode of getTECodeSelectedItemsObject(masterData, 'teCodeResponse', teCode.teCodeId); let i = index;">
+                            {{teCode.itemName}}
+                            <span *ngIf="((getTECodeSelectedItemsObject(masterData, 'teCodeResponse', teCode).length > 0) && (i+1 != getTECodeSelectedItemsObject(masterData, 'teCodeResponse', teCode).length))">,</span>
+                          </span>
+                        </p>
+                      </td>
+                      <td class="col-xs-3">
+                        {{ teCode.teCodeDescription }}
+                      </td>
+                      <td class="col-xs-3">
+                        {{ teCode.teCodeOwnerName }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr/>
+
+        <div class="row">
+          <div class="col-md-12 margin-top-10">
+            <div class="form-group">
+              <label for="file" class="col-xs-4 control-label">ICOMS Offer Template </label>
+              <span *ngIf="(!showDownloadUrl)">
+                <input type="file" id="file" (change)="handleFileInput($event.target.files, $event)">
+                <span style="font-size: 12px;color: red;" *ngIf="fileSizeExceeded">File Size exceeds 20MB
+                  <br>
+                </span>
+                <i style="font-size: 12px;" *ngIf="!fileSizeExceeded">Max File Size is 20MB</i>
+              </span>
+              <a href="{{ downloadFileUrl }}" *ngIf="showDownloadUrl">{{ addEditDiscountSubmitData.discMapPreRequisite.uploadIntakeRequestDocName }}</a>
+            </div>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

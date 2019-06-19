@@ -1,0 +1,37 @@
+<section class="row">
+   <div class="col-md-12">
+      <h1 class="page-header">User Administration - User View/Modify</h1>
+   </div>
+   <plm-breadcrumb [breadCrumbs]="breadCrumbs"></plm-breadcrumb>
+   <div class="col-md-12" *ngIf="statusUpdated">
+      <div class="alert alert-success">
+         <a class="close" data-dismiss="alert" aria-label="close" title="close" click="hideStatus()">×</a>
+          User Updated Successfully
+      </div>
+   </div>
+   <div class="col-md-12" *ngIf="noSearchInCriteria">
+    <div class="alert alert-danger">
+       <a class="close" data-dismiss="alert" aria-label="close" title="close" click="hideStatus()">×</a>
+       Please select IN search criteria
+    </div>
+    </div>
+   <div class="col-md-12" *ngIf="invalidEmail">
+        <div class="alert alert-danger">
+           <a class="close" data-dismiss="alert" aria-label="close" title="close" click="hideStatus()">×</a>
+           InValid Email
+        </div>
+    </div>
+    <div class="col-md-12" *ngIf="noUserFound">
+            <div class="alert alert-danger">
+               <a class="close" data-dismiss="alert" aria-label="close" title="close" click="hideStatus()">×</a>
+               No User Found
+            </div>
+        </div>
+</section>
+
+<plm-search-user-criteria [searchInFilter]="searchInFilter" (searchUser)="onsearchUser($event)" *ngIf="formDataAvailable"></plm-search-user-criteria>
+<plm-user-list *ngIf="formDataAvailable" [userList]="userList" (statusUpdated)="onStatusUpdate($event)"></plm-user-list>
+
+
+
+

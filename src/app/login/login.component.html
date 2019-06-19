@@ -1,0 +1,86 @@
+<plm-header></plm-header>
+<section id="loginform" class="outer-wrapper page-wrapper-no-border" [@routerTransition]>
+    <div class="inner-wrapper">
+        <div class="row">
+            <div>
+                <div class="panel panel-primary sign-panel-width">
+                    <div class="panel-heading">
+                        <div class="panel-title">Sign In</div>
+                    </div>
+                    <div class="col-md-12 margin-top-20" *ngIf="loginFail">
+                        <div class="alert alert-danger">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a> 
+                            {{ inValidCredentials }}
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" name="validateForm" #validateForm="ngForm" novalidate>
+
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input type="text" name="email" class="form-control" [ngModel]="email" [pattern]="emailPattern" required #offEmail="ngModel" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                            </div>
+                    </div>
+                    <div *ngIf="offEmail.invalid && (offEmail.dirty || offEmail.touched)" class="margin-bot-10">
+                        <div *ngIf="offEmail.errors?.required" class="text_error">
+                            <span> Email is required</span>
+
+                        </div>
+                        <div *ngIf="offEmail.errors.pattern && offEmail.touched" class="text_error">
+                            <span> Invalid Email</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="password" name="password" class="form-control" [ngModel]="password" required #offPassword="ngModel" placeholder="Password">
+                    </div>
+                </div>
+                <div *ngIf="offPassword.invalid && (offPassword.dirty || offPassword.touched)" class="margin-bot-10">
+                    <div *ngIf="offPassword.errors?.required" class="text_error">
+                        <span> Password is required</span>
+                    </div>
+                </div>
+
+
+
+                <!--<div class="form-group">
+                                <div class="col-md-12">
+                                    <input type="text"  name="email"  class="form-control" 
+                                    [ngModel]="email" required #offEmail="ngModel"  placeholder="Email">
+                                        <div class="form-control-feedback"  
+                                        *ngIf="offEmail.errors && (offEmail.dirty || offEmail.touched)">
+                                            <p *ngIf="offEmail.errors.required">Email is required</p>
+                                                <p *ngIf="offEmail.errors.pattern">Invalid Email</p>
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="form-group">
+                <div class="col-md-12">
+                    <input type="password"  name="password"  
+                    class="form-control" [ngModel]="password" 
+                    required #offPassword="ngModel"  placeholder="Password">
+                        <div class="form-control-feedback"  
+                        *ngIf="offPassword.errors && (offPassword.dirty || offPassword.touched)">
+                            <p *ngIf="offPassword.errors.required">Password is required</p>
+        </div>
+    </div>
+    </div>-->
+                <div>
+                    <label>
+            <input type="checkbox" ng-model="rememberMe" ng-true-value="true" ng-false-value="false"> Remember me
+        </label>
+                </div>
+                <div>
+                    <button class="btn btn-primary" [disabled]=validateForm.invalid (click)="getLoginResponseData(validateForm)"> Log in </button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</section>
+<plm-footer></plm-footer>

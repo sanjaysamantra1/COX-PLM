@@ -1,0 +1,128 @@
+<div>
+    <section class="row">
+        <div class="col-md-12">
+            <h1 class="page-header">User Administration - Add User</h1>
+        </div>
+        <plm-breadcrumb [breadCrumbs]="breadCrumbs"></plm-breadcrumb>
+        <div class="col-md-12" *ngIf="newUserAdded">
+            <div class="alert alert-success">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                {{ userAddedSuccessfully }}
+            </div>
+        </div>
+
+        <div class="col-md-12" *ngIf="newUserNotAdded">
+            <div class="alert alert-danger">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                {{ userAddedFailed }}
+            </div>
+        </div>
+        <div class="col-md-12" *ngIf="invalidEmail">
+                <div class="alert alert-danger">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                    {{ invalidEmailError }}
+                </div>
+            </div>
+        <div class="col-md-12" *ngIf="emailNotExists">
+            <div class="alert alert-danger">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                {{ invalidUserError }}
+            </div>
+        </div>
+        <!-- <div class="col-md-12">
+         <ul class="breadcrumb">
+            <li><a href="#" ng-click="redirectTo('dashboard')">Home</a></li>
+            <li><a href="#" ng-click="">User Admin</a></li>
+            <li class="active">Add New user</li>
+         </ul>
+      </div> -->
+    </section>
+    <div class="row" *ngIf="formDataAvailable">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                    <form class="form-horizontal" #addUserForm="ngForm" novalidate>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email" class="col-sm-5 control-label">Email</label>
+                                    <div class="col-xs-7">
+                                        <div class="input-group">
+                                            <input type="email" name="email" class="form-control" [(ngModel)]="email" #emailVal="ngModel" unique-id="{Email: 'email'}" required>
+                                            <span class="input-group-btn">
+                                                <a class="btn btn-default" (click)="getUsersDetails()">Search</a>
+                                            </span>
+                                        </div>
+                                        <div *ngIf="emailVal.errors && (emailVal.dirty || emailVal.touched)" class="text_error">
+                                            <div [hidden]="!emailVal.errors.email">
+                                                {{ invalidEmailError }}
+                                            </div>
+                                            <div [hidden]="!emailVal.errors.required">
+                                                {{ invalidEmailError }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12"></div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-xs-5 control-label">First Name</label>
+                                    <div class="col-xs-7">
+                                        <input type="text" class="form-control" name="fname" [(ngModel)]="fname" #fnameVal="ngModel" disabled />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-xs-5 control-label">Last Name
+                                    </label>
+                                    <div class="col-xs-7">
+                                        <input type="text" class="form-control" name="lname" [(ngModel)]="lname" #lnameVal="ngModel" disabled />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-sm-5 control-label">Status</label>
+                                    <div class="col-xs-7">
+                                        <select name="statusDropDown" [(ngModel)]="status" #statusVal="ngModel" class="form-control" required>
+												<option [value]="">Select One</option>
+												<option *ngFor="let status of usersData.userStatus; let i=index;" [value]="status.statusId"> {{ status.statusName }}</option>
+											</select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-5 control-label">Work Group</label>
+                                    <div class="col-xs-7">
+                                        <angular2-multiselect name="dropdownList" [data]="dropdownList" [(ngModel)]="selectedItems"  #workGroupVal="ngModel" [settings]="dropdownSettings" (onSelect)="onItemSelect($event)"
+                                            (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">
+                                        </angular2-multiselect>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-sm-5 control-label">Role</label>
+                                    <div class="col-xs-7">
+                                        <select [(ngModel)]="roles" #rolesVal="ngModel" name="rolesDropdown" class="form-control"
+												required>
+												<option [value]="">Select One</option>
+												<option *ngFor="let roles of usersData.userRoles; let i=index" [value]="roles.roleId"> {{ roles.roleName }}</option>
+											</select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12" style="text-align: center;">
+                                <button type="button" class="btn btn-primary pull-right" [disabled]="!addUserForm.form.valid" (click)="addNewUser()">Create
+                                </button>
+                                <button type="reset" class="btn btn-primary pull-right margin-right-20">Reset</button>
+                                <!-- <button type="button" class="btn btn-primary pull-left" [routerLinkActive]="['router-link-active']" routerLink="/dashboard">Back</button> -->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+<div class="col-md-3">
+    <div class="box-grid-box">
+        <div class="panel panel-primary">
+            <div class="panel-heading psu-box-head">
+                    <strong>{{ psu.offerId }}&nbsp;</strong>
+            </div>
+            <div class="panel-body psu-box-body">
+                <strong>Product Details</strong>
+                <p *ngIf="isDataProduct">
+                    <span class="fa fa-wifi"></span> {{ dataProductVal }}
+                </p>
+                <p *ngIf="isHomeProduct">
+                    <span class="fa fa-home"></span> {{ homeProductVal }}
+                </p>
+                <p *ngIf="isVideoProduct">
+                    <span class="fa fa-tv"></span> {{ videoProductVal }}
+                </p>
+                <p *ngIf="isPhoneProduct">
+                    <span class="fa fa-phone"></span> {{ phoneProductVal }}
+                </p>
+                <div class="divider" style="padding-bottom: 10px;"></div>
+                <strong>Specifications</strong>
+                <p>Price - {{ psu.specificationResponse.price }} </p>
+            </div>
+            <div class="panel-footer psu-box-footer">
+                <button type="button" class="btn btn-primary pull-center" (click)="goToModifyOffer()" *ngIf="psu.offerId !== null">Modify Offer</button>
+                <button type="button" class="btn btn-primary" (click)="goToAddOffer()" *ngIf="psu.offerId == null">Add Offer</button> 
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!--<div class="col-md-3">
+
+    <div class="box-grid-box">
+        <div class="panel panel-primary">
+            <div class="panel-heading psu-box-head">
+                    <strong>{{ psu.offerID }}</strong>
+            </div>
+            <div class="panel-body psu-box-body">
+                <strong>Product Details</strong>
+                <p *ngIf="isDataProduct">
+                    <span class="fa fa-wifi"></span> {{ dataProductVal }}
+                </p>
+                <p *ngIf="isHomeProduct">
+                    <span class="fa fa-home"></span> {{ homeProductVal }}
+                </p>
+                <p *ngIf="isVideoProduct">
+                    <span class="fa fa-tv"></span> {{ videoProductVal }}
+                </p>
+                <p *ngIf="isPhoneProduct">
+                    <span class="fa fa-phone"></span> {{ phoneProductVal }}
+                </p>
+                <div class="divider" style="padding-bottom: 10px;"></div>
+                <strong>Specifications</strong>
+                <p>Price - {{ psu.specification.price }} </p>
+            </div>
+            <div class="panel-footer psu-box-footer">
+                <button type="button" class="btn btn-primary pull-center" [routerLink]="['/plm-work-flow/configurator/offer/add-offer']">Modify Offer</button>
+                 <button type="button" class="btn btn-primary pull-center" [routerLink]="['/plm-work-flow/configurator/offer/add-offer']">Add Offer</button> 
+            </div>
+        </div>
+    </div>
+    
+</div>-->

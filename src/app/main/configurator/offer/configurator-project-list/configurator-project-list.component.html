@@ -1,0 +1,108 @@
+<div>
+    <!-- Configurator Project List Starts -->
+    <div>
+       <section class="row">
+          <div class="col-md-12">
+             <h1 class="page-header">Configurator Process</h1>
+          </div>
+          <div class="col-md-12">
+             <ul class="breadcrumb">
+                <li><a href="#" ng-click="redirectTo('dashboard')">Home</a></li>
+                <li><a href="#" ng-click="redirectTo('dashboard')">PLM Work Flow</a></li>
+                <li><a href="#" ng-click="redirectTo('dashboard')">Configurator</a></li>
+                <li class="active">Offers</li>
+             </ul>
+          </div>
+       </section>
+       <div>
+          <div class="process" id="requestorProcessing">
+             <!-- Configurator Table Starts -->
+             <div class="row">
+                <div class="col-md-12">
+                   <div class="table-responsive">
+                      <table id="mytable" class="table table-bordred table-striped">
+                         <thead>
+                            <tr>
+                                <th style="width:45px;">
+                                    <button type="button" class="btn btn-primary btn-xs" (click)="toggleSearchIcon()">
+                                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                    </button>
+                                </th>
+                                <th>
+                                    <div (click)="sort('requestCode')">
+                                        Request Code 
+                                        <span class="glyphicon sort-icon" *ngIf="key =='requestCode'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                    </div>
+                                    <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByCode" [(ngModel)]="filterByCode" placeholder="By Project Code">
+                                </th>
+                                <th>
+                                    <div (click)="sort('requestType')">
+                                        Request Type
+                                        <span class="glyphicon sort-icon" *ngIf="key =='requestType'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                    </div>
+                                    <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByType" [(ngModel)]="filterByType" placeholder="By Project Type">
+                                </th>
+                                <th>
+                                    <div (click)="sort('pricingOwner')">
+                                        Pricing Owner
+                                        <span class="glyphicon sort-icon" *ngIf="key =='pricingOwner'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                    </div>
+                                    <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterPricingOwner" [(ngModel)]="filterPricingOwner" placeholder="By Pricing Owner">
+                                </th>
+                                <th>
+                                    <div (click)="sort('description')">
+                                        Description
+                                        <span class="glyphicon sort-icon" *ngIf="key =='description'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                    </div>
+                                    <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByDescription" [(ngModel)]="filterByDescription" placeholder="By Description">
+                                </th>
+                                <th>
+                                    <div (click)="sort('resqustorName')">
+                                        Requestor Name
+                                        <span class="glyphicon sort-icon" *ngIf="key =='resqustorName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                    </div>
+                                    <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByResqustorName" [(ngModel)]="filterByResqustorName" placeholder="By Resqustor Name">
+                                </th>
+                                <th>
+                                    <div (click)="sort('createdDate')">
+                                        Created Date
+                                        <span class="glyphicon sort-icon" *ngIf="key =='createdDate'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                    </div>
+                                    <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByCreatedDate" [(ngModel)]="filterByCreatedDate" placeholder="By Created Date">
+                                </th>
+                            </tr>
+                         </thead>
+                         <tbody>
+                            <tr *ngFor="let projectList of configuratorProjectList  | orderBy: key : reverse | paginate: {itemsPerPage: 5, currentPage:page, id: 'ConfiguratorProjectList'}; let i = index">
+                               <td></td>
+                               <td><a (click)="moveToConfiguratorGrid(projectList.projectCode)">{{projectList.projectCode}}</a></td>
+                               <td>{{ projectList.projectType }}</td>
+                               <td>{{ projectList.pricingOwner }}</td>
+                               <td>{{ projectList.description }} </td>
+                               <td>{{ projectList.requestorName }}</td>
+                               <td>{{ projectList.projectStartDt | date:'MM/dd/yyyy' }}</td>
+                            </tr>
+                         </tbody>
+                      </table>
+                      <div class="clearfix"></div>
+                   </div>
+                </div>
+                <div class="col-md-12">
+                    <pagination-controls class="pull-right" (pageChange)="page = $event" id="ConfiguratorProjectList"
+                        maxSize="5"
+                        directionLinks="true"
+                        autoHide="true">
+                    </pagination-controls>
+                </div>
+                <div class="col-md-12">
+                   <button type="submit" class="btn btn-primary pull-left" (click)="returnBack()">Back</button>
+                </div>
+             </div>
+             <!--  Configurator Table Ends -->
+          </div>
+       </div>
+    </div>
+    <!-- Configurator Project List Ends -->
+    
+    
+  

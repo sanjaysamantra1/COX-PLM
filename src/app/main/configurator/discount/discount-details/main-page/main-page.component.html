@@ -1,0 +1,319 @@
+<div class="row">
+  <div class="col-md-12">
+    <!--<form #discountForm="ngForm" (ngSubmit)="onSubmit(discountForm)" class="form-horizontal">-->
+
+    <mat-accordion close-others="oneAtATime">
+      <mat-expansion-panel class="form-divider panel-no-background">
+        <mat-expansion-panel-header>
+          Main Page
+        </mat-expansion-panel-header>
+        
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+
+              <label class="col-sm-5 control-label" for="MainPage">
+                <input type="checkbox" name="active" value="" [(ngModel)]="addEditDiscountSubmitData.discMapMainPage.showMainpageFlg"
+                  #activeVal="ngModel" [checked]="addEditDiscountSubmitData.discMapMainPage.showMainpageFlg"
+                  [disabled]="viewMode" (change)="updateSubmitData('showMainpageFlg', addEditDiscountSubmitData.discMapMainPage.showMainpageFlg)"> Show on Mainpage
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">MP-New/Existing</label>
+              <div class="col-xs-7">
+                <angular2-multiselect *ngIf="addEditMode" name="mpNew" [data]="mpNewDropDownList" [(ngModel)]="mpNewSelectedItems" #mpNewVal="ngModel"
+                  [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('mpNewExistingId', mpNewSelectedItems, 'single')"
+                  (onDeSelect)="onItemDeSelect('mpNewExistingId', mpNewSelectedItems, 'single')" (onSelectAll)="onSelectAll('mpNewExistingId', mpNewSelectedItems, 'single')"
+                  (onDeSelectAll)="onDeSelectAll('mpNewExistingId', mpNewSelectedItems, 'single')">
+                </angular2-multiselect>
+                <p *ngIf="viewMode">
+                  <span *ngFor="let mpNew of utilitiesService.getSelectedItemsObject(masterData, 'MP_NEW_EXISTING', addEditDiscountSubmitData.discMapMainPage.mpNewExistingId); let i = index;">
+                    {{ mpNew.itemName }}
+                    <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'MP_NEW_EXISTING', addEditDiscountSubmitData.discMapMainPage.mpNewExistingId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'MP_NEW_EXISTING', addEditDiscountSubmitData.discMapMainPage.mpNewExistingId).length))">,</span>
+                  </span>
+                </p>
+
+                <!--<div *ngIf="mpNewVal.invalid && (mpNewVal.dirty || mpNewVal.touched)" class="input-error">
+                  <div *ngIf="mpNewVal.errors.required">
+                   MP-New/Existing is required
+                  </div>
+                </div>-->
+
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">MP Offer Product</label>
+              <div class="col-xs-7">
+                <angular2-multiselect *ngIf="addEditMode" name="mpOfferProduct" [data]="mpOfferProductDropDownList" [(ngModel)]="mpOfferProductSelectedItems"
+                  #mpOfferProductVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('mpOfferProductId', mpOfferProductSelectedItems, 'single')"
+                  (onDeSelect)="onItemDeSelect('mpOfferProductId', mpOfferProductSelectedItems, 'single')" (onSelectAll)="onSelectAll('mpOfferProductId', mpOfferProductSelectedItems, 'single')"
+                  (onDeSelectAll)="onDeSelectAll('mpOfferProductId', mpOfferProductSelectedItems, 'single')">
+                </angular2-multiselect>
+                <p *ngIf="viewMode">
+                  <span *ngFor="let mpOfferProduct of utilitiesService.getSelectedItemsObject(masterData, 'MP_OFFER_PRODUCT', addEditDiscountSubmitData.discMapMainPage.mpOfferProductId); let i = index;">
+                    {{ mpOfferProduct.itemName }}
+                    <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'MP_OFFER_PRODUCT', addEditDiscountSubmitData.discMapMainPage.mpOfferProductId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'MP_OFFER_PRODUCT', addEditDiscountSubmitData.discMapMainPage.mpOfferProductId).length))">,</span>
+                  </span>
+                </p>
+
+                <!--<div *ngIf="mpOfferProductVal.invalid && (mpOfferProductVal.dirty || mpOfferProductVal.touched)" class="input-error">
+                  <div *ngIf="mpOfferProductVal.errors.required">
+                   MP Offer Product is required
+                  </div>
+                </div>-->
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">MP Offer Type</label>
+              <div class="col-xs-7">
+                <angular2-multiselect *ngIf="addEditMode" name="mpOfferType" [data]="mpOfferTypeDropDownList" [(ngModel)]="mpOfferTypeSelectedItems"
+                  #mpOfferTypeVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('mpOfferProductId', mpOfferTypeSelectedItems, 'single')"
+                  (onDeSelect)="onItemDeSelect('mpOfferProductId', mpOfferTypeSelectedItems, 'single')" (onSelectAll)="onSelectAll('mpOfferProductId', mpOfferTypeSelectedItems, 'single')"
+                  (onDeSelectAll)="onDeSelectAll('mpOfferProductId', mpOfferTypeSelectedItems, 'single')">
+                </angular2-multiselect>
+                <p *ngIf="viewMode">
+                  <span *ngFor="let mpOfferType of utilitiesService.getSelectedItemsObject(masterData, 'MP_OFFER_TYPE', addEditDiscountSubmitData.discMapMainPage.mpOfferTypeId); let i = index;">
+                    {{ mpOfferType.itemName }}
+                    <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'MP_OFFER_TYPE', addEditDiscountSubmitData.discMapMainPage.mpOfferTypeId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'MP_OFFER_TYPE', addEditDiscountSubmitData.discMapMainPage.mpOfferTypeId).length))">,</span>
+                  </span>
+                </p>
+
+                <!--<div *ngIf="mpOfferTypeVal.invalid && (mpOfferTypeVal.dirty || mpOfferTypeVal.touched)" class="input-error">
+                  <div *ngIf="mpOfferTypeVal.errors.required">
+                   MP Offer Type is required
+                  </div>
+                </div>-->
+
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-xs-5 control-label">MP Sales Channel</label>
+              <div class="col-xs-7">
+                <input type="text" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapMainPage.mpSalesChannel" name="mPSales"
+                  #MPSales="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('mpSalesChannel', addEditDiscountSubmitData.discMapMainPage.mpSalesChannel)">
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapMainPage.mpSalesChannel }}</p>
+                <!--<div *ngIf="MPSalesChannel.invalid && (MPSalesChannel.dirty || MPSalesChannel.touched)" class="input-error">
+                  <div *ngIf="MPSalesChannel.errors.required">
+                    MP Sales Channel is required
+                  </div>
+                </div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">MP Targeted Audience</label>
+              <div class="col-xs-7">
+                <angular2-multiselect *ngIf="addEditMode" name="mpTargetAudience" [data]="mpTargetAudienceDropDownList" [(ngModel)]="mpTargetAudienceSelectedItems"
+                  #mpTargetAudienceVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('mpTargetedAudienceId', mpTargetAudienceSelectedItems, 'single')"
+                  (onDeSelect)="onItemDeSelect('mpTargetedAudienceId', mpTargetAudienceSelectedItems, 'single')" (onSelectAll)="onSelectAll('mpTargetedAudienceId', mpTargetAudienceSelectedItems, 'single')"
+                  (onDeSelectAll)="onDeSelectAll('mpTargetedAudienceId', mpTargetAudienceSelectedItems, 'single')">
+                </angular2-multiselect>
+                <p *ngIf="viewMode">
+                  <span *ngFor="let mpTargetAudience of utilitiesService.getSelectedItemsObject(masterData, 'MP_TARGETED_AUDIENCE', addEditDiscountSubmitData.discMapMainPage.mpTargetedAudienceId); let i = index;">
+                    {{ mpTargetAudience.itemName }}
+                    <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'MP_TARGETED_AUDIENCE', addEditDiscountSubmitData.discMapMainPage.mpTargetedAudienceId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'MP_TARGETED_AUDIENCE', addEditDiscountSubmitData.discMapMainPage.mpTargetedAudienceId).length))">,</span>
+                  </span>
+                </p>
+
+                <!--<div *ngIf="mpTargetAudienceVal.invalid && (mpTargetAudienceVal.dirty || mpTargetAudienceVal.touched)" class="input-error">
+                  <div *ngIf="mpTargetAudienceVal.errors.required">
+                   MP Targeted Audience is required
+                  </div>
+                </div>-->
+
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">MP Markets</label>
+              <div class="col-xs-7">
+                <input type="text" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapMainPage.mpMarkets" name="mPMarkets" #MPMarkets="ngModel"
+                  *ngIf="addEditMode" (change)="updateSubmitData('mpMarkets', addEditDiscountSubmitData.discMapMainPage.mpMarkets)">
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapMainPage.mpMarkets }}</p>
+              </div>
+            </div>
+          </div> -->
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">MP Offer</label>
+              <div class="col-xs-7">
+
+
+                <textarea id="mpOffer" name="mpOffer" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapMainPage.mpOffer"
+                  #MpOffer="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('mpOffer', addEditDiscountSubmitData.discMapMainPage.mpOffer)"
+                  rows="3" i style="height: auto;"></textarea>
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapMainPage.mpOffer }}</p>
+                <!--<div *ngIf="mPOffer.invalid && (mPOffer.dirty || mPOffer.touched)" class="input-error">
+                  <div *ngIf="mPOffer.errors.required">
+                    MP Offer is required.
+                  </div>
+                </div>-->
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-xs-5 control-label">MP Notes </label>
+              <div class="col-xs-7">
+
+                <textarea id="mpNotes" name="mpNotes" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapMainPage.mpNotes"
+                  #MpNotes="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('mpNotes', addEditDiscountSubmitData.discMapMainPage.mpNotes)"
+                  rows="3" i style="height: auto;"></textarea>
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapMainPage.mpNotes }}</p>
+                <!--<div *ngIf="mPNotes.invalid && (mPNotes.dirty || mPNotes.touched)" class="input-error">
+                  <div *ngIf="mPNotes.errors.required">
+                    MP Notes is required.
+                  </div>
+                </div>-->
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">MP Installation(TPR)</label>
+              <div class="col-xs-7">
+                <angular2-multiselect *ngIf="addEditMode" name="mpInstallation" [data]="mpInstallationDropDownList" [(ngModel)]="mpInstallationSelectedItems"
+                  #mpInstallationVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('mpInstallationTprId', mpInstallationSelectedItems, 'single')"
+                  (onDeSelect)="onItemDeSelect('mpInstallationTprId', mpInstallationSelectedItems, 'single')" (onSelectAll)="onSelectAll('mpInstallationTprId', mpInstallationSelectedItems, 'single')"
+                  (onDeSelectAll)="onDeSelectAll('mpInstallationTprId', mpInstallationSelectedItems, 'single')">
+                </angular2-multiselect>
+                <p *ngIf="viewMode">
+                  <span *ngFor="let mpInstallation of utilitiesService.getSelectedItemsObject(masterData, 'MP_INSTALLATION_TPR', addEditDiscountSubmitData.discMapMainPage.mpInstallationTprId); let i = index;">
+                    {{ mpInstallation.itemName }}
+                    <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'MP_INSTALLATION_TPR', addEditDiscountSubmitData.discMapMainPage.mpInstallationTprId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'MP_INSTALLATION_TPR', addEditDiscountSubmitData.discMapMainPage.mpInstallationTprId).length))">,</span>
+                  </span>
+                </p>
+
+                <!--<div *ngIf="mpInstallationVal.invalid && (mpInstallationVal.dirty || mpInstallationVal.touched)" class="input-error">
+                  <div *ngIf="mpInstallationVal.errors.required">
+                   MP Installation(TR) is required
+                  </div>
+                </div>-->
+
+
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">MP Offer Details and Restriction</label>
+              <div class="col-xs-7">
+
+
+                <textarea id="mpOfferDetailsRestrict" name="mpOfferDetailsRestrict" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapMainPage.mpOfferDetailsRestrict"
+                  #MpOfferDetailsRestrict="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('mpOfferDetailsRestrict', addEditDiscountSubmitData.discMapMainPage.mpOfferDetailsRestrict)"
+                  rows="3" i style="height: auto;"></textarea>
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapMainPage.mpOfferDetailsRestrict }}</p>
+                <!--<div *ngIf="mPOfferDetailsandRestriction.invalid && (mPOfferDetailsandRestriction.dirty || mPOfferDetailsandRestriction.touched)" class="input-error">
+                  <div *ngIf="mPOfferDetailsandRestriction.errors.required">
+                    MP Offer Details and Restriction is required.
+                  </div>
+                </div>-->
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <!-- <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">MP Prism Code</label>
+              <div class="col-xs-7">
+                <input type="text" class="form-control" required [(ngModel)]="disMapMainPage.mpPrismCode" name="mpPrismCode" #MPPrismCode="ngModel"
+                (change)="updateSubmitData('mpPrismCode', disMapMainPage.mpPrismCode)">
+                <!--<div *ngIf="MPPrismCode.invalid && (MPPrismCode.dirty || MPPrismCode.touched)" class="input-error">
+                    <div *ngIf="MPPrismCode.errors.required">
+                      MP Prism Code is required
+                    </div>
+                  </div>-->
+          <!--  </div>
+
+            </div>
+          </div> -->
+          <div class="col-md-6">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <label>Channels </label>
+          </div>
+          <div class="col-md-12">
+            <div>
+              <span class="checkbox-inline">
+                <input type="checkbox" name="selectedAll" value="" (change)="selectAllChannels($event.target.checked);" [checked]="isAllChanelsSelectedCheck()"
+                  [disabled]="viewMode">Select All Channels
+              </span>
+            </div>
+            <div>
+              <span class="checkbox-inline checkbox-inline-custom col-md-2" name="mapMarketChannels" *ngFor="let option of masterData.MP_CHANNELS; let i = index;">
+                <input type="checkbox" name="sites" [value]="option.key" [checked]="isChannelExist(option.key)" (change)="addChannel($event.target.checked,option.key);"
+                  [disabled]="viewMode" /> {{option.value}}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <label>Tactics </label>
+          </div>
+          <div class="col-md-12">
+            <div>
+              <span class="checkbox-inline">
+                <input type="checkbox" name="selectedAll" value="" (change)="selectAllTactics($event.target.checked);" [checked]="isAllTacticsSelectedCheck()"
+                  [disabled]="viewMode">Select All Tactics
+              </span>
+            </div>
+            <div>
+              <span class="checkbox-inline checkbox-inline-custom col-md-2" name="mapMarketChannels" *ngFor="let option of masterData.MP_TACTICS; let i = index;">
+                <input type="checkbox" name="sites" [value]="option.key" [checked]="isTacticsExist(option.key)" (change)="addTactics($event.target.checked,option.key);"
+                  [disabled]="viewMode" /> {{option.value}}
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+    <!--</form>-->
+  </div>
+</div>

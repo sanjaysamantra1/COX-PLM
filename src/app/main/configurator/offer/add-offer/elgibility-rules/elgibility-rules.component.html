@@ -1,0 +1,49 @@
+ <!-- Sixth Section Starts here -->
+ <mat-expansion-panel class="form-divider panel-no-background">
+  <mat-expansion-panel-header>
+     Eligibility Rules
+  </mat-expansion-panel-header>
+  <div id="sixth-section">
+     <div class="row form-group">
+        <div class="col-md-4">
+           <select class="auto-complete-drop-down form-control" autocomplete-dropdown ng-model="elruleSelectedItem" ng-options="item as item.ruleName for item in rulesItems track by item.id" ng-change="elrulesAddNew(elruleSelectedItem)">
+              <option value="" selected="selected">Select One</option>
+           </select>
+        </div>
+        <div class="col-md-12">
+           <span class="text_error" *ngIf="showAddElRulesError">Rule Name is already added!</span>
+        </div>
+     </div>
+     <div class="row">
+        <div class="col-md-12">
+           <div class="table-responsive">
+              <table class="table table-bordered">
+                 <thead>
+                    <tr>
+                       <th>ID</th>
+                       <th style="width:90px;">Primary</th>
+                       <th style="width:90px;">Secondary</th>
+                       <th>Rule</th>
+                       <th>Description</th>
+                       <th>Syntax</th>
+                       <th>Remove</th>
+                    </tr>
+                 </thead>
+                 <tbody>
+                    <tr ng-repeat="rules in elrulesItemsTable">
+                       <td>ID</td>
+                       <td><input type="checkbox" value=""></td>
+                       <td><input type="checkbox" value=""></td>
+                       <td>Rule</td>
+                       <td>Description</td>
+                       <td>Syntax</td>
+                       <td><i class="fa fa-remove" ng-click="elgibilityRemoveRow(rowIndex)"></i></td>
+                    </tr>
+                 </tbody>
+              </table>
+           </div>
+        </div>
+     </div>
+  </div>
+</mat-expansion-panel>
+<!-- Sixth Section ends here -->

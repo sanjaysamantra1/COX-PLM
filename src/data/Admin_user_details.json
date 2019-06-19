@@ -1,0 +1,84 @@
+{
+    "actionResult": null,
+    "actionStatus": null,
+    "userRoles": [
+        {
+            "roleId": "1",
+            "roleName": "Corporate",
+            "desc": null,
+            "plmUser": []
+        },
+        {
+            "roleId": "2",
+            "roleName": "Administrator",
+            "desc": null,
+            "plmUser": []
+        },
+        {
+            "roleId": "3",
+            "roleName": "Manager",
+            "desc": null,
+            "plmUser": []
+        },
+        {
+            "roleId": "4",
+            "roleName": "User",
+            "desc": null,
+            "plmUser": []
+        }
+    ],
+    "userStatus": [
+        {
+            "statusId": 1,
+            "statusName": "Active"
+        },
+        {
+            "statusId": 2,
+            "statusName": "InActive"
+        }
+    ],
+    "workGroupModels": [
+        {
+            "workGroupId": 1,
+            "workGroupName": "Requester",
+            "workGroupDesc": "Requester"
+        },
+        {
+            "workGroupId": 2,
+            "workGroupName": "Configurator",
+            "workGroupDesc": "Configurator"
+        },
+        {
+            "workGroupId": 3,
+            "workGroupName": "Distributor",
+            "workGroupDesc": "Distributor"
+        },
+        {
+            "workGroupId": 4,
+            "workGroupName": "ICOMS",
+            "workGroupDesc": "ICOMS"
+        },
+        {
+            "workGroupId": 5,
+            "workGroupName": "OMC",
+            "workGroupDesc": "OMC"
+        },
+        {
+            "workGroupId": 6,
+            "workGroupName": "PinPoint",
+            "workGroupDesc": "PinPoint"
+        },
+        {
+            "workGroupId": 7,
+            "workGroupName": "E-COM",
+            "workGroupDesc": "E-COM"
+        }
+    ],
+    "defaultWorkGroupModels": [
+        {
+            "workGroupId": 8,
+            "workGroupName": "Dashboard",
+            "workGroupDesc": "Dashboard"
+        }
+    ]
+} 

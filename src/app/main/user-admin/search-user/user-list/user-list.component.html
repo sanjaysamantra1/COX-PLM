@@ -1,0 +1,141 @@
+<div class="row">
+    <div class="col-md-12">
+        <div>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- <p>{{ users }}</p> -->
+                    <div>
+                        <div class="table-responsive">
+                            <table id="mytable" class="table table-bordred table-striped">
+                                <thead>
+                                    <tr>
+                                        <th style="width:45px;">
+                                            <button type="button" class="btn btn-primary btn-xs" (click)="toggleSearchIcon()">
+                                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                            </button>
+                                        </th>
+                                        <th>
+                                            <div (click)="sort('firstname')">
+                                                Name
+                                                <span class="glyphicon sort-icon" *ngIf="key =='firstname'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                            </div>
+                                            <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByName" [(ngModel)]="filterByName" (keyup)="updateFilterContext('filterByNameSearchObj', 'name', filterByName)" placeholder="By Name">
+                                        </th>
+                                        <th>
+                                            <div (click)="sort('email')">
+                                                Email
+                                                <span class="glyphicon sort-icon" *ngIf="key =='email'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                            </div>
+                                            <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByEmail" [(ngModel)]="filterByEmail" (keyup)="updateFilterContext('filterByEmailSearchObj', 'logonId', filterByEmail)" placeholder="By Name">
+                                        </th>
+                                        <th>
+                                            <div (click)="sort('statusName')">
+                                                Status
+                                                <span class="glyphicon sort-icon" *ngIf="key =='statusName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                            </div>
+                                            <!-- <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByStatus" [(ngModel)]="filterByStatus" placeholder="By Name"> -->
+                                            <select [hidden]="!showSearch" class="seacrh-input" [(ngModel)]="filterByStatus" (change)="updateFilterContext('filterByStatusSearchObj', 'status', filterByStatus)">
+                                                <option value="">Select One</option>
+                                                <option *ngFor="let status of statusMasterData" value={{status.statusName}}>
+                                                    {{status.statusName}}
+                                                </option>
+                                            </select>
+                                        </th>
+                                        <th>
+                                            <div (click)="sort('role')">
+                                                Role
+                                                <span class="glyphicon sort-icon" *ngIf="key =='role'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                            </div>
+                                            <!--<input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByRole" [(ngModel)]="filterByRole" placeholder="By Name"> -->
+                                            <select [hidden]="!showSearch" class="seacrh-input" [(ngModel)]="filterByRole" (change)="updateFilterContext('filterByRoleSearchObj', 'role', filterByRole)">
+                                                <option value="">Select One</option>
+                                                <option *ngFor="let roles of rolesMasterData" value={{roles.roleName}}>
+                                                  {{roles.roleName}}
+                                                </option>
+                                            </select>
+                                        </th>
+                                        <th>
+                                            <div (click)="sort('workGroup')">
+                                                Work Group
+                                                <span class="glyphicon sort-icon" *ngIf="key =='workGroup'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                            </div>
+                                            <!-- <input [hidden]="!showSearch" class="seacrh-input" type="text" name="searchSelectedWorkGroup" [(ngModel)]="searchSelectedWorkGroup" placeholder="By Name"> -->
+                                            <angular2-multiselect [hidden]="!showSearch" name="dropdownList" [data]="dropdownList" [(ngModel)]="searchSelectedWorkGroup" #workGroupVal="ngModel"
+                                                [settings]="dropdownSettings" (onSelect)="onSearchItemSelect($event, searchSelectedWorkGroup)" (onDeSelect)="OnSearchItemDeSelect($event, searchSelectedWorkGroup)"
+                                                (onSelectAll)="onSearchSelectAll($event, searchSelectedWorkGroup)" (onDeSelectAll)="onSearchDeSelectAll($event, searchSelectedWorkGroup)" (ngModelChange)="updateFilterContext('filterByWorkGroupSearchObj', 'selectedWorkGroup', searchSelectedWorkGroup)">
+                                            </angular2-multiselect>
+                                            <!-- <select [hidden]="!showSearch" class="seacrh-input" [(ngModel)]="searchSelectedWorkGroup">
+                                                <option value="">Select One</option>
+                                                <option *ngFor="let group of workGroupMasterData" value={{group.workGroupName}}>
+                                                    {{group.workGroupName}}
+                                                </option>
+                                            </select> -->
+                                        </th>
+                                        <th>
+                                            <div (click)="sort('lastLogon')">
+                                                Last Login Date
+                                                <span class="glyphicon sort-icon" *ngIf="key =='lastLogon'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                            </div>
+                                            <div  [hidden]="!showSearch">
+                                                <mat-form-field class="input-group">
+                                                    <input matInput [matDatepicker]="createdDate" class="form-control" [(ngModel)]="filterBylastLogon" (ngModelChange)="updateFilterContext('filterBylastLogonSearchObj', 'lastLogon', filterBylastLogon)" name="filterBylastLogon">
+                                                    <mat-datepicker-toggle matSuffix [for]="createdDate"></mat-datepicker-toggle>
+                                                    <mat-datepicker #createdDate></mat-datepicker>
+                                                </mat-form-field>
+                                            </div>
+                                            <!-- <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterBylastLogon" [(ngModel)]="filterBylastLogon" (change)="updateFilterContext('filterByRoleSearchObj', 'role', filterByRole)" placeholder="By Last Login Date"> -->
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody *ngIf="usersExist">
+                                    <tr pagination-id="searchUserTable" *ngFor="let searchs of userList | sharedFilter : filterByNameSearchObj | sharedFilter : filterByEmailSearchObj | sharedFilter : filterByStatusSearchObj | sharedFilter : filterByRoleSearchObj | sharedFilter : filterByWorkGroupSearchObj | sharedFilter : filterBylastLogonSearchObj | orderBy: order:reverse:'case-insensitive' | paginate: {itemsPerPage: 5, currentPage:page, id: '1'}; let i = index">
+                                        <td>
+                                            <input type="checkbox" name="userListCheckbox" class="checkthis" [(ngModel)]="searchs.checked" (change)='enableDisableUpdateButton()'
+                                            />
+                                        </td>
+                                        <td>{{ searchs.name }}</td>
+                                        <td>{{ searchs.logonId }}</td>
+                                        <td>
+                                            <select class="form-control" [(ngModel)]="searchs.selected" required (change)="modifyUserData(searchs.userId, searchs.selected)">
+                                                <option *ngFor="let status of searchs.statusArray; let j=index;" [value]="status.statusId" [selected]="status.statusId == searchs.statusId">{{ status.statusName }}</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="form-control" [(ngModel)]="searchs.selectedRole" required (change)="modifyUserRoleData(searchs.userId, searchs.selectedRole)" [disabled]="(searchs.statusId == 2)">
+                                                <option *ngFor="let roles of searchs.roleArray; let j=index;" [value]="roles.roleId" [selected]="roles.roleId == searchs.roleId">{{ roles.roleName }}</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <!--<select class="form-control" [(ngModel)]="searchs.selectedWorkGroup"
+                                   required (change)="modifyUserWorkGroupData(i)">
+                                   <option *ngFor="let workGroup of searchs.workGroupIDArray; let j=index;" [value]="workGroup.workGroupId" [selected]="workGroup.workGroupId == searchs.workgroupid.workGroupId">{{ workGroup.workGroupName }}</option>
+                                </select>-->
+                                        <angular2-multiselect name="dropdownList" [data]="dropdownList" [(ngModel)]="searchs.selectedWorkGroup" #workGroupVal="ngModel" 
+                                            [settings]="searchs.workGroupDropdownSettings" (onSelect)="onItemSelect($event, i, searchs.selectedWorkGroup)" (onDeSelect)="OnItemDeSelect($event, i, searchs.selectedWorkGroup)"
+                                            (onSelectAll)="onSelectAll($event, i, searchs.selectedWorkGroup)" (onDeSelectAll)="onDeSelectAll($event, i, searchs.selectedWorkGroup)" (ngModelChange)="modifyUserWorkGroupData(searchs.userId, searchs.selectedWorkGroup)">
+                                        </angular2-multiselect>
+                                        </td>
+                                        <td>{{ searchs.lastLogon | date:'MM/dd/yyyy'}}</td>
+                                    </tr>
+                                </tbody>
+                                <tbody *ngIf="(!usersExist)">
+                                    <tr>
+                                        <td style="text-align: center;" colspan="7"> User not found in PLM. </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <pagination-controls class="pull-right" (pageChange)="page = $event" id="1" maxSize="5" directionLinks="true" autoHide="true">
+                    </pagination-controls>
+                </div>
+                <div class="col-md-12" style="padding-bottom: 12px;">
+                    <button type="button" class="btn btn-primary pull-right" (click)="updateUsersData()" [disabled]="updateUsersChecked">Update</button>
+                    <!-- <button type="submit" class="btn btn-primary pull-left" [routerLinkActive]="['router-link-active']" routerLink="/dashboard">Back</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

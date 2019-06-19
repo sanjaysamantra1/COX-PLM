@@ -1,0 +1,8 @@
+<div class="col-md-12">
+  <ul class="breadcrumb">
+     <li *ngFor="let breadCrumb of breadCrumbs;let i = index;" class="active">
+        <a *ngIf="breadCrumb.url != ''" (click)="redirectTo(breadCrumb.url)">{{ breadCrumb.name }}</a>
+        <span *ngIf="breadCrumb.url == ''">{{ breadCrumb.name }}</span>
+     </li>
+  </ul>
+</div>

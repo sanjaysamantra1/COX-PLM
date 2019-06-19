@@ -1,0 +1,236 @@
+<div class="row">
+  <div class="col-md-12">
+    <!--<form #discountForm="ngForm" (ngSubmit)="onSubmit(discountForm)" class="form-horizontal">-->
+    <mat-accordion close-others="oneAtATime">
+      <mat-expansion-panel class="form-divider panel-no-background" (closed)="triggerHeaderClose()" (opened)="triggerHeaderOpen()">
+        <mat-expansion-panel-header>
+          Description Builder
+        </mat-expansion-panel-header>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Description Formula</label>
+              <div class="col-xs-9">
+                <span class="oscar-pad-align">
+                  <span *ngIf="showDollar">$</span>
+                  <span>{{ addEditDiscountSubmitData.discMapDescrBuild.amount }}</span>
+                  <span *ngIf="showPercentage">%</span>
+                  <span *ngIf="showOff"> off </span>
+                  <span>
+                    <span *ngFor="let videoTier of utilitiesService.getSelectedItemsObject(masterData, 'VIDEO_TIERS', addEditDiscountSubmitData.discMapDescrBuild.videoTierIds); let i = index;">
+                      {{videoTier.itemName}} 
+                      <span *ngIf="showTypeVal(i,utilitiesService.getSelectedItemsObject(masterData, 'VIDEO_TIERS', addEditDiscountSubmitData.discMapDescrBuild.videoTierIds).length)">Video; </span>
+                      <span *ngIf="!showTypeVal(i,utilitiesService.getSelectedItemsObject(masterData, 'VIDEO_TIERS', addEditDiscountSubmitData.discMapDescrBuild.videoTierIds).length)">; </span>
+                    </span>
+                  </span>
+                  <span>
+                    <span *ngFor="let ancillaryFeature of utilitiesService.getSelectedItemsObject(masterData, 'ANCILLARY', addEditDiscountSubmitData.discMapDescrBuild.ancillaryFeatureIds); let i = index;">
+                      {{ancillaryFeature.itemName}} ; 
+                    </span>
+                  </span>
+                  <span>
+                    <span *ngFor="let equipmentObj of utilitiesService.getSelectedItemsObject(masterData, 'EQUIPMENT', addEditDiscountSubmitData.discMapDescrBuild.equipmentIds); let i = index;">
+                      {{equipmentObj.itemName}} ; 
+                    </span>
+                  </span>
+                  <span>
+                    <span *ngFor="let dataTier of utilitiesService.getSelectedItemsObject(masterData, 'DATA_TIERS', addEditDiscountSubmitData.discMapDescrBuild.dataTierIds); let i = index;">
+                      {{dataTier.itemName}}
+                      <span *ngIf="showTypeVal(i,utilitiesService.getSelectedItemsObject(masterData, 'DATA_TIERS', addEditDiscountSubmitData.discMapDescrBuild.dataTierIds).length)">Data; </span>
+                      <span *ngIf="!showTypeVal(i,utilitiesService.getSelectedItemsObject(masterData, 'DATA_TIERS', addEditDiscountSubmitData.discMapDescrBuild.dataTierIds).length)">; </span>
+                    </span>
+                  </span>
+                  <span>
+                    <span *ngFor="let phoneTier of utilitiesService.getSelectedItemsObject(masterData, 'PHONE_TIERS', addEditDiscountSubmitData.discMapDescrBuild.phoneTierIds); let i = index;">
+                      {{phoneTier.itemName}}
+                      <span *ngIf="showTypeVal(i,utilitiesService.getSelectedItemsObject(masterData, 'PHONE_TIERS', addEditDiscountSubmitData.discMapDescrBuild.phoneTierIds).length)">Phone; </span>
+                      <span *ngIf="!showTypeVal(i,utilitiesService.getSelectedItemsObject(masterData, 'PHONE_TIERS', addEditDiscountSubmitData.discMapDescrBuild.phoneTierIds).length)">; </span>
+                    </span>
+                  </span>
+                  <span>
+                    <span *ngFor="let homelifeTier of utilitiesService.getSelectedItemsObject(masterData, 'HOMELIFE_TIERS', addEditDiscountSubmitData.discMapDescrBuild.hmLifeTierIds); let i = index;">
+                      {{homelifeTier.itemName}} ; 
+                      <!-- <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'HOMELIFE_TIERS', addEditDiscountSubmitData.discMapDescrBuild.hmLifeTierIds).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'HOMELIFE_TIERS', addEditDiscountSubmitData.discMapDescrBuild.hmLifeTierIds).length))">,</span> -->
+                    </span>
+                  </span>
+                  <span>for 0 mo. </span>
+                  <span *ngIf="(utilitiesService.getSelectedItemsObject(masterData, 'INSTALL', addEditDiscountSubmitData.discMapDescrBuild.installIds).length > 0)">
+                    with 
+                    <span *ngFor="let installObj of utilitiesService.getSelectedItemsObject(masterData, 'INSTALL', addEditDiscountSubmitData.discMapDescrBuild.installIds); let i = index;">
+                      {{installObj.itemName}}
+                      <span *ngIf="showTypeVal(i,utilitiesService.getSelectedItemsObject(masterData, 'INSTALL', addEditDiscountSubmitData.discMapDescrBuild.installIds).length)">Install; </span>
+                      <span *ngIf="!showTypeVal(i,utilitiesService.getSelectedItemsObject(masterData, 'INSTALL', addEditDiscountSubmitData.discMapDescrBuild.installIds).length)">; </span>
+                    </span>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Amount</label>
+              <div class="col-xs-7">
+                <input type="number" *ngIf="addEditMode" id="formula" name="amount" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapDescrBuild.amount"
+                  #Formula="ngModel" (change)="updateSubmitData('amount', addEditDiscountSubmitData.discMapDescrBuild.amount)">
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapDescrBuild.amount }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-xs-5 control-label">Discount Type</label>
+              <div class="col-xs-7" *ngIf="addEditMode">
+                <angular2-multiselect [data]="discountTypeDropDownList" [(ngModel)]="discountTypeSelectedItems" [settings]="singleSelectSettings" singleSelect 
+                  (onSelect)="onItemSelect('discountTypeId', discountTypeSelectedItems, 'single')" (onDeSelect)="onItemDeSelect('discountTypeId', discountTypeSelectedItems, 'single')"
+                  (onSelectAll)="onSelectAll('discountTypeId', discountTypeSelectedItems, 'single')" (onDeSelectAll)="onDeSelectAll('discountTypeId', discountTypeSelectedItems, 'single')" 
+                  (ngModelChange)="modifyDiscountType(discountTypeSelectedItems)">
+                </angular2-multiselect>
+              </div>
+              <p *ngIf="viewMode">
+                <span *ngFor="let discountType of utilitiesService.getSelectedItemsObject(masterData, 'DISCOUNT_TYPE', addEditDiscountSubmitData.discMapDescrBuild.discountTypeId); let i = index;">
+                  {{discountType.itemName}}
+                  <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'DISCOUNT_TYPE', addEditDiscountSubmitData.discMapDescrBuild.discountTypeId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'DISCOUNT_TYPE', addEditDiscountSubmitData.discMapDescrBuild.discountTypeId).length))">,</span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-xs-5 control-label">Video Tiers</label>
+              <div class="col-xs-7" *ngIf="addEditMode">
+                <angular2-multiselect [data]="videoTiersDropDownList" [(ngModel)]="videoTiersSelectedItems" [settings]="multiSelectSettings"
+                  (onSelect)="onItemSelect('videoTierIds', videoTiersSelectedItems, 'multi')" (onDeSelect)="OnItemDeSelect('videoTierIds', videoTiersSelectedItems, 'multi')"
+                  (onSelectAll)="onSelectAll('videoTierIds', videoTiersSelectedItems, 'multi')" (onDeSelectAll)="onDeSelectAll('videoTierIds', videoTiersSelectedItems, 'multi')">
+                </angular2-multiselect>
+              </div>
+              <p *ngIf="viewMode">
+                <span *ngFor="let videoTier of utilitiesService.getSelectedItemsObject(masterData, 'VIDEO_TIERS', addEditDiscountSubmitData.discMapDescrBuild.videoTierIds); let i = index;">
+                  {{videoTier.itemName}}
+                  <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'VIDEO_TIERS', addEditDiscountSubmitData.discMapDescrBuild.videoTierIds).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'VIDEO_TIERS', addEditDiscountSubmitData.discMapDescrBuild.videoTierIds).length))">,</span>
+                </span>
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Data Tiers</label>
+              <div class="col-xs-7" *ngIf="addEditMode">
+                <angular2-multiselect [data]="dataTiersDropDownList" [(ngModel)]="dataTiersSelectedItems" [settings]="multiSelectSettings"
+                  (onSelect)="onItemSelect('dataTierIds', dataTiersSelectedItems, 'multi')" (onDeSelect)="OnItemDeSelect('dataTierIds', dataTiersSelectedItems, 'multi')"
+                  (onSelectAll)="onSelectAll('dataTierIds', dataTiersSelectedItems, 'multi')" (onDeSelectAll)="onDeSelectAll('dataTierIds', dataTiersSelectedItems, 'multi')">
+                </angular2-multiselect>
+              </div>
+              <p *ngIf="viewMode">
+                <span *ngFor="let dataTier of utilitiesService.getSelectedItemsObject(masterData, 'DATA_TIERS', addEditDiscountSubmitData.discMapDescrBuild.dataTierIds); let i = index;">
+                  {{dataTier.itemName}}
+                  <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'DATA_TIERS', addEditDiscountSubmitData.discMapDescrBuild.dataTierIds).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'DATA_TIERS', addEditDiscountSubmitData.discMapDescrBuild.dataTierIds).length))">,</span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Phone Tiers</label>
+              <div class="col-xs-7" *ngIf="addEditMode">
+                <angular2-multiselect [data]="phoneTiersDropDownList" [(ngModel)]="phoneTiersSelectedItems" [settings]="multiSelectSettings"
+                  (onSelect)="onItemSelect('phoneTierIds', phoneTiersSelectedItems, 'multi')" (onDeSelect)="OnItemDeSelect('phoneTierIds', phoneTiersSelectedItems, 'multi')"
+                  (onSelectAll)="onSelectAll('phoneTierIds', phoneTiersSelectedItems, 'multi')" (onDeSelectAll)="onDeSelectAll('phoneTierIds', phoneTiersSelectedItems, 'multi')">
+                </angular2-multiselect>
+              </div>
+              <p *ngIf="viewMode">
+                <span *ngFor="let phoneTier of utilitiesService.getSelectedItemsObject(masterData, 'PHONE_TIERS', addEditDiscountSubmitData.discMapDescrBuild.phoneTierIds); let i = index;">
+                  {{phoneTier.itemName}}
+                  <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'PHONE_TIERS', addEditDiscountSubmitData.discMapDescrBuild.phoneTierIds).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'PHONE_TIERS', addEditDiscountSubmitData.discMapDescrBuild.phoneTierIds).length))">,</span>
+                </span>
+              </p>
+            </div>
+          </div>
+
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">HomeLife Tiers</label>
+              <div class="col-xs-7" *ngIf="addEditMode">
+                <angular2-multiselect [data]="homelifeTiersDropDownList" [(ngModel)]="homelifeTiersSelectedItems" [settings]="multiSelectSettings"
+                  (onSelect)="onItemSelect('hmLifeTierIds', homelifeTiersSelectedItems, 'multi')" (onDeSelect)="OnItemDeSelect('hmLifeTierIds', homelifeTiersSelectedItems, 'multi')"
+                  (onSelectAll)="onSelectAll('hmLifeTierIds', homelifeTiersSelectedItems, 'multi')" (onDeSelectAll)="onDeSelectAll('hmLifeTierIds', homelifeTiersSelectedItems, 'multi')">
+                </angular2-multiselect>
+              </div>
+              <p *ngIf="viewMode">
+                <span *ngFor="let homelifeTier of utilitiesService.getSelectedItemsObject(masterData, 'HOMELIFE_TIERS', addEditDiscountSubmitData.discMapDescrBuild.hmLifeTierIds); let i = index;">
+                  {{homelifeTier.itemName}}
+                  <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'HOMELIFE_TIERS', addEditDiscountSubmitData.discMapDescrBuild.hmLifeTierIds).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'HOMELIFE_TIERS', addEditDiscountSubmitData.discMapDescrBuild.hmLifeTierIds).length))">,</span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Ancillary Features</label>
+              <div class="col-xs-7" *ngIf="addEditMode">
+                <angular2-multiselect [data]="ancillaryFeaturesDropDownList" [(ngModel)]="ancillaryFeaturesSelectedItems" [settings]="multiSelectSettings"
+                  (onSelect)="onItemSelect('ancillaryFeatureIds', ancillaryFeaturesSelectedItems, 'multi')" (onDeSelect)="OnItemDeSelect('ancillaryFeatureIds', ancillaryFeaturesSelectedItems, 'multi')"
+                  (onSelectAll)="onSelectAll('ancillaryFeatureIds', ancillaryFeaturesSelectedItems, 'multi')" (onDeSelectAll)="onDeSelectAll('ancillaryFeatureIds', ancillaryFeaturesSelectedItems, 'multi')">
+                </angular2-multiselect>
+              </div>
+              <p *ngIf="viewMode">
+                <span *ngFor="let ancillaryFeature of utilitiesService.getSelectedItemsObject(masterData, 'ANCILLARY', addEditDiscountSubmitData.discMapDescrBuild.ancillaryFeatureIds); let i = index;">
+                  {{ancillaryFeature.itemName}}
+                  <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'ANCILLARY', addEditDiscountSubmitData.discMapDescrBuild.ancillaryFeatureIds).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'ANCILLARY', addEditDiscountSubmitData.discMapDescrBuild.ancillaryFeatureIds).length))">,</span>
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-xs-5 control-label">Equipment </label>
+              <div class="col-xs-7" *ngIf="addEditMode">
+                <angular2-multiselect [data]="equipmentDropDownList" [(ngModel)]="equipmentSelectedItems" [settings]="multiSelectSettings"
+                  (onSelect)="onItemSelect('equipmentIds', equipmentSelectedItems, 'multi')" (onDeSelect)="OnItemDeSelect('equipmentIds', equipmentSelectedItems, 'multi')"
+                  (onSelectAll)="onSelectAll('equipmentIds', equipmentSelectedItems, 'multi')" (onDeSelectAll)="onDeSelectAll('equipmentIds', equipmentSelectedItems, 'multi')">
+                </angular2-multiselect>
+              </div>
+              <p *ngIf="viewMode">
+                <span *ngFor="let equipmentObj of utilitiesService.getSelectedItemsObject(masterData, 'EQUIPMENT', addEditDiscountSubmitData.discMapDescrBuild.equipmentIds); let i = index;">
+                  {{equipmentObj.itemName}}
+                  <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'EQUIPMENT', addEditDiscountSubmitData.discMapDescrBuild.equipmentIds).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'EQUIPMENT', addEditDiscountSubmitData.discMapDescrBuild.equipmentIds).length))">,</span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Install</label>
+              <div class="col-xs-7" *ngIf="addEditMode">
+                <angular2-multiselect [data]="installDropDownList" [(ngModel)]="installSelectedItems" [settings]="multiSelectSettings" (onSelect)="onItemSelect('installIds', installSelectedItems, 'multi')"
+                  (onDeSelect)="OnItemDeSelect('installIds', installSelectedItems, 'multi')" (onSelectAll)="onSelectAll('installIds', installSelectedItems, 'multi')"
+                  (onDeSelectAll)="onDeSelectAll('installIds', installSelectedItems, 'multi')">
+                </angular2-multiselect>
+              </div>
+              <p *ngIf="viewMode">
+                <span *ngFor="let installObj of utilitiesService.getSelectedItemsObject(masterData, 'INSTALL', addEditDiscountSubmitData.discMapDescrBuild.installIds); let i = index;">
+                  {{installObj.itemName}}
+                  <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'INSTALL', addEditDiscountSubmitData.discMapDescrBuild.installIds).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'INSTALL', addEditDiscountSubmitData.discMapDescrBuild.installIds).length))">,</span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <!--</form>-->
+  </div>
+</div>

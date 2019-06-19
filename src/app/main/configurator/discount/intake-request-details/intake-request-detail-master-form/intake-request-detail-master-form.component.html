@@ -1,0 +1,364 @@
+<div class="row" *ngIf="showIntakeRequestForm">
+  <div>
+    <div class="panel panel-primary">
+      <div class="panel-heading ">Intake Request Details</div>
+      <div class="panel-body">
+          <form class="form-horizontal intake-form" name="createUpdateProjectForm" #createUpdateProjectForm="ngForm" novalidate>
+              <div class="row">
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label for="intakeRequestCode" class="col-sm-5 control-label">Intake Request Code
+                       </label>
+                       <div class="col-xs-7">
+                          <input type="text" name="intakeRequestCode" class="form-control" [disabled]="true" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.projectCode"
+                          *ngIf="addEditMode" (change)="updateSubmitData('projectCode', addEditIntakeRequestForm.projectMasterModel.projectCode)"
+                          />
+                          <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.projectCode }}</p>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label class="col-sm-5 control-label">Intake Request Type</label>
+                       <div class="col-xs-7">
+                          <div>
+                             <!-- <select class="form-control" id="intakeRequestType" name="intakeRequestType" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.projectTypeId" #intakeRequestTypeVal="ngModel" (change)="updateSubmitData('intakeRequestType', addEditIntakeRequestForm.projectMasterModel.projectTypeId)" 
+                                required>
+                                <option *ngFor="let mapProjectType of addEditIntakeRequestMasterData.mapProjectTypes | keys" [value]="mapProjectType.key">{{ mapProjectType.value }}</option>
+                                 </select> -->
+                             <angular2-multiselect *ngIf="addEditMode" name="intakeRequestType" [data]="intakeRequestTypeDropDownList" [(ngModel)]="intakeRequestTypeSelectedItems"
+                             #intakeRequestTypeVal="ngModel" [settings]="singleSelectSettings" singleSelect  (onSelect)="onIntakeRequestTypeItemSelect($event)"
+                             (onDeSelect)="onIntakeRequestTypeItemDeSelect($event)" (onSelectAll)="onSelectAll($event, 'projectTypeId')" (onDeSelectAll)="onDeSelectAll($event, 'projectTypeId')">
+                             </angular2-multiselect>
+                             <div *ngIf="noIntakeRequestType">
+                                <div style="color: red;">
+                                   Intake Request Type Required!
+                                </div>
+                             </div>
+                          </div>
+                          <p *ngIf="viewMode">
+                             <span *ngFor="let intakeRequestType of getSelectedItemsObject(addEditIntakeRequestMasterData, 'INTAKE_REQUEST_TYPE', addEditIntakeRequestForm.projectMasterModel.projectTypeId); let i = index;">
+                             {{intakeRequestType.itemName}}
+                             <span *ngIf="((getSelectedItemsObject(addEditIntakeRequestMasterData, 'INTAKE_REQUEST_TYPE', addEditIntakeRequestForm.projectMasterModel.projectTypeId).length > 0) && (i+1 != getSelectedItemsObject(addEditIntakeRequestMasterData, 'INTAKE_REQUEST_TYPE', addEditIntakeRequestForm.projectMasterModel.projectTypeId).length))">,</span>
+                             </span>
+                          </p>
+                          <!-- <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.projectTypeId }}</p> -->
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="row">
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label class="col-xs-5 control-label">Request Start Date </label>
+                       <div class="col-xs-7">
+                          <div *ngIf="addEditMode">
+                             <mat-form-field style="width:100%;"  class="input-group">
+                             <input name="projectStartDt" matInput class="form-control" [matDatepicker]="startDate" [min]="projectStartMinDate" placeholder=""
+                             [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.projectStartDt" #projectStartDt="ngModel" (ngModelChange)="startDateChanged(addEditIntakeRequestForm.projectMasterModel.projectStartDt)"
+                             (change)="updateSubmitData('projectStartDt', addEditIntakeRequestForm.projectMasterModel.projectStartDt)" required>
+                             <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                             <mat-datepicker #startDate></mat-datepicker>
+                             </mat-form-field>
+                             <div *ngIf="projectStartDt.errors && (projectStartDt.dirty || projectStartDt.touched)">
+                                <mat-error *ngIf="projectStartDt.errors && projectStartDt.errors.required">Request Start Date is required</mat-error>
+                             </div>
+                          </div>
+                          <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.projectStartDt | date:'MM-dd-yyyy'}}</p>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label class="col-xs-5 control-label">Request Completion Date </label>
+                       <div class="col-xs-7">
+                          <div *ngIf="addEditMode">
+                             <mat-form-field style="width:100%;"  class="input-group">
+                             <input name="projectEndDt" matInput class="form-control" [matDatepicker]="endDate" [min]="projectEndMinDate" placeholder=""
+                             [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.projectEndDt" #projectEndDt="ngModel" (ngModelChange)="updateSubmitData('projectEndDt', addEditIntakeRequestForm.projectMasterModel.projectEndDt)"
+                             required>
+                             <mat-datepicker-toggle name="datePickerToggle" matSuffix [for]="endDate"></mat-datepicker-toggle>
+                             <mat-datepicker #endDate></mat-datepicker>
+                             </mat-form-field>
+                             <div *ngIf="projectEndDt.errors && (projectEndDt.dirty || projectEndDt.touched)">
+                                <mat-error *ngIf="projectEndDt.errors && projectEndDt.errors.required">Request Completion Date is required</mat-error>
+                             </div>
+                          </div>
+                          <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.projectEndDt | date:'MM-dd-yyyy' }}</p>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="row">
+                 <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="intakeReqName" class="col-sm-5 control-label">Intake Request Name </label>
+                      <div class="col-xs-7">
+                        <input type="text" name="intakeReqName" class="form-control" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.intakeReqName"
+                        *ngIf="addEditMode" (change)="updateSubmitData('intakeReqName', addEditIntakeRequestForm.projectMasterModel.intakeReqName)"
+                        />
+                        <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.intakeReqName }}</p>
+                      </div>
+                    </div>
+                 </div>
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label class="col-sm-5 control-label">Intake Request Status </label>
+                       <div class="col-xs-7">
+                          <angular2-multiselect id="intakeRequestStatusId" *ngIf="addEditMode" name="intakeRequestStatusId" [data]="intakeRequestStatusIdDropDownList"
+                          [(ngModel)]="intakeRequestStatusIdSelectedItems" #intakeRequestStatusIdVal="ngModel" [settings]="singleSelectSettings" singleSelect 
+                          (onSelect)="onintakeRequestStatusIdItemSelect($event)" (onDeSelect)="onintakeRequestStatusIdItemDeSelect($event)"
+                          (onSelectAll)="onSelectAll($event, 'intakeRequestStatusId')" (onDeSelectAll)="onDeSelectAll($event, 'intakeRequestStatusId')">
+                          </angular2-multiselect>
+                          <p *ngIf="viewMode">
+                             <span *ngFor="let intakeRequestStatusId of getSelectedItemsObject(addEditIntakeRequestMasterData, 'INTAKE_REQUEST_STATUS', addEditIntakeRequestForm.projectMasterModel.intakeRequestStatusId); let i = index;">
+                             {{intakeRequestStatusId.itemName}}
+                             <span *ngIf="((getSelectedItemsObject(addEditIntakeRequestMasterData, 'INTAKE_REQUEST_STATUS', addEditIntakeRequestForm.projectMasterModel.intakeRequestStatusId).length > 0) && (i+1 != getSelectedItemsObject(addEditIntakeRequestMasterData, 'INTAKE_REQUEST_STATUS', addEditIntakeRequestForm.projectMasterModel.intakeRequestStatusId).length))">,</span>
+                             </span>
+                          </p>
+                          <!--<div *ngIf="addEditMode">
+                             <select class="form-control" id="intakeRequestStatusId" name="intakeRequestStatusId" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.intakeRequestStatusId"
+                             #intakeRequestStatusIdVal="ngModel" (change)="updateSubmitData('intakeRequestStatusId', addEditIntakeRequestForm.projectMasterModel.intakeRequestStatusId)" >
+                             <option *ngFor="let intakeRequestStatusId of addEditIntakeRequestMasterData.intakeFormMasterDropDown.INTAKE_REQUEST_STATUS | keys" [value]="intakeRequestStatusId.intakeFormDrpdwnDetailId">{{ intakeRequestStatusId.objectName }}</option>
+                             </select>
+                             </div>
+                             <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.intakeRequestStatusId }}</p>-->
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="row">
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label class="col-sm-5 control-label">Pricing Owner Name </label>
+                       <div class="col-xs-7">
+                          <div>
+                             <!-- <select class="form-control" id="pricingOwnerId" name="pricingOwnerId" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.pricingOwnerId"
+                                #pricingOwnerIdVal="ngModel" (change)="updateSubmitData('pricingOwnerId', addEditIntakeRequestForm.projectMasterModel.pricingOwnerId)" >
+                                <option *ngFor="let pricingOwnerId of addEditIntakeRequestMasterData.intakeFormMasterDropDown.PRICING_OWNER_NAME | keys" [value]="pricingOwnerId.pricingOwnerIdDrpdwnDetailId">{{ pricingOwnerId.objectName }}</option>
+                                 </select> -->
+                             <angular2-multiselect *ngIf="addEditMode" name="pricingOwnerId" [data]="pricingOwnerIdDropDownList" [(ngModel)]="pricingOwnerIdSelectedItems"
+                             #pricingOwnerIdVal="ngModel" [settings]="singleSelectSettings" singleSelect  (onSelect)="onpricingOwnerIdItemSelect($event)"
+                             (onDeSelect)="onpricingOwnerIdItemDeSelect($event)" (onSelectAll)="onSelectAll($event, 'pricingOwnerId')" (onDeSelectAll)="onDeSelectAll($event, 'pricingOwnerId')">
+                             </angular2-multiselect>
+                             <p *ngIf="viewMode">
+                                <span *ngFor="let pricingOwnerId of getPricingOwnerSelectedItemsObject(addEditIntakeRequestMasterData, addEditIntakeRequestForm.projectMasterModel.pricingOwnerId); let i = index;">
+                                {{pricingOwnerId.itemName}}
+                                <span *ngIf="((getPricingOwnerSelectedItemsObject(addEditIntakeRequestMasterData, addEditIntakeRequestForm.projectMasterModel.pricingOwnerId).length > 0) && (i+1 != getPricingOwnerSelectedItemsObject(addEditIntakeRequestMasterData, addEditIntakeRequestForm.projectMasterModel.pricingOwnerId).length))">,</span>
+                                </span>
+                             </p>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label for="requesterName" class="col-sm-5 control-label">Requestor Name </label>
+                       <div class="col-xs-7">
+                          <input type="text" name="requesterName" class="form-control" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.requesterName" *ngIf="addEditMode"
+                          (change)="updateSubmitData('requesterName', addEditIntakeRequestForm.projectMasterModel.requesterName)" />
+                          <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.requesterName }}</p>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="row">
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label class="col-sm-5 control-label">Pricing Owner Notes </label>
+                       <div class="col-xs-7">
+                          <textarea class="form-control" name="pricingOwnerNotes" rows="3" id="pricingOwnerNotes" style="height: auto;" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.pricingOwnerNotes"
+                          #pricingOwnerNotesVal="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('pricingOwnerNotes', addEditIntakeRequestForm.projectMasterModel.pricingOwnerNotes)"></textarea>
+                          <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.pricingOwnerNotes }}</p>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label for="requesterEmail" class="col-sm-5 control-label">Requestor Email </label>
+                       <div class="col-xs-7">
+                          <input type="text" name="requesterEmail" class="form-control" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.requesterEmail" *ngIf="addEditMode"
+                          (change)="updateSubmitData('requesterEmail', addEditIntakeRequestForm.projectMasterModel.requesterEmail)" />
+                          <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.requesterEmail }}</p>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="row">
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label for="trgtAudienceId" class="col-sm-5 control-label">Target Audience </label>
+                       <div class="col-xs-7">
+                          <angular2-multiselect *ngIf="addEditMode" name="trgtAudienceId" [data]="trgtAudienceIdDropDownList" [(ngModel)]="trgtAudienceIdSelectedItems"
+                          [settings]="singleSelectSettings" singleSelect  (onSelect)="ontrgtAudienceIdItemSelect($event)" (onDeSelect)="ontrgtAudienceIdItemDeSelect($event)"
+                          (onSelectAll)="onSelectAll($event, 'trgtAudienceId')" (onDeSelectAll)="onDeSelectAll($event, 'trgtAudienceId')">
+                          </angular2-multiselect>
+                          <p *ngIf="viewMode">
+                             <span *ngFor="let trgtAudienceId of getSelectedItemsObject(addEditIntakeRequestMasterData, 'TARGET_AUDIENCE', addEditIntakeRequestForm.projectMasterModel.trgtAudienceId); let i = index;">
+                             {{trgtAudienceId.itemName}}
+                             <span *ngIf="((getSelectedItemsObject(addEditIntakeRequestMasterData, 'TARGET_AUDIENCE', addEditIntakeRequestForm.projectMasterModel.trgtAudienceId).length > 0) && (i+1 != getSelectedItemsObject(addEditIntakeRequestMasterData, 'TARGET_AUDIENCE', addEditIntakeRequestForm.projectMasterModel.trgtAudienceId).length))">,</span>
+                             </span>
+                          </p>
+                          <!-- <input type="text" name="trgtAudienceId" class="form-control" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.trgtAudienceId" *ngIf="addEditMode"
+                             (change)="updateSubmitData('trgtAudienceId', addEditIntakeRequestForm.projectMasterModel.trgtAudienceId)" />
+                             <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.trgtAudienceId }}</p> -->
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label class="col-sm-5 control-label">POPS Notes </label>
+                       <div class="col-xs-7">
+                          <textarea class="form-control" name="popsNotes" rows="3" id="popsNotes" style="height: auto;" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.popsNotes"
+                          #popsNotesVal="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('popsNotes', addEditIntakeRequestForm.projectMasterModel.popsNotes)"></textarea>
+                          <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.popsNotes }}</p>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="row">
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label for="channelIds" class="col-sm-5 control-label">Channels </label>
+                       <div class="col-xs-7">
+                          <angular2-multiselect *ngIf="addEditMode" name="channelIds" [data]="channelIdsDropDownList" [(ngModel)]="channelIdsSelectedItems"
+                          [settings]="multiSelectSettings" (onSelect)="onchannelIdsItemSelect($event, 'channelIds')" (onDeSelect)="onchannelIdsItemDeSelect($event, 'channelIds')"
+                          (onSelectAll)="onSelectAll($event, 'channelIds')" (onDeSelectAll)="onDeSelectAll($event,'channelIds')">
+                          </angular2-multiselect>
+                          <p *ngIf="viewMode">
+                             <span *ngFor="let channelIds of getSelectedItemsObject(addEditIntakeRequestMasterData, 'CHANNELS', addEditIntakeRequestForm.projectMasterModel.channelIds); let i = index;">
+                             {{channelIds.itemName}}
+                             <span *ngIf="((getSelectedItemsObject(addEditIntakeRequestMasterData, 'CHANNELS', addEditIntakeRequestForm.projectMasterModel.channelIds).length > 0) && (i+1 != getSelectedItemsObject(addEditIntakeRequestMasterData, 'CHANNELS', addEditIntakeRequestForm.projectMasterModel.channelIds).length))">,</span>
+                             </span>
+                          </p>
+                          <!-- <input type="text" name="channelIds" class="form-control" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.channelIds" *ngIf="addEditMode" (change)="updateSubmitData('channelIds', addEditIntakeRequestForm.projectMasterModel.channelIds)"  />
+                             <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.channelIds }}</p> -->
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label for="addUptierPaths" class="col-sm-5 control-label">Add Uptier Paths </label>
+                       <div class="col-xs-7">
+                          <textarea class="form-control" name="addUptierPaths" rows="3" id="addUptierPaths" style="height: auto;" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.addUptierPaths"
+                          #addUptierPathsVal="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('addUptierPaths', addEditIntakeRequestForm.projectMasterModel.addUptierPaths)"></textarea>
+                          <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.addUptierPaths }}</p>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="row">
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label class="col-sm-5 control-label">Category </label>
+                       <div class="col-xs-7">
+                          <angular2-multiselect *ngIf="addEditMode" name="categoryId" [data]="categoryIdDropDownList" [(ngModel)]="categoryIdSelectedItems"
+                          [settings]="singleSelectSettings" singleSelect  (onSelect)="onCategoryIdItemSelect($event)" (onDeSelect)="onCategoryIdItemDeSelect($event)"
+                          (onSelectAll)="onSelectAll($event, 'categoryId')" (onDeSelectAll)="onDeSelectAll($event, 'categoryId')">
+                          </angular2-multiselect>
+                          <p *ngIf="viewMode">
+                             <span *ngFor="let categoryId of getSelectedItemsObject(addEditIntakeRequestMasterData, 'INTAKE_CATEGORY', addEditIntakeRequestForm.projectMasterModel.categoryId); let i = index;">
+                             {{categoryId.itemName}}
+                             <span *ngIf="((getSelectedItemsObject(addEditIntakeRequestMasterData, 'INTAKE_CATEGORY', addEditIntakeRequestForm.projectMasterModel.categoryId).length > 0) && (i+1 != getSelectedItemsObject(addEditIntakeRequestMasterData, 'INTAKE_CATEGORY', addEditIntakeRequestForm.projectMasterModel.categoryId).length))">,</span>
+                             </span>
+                          </p>
+                          <!-- <input type="text" name="categoryId" class="form-control" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.categoryId" *ngIf="addEditMode" (change)="updateSubmitData('categoryId', addEditIntakeRequestForm.projectMasterModel.categoryId)"  />
+                             <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.categoryId }}</p> -->
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label for="productIds" class="col-sm-5 control-label">Products </label>
+                       <div class="col-xs-7">
+                          <angular2-multiselect *ngIf="addEditMode" name="productIds" [data]="productIdsDropDownList" [(ngModel)]="productIdsSelectedItems"
+                          [settings]="multiSelectSettings" (onSelect)="onproductIdsItemSelect($event, 'productIds')" (onDeSelect)="onproductIdsItemDeSelect($event, 'productIds')"
+                          (onSelectAll)="onSelectAll($event, 'productIds')" (onDeSelectAll)="onDeSelectAll($event, 'productIds')">
+                          </angular2-multiselect>
+                          <p *ngIf="viewMode">
+                             <span *ngFor="let product of getproductIdsSelectedItemsObject(addEditIntakeRequestMasterData, addEditIntakeRequestForm.projectMasterModel.productIds); let i = index;">
+                             {{product.itemName}}
+                             <span *ngIf="((getproductIdsSelectedItemsObject(addEditIntakeRequestMasterData, addEditIntakeRequestForm.projectMasterModel.productIds).length > 0) && (i+1 != getproductIdsSelectedItemsObject(addEditIntakeRequestMasterData, addEditIntakeRequestForm.projectMasterModel.productIds).length))">,</span>
+                             </span>
+                          </p>
+                          <!--  <input type="text" name="productIds" class="form-control" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.productIds" *ngIf="addEditMode" (change)="updateSubmitData('productIds', addEditIntakeRequestForm.projectMasterModel.productIds)"  />
+                             <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.productIds }}</p> -->
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="row">
+                 <div class="col-md-6">
+                    <div class="form-group">
+                       <label for="priorityId" class="col-sm-5 control-label">Priority </label>
+                       <div class="col-xs-7">
+                          <angular2-multiselect *ngIf="addEditMode" name="priorityId" [data]="priorityIdDropDownList" [(ngModel)]="priorityIdSelectedItems"
+                          #tierRequirementsVal="ngModel" [settings]="singleSelectSettings" singleSelect  (onSelect)="onpriorityIdItemSelect($event)"
+                          (onDeSelect)="onpriorityIdItemDeSelect($event)" (onSelectAll)="onSelectAll($event, 'priorityId')" (onDeSelectAll)="onDeSelectAll($event, 'priorityId')">
+                          </angular2-multiselect>
+                          <p *ngIf="viewMode">
+                             <span *ngFor="let priorityId of getSelectedItemsObject(addEditIntakeRequestMasterData, 'INTAKE_PRIORITY', addEditIntakeRequestForm.projectMasterModel.priorityId); let i = index;">
+                             {{priorityId.itemName}}
+                             <span *ngIf="((getSelectedItemsObject(addEditIntakeRequestMasterData, 'INTAKE_PRIORITY', addEditIntakeRequestForm.projectMasterModel.priorityId).length > 0) && (i+1 != getSelectedItemsObject(addEditIntakeRequestMasterData, 'INTAKE_PRIORITY', addEditIntakeRequestForm.projectMasterModel.priorityId).length))">,</span>
+                             </span>
+                          </p>
+                          <!-- <input type="text" name="priorityId" class="form-control" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.priorityId" *ngIf="addEditMode" (change)="updateSubmitData('priorityId', addEditIntakeRequestForm.projectMasterModel.priorityId)"  />
+                             <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.priorityId }}</p> -->
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-md-6"></div>
+              </div>
+              <div class="row">
+                 <div class="col-md-12">
+                    <label>Sites/Markets </label>
+                 </div>
+                 <div class="col-md-12">
+                    <div>
+                       <span class="checkbox-inline">
+                       <input type="checkbox" name="selectedAll" value="" (change)="selectAll($event.target.checked);" [checked]="isAllSitesSelectedCheck()"
+                       [disabled]="viewMode">Select All
+                       </span>
+                    </div>
+                    <div>
+                       <span class="checkbox-inline checkbox-inline-custom col-md-2" name="mapMarketSites" *ngFor="let option of addEditIntakeRequestMasterData.mapMarketList | keys; let i = index;">
+                       <input type="checkbox" name="sites" [value]="option.key" [checked]="isSitesExist(option.key)"
+                       (change)="addSite($event.target.checked,option.key);" [disabled]="viewMode" /> {{option.value}}
+                       </span>
+                    </div>
+                 </div>
+              </div>
+              <div class="row">
+                 <div class="col-md-6 margin-top-10">
+                    <div class="form-group">
+                       <label class="col-xs-12 control-label">Description </label>
+                       <div class="col-xs-12">
+                          <textarea class="form-control" name="projectDescription" rows="3" id="description" style="height: auto;" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.description"
+                          #descriptionVal="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('description', addEditIntakeRequestForm.projectMasterModel.description)"></textarea>
+                          <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.description }}</p>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="row">
+                 <div class="col-md-12 margin-top-10">
+                    <div class="form-group">
+                       <label for="file" class="col-xs-4 control-label">Upload intake request document </label>
+                       <span *ngIf="(!showDownloadUrl)">
+                       <input type="file" id="file" (change)="handleFileInput($event.target.files, $event)">
+                       <span style="font-size: 12px;color: red;" *ngIf="fileSizeExceeded">File Size exceeds 20MB<br></span>
+                       <i style="font-size: 12px;" *ngIf="!fileSizeExceeded">Max File Size is 20MB</i>
+                       </span>
+                       <a href="{{ downloadFileUrl }}" *ngIf="showDownloadUrl">{{ addEditIntakeRequestForm.projectMasterModel.uploadIntakeRequestDocName }}</a>
+                    </div>
+                 </div>
+              </div>
+              <div class="row">
+                 <plm-intake-request-detail-intake-form [addEditIntakeRequestMasterData]="addEditIntakeRequestMasterData" [addEditIntakeRequestForm]="addEditIntakeRequestForm"></plm-intake-request-detail-intake-form>
+              </div>
+           </form>
+      </div>
+    </div>
+    <div style="margin-bottom:20px;"></div>
+  </div>
+</div>

@@ -1,0 +1,260 @@
+<!-- Intake Request Intake Form Starts -->
+<div class="col-sm-12" style="background: #337ab7; color: #FDFDFE; margin-bottom: 20px;">
+  <div class="col-md-6" style="margin-left: -10px;">
+    <h4 style="font-size: 15px;">Intake Request Form – Discount Specifications </h4>
+  </div>
+  <div class="col-md-6" style="float: right; margin-right: -10px;">
+    <a class="accordion-heading" style="color:#fff;margin-top: 6px;float:right;font-size: 18px;" data-toggle="collapse" data-target="#intakeForm"
+      aria-expanded="false">
+    </a>
+  </div>
+</div>
+<div class="collapse" id="intakeForm">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel-primary">
+        <div style="padding-left: 12px;" *ngIf="showIntakeFormHeader"><label>Offer Intake Form: {{ addEditIntakeRequestForm.projectCode }}</label>
+        </div>
+        <hr *ngIf="showIntakeFormHeader">
+        <div class="panel-body">
+          <form class="form-horizontal">
+              <div class="row">
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <label class="col-sm-5 control-label">Discount Codes to Change
+                        </label>
+                        <div class="col-xs-7">
+                           <angular2-multiselect *ngIf="addEditMode" name="campaignCodesToChange" [data]="campaignCodesToChangeDropDownList" [(ngModel)]="campaignCodesToChangeSelectedItems"  #campaignCodesToChangeVal="ngModel" [settings]="multiSelectSettings" (onSelect)="onCampaignCodesToChangeItemSelect($event)"
+                           (onDeSelect)="onCampaignCodesToChangeItemDeSelect($event)" (onSelectAll)="onSelectAll($event, 'campCodeIds')" (onDeSelectAll)="onDeSelectAll($event, 'campCodeIds')">
+                           </angular2-multiselect>
+                           <p *ngIf="viewMode">
+                              <span *ngFor="let campCodeIds of getCampaignCodesListSelectedItemsObject(addEditIntakeRequestMasterData, addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.campCodeIds); let i = index;">
+                              {{campCodeIds.itemName}} <span *ngIf="((getCampaignCodesListSelectedItemsObject(addEditIntakeRequestMasterData, addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.campCodeIds).length > 0) && (i+1 != getCampaignCodesListSelectedItemsObject(addEditIntakeRequestMasterData, addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.campCodeIds).length))">,</span>
+                              </span>
+                           </p>
+                           <!-- <input type="text" name="campaignCodesToChange" class="form-control" value="" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.campaignCodesToChange"
+                              #campaignCodesToChangeVal="ngModel" *ngIf="addEditMode">
+                              <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.campaignCodesToChange }}</p> -->
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <label class="col-sm-5 control-label">Step Up Duration
+                        </label>
+                        <div class="col-xs-7">
+                           <angular2-multiselect *ngIf="addEditMode" name="stepupDuratnId" [data]="stepupDuratnIdDropDownList" [(ngModel)]="stepupDuratnIdSelectedItems" #stepupDuratnIdVal="ngModel" [settings]="singleSelectSettings" singleSelect  (onSelect)="onstepupDuratnIdItemSelect($event)"
+                           (onDeSelect)="onstepupDuratnIdItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">
+                           </angular2-multiselect>
+                           <p *ngIf="viewMode">
+                              <span *ngFor="let stepupDuratnId of getSelectedItemsObject(addEditIntakeRequestMasterData, 'STEPUP_DURATION', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.stepupDuratnId); let i = index;">
+                              {{stepupDuratnId.itemName}} <span *ngIf="((getSelectedItemsObject(addEditIntakeRequestMasterData, 'STEPUP_DURATION', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.stepupDuratnId).length > 0) && (i+1 != getSelectedItemsObject(addEditIntakeRequestMasterData, 'STEPUP_DURATION', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.stepupDuratnId).length))">,</span>
+                              </span>
+                           </p>
+                           <!-- <input type="email" name="stepupDuratnId" class="form-control" value="" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.stepupDuratnId"
+                              #stepupDuratnIdVal="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('stepupDuratnId', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.stepupDuratnId)" >
+                              <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.stepupDuratnId }}</p> -->
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <label class="col-xs-5 control-label">Step Up Amount
+                        </label>
+                        <div class="col-xs-7">
+                           <input type="number" min="0" oninput="validity.valid||(value=value.replace(/\D+/g, ''))" name="stepupAmount" class="form-control" value="" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.stepupAmount"
+                           #stepupAmountVal="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('stepupAmount', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.stepupAmount)" >
+                           <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.stepupAmount }}</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <label class="col-xs-5 control-label">Discount Start Date</label>
+                        <div class="col-xs-7">
+                            <mat-form-field style="width:100%;"  class="input-group" *ngIf="addEditMode">
+                       <input name="discountStartDate" matInput class="form-control" [matDatepicker]="discountStartDate" [min]="discountStartMinDate" placeholder=""
+                       [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.discountStartDate" #discountStartDate="ngModel" (ngModelChange)="startDateChanged(addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.discountStartDate)"
+                       (change)="updateSubmitData('discountStartDate', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.discountStartDate)">
+                       <mat-datepicker-toggle matSuffix [for]="discountStartDate"></mat-datepicker-toggle>
+                       <mat-datepicker #discountStartDate></mat-datepicker>
+                       </mat-form-field>
+                     
+                       <!--<mat-form-field style="width:100%;"  class="input-group" *ngIf="addEditMode">
+                         <input name="discountStartDate" matInput class="form-control" [matDatepicker]="discountStartDate" placeholder=""
+                         [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.discountStartDate" #discountStartDateVal="ngModel" (ngModelChange)="updateSubmitData('discountStartDate', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.discountStartDate)"
+                         (change)="updateSubmitData('discountStartDate', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.discountStartDate)">
+                         <mat-datepicker-toggle matSuffix [for]="discountStartDate"></mat-datepicker-toggle>
+                         <mat-datepicker #discountStartDate></mat-datepicker>
+                       </mat-form-field>-->
+                     <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.discountStartDate | date:'MM-dd-yyyy' }}</p>
+                     <!-- <input type="date" name="discountStartDate" class="form-control" value="" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.discountStartDate"
+                       #discountStartDateVal="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('discountStartDate', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.discountStartDate)" >
+                      -->
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <label class="col-xs-5 control-label">Discount End Date</label>
+                        <div class="col-xs-7">
+                     <!--<mat-form-field style="width:100%;"  class="input-group">
+                       <input name="discountExpireDate" matInput class="form-control" [matDatepicker]="endDate" [min]="discountEndMinDate" placeholder=""
+                       [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.discountExpireDate" #discountExpireDate="ngModel" (ngModelChange)="updateSubmitData('discountExpireDate', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.discountExpireDate)"
+                       required>
+                       <mat-datepicker-toggle name="datePickerToggle" matSuffix [for]="discountExpireDate"></mat-datepicker-toggle>
+                       <mat-datepicker #discountExpireDate></mat-datepicker>
+                       </mat-form-field>-->
+                     <mat-form-field style="width:100%;"  class="input-group" *ngIf="addEditMode">
+                       <input name="discountExpireDate" matInput class="form-control" [matDatepicker]="discountExpireDate" [min]="discountEndMinDate" placeholder=""
+                         [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.discountExpireDate" #discountExpireDateVal="ngModel" (ngModelChange)="updateSubmitData('discountExpireDate', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.discountExpireDate)">
+                       <mat-datepicker-toggle matSuffix [for]="discountExpireDate"></mat-datepicker-toggle>
+                       <mat-datepicker #discountExpireDate></mat-datepicker>
+                     </mat-form-field>
+                     <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.discountExpireDate  | date:'MM-dd-yyyy' }}</p>
+                     <!-- <input type="date" name="discountExpireDate" class="form-control" value="" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.discountExpireDate"
+                       #discountExpireDateVal="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('discountExpireDate', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.discountExpireDate)" >
+                     <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.discountExpireDate }}</p> -->
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <label class="col-xs-5 control-label">Duration(mnths)</label>
+                        <div class="col-xs-7">
+                           <input type="text" name="durationMonths" class="form-control" value="" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.durationMonths"
+                           #durationInMonthsVal="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('durationMonths', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.durationMonths)" >
+                           <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.durationMonths }}</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <label class="col-xs-5 control-label">Require PLG</label>
+                        <div class="col-xs-7" style="float: right; width: 58%;">
+                           <!-- <textarea class="form-control" name="requirePlgId" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.requirePlgId" #requirePLGVal="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('requirePlgId', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.requirePlgId)" ></textarea>
+                              <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.requirePlgId }}</p> -->
+                           <angular2-multiselect *ngIf="addEditMode" name="requirePlgId" [data]="requirePLGDropDownList" [(ngModel)]="requirePLGSelectedItems" #requirePLGVal="ngModel" [settings]="singleSelectSettings" singleSelect  (onSelect)="onRequirePLGItemSelect($event)"
+                           (onDeSelect)="onRequirePLGItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">
+                           </angular2-multiselect>
+                           <p *ngIf="viewMode">
+                              <span *ngFor="let requirePlgId of getSelectedItemsObject(addEditIntakeRequestMasterData, 'REQUIRE_PLG', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.requirePlgId); let i = index;">
+                              {{requirePlgId.itemName}} <span *ngIf="((getSelectedItemsObject(addEditIntakeRequestMasterData, 'REQUIRE_PLG', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.requirePlgId).length > 0) && (i+1 != getSelectedItemsObject(addEditIntakeRequestMasterData, 'REQUIRE_PLG', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.requirePlgId).length))">,</span>
+                              </span>
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <label class="col-xs-5 control-label">Must Have These Products</label>
+                        <div class="col-xs-7" style="float: right; width: 58%;">
+                           <textarea class="form-control" name="prodMustInc" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.prodMustInc"
+                           #mustHaveTheseProductsVal="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('prodMustInc', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.prodMustInc)" ></textarea>
+                           <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.prodMustInc }}</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <label class="col-xs-5 control-label">Must Exclude These Products</label>
+                        <div class="col-xs-7" style="float: right; width: 58%;">
+                           <textarea class="form-control" name="prodMustExc" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.prodMustExc"
+                           #mustExcludeTheseProductsVal="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('prodMustExc', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.prodMustExc)" ></textarea>
+                           <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.prodMustExc }}</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <label class="col-xs-5 control-label">Must Retain These Products</label>
+                        <div class="col-xs-7" style="float: right; width: 58%;">
+                           <textarea class="form-control" name="prodMustRetainInc" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.prodMustRetainInc"
+                           #mustRetainTheseProductsVal="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('prodMustRetainInc', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.prodMustRetainInc)" ></textarea>
+                           <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.prodMustRetainInc }}</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <label class="col-xs-5 control-label">Must Not Retain These Products</label>
+                        <div class="col-xs-7" style="float: right; width: 58%;">
+                           <textarea class="form-control" name="prodMustRetainExc" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.prodMustRetainExc"
+                           #mustNotRetainTheseProductsVal="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('prodMustRetainExc', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.prodMustRetainExc)" ></textarea>
+                           <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.prodMustRetainExc }}</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <label class="col-xs-11 control-label">
+                        <input type="checkbox" name="installationIncluded" value="" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.instltnIncFlg"
+                        #instltnIncFlgVal="ngModel" [checked]="addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.instltnIncFlg" [disabled]="viewMode" (change)="updateInstallationIncludedSubmitData('instltnIncFlg', 'instltnIncFlgVal', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.instltnIncFlg)" >Installation Included
+                        </label>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <label class="col-xs-5 control-label">Installation Pricing
+                        </label>
+                        <div class="col-xs-7" style="float: right; width: 58%;">
+                           <input type="text" name="installationPricing" class="form-control" value="" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.instltnPricing"
+                           #installationPricingVal="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('instltnPricing', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.instltnPricing)" >
+                           <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.instltnPricing }}</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <label class="col-xs-5 control-label">Must Not Install These Products</label>
+                        <div class="col-xs-7" style="float: right; width: 58%;">
+                           <textarea class="form-control" name="prodMustInstlExc" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.prodMustInstlExc"
+                           #mustNotInstallTheseProductsVal="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('prodMustInstlExc', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.prodMustInstlExc)" ></textarea>
+                           <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.prodMustInstlExc }}</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <label class="col-xs-5 control-label">Tier Requirements </label>
+                        <div class="col-xs-7">
+                           <angular2-multiselect *ngIf="addEditMode" name="tireqIds" [data]="tierRequirementsDropDownList" [(ngModel)]="tierRequirementsSelectedItems" #tierRequirementsVal="ngModel" [settings]="multiSelectSettings" (onSelect)="onTierRequirementsItemSelect($event)"
+                           (onDeSelect)="onTierRequirementsItemDeSelect($event)" (onSelectAll)="onSelectAll($event, 'tireqIds')" (onDeSelectAll)="onDeSelectAll($event, 'tireqIds')">
+                           </angular2-multiselect>
+                           <p *ngIf="viewMode">
+                              <span *ngFor="let tierRequirement of getSelectedItemsObject(addEditIntakeRequestMasterData, 'TIER_REQUIREMENTS', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.tireqIds); let i = index;">
+                              {{tierRequirement.itemName}} <span *ngIf="((getSelectedItemsObject(addEditIntakeRequestMasterData, 'TIER_REQUIREMENTS', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.tireqIds).length > 0) && (i+1 != getSelectedItemsObject(addEditIntakeRequestMasterData, 'TIER_REQUIREMENTS', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.tireqIds).length))">,</span>
+                              </span>
+                           </p>
+                           <!-- <select class="form-control" name="tireqIds" [(ngModel)]="addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.intakeTirequirement"
+                              #tierRequirementsVal="ngModel" *ngIf="addEditMode" (change)="updateSubmitData('intakeTirequirement', addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.intakeTirequirement)" >
+                              <option value="">Select</option>
+                              <option *ngFor="let tierRequirement of addEditIntakeRequestMasterData.intakeFormMasterDropDown.TIER_REQUIREMENTS | keys" [value]="tierRequirement.intakeFormDrpdwnDetailId">{{ tierRequirement.objectName }}</option>
+                              </select>
+                              <p *ngIf="viewMode">{{ addEditIntakeRequestForm.projectMasterModel.intakeFormReqTxnDetModel.intakeTirequirement }}</p> -->
+                        </div>
+                     </div>
+                  </div>
+               </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
+</div>
+<!-- Intake Request Intake Form Ends -->

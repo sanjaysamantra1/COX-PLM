@@ -1,0 +1,138 @@
+{
+    "projectCode": "PRO_1517397615935",
+    "psu": {
+        "1P": [
+            {
+                "offerID": "Offer-101",
+                "sequenceNo": "1",
+                "psuType": "1P",
+                "product": [
+                    {
+                        "productGroup": "Data",
+                        "productID": "1",
+                        "productName": "Ultimate Data"
+                    }
+                ],
+                "specification": {
+                    "price": "$49",
+                    "discountType": "Pro Install",
+                    "discountDuration": "One Time",
+                    "priceSpecification": "12 month",
+                    "discountValue": "$25"
+                }
+            }
+        ],
+        "2P": [
+            {
+                "offerID": "Offer-102",
+                "sequenceNo": "1",
+                "psuType": "2P",
+                "product": [
+                    {
+                        "productGroup": "Data",
+                        "productID": "1",
+                        "productName": "Ultimate Data"
+                    },
+                    {
+                        "productGroup": "Video",
+                        "productID": "1",
+                        "productName": "New Contour TV"
+                    }
+                ],
+                "specification": {
+                    "price": "$99",
+                    "discountType": "Pro Install",
+                    "discountDuration": "One Time",
+                    "priceSpecification": "12 month",
+                    "discountValue": "$25"
+                }
+            }
+        ],
+        "3P": [
+            {
+                "offerID": "Offer-103",
+                "sequenceNo": "1",
+                "psuType": "3P",
+                "product": [
+                    {
+                        "productGroup": "Data",
+                        "productID": "1",
+                        "productName": "Ultimate Data"
+                    },
+                    {
+                        "productGroup": "Video",
+                        "productID": "1",
+                        "productName": "New Contour TV"
+                    },
+                    {
+                        "productGroup": "Home",
+                        "productID": "1",
+                        "productName": "Ultimate Home"
+                    }
+                ],
+                "specification": {
+                    "price": "$129",
+                    "discountType": "Pro Install",
+                    "discountDuration": "One Time",
+                    "priceSpecification": "12 month",
+                    "discountValue": "$25"
+                }
+            }
+        ],
+        "4P": [
+            {
+                "offerID": "Offer-104",
+                "sequenceNo": "1",
+                "psuType": "4P",
+                "product": [
+                    {
+                        "productGroup": "Data",
+                        "productID": "1",
+                        "productName": "Ultimate Data"
+                    },
+                    {
+                        "productGroup": "Phone",
+                        "productID": "1",
+                        "productName": "Ultimate Phone"
+                    },
+                    {
+                        "productGroup": "Video",
+                        "productID": "1",
+                        "productName": "New Contour TV"
+                    },
+                    {
+                        "productGroup": "Home",
+                        "productID": "1",
+                        "productName": "Ultimate Home"
+                    }
+                ],
+                "specification": {
+                    "price": "$149",
+                    "discountType": "Pro Install",
+                    "discountDuration": "One Time",
+                    "priceSpecification": "12 month",
+                    "discountValue": "$25"
+                }
+            }
+        ]
+    },
+	"offers":	[
+		{
+			"projectCode" : "projectCode 1",
+			"offerId": "offerId 1",
+			"startDt": "02/23/2018",
+			"releaseDt": "02/23/2018",
+			"status": "New",
+			"releaseCd": "02/23/2018"
+		},
+		{
+			"projectCode": "projectCode 2",
+			"offerId": "offerId 2",
+			"startDt": "02/23/2018",
+			"releaseDt": "02/23/2018",
+			"status": "New",
+			"releaseCd": "02/23/2018"
+		}
+	]
+}
+

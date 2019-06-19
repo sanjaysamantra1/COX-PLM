@@ -1,0 +1,158 @@
+{
+  "mrktingOfferTxnDet": {
+	"projectCode": "GTM2B2017_4",
+    "offerId": "Offer_0101",
+	"offerName": "4P Gold Bundle Ult CTV/Ult CHSI/Prem CDT/Auto CHL",
+    "createdBy": "",
+    "createdDate": "",
+    "offerDescription": "Offer Description",
+    "discValue": "",
+    "offerEndDate": "06-28-2018",
+    "modifiedDate": "",
+    "offerType": "4P GOLD",
+    "price": "149",
+    "priceSpec": "12 month(+$20 in 13-24 month)",
+    "offerStartDate": "06-28-2018",
+    "discountType": "PRO INSTALL",
+    "discountRule": "",
+	"discountValue": "25",
+	"discountDuration": "One Time",
+    "psuType": "",
+    "bundleType": "4P GOLD",
+    "moProductDataModel": [
+      {
+        "productGroup": "Data",
+        "productID": "1",
+        "productName": "Ultimate Data"
+      },
+	  {
+        "productGroup": "Video",
+        "productID": "2",
+        "productName": "New Contour TV"
+      },
+	  {
+        "productGroup": "Phone",
+        "productID": "3",
+        "productName": "Box Prem Phone"
+      },
+	  {
+        "productGroup": "Home Life",
+        "productID": "4",
+        "productName": "Home Automation"
+      }
+    ]
+  },
+  "generalInfoMapTxnDet": {
+    "offerId": "Offer_0101",
+	"offerName": "Offer Name",
+	"offerDescription": "Offer Description",
+    "offerBundle": "",
+    "offerCategory": "",
+    "offerStartDate": "2018-01-02",
+    "offerEndDate": "2018-01-02",
+    "lastUpdateDate": "2018-01-02",
+    "testDate": "2018-01-02",
+    "productionLauanchDate": "2018-01-02",
+    "offerStatus": "New",
+    "version": "Version 1",
+    "createdByUser": "User Admin",
+    "salesAdvise": "Advise 1",
+    "sites": [ "1", "2", "3"]
+  },
+  "offerProdMapTxnDets": [
+    {
+      "prodId": "",
+      "offrPrdMapId": "",
+      "name": "",
+      "catagory": "",
+      "psu": "",
+      "icomsCode": ""
+    }
+  ],
+  "offerDiscMapTxnDets": [
+    {
+      "discountId": "",
+      "offrDiscountMapId": "",
+      "discountName": "",
+      "discountType": "",
+      "primaryFlag": ""
+    }
+  ],
+  "offerRelRuleTxnDets": [
+    {
+      "id": "",
+      "offrRelRruleMapId": "",
+      "ruleName": "",
+      "createdDate": "",
+      "modifiedDate": "",
+      "modifiedOwner": ""
+    }
+  ],
+  "offerEligRuleTxnDets": [
+    {
+      "id": "",
+      "offrRelEruleMapId": "",
+      "ruleName": "",
+      "createdDate": "",
+      "modifiedDate": "",
+      "modifiedOwner": ""
+    }
+  ],
+  "offerPinpointTxnDets": {
+    "offrPinpointMapId": "",
+    "agenttypelist": "",
+    "anypakFlag": "",
+    "anypremiumFlag": "",
+    "campnCodeExclude": "",
+    "campnCodeInclude": "",
+    "dataequipOptnl": "",
+    "dvrOptional": "",
+    "estimatedmrc": "",
+    "inbaseofferFlag": "",
+    "instalOptnlId": "",
+    "mandatoryflag": "",
+    "ofrlevelTecode": "",
+    "omcOfferId": "",
+    "prismcodelist": "",
+    "prismrestrictedFlag": "",
+    "proactivecode": "",
+    "proactiveofferFlag": "",
+    "pylabel": "",
+    "receiver": "",
+    "phoneInstalType": "",
+    "hmlifeInstalType": "",
+    "dataInstalType": "",
+    "videoInstalType": "",
+    "baseofrHmlife": "",
+    "baseofrVideo": "",
+    "baseofrPhone": "",
+    "baseofrData": "",
+    "ratefrpExclusion": "",
+    "staticintentlist": "",
+    "subStaticintentlist": "",
+    "paymode": "",
+    "status": "",
+    "channelsLabel": "",
+    "addonType": "",
+    "dvr": "",
+    "dataEquip": "",
+    "videoEquip": ""
+  },
+  "offrEcommPinpntTxnDets": {
+    "offrEcomMapId": "",
+    "ecomOfferId": "",
+    "statActionprimary": "",
+    "statActionurlfeatured": "",
+    "statActurlCompGrp": "",
+    "statImageurlCompGroup": "",
+    "statImageurlfeatur": "",
+    "statImageurlprimary": "",
+    "statMsgtxtCompGrp": "",
+    "statMsgtxtfeatur": "",
+    "statMsgtxtprimary": "",
+    "statProductlist": "",
+    "statThemlist": "",
+    "statTreatmentlist": "",
+    "status": ""
+  }
+}

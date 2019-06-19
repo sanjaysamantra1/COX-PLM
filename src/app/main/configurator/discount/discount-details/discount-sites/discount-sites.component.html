@@ -1,0 +1,21 @@
+<mat-expansion-panel class="form-divider panel-no-background">
+    <mat-expansion-panel-header>
+        Markets
+    </mat-expansion-panel-header>
+    <div class="row" *ngIf="formLoaded">
+        <div class="col-md-12">
+            <div>
+                <span class="checkbox-inline">
+                <input type="checkbox" name="selectedAll" value="" (change)="selectAllSites($event.target.checked);" [checked]="isAllSitesSelectedCheck()"
+                [disabled]="viewMode">Select All Markets
+                </span>
+            </div>
+            <div>
+                <span class="checkbox-inline checkbox-inline-custom col-md-2" name="mapMarketSites" *ngFor="let option of masterData.MARKETS; let i = index;">
+                    <input type="checkbox" name="sites" [value]="option.key" [checked]="isSitesExist(option.key)"
+                        (change)="addSite($event.target.checked,option.key);" [disabled]="viewMode" /> {{option.code}}
+                </span>
+            </div>
+        </div>
+    </div>
+</mat-expansion-panel>

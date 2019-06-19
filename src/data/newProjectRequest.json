@@ -1,0 +1,155 @@
+{
+    "projectCode": "",
+    "projectStartDt": "",
+    "projectEndDt": "",
+    "description": "",
+    "mapProjectTypes": {
+        "1": "New Offer Creation",
+        "2": "Offer Extension",
+        "3": "Offer Expiration",
+        "4": "Offer Attributes Modification",
+        "5": "Offer Pricing Change"
+    },
+    "mapMarketList": {
+        "1": "San Diego",
+        "2": "Phoenix",
+        "3": "Baton Rouge",
+        "4": "Omaha",
+        "5": "Connecticut",
+        "6": "Roanoke",
+        "7": "Orange County",
+        "8": "Oklahoma City",
+        "9": "Tulsa",
+        "10": "Macon",
+        "11": "Rhode Island",
+        "12": "New Orleans",
+        "13": "Santa Barbara",
+        "14": "Gainesville",
+        "15": "Pensacola",
+        "16": "Northern Virginia",
+        "17": "Kansas",
+        "18": "Palos Verdes",
+        "19": "Hampton Roads",
+        "20": "Cleveland",
+        "21": "Las Vegas"
+    },
+    "intakeFormResp": {
+        "intakeFormId":"",
+        "addUptierPaths": "",
+        "description": "",
+        "durationMonths": "",
+        "instltnIncFlg": "",
+        "instltnPricing": "",
+        "prodMustExc": "",
+        "prodMustInc": "",
+        "prodMustInstlExc": "",
+        "prodMustInstlInc": "",
+        "prodMustRetainExc": "",
+        "products": "",
+        "projectName": "",
+        "reqstorEmail": "",
+        "reqstorName": "",
+        "stepupAmount": "",
+        "intakeChnlModel": [
+            {
+                "chnlId":1,
+                "chnlName": "Channel 1"
+            },
+            {
+                "chnlId":2,
+                "chnlName": "Channel 2"
+            },
+            {
+                "chnlId":3,
+                "chnlName": "Channel 3"
+            }
+        ],
+        "intakeDurtnModel": [
+            {
+                "durtnId": 1,
+                "duration": "Duration 1"
+            },
+            {
+                "durtnId": 2,
+                "duration": "Duration 2"
+            },
+            {
+                "durtnId": 3,
+                "duration": "Duration 3"
+            }
+        ],
+        "intakeMktModel": [
+            {
+                "mktId":1,
+                "mktName": "Market 1"
+            },
+            {
+                "mktId":2,
+                "mktName": "Market 2"
+            },
+            {
+                "mktId":3,
+                "mktName": "Market 3"
+            }
+        ],
+        "intakeReqPlgModel": [
+            {
+                "reqId": 1,
+                "plgFlag": "PLG 1"
+            },
+            {
+                "reqId": 2,
+                "plgFlag": "PLG 2"
+            },
+            {
+                "reqId": 3,
+                "plgFlag": "PLG 3"
+            }
+        ],
+        "intakeTecodeModel": [
+            {
+                "tecode":1,
+                "tecodeName": "TE Code 1"
+            },
+             {
+                "tecode":2,
+                "tecodeName": "TE Code 2"
+            },
+             {
+                "tecode":3,
+                "tecodeName": "TE Code 3"
+            }
+        ],
+        "intakeTgtaudModel": [
+            {
+                "tgtId": 1,
+                "tgtName": "Target Audience 1"
+            },
+            {
+                "tgtId": 2,
+                "tgtName": "Target Audience 2"
+            },
+            {
+                "tgtId": 3,
+                "tgtName": "Target Audience 3"
+            }
+        ],
+        "intakeTireqModel": [
+            {
+                "tierId": 1,
+                "tierName": "Tier 1"
+            },
+            {
+                "tierId": 2,
+                "tierName": "Tier 2"
+            },
+            {
+                "tierId": 3,
+                "tierName": "Tier 3"
+            }
+
+        ]
+    }
+}
+
+

@@ -1,0 +1,44 @@
+<div>
+  <!-- Requestor Landing page Starts -->
+  <div style="margin-bottom:20px;">
+    <section class="row">
+      <div class="col-md-12">
+        <h1 class="page-header">Intake Request Detail </h1>
+      </div>
+      <div class="col-md-12">
+        <ul class="breadcrumb">
+          <li>
+            <a (click)="redirectBack('')"><b>Home</b></a>
+          </li>
+          <li class="active"><a (click)="redirectBack('')"><b>PLM Work Flow</b></a></li>
+          <li class="active"><a (click)="redirectBack('')"><b>Requestor</b></a></li>
+          <li class="active">
+              <a (click)="redirectBack('plm-work-flow/requestor/intake-request-list')"><b>Intake Request List</b></a>
+          </li>
+          <li class="active"><b>Intake Request Detail</b></li>
+        </ul>
+      </div>
+      <div class="col-md-12" *ngIf="intakeRequestSubmitFailed">
+          <div class="alert alert-danger">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+              {{ capitalizedAddEdiitMode }} Intake Request {{ addEditIntakeRequestProjectID }} submit is failed!!!
+          </div>
+      </div>
+      <div class="col-md-12" *ngIf="saveAndExitFail">
+        <div class="alert alert-danger">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+            {{ capitalizedAddEdiitMode }} Intake Request {{ addEditIntakeRequestProjectID }} save is failed!!!
+        </div>
+    </div>
+    </section>
+    <!-- Requestor Landing Main Starts -->
+    <div class="col-md-12">
+      <plm-intake-request-detail-master-form [addEditIntakeRequestMasterData]="addEditIntakeRequestMasterData" [addEditIntakeRequestForm]="addEditIntakeRequestForm" (fileUpload)="onFileUpload($event)"></plm-intake-request-detail-master-form>
+    </div>
+    <div class="col-md-12 margin-bot-20">
+      <button type="button" class="btn btn-primary pull-right margin-left-20" *ngIf="(addEditMode != 'view')" [disabled]="validateIntakeForm()" (click)="submitIntakeRequest()">Submit Intake Request </button>
+      <button type="button" class="btn btn-primary pull-right" *ngIf="(addEditMode != 'view')" [disabled]="validateIntakeForm()" (click)="saveAndExit()">Save and Exit </button>
+      <button type="button" class="btn btn-primary pull-left" (click)="redirectBack('plm-work-flow/requestor/intake-request-list')">Back </button>
+    </div>
+  </div>
+

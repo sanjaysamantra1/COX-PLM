@@ -1,0 +1,176 @@
+ <!-- Eight Section Starts here -->
+ <mat-expansion-panel class="form-divider panel-no-background">
+  <mat-expansion-panel-header>
+      eCommerce Decision Attributes
+  </mat-expansion-panel-header>
+<div class="row">
+        <div class="form-group">
+           <div class="col-md-6"> 
+            <label class="col-sm-5 control-label">eCom PinPoint Status</label>
+           <div class="col-sm-7"><select class="form-control" name="statusId" [(ngModel)]="offerECOMMPinPointInfo.statusId" (change)="updateSubmitData('statusId', offerECOMMPinPointInfo.statusId)">
+              <option>Select Offer</option>
+              <option>Need to Enter</option>
+              <option>Entered</option>
+              <option>Do not need to enter</option>
+           </select></div>
+           </div>
+        <div class="col-md-6"> 
+            <label class="col-sm-5 control-label">eComm Offer ID</label>
+           <div class="col-sm-7">  <input type="text" class="form-control" name="ecomOfferId" [(ngModel)]="offerECOMMPinPointInfo.ecomOfferId" (change)="updateSubmitData('ecomOfferId', offerECOMMPinPointInfo.ecomOfferId)"></div>
+           </div>
+        </div>
+</div>
+<div class="row margin-top-20">
+        <div class="form-group">
+            <div class="col-md-6"> 
+            <label class="col-sm-5 control-label">StaticTreatmentList</label>
+           <div class="col-sm-7">  <input type="text" class="form-control" name="statTreatmentlist" [(ngModel)]="offerECOMMPinPointInfo.statTreatmentlist" (change)="updateSubmitData('statTreatmentlist', offerECOMMPinPointInfo.statTreatmentlist)" >
+           </div>
+            </div>
+        <div class="col-md-6"> 
+            <label class="col-sm-5 control-label">StaticProductList</label>
+           <div class="col-sm-7">   <input type="text" class="form-control" name="statProductlist" [(ngModel)]="offerECOMMPinPointInfo.statProductlist" (change)="updateSubmitData('statProductlist', offerECOMMPinPointInfo.statProductlist)" ></div>
+           </div>
+        </div>
+</div>
+    <div class="row margin-top-20">
+        <div class="form-group">
+            <div class="col-md-6"> 
+            <label class="col-sm-5 control-label">StaticThemeList</label>
+           <div class="col-sm-7">    <input type="text" class="form-control" name="statThemlist" [(ngModel)]="offerECOMMPinPointInfo.statThemlist" (change)="updateSubmitData('statThemlist', offerECOMMPinPointInfo.statThemlist)" >
+       
+           </div>
+            </div>
+        <div class="col-md-6"> 
+            <label class="col-sm-5 control-label">StaticImageUrlPrimary</label>
+           <div class="col-sm-7"> 
+                <input type="text" class="form-control" name="statImageurlprimary" [(ngModel)]="offerECOMMPinPointInfo.statImageurlprimary" (change)="updateSubmitData('statImageurlprimary', offerECOMMPinPointInfo.statImageurlprimary)" ></div>
+           </div>
+        </div>
+</div>
+    <div class="row margin-top-20">
+        <div class="form-group">
+            <div class="col-md-6"> 
+            <label class="col-sm-5 control-label">StaticActionUrlFeatured</label>
+           <div class="col-sm-7"> 
+                 <input type="text" class="form-control" name="statActionurlfeatured" [(ngModel)]="offerECOMMPinPointInfo.statActionurlfeatured" (change)="updateSubmitData('statActionurlfeatured', offerECOMMPinPointInfo.statActionurlfeatured)" >
+           </div>
+            </div>
+        <div class="col-md-6"> 
+            <label class="col-sm-5 control-label">StaticActionUrlComparisonGroup</label>
+           <div class="col-sm-7">  
+                 <input type="text" class="form-control" name="statActurlCompGrp" [(ngModel)]="offerECOMMPinPointInfo.statActurlCompGrp" (change)="updateSubmitData('statActurlCompGrp', offerECOMMPinPointInfo.statActurlCompGrp)" >
+                </div>
+           </div>
+        </div>
+</div>
+    <div class="row margin-top-20">
+        <div class="form-group">
+            <div class="col-md-6"> 
+            <label class="col-sm-5 control-label">StaticMsgTxtPrimary</label>
+           <div class="col-sm-7"> 
+                  <input type="text" class="form-control" name="statMsgtxtprimary" [(ngModel)]="offerECOMMPinPointInfo.statMsgtxtprimary" (change)="updateSubmitData('statMsgtxtprimary', offerECOMMPinPointInfo.statMsgtxtprimary)" >
+           </div>
+            </div>
+        <div class="col-md-6"> 
+            <label class="col-sm-5 control-label">StaticMsgTxtFeatured</label>
+           <div class="col-sm-7">   
+               <input type="text" class="form-control" name="statMsgtxtfeatur" [(ngModel)]="offerECOMMPinPointInfo.statMsgtxtfeatur" (change)="updateSubmitData('statMsgtxtfeatur', offerECOMMPinPointInfo.statMsgtxtfeatur)" ></div>
+           </div>
+        </div>
+</div>
+    <div class="row margin-top-20">
+        <div class="form-group">
+            <div class="col-md-6"> 
+            <label class="col-sm-5 control-label">StaticMsgTxtComparisonGroup</label>
+           <div class="col-sm-7">  <input type="text" class="form-control" name="statMsgtxtCompGrp" [(ngModel)]="offerECOMMPinPointInfo.statMsgtxtCompGrp"  (change)="updateSubmitData('statMsgtxtCompGrp', offerECOMMPinPointInfo.statMsgtxtCompGrp)">
+           </div>
+            </div>
+        <div class="col-md-6"> 
+            <label class="col-sm-5 control-label">StaticActionUrlPrimary</label>
+           <div class="col-sm-7">  
+                 <input type="text" class="form-control" name="StaticActionUrlPrimary" [(ngModel)]="offerECOMMPinPointInfo.statMsgtxtCompGrp"  (change)="updateSubmitData('statMsgtxtCompGrp', offerECOMMPinPointInfo.statMsgtxtCompGrp)"></div>
+           </div>
+        </div>
+</div>
+    <div class="row margin-top-20">
+        <div class="form-group">
+            <div class="col-md-6"> 
+            <label class="col-sm-5 control-label">StaticImageUrlFeatured</label>
+           <div class="col-sm-7"> 
+                <input type="text" class="form-control" name="StaticImageUrlFeatured" [(ngModel)]="offerECOMMPinPointInfo.statTreatmentlist" (change)="updateSubmitData('statTreatmentlist', offerECOMMPinPointInfo.statTreatmentlist)" >
+           </div>
+            </div>
+        <div class="col-md-6"> 
+            <label class="col-sm-5 control-label">StaticImageUrlComparisonGroup</label>
+           <div class="col-sm-7">   <input type="text" class="form-control" name="StaticImageUrlComparisonGroup" [(ngModel)]="offerECOMMPinPointInfo.statProductlist" (change)="updateSubmitData('statProductlist', offerECOMMPinPointInfo.statProductlist)" ></div>
+           </div>
+        </div>
+</div>
+  <!-- <div id="fourth-section">
+      <div class="row">
+        <div class="form-group col-md-4">
+           <label>eCom PinPoint Status</label>
+           <select class="form-control" name="statusId" [(ngModel)]="offerECOMMPinPointInfo.statusId" (change)="updateSubmitData('statusId', offerECOMMPinPointInfo.statusId)">
+              <option>Select Offer</option>
+              <option>Need to Enter</option>
+              <option>Entered</option>
+              <option>Do not need to enter</option>
+           </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label>eCom Offer ID</label>
+           <input type="text" class="form-control" name="ecomOfferId" [(ngModel)]="offerECOMMPinPointInfo.ecomOfferId" (change)="updateSubmitData('ecomOfferId', offerECOMMPinPointInfo.ecomOfferId)">
+        </div>
+        <div class="form-group col-md-4">
+           <label>Statis TreatMent List</label>
+           <input type="text" class="form-control" name="statTreatmentlist" [(ngModel)]="offerECOMMPinPointInfo.statTreatmentlist" (change)="updateSubmitData('statTreatmentlist', offerECOMMPinPointInfo.statTreatmentlist)" >
+        </div>
+        <div class="form-group col-md-4">
+           <label>StatisProductList</label>
+           <input type="text" class="form-control" name="statProductlist" [(ngModel)]="offerECOMMPinPointInfo.statProductlist" (change)="updateSubmitData('statProductlist', offerECOMMPinPointInfo.statProductlist)" >
+        </div>
+        <div class="form-group col-md-4">
+           <label>StatisThemList</label>
+           <input type="text" class="form-control" name="statThemlist" [(ngModel)]="offerECOMMPinPointInfo.statThemlist" (change)="updateSubmitData('statThemlist', offerECOMMPinPointInfo.statThemlist)" >
+        </div>
+        <div class="form-group col-md-4">
+           <label>StaticImageUrlPrimary</label>
+           <input type="text" class="form-control" name="statImageurlprimary" [(ngModel)]="offerECOMMPinPointInfo.statImageurlprimary" (change)="updateSubmitData('statImageurlprimary', offerECOMMPinPointInfo.statImageurlprimary)" >
+        </div>
+        <div class="form-group col-md-4">
+           <label>StaticActionUrlFeatured</label>
+           <input type="text" class="form-control" name="statActionurlfeatured" [(ngModel)]="offerECOMMPinPointInfo.statActionurlfeatured" (change)="updateSubmitData('statActionurlfeatured', offerECOMMPinPointInfo.statActionurlfeatured)" >
+        </div>
+        <div class="form-group col-md-4">
+           <label>StaticActionUrlComparisonGroup</label>
+           <input type="text" class="form-control" name="statActurlCompGrp" [(ngModel)]="offerECOMMPinPointInfo.statActurlCompGrp" (change)="updateSubmitData('statActurlCompGrp', offerECOMMPinPointInfo.statActurlCompGrp)" >
+        </div>
+        <div class="form-group col-md-4">
+           <label>StaticMsgTxtPrimary</label>
+           <input type="text" class="form-control" name="statMsgtxtprimary" [(ngModel)]="offerECOMMPinPointInfo.statMsgtxtprimary" (change)="updateSubmitData('statMsgtxtprimary', offerECOMMPinPointInfo.statMsgtxtprimary)" >
+        </div>
+        <div class="form-group col-md-4">
+           <label>StaticMsgTxtFeatured</label>
+           <input type="text" class="form-control" name="statMsgtxtfeatur" [(ngModel)]="offerECOMMPinPointInfo.statMsgtxtfeatur" (change)="updateSubmitData('statMsgtxtfeatur', offerECOMMPinPointInfo.statMsgtxtfeatur)" >
+        </div>
+        <div class="form-group col-md-4">
+           <label>StaticMsgTxtComparisonGroup</label>
+           <input type="text" class="form-control" name="statMsgtxtCompGrp" [(ngModel)]="offerECOMMPinPointInfo.statMsgtxtCompGrp"  (change)="updateSubmitData('statMsgtxtCompGrp', offerECOMMPinPointInfo.statMsgtxtCompGrp)">
+        </div>
+        <div class="form-group col-md-4">
+           <label>StaticActionPrimary</label>
+           <input type="text" class="form-control" name="statActionprimary" [(ngModel)]="offerECOMMPinPointInfo.statActionprimary" (change)="updateSubmitData('statActionprimary', offerECOMMPinPointInfo.statActionprimary)" >
+        </div>
+        <div class="form-group col-md-4">
+           <label>StaticImageUrlFeatured</label>
+           <input type="text" class="form-control" name="statImageurlfeatur" [(ngModel)]="offerECOMMPinPointInfo.statImageurlfeatur" (change)="updateSubmitData('statImageurlfeatur', offerECOMMPinPointInfo.statImageurlfeatur)" >
+        </div>
+        <div class="form-group col-md-4">
+           <label>StaticImageUrlComaparisonGroup</label>
+           <input type="text" class="form-control" name="statImageurlCompGroup" [(ngModel)]="offerECOMMPinPointInfo.statImageurlCompGroup" (change)="updateSubmitData('statImageurlCompGroup', offerECOMMPinPointInfo.statImageurlCompGroup)" >
+        </div>
+     </div>  
+  </div> -->
+</mat-expansion-panel>
+<!-- Eight Section ends here -->

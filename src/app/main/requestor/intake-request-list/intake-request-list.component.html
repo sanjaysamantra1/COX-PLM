@@ -1,0 +1,159 @@
+<!-- Intake Request List page Starts -->
+<div *ngIf="showIntakeRequestList">
+  <div style="margin-bottom:20px;">
+    <section class="row">
+      <div class="col-md-12">
+        <h1 class="page-header">Intake Request List </h1>
+      </div>
+      <div class="col-md-12">
+        <ul class="breadcrumb">
+          <li>
+            <a href="#" [routerLink]="['']">
+              <b>Home</b>
+            </a>
+          </li>
+          <li class="active">
+            <a href="#" [routerLink]="['']"><b>PLM Work Flow</b></a>
+          </li>
+          <li class="active">
+            <a href="#" [routerLink]="['']"><b>Requestor</b></a>
+          </li>
+          <li class="active">
+            <b>Intake Request List</b>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="process" id="requestorProcessing">
+            <div class="clearfix"></div>
+            <div class="row">
+              <div class="col-md-12">
+                <div>
+                  <div class="table-responsive">
+                    <table id="mytable" class="table table-bordred table-striped width-based-table">
+                      <thead>
+                        <tr>
+                          <th style="width:45px;">
+                            <button type="button" class="btn btn-primary btn-xs" (click)="toggleSearchIcon()">
+                              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                            </button>
+                          </th>
+                          <th style="min-width:130px;">
+                            <div (click)="sort('projectCode')">
+                              Request Code
+                              <span class="glyphicon sort-icon" *ngIf="key =='projectCode'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                            </div>
+                            <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByProjectCode" [(ngModel)]="filterByProjectCode" (keyup)="updateFilterContext('filterByProjectCodeSearchObj', 'projectCode', filterByProjectCode)" placeholder="By Project Code">
+                          </th>
+                          <th style="min-width:130px;">
+                            <div (click)="sort('projectType')">
+                              Request Type
+                              <span class="glyphicon sort-icon" *ngIf="key =='projectType'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                            </div>
+                            <!--<input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByProjectType" [(ngModel)]="filterByProjectType" (keyup)="updateFilterContext('projectType', filterByProjectType)" placeholder="By Project Type">-->
+                            <select [hidden]="!showSearch" class="seacrh-input" name="filterByProjectType" [(ngModel)]="filterByProjectType" (change)="updateFilterContext('filterByProjectTypeSearchObj', 'projectType', filterByProjectType)">
+                              <option value="">Select One</option>
+                              <option *ngFor="let intakeRequestType of addEditIntakeRequestMasterData.intakeFormMasterDropDown.INTAKE_REQUEST_TYPE; let i= index;"  [value]="intakeRequestType.objectName">{{ intakeRequestType.objectName }}</option>
+                            </select>
+                          </th>
+                          <th style="min-width:130px;">
+                            <div (click)="sort('pricingOwner')">
+                              Pricing Owner
+                              <span class="glyphicon sort-icon" *ngIf="key =='pricingOwner'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                            </div>
+                            <!--<input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByPricingOwnerName" [(ngModel)]="filterByPricingOwnerName" (keyup)="updateFilterContext('pricingOwnerName', filterByPricingOwnerName)" placeholder="By Pricing Owner">-->
+                            <select [hidden]="!showSearch" class="seacrh-input" name="filterByPricingOwnerName" [(ngModel)]="filterByPricingOwnerName" (change)="updateFilterContext('filterByPricingOwnerNameSearchObj', 'pricingOwnerName', filterByPricingOwnerName)">
+                              <option value="">Select One</option>
+                              <option *ngFor="let pricingOwner of addEditIntakeRequestMasterData.pricingOwners; let i= index;"  [value]="pricingOwner.firstname+' '+pricingOwner.lastname">{{ pricingOwner.firstname+' '+pricingOwner.lastname }}</option>
+                            </select>
+                          </th>
+                          <th style="min-width:130px;">
+                            <div (click)="sort('description')">
+                              Description
+                              <span class="glyphicon sort-icon" *ngIf="key =='description'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                            </div>
+                            <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByDescription" [(ngModel)]="filterByDescription" (keyup)="updateFilterContext('filterByDescriptionSearchObj', 'description', filterByDescription)" placeholder="By Description">
+                          </th>
+                          <th style="min-width:130px;">
+                            <div (click)="sort('requesterName')">
+                              Requestor Name
+                              <span class="glyphicon sort-icon" *ngIf="key =='requesterName'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                            </div>
+                            <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByRequesterName" [(ngModel)]="filterByRequesterName" (keyup)="updateFilterContext('filterByRequesterNameSearchObj', 'requesterName', filterByRequesterName)" placeholder="By Requestor Name">
+                          </th>
+                          <th style="min-width:130px;">
+                            <div (click)="sort('status')">
+                              Status
+                              <span class="glyphicon sort-icon" *ngIf="key =='status'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                            </div>
+                            <!--<input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByStatus" [(ngModel)]="filterByStatus" (keyup)="updateFilterContext('status', filterByStatus)" placeholder="By Status">-->
+                            <select [hidden]="!showSearch" class="seacrh-input" name="filterByStatus" [(ngModel)]="filterByStatus" (change)="updateFilterContext('filterByStatusSearchObj', 'status', filterByStatus)">
+                              <option value="">Select One</option>
+                              <option value="Draft">Draft</option>
+                              <option value="Submitted for Configurator">Submitted for Configurator</option>
+                              <option value="Completed">Completed</option>
+                            </select>
+                          </th>
+                          <th style="min-width:130px;">
+                            <div (click)="sort('createdDate')">
+                              Created Date
+                              <span class="glyphicon sort-icon" *ngIf="key =='createdDate'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                            </div>
+                            <!-- <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByCreatedDate" [(ngModel)]="filterByCreatedDate" (keyup)="updateFilterContext('createdDate', filterByCreatedDate)" placeholder="By Created Date"> -->
+                            <div [hidden]="!showSearch">
+                              <mat-form-field class="input-group">
+                                <input matInput [matDatepicker]="createdDate" class="form-control" [(ngModel)]="filterByCreatedDate" (ngModelChange)="updateFilterContext('filterByCreatedDateSearchObj', 'createdDate', filterByCreatedDate)" name="filterByCreatedDate">
+                                <mat-datepicker-toggle matSuffix [for]="createdDate"></mat-datepicker-toggle>
+                                <mat-datepicker #createdDate></mat-datepicker>
+                              </mat-form-field>
+                            </div>
+                          </th>
+                          <th>Edit</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let intakeRequestDetail of intakeRequestDetails | sharedFilter : filterByProjectCodeSearchObj | sharedFilter : filterByProjectTypeSearchObj | sharedFilter : filterByPricingOwnerNameSearchObj | sharedFilter : filterByDescriptionSearchObj | sharedFilter : filterByRequesterNameSearchObj | sharedFilter : filterByStatusSearchObj | sharedFilter : filterByCreatedDateSearchObj | orderBy: key : reverse | paginate: {itemsPerPage: 5, currentPage:page, id: 'projectList'}; let i = index">
+                          <td></td>
+                          <td>
+                            <a (click)="viewIntakeRequest(intakeRequestDetail.projectCode)"> {{ intakeRequestDetail.projectCode }} </a>
+                          </td>
+                          <td>{{ intakeRequestDetail.projectType }}</td>
+                          <td>{{ intakeRequestDetail.pricingOwnerName }}</td>
+                          <td>{{ intakeRequestDetail.description }}</td>
+                          <td>{{ intakeRequestDetail.requesterName }}</td>
+                          <td>{{ intakeRequestDetail.status }}</td>
+                          <td>{{ getDateInFormat(intakeRequestDetail.createdDate) }}</td>
+                          <td>
+                            <p data-placement="top" data-toggle="tooltip" title="Edit">
+                              <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#editIntakeRequest"
+                                (click)="editIntakeRequest(intakeRequestDetail.projectCode)">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                              </button>
+                            </p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <pagination-controls class="pull-right" (pageChange)="page = $event" id="projectList" maxSize="5" directionLinks="true" autoHide="true">
+                </pagination-controls>
+              </div>
+              <div class="col-md-12 margin-bot-20">
+                <button type="button" class="btn btn-primary pull-right" (click)="addNewIntakeRequest()">Add new intake Request </button>
+                <button type="button" class="btn btn-primary pull-left" [routerLink]="['']">Back</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--  Intake Request List page Ends -->

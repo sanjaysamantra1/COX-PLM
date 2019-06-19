@@ -1,0 +1,35 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-default navbar-fixed-top fixed-top" id="mainNav">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="javascript:void(0);" class="navbar-brand">
+                <span id="logo"></span>
+                <span style="float:left;margin-top:20px;margin-right:35px;">PLM Application</span>
+            </a>
+            <div class="pull-right mobile-align">
+            <ul class="nav navbar-nav navbar-right" style="padding-right: 30px;">
+                <li *ngIf="isLoggedIn" class="top-menu home-icon">
+                    <a href="/dashboard"><span class="fa fa-home"></span> <span class="top-menu-text">Home</span></a>
+                </li>
+                <li>
+                    <a href="/contact"><span class="fa fa-mobile-phone"></span> <span class="top-menu-text">Contact</span></a>
+                </li>
+                <li>
+                    <a href="/help"><span class="fa fa-question"></span> <span class="top-menu-text">Help</span></a>
+                </li>
+                <!--<li ng-show="isValidLogin">
+                    <a ng-click="goToLogoutPage()">
+                        <span class="fa fa-sign-in"></span> <span class="top-menu-text">Logout</span></a>
+                </li>-->
+            </ul>
+        </div>
+        </div>
+        
+    </nav>
+</header>

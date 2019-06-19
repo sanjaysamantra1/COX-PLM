@@ -1,0 +1,38 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-default navbar-fixed-top fixed-top" id="mainNav">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+             aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">
+                <img src="assets/img/logo-w.png" width="70" height="34" style="float:left;margin-right:10px;margin-top:13px;margin-left: 15px;"
+                />
+                <span style="float:left;margin-top:20px;margin-right:35px;">PLM Application</span>
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right" style="padding-right: 30px;">
+                <li ng-show="isValidLogin">
+                    <a ng-click="redirectTo('dashboard')">
+                        <span class="fa fa-home"></span> Home</a>
+                </li>
+                <li ng-show="isValidLogin">
+                    <a ng-click="goToLogoutPage()">
+                        <span class="fa fa-sign-in"></span> Logout</a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="fa fa-mobile-phone"></span> Contact</a>
+                </li>
+                <li>
+                    <a href="/faq">
+                        <span class="fa fa-question"></span> Help</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,601 @@
+{
+    "actionResult": null,
+    "actionStatus": "SUCCESS",
+    "intakeFormMasterDropDown": {
+        "INTAKE_REQUEST_TYPE": [
+            {
+                "intakeFormDrpdwnDetailId": 162,
+                "objectName": "New Offer Creation",
+                "intakeFormDrpdwnMasterId": 700,
+                "intakeFormDrpdwnMasterObjectName": "INTAKE_REQUEST_TYPE"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 163,
+                "objectName": "Offer Extension",
+                "intakeFormDrpdwnMasterId": 700,
+                "intakeFormDrpdwnMasterObjectName": "INTAKE_REQUEST_TYPE"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 164,
+                "objectName": "Offer Expiration",
+                "intakeFormDrpdwnMasterId": 700,
+                "intakeFormDrpdwnMasterObjectName": "INTAKE_REQUEST_TYPE"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 165,
+                "objectName": "Offer Attributes Modification",
+                "intakeFormDrpdwnMasterId": 700,
+                "intakeFormDrpdwnMasterObjectName": "INTAKE_REQUEST_TYPE"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 166,
+                "objectName": "Offer Pricing Change",
+                "intakeFormDrpdwnMasterId": 700,
+                "intakeFormDrpdwnMasterObjectName": "INTAKE_REQUEST_TYPE"
+            }
+        ],
+        "REQUIRE_PLG": [
+            {
+                "intakeFormDrpdwnDetailId": 110,
+                "objectName": "Yes",
+                "intakeFormDrpdwnMasterId": 200,
+                "intakeFormDrpdwnMasterObjectName": "REQUIRE_PLG"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 111,
+                "objectName": "No",
+                "intakeFormDrpdwnMasterId": 200,
+                "intakeFormDrpdwnMasterObjectName": "REQUIRE_PLG"
+            }
+        ],
+        "INTAKE_REQUEST_STATUS": [
+            {
+                "intakeFormDrpdwnDetailId": 167,
+                "objectName": "New",
+                "intakeFormDrpdwnMasterId": 800,
+                "intakeFormDrpdwnMasterObjectName": "INTAKE_REQUEST_STATUS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 168,
+                "objectName": "In Progress",
+                "intakeFormDrpdwnMasterId": 800,
+                "intakeFormDrpdwnMasterObjectName": "INTAKE_REQUEST_STATUS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 169,
+                "objectName": "Complete",
+                "intakeFormDrpdwnMasterId": 800,
+                "intakeFormDrpdwnMasterObjectName": "INTAKE_REQUEST_STATUS"
+            }
+        ],
+        "INTAKE_CATEGORY": [
+            {
+                "intakeFormDrpdwnDetailId": 170,
+                "objectName": "Acq",
+                "intakeFormDrpdwnMasterId": 900,
+                "intakeFormDrpdwnMasterObjectName": "INTAKE_CATEGORY"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 171,
+                "objectName": "CC",
+                "intakeFormDrpdwnMasterId": 900,
+                "intakeFormDrpdwnMasterObjectName": "INTAKE_CATEGORY"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 172,
+                "objectName": "Ret",
+                "intakeFormDrpdwnMasterId": 900,
+                "intakeFormDrpdwnMasterObjectName": "INTAKE_CATEGORY"
+            }
+        ],
+        "TARGET_AUDIENCE": [
+            {
+                "intakeFormDrpdwnDetailId": 112,
+                "objectName": "Existing",
+                "intakeFormDrpdwnMasterId": 300,
+                "intakeFormDrpdwnMasterObjectName": "TARGET_AUDIENCE"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 113,
+                "objectName": "New",
+                "intakeFormDrpdwnMasterId": 300,
+                "intakeFormDrpdwnMasterObjectName": "TARGET_AUDIENCE"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 114,
+                "objectName": "Both",
+                "intakeFormDrpdwnMasterId": 300,
+                "intakeFormDrpdwnMasterObjectName": "TARGET_AUDIENCE"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 115,
+                "objectName": "N/A",
+                "intakeFormDrpdwnMasterId": 300,
+                "intakeFormDrpdwnMasterObjectName": "TARGET_AUDIENCE"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 116,
+                "objectName": "Employees",
+                "intakeFormDrpdwnMasterId": 300,
+                "intakeFormDrpdwnMasterObjectName": "TARGET_AUDIENCE"
+            }
+        ],
+        "TIER_REQUIREMENTS": [
+            {
+                "intakeFormDrpdwnDetailId": 129,
+                "objectName": "ADVANCE",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 130,
+                "objectName": "ADVANCE TV PAQUETE LATINO",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 131,
+                "objectName": "C2C",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 132,
+                "objectName": "CDT ECONOMY",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 133,
+                "objectName": "CONTOUR FLEX ECONOMY",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 134,
+                "objectName": "CONTOUR FLEX ECONOMY LATINO",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 135,
+                "objectName": "CONTOUR FLEX LATINO",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 136,
+                "objectName": "CONTOUR FLEX STARTER",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 137,
+                "objectName": "CONTOUR TV",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 138,
+                "objectName": "CONTOUR TV LATINO",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 139,
+                "objectName": "CONTOUR TV PREFERRED",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 140,
+                "objectName": "CONTOUR TV PREFERRED LATINO",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 141,
+                "objectName": "CONTOUR TV PREMIER",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 142,
+                "objectName": "CONTOUR TV ULTIMATE",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 143,
+                "objectName": "CONTOUR TV ULTIMATE LATINO",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 144,
+                "objectName": "ECONOMY",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 145,
+                "objectName": "ECONOMY PLUS",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 146,
+                "objectName": "EL MIX",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 147,
+                "objectName": "ESSENTIALS",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 148,
+                "objectName": "ESSENTIALS 30",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 149,
+                "objectName": "FLEX WATCH LATINO",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 150,
+                "objectName": "FLEXWATCH",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 151,
+                "objectName": "GIGABIT",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 152,
+                "objectName": "HOME AUTOMATION",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 153,
+                "objectName": "LINE CC",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 154,
+                "objectName": "PREFERRED",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 155,
+                "objectName": "PREFERRED 100",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 156,
+                "objectName": "PREMIER",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 157,
+                "objectName": "SEASONAL",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 158,
+                "objectName": "STARTER",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 159,
+                "objectName": "STARTER 10",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 160,
+                "objectName": "STARTER PLUS",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 161,
+                "objectName": "ULTIMATE",
+                "intakeFormDrpdwnMasterId": 600,
+                "intakeFormDrpdwnMasterObjectName": "TIER_REQUIREMENTS"
+            }
+        ],
+        "CHANNELS": [
+            {
+                "intakeFormDrpdwnDetailId": 120,
+                "objectName": "ALL",
+                "intakeFormDrpdwnMasterId": 500,
+                "intakeFormDrpdwnMasterObjectName": "CHANNELS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 121,
+                "objectName": "CAG",
+                "intakeFormDrpdwnMasterId": 500,
+                "intakeFormDrpdwnMasterObjectName": "CHANNELS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 122,
+                "objectName": "Care",
+                "intakeFormDrpdwnMasterId": 500,
+                "intakeFormDrpdwnMasterObjectName": "CHANNELS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 123,
+                "objectName": "Chat",
+                "intakeFormDrpdwnMasterId": 500,
+                "intakeFormDrpdwnMasterObjectName": "CHANNELS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 124,
+                "objectName": "CHL COE",
+                "intakeFormDrpdwnMasterId": 500,
+                "intakeFormDrpdwnMasterObjectName": "CHANNELS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 125,
+                "objectName": "CHL PSC",
+                "intakeFormDrpdwnMasterId": 500,
+                "intakeFormDrpdwnMasterObjectName": "CHANNELS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 126,
+                "objectName": "DSR",
+                "intakeFormDrpdwnMasterId": 500,
+                "intakeFormDrpdwnMasterObjectName": "CHANNELS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 127,
+                "objectName": "Executive Escalation (Care)",
+                "intakeFormDrpdwnMasterId": 500,
+                "intakeFormDrpdwnMasterObjectName": "CHANNELS"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 128,
+                "objectName": "Field",
+                "intakeFormDrpdwnMasterId": 500,
+                "intakeFormDrpdwnMasterObjectName": "CHANNELS"
+            }
+        ],
+        "INTAKE_PRIORITY": [
+            {
+                "intakeFormDrpdwnDetailId": 173,
+                "objectName": "High",
+                "intakeFormDrpdwnMasterId": 1000,
+                "intakeFormDrpdwnMasterObjectName": "INTAKE_PRIORITY"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 174,
+                "objectName": "Medium",
+                "intakeFormDrpdwnMasterId": 1000,
+                "intakeFormDrpdwnMasterObjectName": "INTAKE_PRIORITY"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 175,
+                "objectName": "Low",
+                "intakeFormDrpdwnMasterId": 1000,
+                "intakeFormDrpdwnMasterObjectName": "INTAKE_PRIORITY"
+            }
+        ],
+        "STEPUP_DURATION": [
+            {
+                "intakeFormDrpdwnDetailId": 101,
+                "objectName": "12+12",
+                "intakeFormDrpdwnMasterId": 100,
+                "intakeFormDrpdwnMasterObjectName": "STEPUP_DURATION"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 102,
+                "objectName": "12+12+12",
+                "intakeFormDrpdwnMasterId": 100,
+                "intakeFormDrpdwnMasterObjectName": "STEPUP_DURATION"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 103,
+                "objectName": "12+24",
+                "intakeFormDrpdwnMasterId": 100,
+                "intakeFormDrpdwnMasterObjectName": "STEPUP_DURATION"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 104,
+                "objectName": "24+12",
+                "intakeFormDrpdwnMasterId": 100,
+                "intakeFormDrpdwnMasterObjectName": "STEPUP_DURATION"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 105,
+                "objectName": "24+12+12",
+                "intakeFormDrpdwnMasterId": 100,
+                "intakeFormDrpdwnMasterObjectName": "STEPUP_DURATION"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 106,
+                "objectName": "No Step Up",
+                "intakeFormDrpdwnMasterId": 100,
+                "intakeFormDrpdwnMasterObjectName": "STEPUP_DURATION"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 107,
+                "objectName": "12",
+                "intakeFormDrpdwnMasterId": 100,
+                "intakeFormDrpdwnMasterObjectName": "STEPUP_DURATION"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 108,
+                "objectName": "99999",
+                "intakeFormDrpdwnMasterId": 100,
+                "intakeFormDrpdwnMasterObjectName": "STEPUP_DURATION"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 109,
+                "objectName": "TE Code Request - Not Applicable",
+                "intakeFormDrpdwnMasterId": 100,
+                "intakeFormDrpdwnMasterObjectName": "STEPUP_DURATION"
+            }
+        ],
+        "TE_CODE": [
+            {
+                "intakeFormDrpdwnDetailId": 117,
+                "objectName": "Yes",
+                "intakeFormDrpdwnMasterId": 400,
+                "intakeFormDrpdwnMasterObjectName": "TE_CODE"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 118,
+                "objectName": "No",
+                "intakeFormDrpdwnMasterId": 400,
+                "intakeFormDrpdwnMasterObjectName": "TE_CODE"
+            },
+            {
+                "intakeFormDrpdwnDetailId": 119,
+                "objectName": "Varies by Offer",
+                "intakeFormDrpdwnMasterId": 400,
+                "intakeFormDrpdwnMasterObjectName": "TE_CODE"
+            }
+        ]
+    },
+    "campaignCodesList": [
+        {
+            "key": "1",
+            "value": "1212"
+        },
+        {
+            "key": "14",
+            "value": "A12908021"
+        },
+        {
+            "key": "15",
+            "value": "A12231434"
+        },
+        {
+            "key": "16",
+            "value": "A12215454"
+        },
+        {
+            "key": "17",
+            "value": "A12289789"
+        },
+        {
+            "key": "18",
+            "value": "A12202132"
+        },
+        {
+            "key": "26",
+            "value": "A12908021"
+        },
+        {
+            "key": "27",
+            "value": "A12908021"
+        },
+        {
+            "key": "28",
+            "value": "A12908021"
+        }
+    ],
+    "mapMarketList": {
+        "1": "Orange County",
+        "2": "Las Vegas",
+        "3": "Palos Verdes",
+        "4": "Santa Barbara",
+        "5": "Northern Virginia",
+        "6": "San Diego",
+        "7": "Phoenix",
+        "8": "Connecticut",
+        "9": "Rhode Island",
+        "10": "Cleveland",
+        "11": "Hampton Roads",
+        "12": "Roanoke",
+        "13": "Kansas",
+        "14": "New Orleans",
+        "15": "Baton Rouge",
+        "16": "Tulsa",
+        "17": "Omaha",
+        "18": "Gainesville",
+        "19": "Pensacola",
+        "20": "Oklahoma City",
+        "21": "Macon"
+    },
+    "pricingOwners": [
+        {
+            "userId": 17,
+            "createdBy": "test@cox.com",
+            "createdDate": "02-19-2018",
+            "firstname": "Test",
+            "lastname": "Lastname",
+            "logonId": "test@cox.com",
+            "modifiedBy": null,
+            "modifiedDate": null,
+            "lastLoginInfo": null,
+            "statusId": 1,
+            "roleId": null,
+            "workGroupIds": null,
+            "lastLogon": null
+        },
+        {
+            "userId": 16,
+            "createdBy": "user@cox.com",
+            "createdDate": "02-16-2018",
+            "firstname": "First Name",
+            "lastname": "Last Name",
+            "logonId": "user@cox.com",
+            "modifiedBy": null,
+            "modifiedDate": null,
+            "lastLoginInfo": null,
+            "statusId": 2,
+            "roleId": null,
+            "workGroupIds": null,
+            "lastLogon": null
+        }
+    ],
+    "products": [
+        {
+            "psuTypeId": "105",
+            "psuName": "MULTI",
+            "description": null
+        },
+        {
+            "psuTypeId": "106",
+            "psuName": "OTHERS",
+            "description": null
+        },
+        {
+            "psuTypeId": "101",
+            "psuName": "DATA",
+            "description": null
+        },
+        {
+            "psuTypeId": "102",
+            "psuName": "PHONE",
+            "description": null
+        },
+        {
+            "psuTypeId": "103",
+            "psuName": "VIDEO",
+            "description": null
+        },
+        {
+            "psuTypeId": "104",
+            "psuName": "HOMELIFE",
+            "description": null
+        }
+    ]
+}

@@ -1,0 +1,187 @@
+{
+    "actionResult": null,
+    "actionStatus": null,
+    "users": [
+        {
+            "userId": 4,
+            "createdBy": "theeran@cox.com",
+            "createdDate": "03-21-2018",
+            "firstname": "Theeran",
+            "lastname": "Karthi Kannan",
+            "logonId": "theeran@cox.com",
+            "modifiedBy": "4",
+            "modifiedDate": "03-28-2018",
+            "lastLoginInfo": {
+                "userLoginInfoTxnDetId": 32,
+                "lastLogon": null,
+                "loginStatus": "Y",
+                "loginTime": "03-28-2018",
+                "sessionKey": "a3Kz8\\f9"
+            },
+            "statusId": 1,
+            "roleId": 1,
+            "workGroupIds": [
+                9,
+                2
+            ],
+            "lastLogon": "2018-03-28"
+        },
+        {
+            "userId": 3,
+            "createdBy": "gurushankar.s@cox.com",
+            "createdDate": "03-21-2018",
+            "firstname": "Guru",
+            "lastname": "Sankar",
+            "logonId": "gurushankar.s@cox.com",
+            "modifiedBy": "1",
+            "modifiedDate": "03-22-2018",
+            "lastLoginInfo": {
+                "userLoginInfoTxnDetId": 5,
+                "lastLogon": null,
+                "loginStatus": "Y",
+                "loginTime": "03-21-2018",
+                "sessionKey": "(s0St4e7"
+            },
+            "statusId": 1,
+            "roleId": 1,
+            "workGroupIds": [
+                9
+            ],
+            "lastLogon": "2018-03-21"
+        },
+        {
+            "userId": 5,
+            "createdBy": "theeran1@cox.com",
+            "createdDate": "03-21-2018",
+            "firstname": "Theeran",
+            "lastname": "KK",
+            "logonId": "theeran1@cox.com",
+            "modifiedBy": "1",
+            "modifiedDate": "03-22-2018",
+            "lastLoginInfo": null,
+            "statusId": 1,
+            "roleId": 1,
+            "workGroupIds": [
+                9,
+                1
+            ],
+            "lastLogon": null
+        },
+        {
+            "userId": 6,
+            "createdBy": "theeran2@cox.com",
+            "createdDate": "03-21-2018",
+            "firstname": "Theeran",
+            "lastname": "KK",
+            "logonId": "theeran2@cox.com",
+            "modifiedBy": "1",
+            "modifiedDate": "03-22-2018",
+            "lastLoginInfo": null,
+            "statusId": 1,
+            "roleId": 1,
+            "workGroupIds": [
+                9,
+                1,
+                2
+            ],
+            "lastLogon": null
+        },
+        {
+            "userId": 1,
+            "createdBy": "Ramesh.Bodapati@cox.com",
+            "createdDate": "02-19-2018",
+            "firstname": "Ramesh",
+            "lastname": "Bodapati",
+            "logonId": "ramesh.bodapati@cox.com",
+            "modifiedBy": "4",
+            "modifiedDate": "03-26-2018",
+            "lastLoginInfo": {
+                "userLoginInfoTxnDetId": 21,
+                "lastLogon": null,
+                "loginStatus": "Y",
+                "loginTime": "03-22-2018",
+                "sessionKey": "n|m33V3o"
+            },
+            "statusId": 2,
+            "roleId": 1,
+            "workGroupIds": [
+                9,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "lastLogon": "2018-03-22"
+        },
+        {
+            "userId": 2,
+            "createdBy": "nitin.choube@cox.com",
+            "createdDate": "03-21-2018",
+            "firstname": "nitin",
+            "lastname": "choube",
+            "logonId": "nitin.choube@cox.com",
+            "modifiedBy": "2",
+            "modifiedDate": "03-21-2018",
+            "lastLoginInfo": {
+                "userLoginInfoTxnDetId": 6,
+                "lastLogon": null,
+                "loginStatus": "Y",
+                "loginTime": "03-21-2018",
+                "sessionKey": "5'4a9ptG"
+            },
+            "statusId": 1,
+            "roleId": 2,
+            "workGroupIds": [
+                9,
+                1
+            ],
+            "lastLogon": "2018-03-22"
+        }
+    ],
+    "icomsStatus": [
+        {
+            "name": "ICOMS_STATUS",
+            "records": [
+                {
+                    "key": 657,
+                    "value": "Not Started"
+                },
+                {
+                    "key": 658,
+                    "value": "Build in Progress"
+                },
+                {
+                    "key": 659,
+                    "value": "Peer Review Needed"
+                },
+                {
+                    "key": 660,
+                    "value": "Peer Review in Progress"
+                },
+                {
+                    "key": 661,
+                    "value": "Oh Hold"
+                },
+                {
+                    "key": 662,
+                    "value": "Received"
+                },
+                {
+                    "key": 663,
+                    "value": "Completed"
+                },
+                {
+                    "key": 664,
+                    "value": "Cancelled"
+                },
+                {
+                    "key": 665,
+                    "value": "Need Changes"
+                }
+            ]
+        }
+    ]
+}

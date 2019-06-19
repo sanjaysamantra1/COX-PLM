@@ -1,0 +1,118 @@
+<div class="row">
+  <div class="col-md-12">
+    <!--<form #discountForm="ngForm" (ngSubmit)="onSubmit(discountForm)" class="form-horizontal">-->
+    <mat-accordion close-others="oneAtATime">
+      <mat-expansion-panel class="form-divider panel-no-background">
+        <mat-expansion-panel-header>
+          Online
+        </mat-expansion-panel-header>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Online Status</label>
+              <div class="col-xs-7">
+                <angular2-multiselect *ngIf="addEditMode" name="onlineStatus" [data]="onlineStatusDropDownList" [(ngModel)]="onlineStatusSelectedItems"
+                  #onlineStatusVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('onlineStatusId', onlineStatusSelectedItems, 'single')"
+                  (onDeSelect)="onItemDeSelect('onlineStatusId', onlineStatusSelectedItems, 'single')"
+                  (onSelectAll)="onSelectAll('onlineStatusId', onlineStatusSelectedItems, 'single')"
+                  (onDeSelectAll)="onDeSelectAll('onlineStatusId', onlineStatusSelectedItems, 'single')">
+                </angular2-multiselect>
+                <p *ngIf="viewMode">
+                    <span *ngFor="let onlineStatus of utilitiesService.getSelectedItemsObject(masterData, 'ONLINE_STATUS', addEditDiscountSubmitData.discMapOnline.onlineStatusId); let i = index;">
+                        {{onlineStatus.itemName}}
+                        <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'ONLINE_STATUS', addEditDiscountSubmitData.discMapOnline.onlineStatusId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'ONLINE_STATUS', addEditDiscountSubmitData.discMapOnline.onlineStatusId).length))">,</span>
+                    </span>
+                </p>
+
+                <!--<div *ngIf="onlineStatusVal.invalid && (onlineStatusVal.dirty || onlineStatusVal.touched)" class="input-error">
+                    <div *ngIf="onlineStatusVal.errors.required">
+                     Online Status is required
+                    </div>
+                  </div>-->
+
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-xs-5 control-label">Uptier Values</label>
+              <div class="col-xs-7">
+                <textarea id="uptierValues" name="uptierValues" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapOnline.uptierValues" #uptierValues="ngModel"
+                  *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('uptierValues', addEditDiscountSubmitData.discMapOnline.uptierValues)" rows="3" i style="height: auto;"></textarea>
+
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapOnline.uptierValues }}</p>
+
+                <!--<div *ngIf="uptierValues.invalid && (uptierValues.dirty || uptierValues.touched)" class="input-error">
+                  <div *ngIf="uptierValues.errors.required">
+                   Uptier Values is required.
+                  </div>
+                </div>-->
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-xs-5 control-label">Disclaimer</label>
+              <div class="col-xs-7">
+                <textarea id="disclaimer" name="Disclaimer" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapOnline.disclaimer" #disclaimer="ngModel"
+                  *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('disclaimer', addEditDiscountSubmitData.discMapOnline.disclaimer)" rows="3" i style="height: auto;"></textarea>
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapOnline.disclaimer }}</p>
+                <!--<div *ngIf="discliamer.invalid && (discliamer.dirty || discliamer.touched)" class="input-error">
+                  <div *ngIf="discliamer.errors.required">
+                   Discliamer is required.
+                  </div>
+                </div>-->
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">eCome Promo Code</label>
+              <div class="col-xs-7">
+                <input type="text" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapOnline.ecomPromoCode" name="ecomPromoCode" #ecomPromoCode="ngModel"
+                  *ngIf="addEditMode" (change)="updateSubmitData('ecomPromoCode', addEditDiscountSubmitData.discMapOnline.ecomPromoCode)">
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapOnline.ecomPromoCode }}</p>
+                <!--<div *ngIf="ecomePromo.invalid && (ecomePromo.dirty || ecomePromo.touched)" class="input-error">
+                    <div *ngIf="ecomePromo.errors.required">
+                      eCome Promo Code is required
+                    </div>
+                  </div>-->
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Savings Sticker</label>
+              <div class="col-xs-7">
+                <textarea id="savingsSticker" name="savingsSticker" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapOnline.savingsSticker"
+                  #savingsSticker="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('savingsSticker', addEditDiscountSubmitData.discMapOnline.savingsSticker)"
+                  rows="3" i style="height: auto;"></textarea>
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapOnline.savingsSticker }}</p>
+                <!--<div *ngIf="savings.invalid && (savings.dirty || savings.touched)" class="input-error">
+                  <div *ngIf="savings.errors.required">
+                  Savings Sticker is required.
+                  </div>
+                </div>-->
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <!--</form>-->
+  </div>
+</div>

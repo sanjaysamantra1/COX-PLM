@@ -1,0 +1,65 @@
+<div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">PLM Workflow Dashboard</h1>
+        </div>
+    </div>
+    <div class="row landing-grids">
+        <plm-actors [role]="'requestor'"></plm-actors>
+        <plm-actors [role]="'configurator'"></plm-actors>
+        <plm-actors [role]="'distributor'"></plm-actors>
+</div>
+
+    <div class="row">
+<div class="col-md-6 margin-top-20">
+
+        </div>
+
+        </div>
+<div class="col-md-6 margin-top-20">
+
+        </div>
+<div class="col-md-6 margin-top-20">
+
+        </div>
+    </div>
+
+     <div class="row">
+        <div class="col col-sm-6">
+            <div class="card mb-3">
+                <div #chartTarget>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-6">
+            <div class="card mb-3">
+                <div #chartTarget1>
+                </div>
+            </div>
+        </div>
+     </div>
+      <div class="row">
+        <div class="col col-sm-6">
+            <div class="card mb-3">
+                <div #chartTarget2>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-6">
+            <div class="card mb-3">
+                <div #chartTarget3>
+                </div>
+            </div>
+        </div>
+     </div>
+
+    <div class="row landing-grids margin-top-10">
+        <plm-actors [role]="'icoms'"></plm-actors>
+        <plm-actors [role]="'omc'"></plm-actors>
+        <plm-actors [role]="'pinpoint'"></plm-actors>
+        <plm-actors [role]="'ecom'"></plm-actors>
+</div>
+
+
+
+

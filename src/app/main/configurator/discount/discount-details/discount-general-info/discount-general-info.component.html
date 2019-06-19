@@ -1,0 +1,361 @@
+<!-- First Section Starts here -->
+<mat-expansion-panel class="form-divider panel-no-background">
+    <mat-expansion-panel-header>
+        Discount General Information
+    </mat-expansion-panel-header>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-5 control-label">Discount ID</label>
+                <div class="col-xs-7">
+                    <input type="text" id="DiscountID" name="DiscountID" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discountId"
+                        *ngIf="addEditMode" (change)="updateSubmitData('discountId', addEditDiscountSubmitData.discountId)" #DiscountIDs="ngModel"
+                        disabled>
+
+                    <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discountId }}</p>
+                    <!--<div *ngIf="discountIDs.invalid && (discountIDs.dirty || discountIDs.touched)"
+                        class="input-error">
+                            <div *ngIf="discountIDs.errors.required">
+                                Discount ID  is required!
+                            </div>
+                        </div>-->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-5 control-label">Discount Code</label>
+                <div class="col-xs-7">
+                    <input type="text" id="DiscountCode" name="DiscountCode" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discountCode"
+                        *ngIf="addEditMode" (change)="updateSubmitData('discountCode', addEditDiscountSubmitData.discountCode)"
+                        #DiscountCodes="ngModel">
+
+                    <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discountCode }}</p>
+                    <!--<div *ngIf="discountCodes.invalid && (discountCodes.dirty || discountCodes.touched)"
+                        class="input-error">
+                            <div *ngIf="discountCodes.errors.required">
+                                Discount Code  is required!
+                            </div>
+                        </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-xs-5 control-label">Sales Start Date</label>
+                <div class="col-xs-7">
+                    <div *ngIf="addEditMode">
+                        <mat-form-field style="width:100%;" class="input-group">
+                            <input name="startDate" matInput [matDatepicker]="startDate" class="form-control" [(ngModel)]="addEditDiscountSubmitData.startDate"
+                                [min]="salesStartMinDate" #discountStartDate="ngModel" (ngModelChange)="startDateChanged('startDate', addEditDiscountSubmitData.startDate)">
+                            <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                            <mat-datepicker #startDate></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <p *ngIf="viewMode">{{ addEditDiscountSubmitData.startDate | date:'MM-dd-yyyy'}}</p>
+
+
+
+                    <!--<div *ngIf="startDate.errors && (startDate.dirty || startDate.touched)">
+                            <mat-error *ngIf="startDate.errors && startDate.errors.required">Start Date is required</mat-error>
+                            </div>-->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-xs-5 control-label">Sales End Date </label>
+                <div class="col-xs-7">
+                    <div *ngIf="addEditMode">
+                        <mat-form-field style="width:100%;" class="input-group">
+                            <input matInput [matDatepicker]="endDate" class="form-control" [(ngModel)]="addEditDiscountSubmitData.endDate" [min]="salesEndMinDate"
+                                #discountEndDate="ngModel" (ngModelChange)="updateSubmitData('endDate', addEditDiscountSubmitData.endDate)">
+                            <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+                            <mat-datepicker #endDate></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <p *ngIf="viewMode">{{ addEditDiscountSubmitData.endDate | date:'MM-dd-yyyy' }}</p>
+                    <!--<div *ngIf="expiryDates.invalid && (expiryDates.dirty || expiryDates.touched)" class="input-error">
+                            <div *ngIf="expiryDates.errors.required">
+                                expiry Date is required
+                            </div>
+                            </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-xs-5 control-label">Description</label>
+                <div class="col-xs-7">
+                    <input type="text" id="Description" name="Description" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.description"
+                        *ngIf="addEditMode" (change)="updateSubmitData('description', addEditDiscountSubmitData.description)"
+                        #Descriptions="ngModel">
+                    <p *ngIf="viewMode">{{ addEditDiscountSubmitData.description }}</p>
+                    <!--<div *ngIf="descriptions.invalid && (descriptions.dirty || descriptions.touched)"
+                            class="input-error">
+                                <div *ngIf="descriptions.errors.required">
+                                    description is required!
+                                </div>
+                            </div>-->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-5 control-label">Parent discount Code</label>
+                <div class="col-xs-7">
+                    <!--<select class="form-control" id="status" name="status">
+                            <option value="In Progress" selected>In Progress</option>
+                            <option value="Completed">Completed</option>
+                            
+                        </select>-->
+                    <angular2-multiselect *ngIf="addEditMode" name="parentDiscountDropDown" [data]="parentDiscountCodeDropDownList" [(ngModel)]="parentDiscountCodeSelectedItems"
+                        #intakeRequestTypeVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('parentCampaignId', parentDiscountCodeSelectedItems, 'single')"
+                        (onDeSelect)="onItemDeSelect('parentCampaignId', parentDiscountCodeSelectedItems, 'single')" (onSelectAll)="onSelectAll('parentCampaignId', parentDiscountCodeSelectedItems, 'single')"
+                        (onDeSelectAll)="onDeSelectAll('parentCampaignId', parentDiscountCodeSelectedItems, 'single')">
+                    </angular2-multiselect>
+                    <p *ngIf="viewMode">
+                        <span *ngFor="let parentDiscountCode of utilitiesService.getSelectedItemsObject(masterData, 'campaignCodesList', addEditDiscountSubmitData.parentCampaignId); let i = index;">
+                            {{parentDiscountCode.itemName}}
+                            <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'campaignCodesList', addEditDiscountSubmitData.parentCampaignId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'campaignCodesList', addEditDiscountSubmitData.parentCampaignId).length))">,</span>
+                        </span>
+                    </p>
+
+                    <!--<div *ngIf="statuss.invalid && (statuss.dirty || statuss.touched)"
+                                class="input-error">
+                                    <div *ngIf="statuss.errors.required">
+                                        status is required!
+                                    </div>
+                                </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-5 control-label">Replacing Discount Code</label>
+                <div class="col-xs-7">
+                    <angular2-multiselect *ngIf="addEditMode" name="replacingDiscountDropDown" [data]="replacingDiscountCodeDropDownList" [(ngModel)]="replacingDiscountCodeSelectedItems"
+                        #intakeRequestTypeVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('replacingCampaignId', replacingDiscountCodeSelectedItems, 'single')"
+                        (onDeSelect)="onItemDeSelect('replacingCampaignId', replacingDiscountCodeSelectedItems, 'single')" (onSelectAll)="onSelectAll('replacingCampaignId', replacingDiscountCodeSelectedItems, 'single')"
+                        (onDeSelectAll)="onDeSelectAll('replacingCampaignId', replacingDiscountCodeSelectedItems, 'single')">
+                    </angular2-multiselect>
+                    <p *ngIf="viewMode">
+                        <span *ngFor="let replacingDiscountCode of utilitiesService.getSelectedItemsObject(masterData, 'campaignCodesList', addEditDiscountSubmitData.replacingCampaignId); let i = index;">
+                            {{replacingDiscountCode.itemName}}
+                            <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'campaignCodesList', addEditDiscountSubmitData.replacingCampaignId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'campaignCodesList', addEditDiscountSubmitData.replacingCampaignId).length))">,</span>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-5 control-label">Failed Self Install Credit </label>
+                <div class="col-xs-7">
+                    <input type="text" id="failedSelfInstalledCredit" name="failedSelfInstalledCredit" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.failedSelfInstalledCredit"
+                        *ngIf="addEditMode" (change)="updateSubmitData('failedSelfInstalledCredit', addEditDiscountSubmitData.failedSelfInstalledCredit)"
+                        #failedSelfInstalledCredit="ngModel">
+                    <p *ngIf="viewMode">{{ addEditDiscountSubmitData.failedSelfInstalledCredit }}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-5 control-label">End Date Last Change</label>
+                <div class="col-xs-7">
+                    <div *ngIf="addEditMode">
+                        <mat-form-field style="width:100%;" class="input-group">
+                            <input matInput [matDatepicker]="endDateLastChange" class="form-control" [(ngModel)]="addEditDiscountSubmitData.endDateLastChange"
+                                #discountEndDateLastChange="ngModel" [min]="salesEndLastChangeMinDate" (ngModelChange)="updateSubmitData('endDateLastChange', addEditDiscountSubmitData.endDateLastChange)">
+                            <mat-datepicker-toggle matSuffix [for]="endDateLastChange"></mat-datepicker-toggle>
+                            <mat-datepicker #endDateLastChange></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <p *ngIf="viewMode">{{ addEditDiscountSubmitData.endDateLastChange | date:'MM-dd-yyyy' }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-5 control-label">Self Install Incentive</label>
+                <div class="col-xs-7">
+                    <input type="text" id="selfInstallIncentive" name="selfInstallIncentive" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.selfInstallIncentive"
+                        *ngIf="addEditMode" (change)="updateSubmitData('selfInstallIncentive', addEditDiscountSubmitData.selfInstallIncentive)"
+                        #selfInstallIncentive="ngModel">
+                    <p *ngIf="viewMode">{{ addEditDiscountSubmitData.selfInstallIncentive }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-5 control-label">
+                    <input type="checkbox" name="active" value="" [(ngModel)]="addEditDiscountSubmitData.active" #activeVal="ngModel"
+                        [checked]="addEditDiscountSubmitData.active" [disabled]="viewMode" (change)="updateSubmitData('active', addEditDiscountSubmitData.active)"> Active/Inactive</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-5 control-label">
+                    <input type="checkbox" name="active" value="" [(ngModel)]="addEditDiscountSubmitData.future" #activeVal="ngModel"
+                        [checked]="addEditDiscountSubmitData.future" [disabled]="viewMode" (change)="updateSubmitData('future', addEditDiscountSubmitData.future)"> Future</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-5 control-label">Project</label>
+                <div class="col-xs-7">
+                    <angular2-multiselect *ngIf="addEditMode" name="projectType" [data]="projectDropDownList" [(ngModel)]="projectSelectedItems"
+                        #intakeRequestTypeVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('projectId', projectSelectedItems, 'single')"
+                        (onDeSelect)="onItemDeSelect('projectId', projectSelectedItems, 'single')" (onSelectAll)="onSelectAll('projectId', projectSelectedItems, 'single')"
+                        (onDeSelectAll)="onDeSelectAll('projectId', projectSelectedItems, 'single')">
+                    </angular2-multiselect>
+                    <p *ngIf="viewMode">
+                        <span *ngFor="let project of utilitiesService.getSelectedItemsObject(masterData, 'PROJECT', addEditDiscountSubmitData.projectId); let i = index;">
+                            {{ project.itemName }}
+                            <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'PROJECT', addEditDiscountSubmitData.projectId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'PROJECT', addEditDiscountSubmitData.projectId).length))">,</span>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-5 control-label">Review Before Expiration Status</label>
+                <div class="col-xs-7">
+                    <angular2-multiselect *ngIf="addEditMode" name="projectType" [data]="reviewBeforeExpirationStatusDropDownList" [(ngModel)]="reviewBeforeExpirationStatusSelectedItems"
+                        #intakeRequestTypeVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('reviewBeforeExpirationStatusId', reviewBeforeExpirationStatusSelectedItems, 'single')"
+                        (onDeSelect)="onItemDeSelect('reviewBeforeExpirationStatusId', reviewBeforeExpirationStatusSelectedItems, 'single')"
+                        (onSelectAll)="onSelectAll('reviewBeforeExpirationStatusId', reviewBeforeExpirationStatusSelectedItems, 'single')"
+                        (onDeSelectAll)="onDeSelectAll('reviewBeforeExpirationStatusId', reviewBeforeExpirationStatusSelectedItems, 'single')">
+                    </angular2-multiselect>
+                    <p *ngIf="viewMode">
+                        <span *ngFor="let reviewBeforeExpirationStatusIdVal of utilitiesService.getSelectedItemsObject(masterData, 'REVW_BFR_EXPIRATION_STATUS', addEditDiscountSubmitData.reviewBeforeExpirationStatusId); let i = index;">
+                            {{reviewBeforeExpirationStatusIdVal.itemName}}
+                            <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'REVW_BFR_EXPIRATION_STATUS', addEditDiscountSubmitData.reviewBeforeExpirationStatusId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'REVW_BFR_EXPIRATION_STATUS', addEditDiscountSubmitData.reviewBeforeExpirationStatusId).length))">,</span>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-5 control-label">Created Date</label>
+                <div class="col-xs-7">
+                    <div *ngIf="addEditMode">
+                        <mat-form-field style="width:100%;" class="input-group">
+                            <input matInput [matDatepicker]="createdDate" class="form-control" [(ngModel)]="addEditDiscountSubmitData.createdDate" #discountCreatedDate="ngModel"
+                                [min]="salesCreatedMinDate" (ngModelChange)="startDateChanged('createdDate', addEditDiscountSubmitData.createdDate)">
+                            <mat-datepicker-toggle matSuffix [for]="createdDate"></mat-datepicker-toggle>
+                            <mat-datepicker #createdDate></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <p *ngIf="viewMode">{{ addEditDiscountSubmitData.createdDate }}</p>
+                    <!--<div *ngIf="createds.invalid && (createds.dirty || createds.touched)"
+                            class="input-error">
+                                <div *ngIf="createds.errors.required">
+                                    created is required!
+                                </div>
+                            </div>-->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-5 control-label">Modified Date</label>
+                <div class="col-xs-7">
+                    <div *ngIf="addEditMode">
+                        <mat-form-field style="width:100%;" class="input-group">
+                            <input matInput [matDatepicker]="modifiedDate" class="form-control" [(ngModel)]="addEditDiscountSubmitData.modifiedDate" [min]="salesModifiedMinDate"
+                                #discountModifiedDate="ngModel" (ngModelChange)="updateSubmitData('modifiedDate', addEditDiscountSubmitData.modifiedDate)">
+                            <mat-datepicker-toggle matSuffix [for]="modifiedDate"></mat-datepicker-toggle>
+                            <mat-datepicker #modifiedDate></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+
+                    <p *ngIf="viewMode">{{ addEditDiscountSubmitData.modifiedDate }}</p>
+                    <!--<div *ngIf="projectIDs.invalid && (projectIDs.dirty || projectIDs.touched)"
+                            class="input-error">
+                                <div *ngIf="projectIDs.errors.required">
+                                    projectID is required!
+                                </div>
+                            </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-5 control-label">Created By User</label>
+                <div class="col-xs-7">
+                    <input type="text" id="CreatedByUser" name="CreatedByUser" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.createdByUser"
+                        *ngIf="addEditMode" (change)="updateSubmitData('createdByUser', addEditDiscountSubmitData.createdByUser)"
+                        #CreatedByUsers="ngModel" disabled>
+
+                    <p *ngIf="viewMode">{{ addEditDiscountSubmitData.createdByUser }}</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-5 control-label">Notes</label>
+                <div class="col-xs-7">
+                    <textarea id="Notes" name="Notes" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.notes" *ngIf="addEditMode"
+                        (change)="convertTextAreaContentWithBreaks('notes', addEditDiscountSubmitData.notes)" #Note="ngModel"></textarea>
+                    <p *ngIf="viewMode">{{ addEditDiscountSubmitData.notes }}</p>
+                    <!--<div *ngIf="notess.invalid && (notess.dirty || notess.touched)"
+                            class="input-error">
+                                <div *ngIf="notess.errors.required">
+                                    notes is required!
+                                </div>
+                            </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-5 control-label">Status</label>
+                <div class="col-xs-7">
+                    <input type="text" id="status" name="status" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.status"
+                        *ngIf="addEditMode" (change)="updateSubmitData('status', addEditDiscountSubmitData.status)" #DiscountIDs="ngModel"
+                        disabled>
+
+                    <p *ngIf="viewMode">{{ addEditDiscountSubmitData.status }}</p>
+                    <!-- <input type="text" id="Status" name="Status" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.status" (change)="updateSubmitData('status', addEditDiscountSubmitData.status)"
+                                #Stat="ngModel">
+                            <div *ngIf="statuss.invalid && (statuss.dirty || statuss.touched)"
+                                    class="input-error">
+                                        <div *ngIf="statuss.errors.required">
+                                            status is required!
+                                        </div>
+                                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-expansion-panel>
+<!-- First Section ends here -->

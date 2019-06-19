@@ -1,0 +1,274 @@
+{
+    "projectCode": "PRO_1519133984077",
+    "psu": {
+        "1P": [
+            {
+                "offerId": "800",
+                "marketingOfferID": "801",
+                "sequenceNo": null,
+                "psuType": "1P",
+                "productResponse": [
+                    {
+                        "psuTypeId": "101",
+                        "psuName": "DATA",
+                        "description": "STARTER"
+                    }
+                ],
+                "specificationResponse": {
+                    "price": "200.5",
+                    "discounType": "1",
+                    "discountduration": "New Description",
+                    "priceSpecification": "New Description",
+                    "discountValue": null
+                }
+            },
+            {
+                "offerId": null,
+                "marketingOfferID": "802",
+                "sequenceNo": null,
+                "psuType": "1P",
+                "productResponse": [
+                    {
+                        "psuTypeId": "102",
+                        "psuName": "PHONE",
+                        "description": "ESSENTIALS"
+                    }
+                ],
+                "specificationResponse": {
+                    "price": "200.5",
+                    "discounType": "1",
+                    "discountduration": "New Description",
+                    "priceSpecification": "New Description",
+                    "discountValue": null
+                }
+            }
+        ],
+        "2P": [
+            {
+                "offerId": "701",
+                "marketingOfferID": "803",
+                "sequenceNo": null,
+                "psuType": "1P",
+                "productResponse": [
+                    {
+                        "psuTypeId": "101",
+                        "psuName": "DATA",
+                        "description": "NO TIER"
+                    },
+                    {
+                        "psuTypeId": "102",
+                        "psuName": "PHONE",
+                        "description": "C2C"
+                    }
+                ],
+                "specificationResponse": {
+                    "price": "100",
+                    "discounType": "1",
+                    "discountduration": "Update Description",
+                    "priceSpecification": "Update Description",
+                    "discountValue": null
+                }
+            },
+            {
+                "offerId": null,
+                "marketingOfferID": "805",
+                "sequenceNo": null,
+                "psuType": "1P",
+                "productResponse": [
+                    {
+                        "psuTypeId": "101",
+                        "psuName": "DATA",
+                        "description": "NO TIER"
+                    },
+                    {
+                        "psuTypeId": "102",
+                        "psuName": "PHONE",
+                        "description": "C2C"
+                    }
+                ],
+                "specificationResponse": {
+                    "price": "100",
+                    "discounType": "1",
+                    "discountduration": "Update Description",
+                    "priceSpecification": "Update Description",
+                    "discountValue": null
+                }
+            }
+        ],
+        "3P": [
+            {
+                "offerId": "702",
+                "marketingOfferID": "803",
+                "sequenceNo": null,
+                "psuType": "1P",
+                "productResponse": [
+                    {
+                        "psuTypeId": "101",
+                        "psuName": "DATA",
+                        "description": "NO TIER"
+                    },
+                    {
+                        "psuTypeId": "102",
+                        "psuName": "PHONE",
+                        "description": "C2C"
+                    },
+                    {
+                        "psuTypeId": "103",
+                        "psuName": "VIDEO",
+                        "description": "OTHER"
+                    }
+                ],
+                "specificationResponse": {
+                    "price": "100",
+                    "discounType": "1",
+                    "discountduration": "Update Description",
+                    "priceSpecification": "Update Description",
+                    "discountValue": null
+                }
+            },
+            {
+                "offerId": null,
+                "marketingOfferID": "805",
+                "sequenceNo": null,
+                "psuType": "1P",
+                "productResponse": [
+                    {
+                        "psuTypeId": "101",
+                        "psuName": "DATA",
+                        "description": "NO TIER"
+                    },
+                    {
+                        "psuTypeId": "102",
+                        "psuName": "PHONE",
+                        "description": "C2C"
+                    },
+                    {
+                        "psuTypeId": "103",
+                        "psuName": "VIDEO",
+                        "description": "OTHER"
+                    }
+                ],
+                "specificationResponse": {
+                    "price": "100",
+                    "discounType": "1",
+                    "discountduration": "Update Description",
+                    "priceSpecification": "Update Description",
+                    "discountValue": null
+                }
+            }
+        ],
+        "4P": [
+            {
+                "offerId": "702",
+                "marketingOfferID": "804",
+                "sequenceNo": null,
+                "psuType": "1P",
+                "productResponse": [
+                    {
+                        "psuTypeId": "101",
+                        "psuName": "DATA",
+                        "description": "NO TIER"
+                    },
+                    {
+                        "psuTypeId": "102",
+                        "psuName": "PHONE",
+                        "description": "C2C"
+                    },
+                    {
+                        "psuTypeId": "103",
+                        "psuName": "VIDEO",
+                        "description": "OTHER"
+                    },
+                    {
+                        "psuTypeId": "104",
+                        "psuName": "HOMELIFE",
+                        "description": "SEASONAL"
+                    }
+                ],
+                "specificationResponse": {
+                    "price": "100",
+                    "discounType": "1",
+                    "discountduration": "Update Description",
+                    "priceSpecification": "Update Description",
+                    "discountValue": null
+                }
+            },
+            {
+                "offerId": "750",
+                "marketingOfferID": "805",
+                "sequenceNo": null,
+                "psuType": "1P",
+                "productResponse": [
+                    {
+                        "psuTypeId": "101",
+                        "psuName": "DATA",
+                        "description": "NO TIER"
+                    },
+                    {
+                        "psuTypeId": "102",
+                        "psuName": "PHONE",
+                        "description": "C2C"
+                    },
+                    {
+                        "psuTypeId": "103",
+                        "psuName": "VIDEO",
+                        "description": "OTHER"
+                    },
+                    {
+                        "psuTypeId": "104",
+                        "psuName": "HOMELIFE",
+                        "description": "SEASONAL"
+                    }
+                ],
+                "specificationResponse": {
+                    "price": "100",
+                    "discounType": "1",
+                    "discountduration": "Update Description",
+                    "priceSpecification": "Update Description",
+                    "discountValue": null
+                }
+            }
+        ]
+    },
+    "offers": [
+        {
+            "projectCode": "PRO_1519133984077",
+            "offerId": "22",
+            "psu": "1P",
+            "startDt": "01-02-2018",
+            "releaseDt": "01-02-2018",
+            "status": "Draft",
+            "releaseCd": null
+        }
+    ],
+    "offersUnderProject": [
+        {
+            "offerId": "1409",
+            "name": "1P Quick Connect Pref 100 CHSI",
+            "type":"1P CHSI",
+            "description":"Pref 100 CHSI, EQ rental, first mo free, $54.99 mo. 2-12",
+            "category":"01-Base Offer",
+            "startDate": "06-28-2017",
+            "endDate": "07-23-2017",
+            "bundle": "",
+            "salesAdvice":"Pref 100 CHSI, EQ rental, first mo free, $54.99 mo. 2-12",
+            "primaryCampaignCode":"EO171DP121",
+            "lastModifyDate":"06-28-2017",
+            "status":"Draft"
+        },
+        {
+            "offerId": "1410",
+            "name": "3P Quick Connect CTV/Pref 100 CHSI/Ess CHL",
+            "type":"3P VIDEO/CHSI/CHL",
+            "description":"CTV, Pref 100 CHSI, Ess CHL, EQ rental, $55 first mo., $109.99 mo. 2-12",
+            "category":"01-Base Offer",
+            "startDate": "06-28-2017",
+            "endDate": "07-23-2017",
+            "bundle": "",
+            "salesAdvice":"CTV, Pref 100 CHSI, Ess CHL, EQ rental, $55 first mo., $109.99 mo. 2-12",
+            "primaryCampaignCode":"SB178N123B",
+            "lastModifyDate":"07-23-2017",
+            "status":"Completed"
+        }
+    ]
+}

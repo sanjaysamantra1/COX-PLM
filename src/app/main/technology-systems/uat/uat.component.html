@@ -1,0 +1,115 @@
+<div class="row" >
+  <div class="col-md-12">
+     <h1 class="page-header">OMC-UAT Users</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+     <div class="panel panel-primary">
+        <div class="panel-heading">Search</div>
+        <div class="panel-body">
+           <form class="form-inline">
+              <div class="row">
+                 <div class="col-md-8">
+                    <div class="form-group">
+                       <label for="search" class="control-label">Project Code/  Release Code/Offer Code</label>
+                       <input type="text" class="form-control" ng-model="search[columns]" placeholder="Enter some text to search">
+                    </div>
+                 </div>
+                 <div class="col-md-2">
+                    <button class="btn btn-primary" type="submit" class="btn" ng-click="search = search[columns]">Search</button>
+                 </div>
+              </div>
+           </form>
+        </div>
+     </div>
+  </div>
+</div>
+<div class="row" ng-controller="distributorOffersController" >
+  <div class="col-md-12"  >
+     <div class="table-responsive" >
+        <table class="table table-bordered table-striped table-hover">
+           <thead>
+              <tr>
+                 <th>Project Code</th>
+                 <th>Release Code</th>
+                 <th>Offer ID</th>
+                 <th>PSU</th>
+                 <th>Offer Start Date</th>
+                 <th>Release Date</th>
+                 <th>Release Status</th>
+                 <th>UAT Status</th>
+                 <th>Comments</th>
+              </tr>
+           </thead>
+           <tbody>
+              <tr>
+                 <td rowspan="1">GTM2B2017_4</td>
+                 <td>Rel_12012018</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td>
+                    <select class="form-control" id="sel1">
+                       <option>Select</option>
+                       <option>Success</option>
+                       <option>Failure</option>
+                    </select>
+                 </td>
+                 <td> <textarea class="form-control" rows="1" id="comment"></textarea></td>
+              </tr>
+              <tr>
+                 <td></td>
+                 <td></td>
+                 <td>Offer_0101</td>
+                 <td>1P</td>
+                 <td>24-NOV-17</td>
+                 <td>30-NOV-17</td>
+                 <td>OMC QA 1 testing Success</td>
+                 <td></td>
+                 <td></td>
+              </tr>
+              <tr>
+                 <td></td>
+                 <td  ></td>
+                 <td >Offer_0106</td>
+                 <td>2P</td>
+                 <td >24-NOV-17</td>
+                 <td>30-NOV-17</td>
+                 <td>OMC QA 1 testing Success</td>
+                 <td></td>
+                 <td></td>
+              </tr>
+              <tr>
+                 <td></td>
+                 <td></td>
+                 <td>Offer_0110</td>
+                 <td>3P</td>
+                 <td>24-NOV-17</td>
+                 <td>30-NOV-17</td>
+                 <td>OMC QA 1 testing Success</td>
+                 <td></td>
+                 <td></td>
+              </tr>
+              <tr>
+                 <td></td>
+                 <td></td>
+                 <td>Offer_0112</td>
+                 <td>4P</td>
+                 <td>24-NOV-17</td>
+                 <td>30-NOV-17</td>
+                 <td>OMC QA 1 testing Success</td>
+                 <td></td>
+                 <td></td>
+              </tr>
+           </tbody>
+        </table>
+     </div>
+  </div>
+  <div class="col-md-12 margin-bot-15">
+     <a ng-click="moveToOMCProd()" class="btn btn-primary pull-right">Submit</a>
+     <button type="submit" class="btn btn-primary pull-left" ng-click="redirectTo('dashboard')">Back</button>
+  </div>
+</div>

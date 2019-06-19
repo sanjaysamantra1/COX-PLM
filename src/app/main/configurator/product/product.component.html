@@ -1,0 +1,245 @@
+<div ng-controller="distributorOffersController">
+    <div class="row">
+       <div class="col-lg-12">
+          <h1 class="page-header">Add Product</h1>
+       </div>
+       <div class="col-md-12">
+          <ul class="breadcrumb">
+             <li><a href="#" ng-click="redirectTo('dashboard')">Home</a></li>
+             <li><a href="#" ng-click="redirectTo('dashboard')">PLM Work Flow</a></li>
+             <li><a href="#" ng-click="redirectTo('configurator')">Configurator</a></li>
+             <li class="active">Products</li>
+          </ul>
+       </div>
+    </div>
+    <div class="row">
+       <div class="col-md-12">
+          <form class="form-horizontal">
+             <mat-accordion close-others="oneAtATime">
+                <!-- First Section Starts here -->
+                <mat-expansion-panel class="form-divider panel-no-background">
+                   <mat-expansion-panel-header>
+                      Product Information
+                   </mat-expansion-panel-header>
+                   <div class="row">
+                      <div class="col-md-6">
+                         <div class="form-group">
+                            <label class="col-sm-4 control-label">Product Id</label>
+                            <div class="col-sm-8">
+                               <div class="label-des">&nbsp;</div>
+                            </div>
+                         </div>
+                      </div>
+                      <div class="col-md-6">
+                         <div class="form-group">
+                            <label class="col-sm-4 control-label">Name</label>
+                            <div class="col-sm-8">
+                               <input type="text" name="" class="form-control">
+                            </div>
+                         </div>
+                      </div>
+                      <div class="col-md-6">
+                         <div class="form-group">
+                            <label class="col-sm-4 control-label">Description</label>
+                            <div class="col-sm-8">
+                               <input type="text" name="" class="form-control">
+                            </div>
+                         </div>
+                      </div>
+                      <div class="col-md-6">
+                         <div class="form-group">
+                            <label class="col-sm-4 control-label">Line of Business</label>
+                            <div class="col-sm-8">
+                               <input type="text" name="" class="form-control">
+                            </div>
+                         </div>
+                      </div>
+                      <div class="col-md-6">
+                         <div class="form-group">
+                            <label class="col-sm-4 control-label">Start Date</label>
+                            <div class="col-sm-8">
+                               <input type="date" name="" class="form-control">
+                            </div>
+                         </div>
+                      </div>
+                      <div class="col-md-6">
+                         <div class="form-group">
+                            <label class="col-sm-4 control-label">Expiry Date</label>
+                            <div class="col-sm-8">
+                               <input type="date" name="" class="form-control">
+                            </div>
+                         </div>
+                      </div>
+                      <div class="col-md-6">
+                         <div class="form-group">
+                            <label class="col-sm-4 control-label">Status</label>
+                            <div class="col-sm-8">
+                               <select class="form-control">
+                                  <option>Select One</option>
+                                  <option>Active</option>
+                                  <option>Inactive</option>
+                                  <option>Grandfathered</option>
+                               </select>
+                            </div>
+                         </div>
+                      </div>
+                      <div class="col-md-6">
+                         <div class="form-group">
+                            <label class="col-sm-4 control-label">Created By User</label>
+                            <div class="col-sm-8">
+                               <input type="text" name="" class="form-control">
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </mat-expansion-panel>
+                <!-- First Section ends here -->
+                <!-- Second Section Starts here -->
+                <mat-expansion-panel class="form-divider panel-no-background">
+                   <mat-expansion-panel-header>
+                      Product Specifications
+                   </mat-expansion-panel-header>
+                   <div class="row">
+                      <div class="col-md-6">
+                         <div class="form-group">
+                            <label class="col-sm-4 control-label">PSU</label>
+                            <div class="col-sm-8">
+                               <input type="text" name="" class="form-control">
+                            </div>
+                         </div>
+                      </div>
+                      <div class="col-md-6">
+                         <div class="form-group">
+                            <label class="col-sm-4 control-label">Category</label>
+                            <div class="col-sm-8">
+                               <input type="text" name="" class="form-control">
+                            </div>
+                         </div>
+                      </div>
+                      <div class="col-md-6">
+                         <div class="form-group">
+                            <label class="col-sm-4 control-label">ICOM Type</label>
+                            <div class="col-sm-8">
+                               <select class="form-control">
+                                  <option>Select One</option>
+                                  <option>Package</option>
+                                  <option>Service Code</option>
+                               </select>
+                            </div>
+                         </div>
+                      </div>
+                      <div class="col-md-6">
+                         <div class="form-group">
+                            <label class="col-sm-4 control-label">Tier</label>
+                            <div class="col-sm-8">
+                               <input type="text" name="" class="form-control">
+                            </div>
+                         </div>
+                      </div>
+                      <div class="col-md-6">
+                         <div class="form-group">
+                            <label class="col-sm-4 control-label">Type</label>
+                            <div class="col-sm-8">
+                               <select class="form-control">
+                                  <option>Select One</option>
+                                  <option>Data</option>
+                                  <option>Telephony</option>
+                                  <option>Video</option>
+                                  <option>Homelife</option>
+                                  <option>Wireless</option>
+                               </select>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </mat-expansion-panel>
+                <!-- Second Section ends here -->
+                <!-- third Section Starts here -->
+                <mat-expansion-panel class="form-divider panel-no-background">
+                   <mat-expansion-panel-header>
+                      Product Characteristics
+                   </mat-expansion-panel-header>
+                   <div class="row">
+                      <div class="col-md-6">
+                         <div class="form-group">
+                            <label class="col-sm-4 control-label">Characteristics</label>
+                            <div class="col-sm-8">
+                               <input type="text" name="" class="form-control">
+                            </div>
+                         </div>
+                      </div>
+                      <div class="col-md-6">
+                         <div class="form-group">
+                            <label class="col-sm-4 control-label">Characteristic Value</label>
+                            <div class="col-sm-8">
+                               <input type="text" name="" class="form-control">
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </mat-expansion-panel>
+                <!-- third Section ends here -->
+                <!-- Fourth Section Starts here -->
+                <mat-expansion-panel class="form-divider panel-no-background">
+                   <mat-expansion-panel-header>
+                      Product to Service/Package Code Mapping
+                   </mat-expansion-panel-header>
+                   <div id="thirdsection">
+                      <div class="row form-group">
+                         <div class="col-md-4">
+                            <select class="auto-complete-drop-down form-control" autocomplete-dropdown ng-model="selectedItem" ng-options="item as item.name for item in productItems track by item.id" ng-change="productAddNew(selectedItem)">
+                               <option value="" selected="selected">Select One</option>
+                            </select>
+                         </div>
+                         <div class="col-md-12">
+                            <span class="text_error" ng-show="showAddProductError">Product is already added!</span>
+                         </div>
+                      </div>
+                      <div class="row">
+                         <div class="col-md-12">
+                            <div class="table-responsive">
+                               <table class="table table-bordered">
+                                  <thead>
+                                     <tr>
+                                        <th>&nbsp;</th>
+                                        <th>ICOMS Code - SVC Code</th>
+                                        <th>ICOMS Code - Description</th>
+                                        <th>ICOMS Code - RI</th>
+                                        <th>Notes</th>
+                                        <th>&nbsp;</th>
+                                     </tr>
+                                  </thead>
+                                  <tbody>
+                                     <tr ng-if="productItemsTable.length==0">
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                     </tr>
+                                     <tr ng-repeat="item in productItemsTable">
+                                        <td>item.id}}</td>
+                                        <td>item.name}}</td>
+                                        <td>item.type}}</td>
+                                        <td>item.psu}}</td>
+                                        <td>item.packageCode}}</td>
+                                        <td><i class="fa fa-remove" ng-click="productRemoveRow(rowIndex)"></i></td>
+                                     </tr>
+                                  </tbody>
+                               </table>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </mat-expansion-panel>
+                <!-- Fourth Section ends here -->
+             </mat-accordion>
+             <div class="col-md-12">
+                <button type="button" class="btn btn-primary pull-right">Submit</button>
+                <button type="submit" class="btn btn-primary pull-left" ng-click="redirectTo('dashboard')">Back</button>
+             </div>
+          </form>
+       </div>
+    </div>
+ </div>

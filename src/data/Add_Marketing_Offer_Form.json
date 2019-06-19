@@ -1,0 +1,334 @@
+{
+    "actionResult": null,
+    "actionStatus": "SUCCESS",
+    "projectMasterModel": null,
+    "mrktingOfferModel": null,
+    "discTypeMasterModel": [
+        {
+            "discTypeId": 1,
+            "discTypeName": "Type-1"
+        },
+        {
+            "discTypeId": 2,
+            "discTypeName": "Type-2"
+        },
+        {
+            "discTypeId": 3,
+            "discTypeName": "Type-3"
+        },
+        {
+            "discTypeId": 4,
+            "discTypeName": "Type-4"
+        }
+    ],
+    "mktOffrDiscountMasterModel": [
+        {
+            "discTypeId": "1",
+            "discTypeName": "Pro Install"
+        },
+        {
+            "discTypeId": "2",
+            "discTypeName": "Pre Install"
+        }
+    ],
+    "psuTypeDetailModelMap": {
+        "101": [
+            {
+                "psuTypeId": 1,
+                "psuName": "NO TIER",
+                "description": null
+            },
+            {
+                "psuTypeId": 2,
+                "psuName": "C2C",
+                "description": null
+            },
+            {
+                "psuTypeId": 3,
+                "psuName": "OTHER",
+                "description": null
+            },
+            {
+                "psuTypeId": 4,
+                "psuName": "SEASONAL",
+                "description": null
+            },
+            {
+                "psuTypeId": 5,
+                "psuName": "STARTER 10",
+                "description": null
+            },
+            {
+                "psuTypeId": 6,
+                "psuName": "STARTER",
+                "description": null
+            },
+            {
+                "psuTypeId": 7,
+                "psuName": "STARTER LIMITED",
+                "description": null
+            },
+            {
+                "psuTypeId": 8,
+                "psuName": "ESSENTIALS",
+                "description": null
+            },
+            {
+                "psuTypeId": 9,
+                "psuName": "ESSENTIAL 30",
+                "description": null
+            },
+            {
+                "psuTypeId": 10,
+                "psuName": "PREFERRED 100",
+                "description": null
+            },
+            {
+                "psuTypeId": 11,
+                "psuName": "PREFERRED",
+                "description": null
+            },
+            {
+                "psuTypeId": 12,
+                "psuName": "PREMIER",
+                "description": null
+            },
+            {
+                "psuTypeId": 13,
+                "psuName": "ULTIMATE",
+                "description": null
+            },
+            {
+                "psuTypeId": 14,
+                "psuName": "GIGABIT",
+                "description": null
+            }
+        ],
+        "102": [
+            {
+                "psuTypeId": 15,
+                "psuName": "NO TIER",
+                "description": null
+            },
+            {
+                "psuTypeId": 16,
+                "psuName": "SEASONAL",
+                "description": null
+            },
+            {
+                "psuTypeId": 17,
+                "psuName": "OTHER",
+                "description": null
+            },
+            {
+                "psuTypeId": 18,
+                "psuName": "STARTER",
+                "description": null
+            },
+            {
+                "psuTypeId": 19,
+                "psuName": "ESSENTIALS",
+                "description": null
+            },
+            {
+                "psuTypeId": 20,
+                "psuName": "CDT ECONOMY",
+                "description": null
+            },
+            {
+                "psuTypeId": 21,
+                "psuName": "PREMIER",
+                "description": null
+            }
+        ],
+        "103": [
+            {
+                "psuTypeId": 22,
+                "psuName": "NO TIER",
+                "description": null
+            },
+            {
+                "psuTypeId": 23,
+                "psuName": "OTHER",
+                "description": null
+            },
+            {
+                "psuTypeId": 24,
+                "psuName": "SEASONAL",
+                "description": null
+            },
+            {
+                "psuTypeId": 25,
+                "psuName": "STARTER",
+                "description": null
+            },
+            {
+                "psuTypeId": 26,
+                "psuName": "STARTER PLUS",
+                "description": null
+            },
+            {
+                "psuTypeId": 27,
+                "psuName": "CONTOUR FLEX ECONOMY",
+                "description": null
+            },
+            {
+                "psuTypeId": 28,
+                "psuName": "CONTOUR FLEX STARTER",
+                "description": null
+            },
+            {
+                "psuTypeId": 29,
+                "psuName": "CONTOUR FLEX ECONOMY LATINO",
+                "description": null
+            },
+            {
+                "psuTypeId": 30,
+                "psuName": "CONTOUR FLEX STARTER APP ONLY",
+                "description": null
+            },
+            {
+                "psuTypeId": 31,
+                "psuName": "TV ECONOMY LATINO",
+                "description": null
+            },
+            {
+                "psuTypeId": 32,
+                "psuName": "CONTOUR FLEX LATINO",
+                "description": null
+            },
+            {
+                "psuTypeId": 33,
+                "psuName": "ECONOMY",
+                "description": null
+            },
+            {
+                "psuTypeId": 34,
+                "psuName": "ECONOMY PLUS",
+                "description": null
+            },
+            {
+                "psuTypeId": 35,
+                "psuName": "EL MIX",
+                "description": null
+            },
+            {
+                "psuTypeId": 36,
+                "psuName": "ESSENTIALS",
+                "description": null
+            },
+            {
+                "psuTypeId": 37,
+                "psuName": "FLEX WATCH LATINO",
+                "description": null
+            },
+            {
+                "psuTypeId": 38,
+                "psuName": "FLEXWATCH",
+                "description": null
+            },
+            {
+                "psuTypeId": 39,
+                "psuName": "CONTOUR TV",
+                "description": null
+            },
+            {
+                "psuTypeId": 40,
+                "psuName": "ADVANCED",
+                "description": null
+            },
+            {
+                "psuTypeId": 41,
+                "psuName": "ADVANCED TV LATINO",
+                "description": null
+            },
+            {
+                "psuTypeId": 42,
+                "psuName": "ADVANCED TV PAQUETE LATINO",
+                "description": null
+            },
+            {
+                "psuTypeId": 43,
+                "psuName": "CONTOUR TV LATINO",
+                "description": null
+            },
+            {
+                "psuTypeId": 44,
+                "psuName": "SUPER MIX",
+                "description": null
+            },
+            {
+                "psuTypeId": 45,
+                "psuName": "CONTOUR TV PREFERRED",
+                "description": null
+            },
+            {
+                "psuTypeId": 46,
+                "psuName": "CONTOUR TV PREFERRED LATINO",
+                "description": null
+            },
+            {
+                "psuTypeId": 47,
+                "psuName": "PREFERRED",
+                "description": null
+            },
+            {
+                "psuTypeId": 48,
+                "psuName": "CONTOUR TV PREMIER",
+                "description": null
+            },
+            {
+                "psuTypeId": 49,
+                "psuName": "PREMIER",
+                "description": null
+            },
+            {
+                "psuTypeId": 50,
+                "psuName": "CONTOUR TV ULTIMATE",
+                "description": null
+            },
+            {
+                "psuTypeId": 51,
+                "psuName": "ULTIMATE",
+                "description": null
+            },
+            {
+                "psuTypeId": 52,
+                "psuName": "CONTOUR TV ULTIMATE LATINO",
+                "description": null
+            }
+        ],
+        "104": [
+            {
+                "psuTypeId": 53,
+                "psuName": "NO TIER",
+                "description": null
+            },
+            {
+                "psuTypeId": 54,
+                "psuName": "OTHER",
+                "description": null
+            },
+            {
+                "psuTypeId": 55,
+                "psuName": "STARTER",
+                "description": null
+            },
+            {
+                "psuTypeId": 56,
+                "psuName": "HOME AUTOMATION",
+                "description": null
+            },
+            {
+                "psuTypeId": 57,
+                "psuName": "ESSENTIALS",
+                "description": null
+            },
+            {
+                "psuTypeId": 58,
+                "psuName": "PREFERRED",
+                "description": null
+            }
+        ]
+    }
+}

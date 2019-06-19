@@ -1,0 +1,55 @@
+<!-- Configurator (Offer Creation) Starts Here -->
+<div>
+    <section class="row">
+       <div class="col-md-12">
+          <h1 class="page-header">Configurator (Offer Creation)</h1>
+       </div>
+       <div class="col-md-12">
+          <ul class="breadcrumb">
+             <li><a href="#" ng-click="redirectTo('dashboard')">Home</a></li>
+             <li><a href="#" ng-click="redirectTo('dashboard')">PLM Work Flow</a></li>
+             <li class="active">Configurator</li>
+          </ul>
+       </div>
+    </section>
+    <mat-accordion close-others="oneAtATime">
+       
+        <!-- Offer From Project Starts Here 
+        <plm-offer-from-project [offerFromProject]="offerFromProject" *ngIf="showAddOfferSection"></plm-offer-from-project>
+-->
+        <!-- General Information Starts Here -->
+        <plm-general-info [offerFormDropDown]="offerFormDropDown" [offerGeneralInfo]="offerGeneralInfo" *ngIf="showAddOfferSection"></plm-general-info>
+
+        <!-- Product Asssociation Starts Here -->
+        <plm-product-association [offerFormDropDown]="offerFormDropDown" [offerProductAssInfo]="offerProductAssInfo" *ngIf="showAddOfferSection"></plm-product-association>
+
+        <!-- Discount Asssociation Starts Here -->
+        <plm-discount-association [offerFormDropDown]="offerFormDropDown" [offerDiscountAssInfo]="offerDiscountAssInfo" *ngIf="showAddOfferSection"></plm-discount-association>
+         
+        <!-- Relevancy Rules Starts Here -->
+        <plm-relevancy-rules [offerFormDropDown]="offerFormDropDown" [offerRelevancyRulesInfo]="offerRelevancyRulesInfo" *ngIf="showAddOfferSection"></plm-relevancy-rules>
+
+        <!-- Elgibility Rules Starts Here -->
+        <plm-eligiblity-rules [offerFormDropDown]="offerFormDropDown" [offerEligiblityRulesInfo]="offerEligiblityRulesInfo" *ngIf="showAddOfferSection"></plm-eligiblity-rules>
+
+        <!-- Pricing-pinpoint Starts Here -->
+        <plm-pricing-pinpoint [offerFormDropDown]="offerFormDropDown" [offerPricingPinPointInfo]="offerPricingPinPointInfo" *ngIf="showAddOfferSection"></plm-pricing-pinpoint>
+        
+        <!-- Ecomm Pinpoint Starts Here -->
+        <plm-ecomm-pinpoint [offerFormDropDown]="offerFormDropDown" [offerECOMMPinPointInfo]="offerECOMMPinPointInfo" *ngIf="showAddOfferSection"></plm-ecomm-pinpoint>
+        
+      </mat-accordion>
+      <div class="row margin-top-15 margin-bot-20">
+          <div class="col-md-12">
+              <!--<button type="button" class="btn btn-primary btn-large pull-right" ng-click="returnToOfferTable()">Submit </button>-->
+               <button type="button" class="btn btn-primary pull-right"  (click)="submitOffer()" [disabled]="disableSubmit">Submit</button>
+               <button type="button" class="btn btn-primary pull-right" style="margin-right:10px;" (click)="saveExitOffer()" [disabled]="disableSubmit">Save And Exit</button>
+
+               <button type="submit" class="btn btn-primary pull-left" (click)="returnBack()">Back</button>
+              
+              <!--<button type="submit" class="btn btn-primary pull-left" ng-click="showOfferUnderProject()">Back</button>-->
+           </div>
+      </div>
+ </div>
+
+ <!-- Configurator (Offer Creation) Starts Here -->

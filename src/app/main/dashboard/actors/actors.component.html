@@ -1,0 +1,24 @@
+<div class="col-md-3 col-sm-6">
+    <div [ngClass]="buttonPanelClass" ng-click="showDetails()">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-xs-3">
+                    <i [ngClass]="buttonClass"></i>
+                </div>
+                <div class="col-xs-9 text-right">
+                    <div class="huge">{{ count }}</div>
+                    <div class="ng-binding">{{ title }}</div>
+                </div>
+            </div>
+        </div>
+        <a (click)="showDetails(role)">
+            <div class="panel-footer">
+                <span class="pull-left">View Details</span>
+                <span class="pull-right">
+                    <i class="fa fa-arrow-circle-right"></i>
+                </span>
+                <div class="clearfix"></div>
+            </div>
+        </a>
+    </div>
+</div>

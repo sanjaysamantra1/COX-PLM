@@ -1,0 +1,115 @@
+{
+    "actionResult": null,
+    "actionStatus": "SUCCESS",
+    "searchUserModel": null,
+    "users": [
+        {
+            "userId": 62,
+            "createdBy": "nitin@cox.com",
+            "createdDate": "03-16-2018",
+            "firstname": "test",
+            "lastname": "test last name",
+            "logonId": "Nitin@cox.com",
+            "modifiedBy": "16",
+            "modifiedDate": "2018-03-20",
+            "lastLoginInfo": {
+                "userLoginInfoTxnDetId": 102,
+                "lastLogon": null,
+                "loginStatus": "Y",
+                "loginTime": "2018-03-20",
+                "sessionKey": "$T5lc17k"
+            },
+            "statusId": 1,
+            "roleId": 1,
+            "workGroupIds": [1, 2],
+            "lastLogon": "2018-03-20"
+        },
+        {
+            "userId": 64,
+            "createdBy": "alka.kumari@cox.com",
+            "createdDate": "03-19-2018",
+            "firstname": "alka",
+            "lastname": "kumari",
+            "logonId": "alka.kumari@cox.com",
+            "modifiedBy": "16",
+            "modifiedDate": "2018-03-20",
+            "lastLoginInfo": null,
+            "statusId": 2,
+            "roleId": 3,
+            "workGroupIds": [3, 4],
+            "lastLogon": null
+        },
+        {
+            "userId": 63,
+            "createdBy": "user1@cox.com",
+            "createdDate": "03-18-2018",
+            "firstname": "FName1",
+            "lastname": "LName1",
+            "logonId": "user1@cox.com",
+            "modifiedBy": null,
+            "modifiedDate": null,
+            "lastLoginInfo": null,
+            "statusId": 2,
+            "roleId": 4,
+            "workGroupIds": [5, 6],
+            "lastLogon": null
+        },
+        {
+            "userId": 1,
+            "createdBy": "Ramesh.Bodapati@cox.com",
+            "createdDate": "02-19-2018",
+            "firstname": "Ramesh",
+            "lastname": "Bodapati",
+            "logonId": "ramesh.bodapati@cox.com",
+            "modifiedBy": null,
+            "modifiedDate": null,
+            "lastLoginInfo": null,
+            "statusId": 1,
+            "roleId": 2,
+            "workGroupIds": [7],
+            "lastLogon": "2018-03-20"
+        },
+        {
+            "userId": 65,
+            "createdBy": "TEST@COX.COM",
+            "createdDate": "2018-03-20",
+            "firstname": "TEST",
+            "lastname": "TEST",
+            "logonId": "TEST@COX.COM",
+            "modifiedBy": null,
+            "modifiedDate": null,
+            "lastLoginInfo": {
+                "userLoginInfoTxnDetId": 122,
+                "lastLogon": null,
+                "loginStatus": "Y",
+                "loginTime": "2018-03-20",
+                "sessionKey": "Lyj882x]"
+            },
+            "statusId": 1,
+            "roleId": 1,
+            "workGroupIds": [1, 2],
+            "lastLogon": "2018-03-20"
+        },
+        {
+            "userId": 16,
+            "createdBy": "user@cox.com",
+            "createdDate": "02-16-2018",
+            "firstname": "First Name",
+            "lastname": "Last Name",
+            "logonId": "user@cox.com",
+            "modifiedBy": null,
+            "modifiedDate": null,
+            "lastLoginInfo": {
+                "userLoginInfoTxnDetId": 20,
+                "lastLogon": null,
+                "loginStatus": "Y",
+                "loginTime": "03-16-2018",
+                "sessionKey": "1,1cpZ2a"
+            },
+            "statusId": 2,
+            "roleId": 2,
+            "workGroupIds": [3, 4],
+            "lastLogon": "2018-03-20"
+        }
+    ]
+}

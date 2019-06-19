@@ -1,0 +1,93 @@
+{
+    "actionResult": null,
+    "actionStatus": "SUCCESS",
+    "projectCode": null,
+    "projectMasterModel": {
+        "projectCode": "PRO_1519133984077",
+        "projectType": "2",
+        "projectTypeName": null,
+        "projectDesc": "Update Description",
+        "projectStartDt": "2018-02-01T18:30:00.000Z",
+        "projectEndDt": "2018-02-01T18:30:00.000Z",
+        "market": null,
+        "status": "1002",
+        "statusName": null,
+        "assignedTo": null,
+        "processId": 1,
+        "siteMap": null
+    },
+    "mrktingOfferModel": [{
+        "moId": "701",
+        "projectCode": "Test Project Code",
+        "createdBy": null,
+        "createdDate": null,
+        "description": null,
+        "discValue": "Update Description",
+        "endDate": "2018-02-02",
+        "modifiedDate": null,
+        "offerType": "1",
+        "price": 100,
+        "priceSpec": "Update Description",
+        "startDate": "2018-02-02",
+        "discountTypeId": 1,
+        "discountRule": "Update Description",
+        "psuType": null,
+        "bundleType": "gold",
+        "moProductDataModel": [
+            {
+                "prodDataId": "2",
+                "prodDetail": "NO TIER",
+                "psuType": "4P",
+                "mrktingOfferTxnDetModel": null,
+                "psuTypeMasterModel": {
+                    "psuTypeId": "101",
+                    "psuName": "DATA",
+                    "description": null
+                }
+            },
+            {
+                "prodDataId": "18",
+                "prodDetail": "C2C",
+                "psuType": "4P",
+                "mrktingOfferTxnDetModel": null,
+                "psuTypeMasterModel": {
+                    "psuTypeId": "102",
+                    "psuName": "PHONE",
+                    "description": null
+                }
+            },
+            {
+                "prodDataId": "24",
+                "prodDetail": "OTHER",
+                "psuType": "4P",
+                "mrktingOfferTxnDetModel": null,
+                "psuTypeMasterModel": {
+                    "psuTypeId": "103",
+                    "psuName": "VIDEO",
+                    "description": null
+                }
+            },
+            {
+                "prodDataId": "56",
+                "prodDetail": "SEASONAL",
+                "psuType": "4P",
+                "mrktingOfferTxnDetModel": null,
+                "psuTypeMasterModel": {
+                    "psuTypeId": "104",
+                    "psuName": "HOMELIFE",
+                    "description": null
+                }
+            }
+        ],
+        "currencyId": null,
+        "bundleMasterModel": {
+            "bndlId": 1,
+            "bndlName": "Bronze"
+        },
+        "currencyMasterModel": null,
+        "mktOffrDiscountMasterModel": {
+            "discTypeId": null,
+            "discTypeName": null
+        }
+    }]
+}

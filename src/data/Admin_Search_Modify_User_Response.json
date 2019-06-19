@@ -1,0 +1,46 @@
+{
+    "actionResult": null,
+    "actionStatus": "SUCCESS",
+    "searchUserModel": [
+        {
+            "userid": "1",
+            "firstname": "userFirstName",
+            "lastname": "userLastName",
+            "email": "user1@cox.com",
+            "lastLogon": null,
+            "statusid": {
+                "statusId": 1,
+                "statusName": "Active"
+            },
+            "roleid": {
+                "roleId": 1,
+                "roleName": "Corporate"
+            },
+            "workgroupid": {
+                "workGroupId": 1,
+                "workGroupName": "Requester"
+            }
+           
+        },
+        {
+            "userid": "2",
+            "firstname": "userFirstName",
+            "lastname": "userLastName",
+            "email": "user2@cox.com",
+            "lastLogon": null,
+            "statusid": {
+                "statusId": 1,
+                "statusName": "Active"
+            },
+            "roleid": {
+                "roleId": 2,
+                "roleName": "Administrator"
+            },
+            "workgroupid": {
+                "workGroupId": 2,
+                "workGroupName": "Configurator"
+            }
+          
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+<div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Add Discount Code</h1>
+        </div>
+        <div class="col-md-12">
+            <ul class="breadcrumb">
+                <li><a href="#" ng-click="redirectTo('dashboard')">Home</a></li>
+                <li><a href="#" ng-click="redirectTo('dashboard')">PLM Work Flow</a></li>
+                <li><a href="#" ng-click="redirectTo('configurator')">Configurator</a></li>
+                <li class="active">Discounts</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" *ngIf="addDiscountSubmitFailed">
+            <div class="alert alert-danger">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                Add Discount submit is failed!!!
+            </div>
+        </div>
+        <div class="col-md-12" *ngIf="addDiscountSaveAndExitFail">
+            <div class="alert alert-danger">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                Add Discount save is failed!!!
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+                <form class="form-horizontal intake-form" name="discountForm" #discountForm="ngForm" novalidate *ngIf="formDataLoaded">
+            <!-- <form name="discountForm" #discountForm="ngForm" (ngSubmit)="onSubmit(discountForm)" class="form-horizontal"> -->
+                <mat-accordion close-others="oneAtATime">
+                    <plm-discount-general-info></plm-discount-general-info>
+                    <plm-discription-builder></plm-discription-builder>
+                    <plm-gift-card></plm-gift-card>
+                    <plm-discount-sites></plm-discount-sites>
+                    <plm-campaign-code-creation-pricing-method></plm-campaign-code-creation-pricing-method>
+                    <plm-discount-pricing-rules></plm-discount-pricing-rules>
+                    <plm-campaign-code-creation-pre-reqs (fileUpload)="onFileUpload($event)"></plm-campaign-code-creation-pre-reqs>
+                    <plm-mapping-table></plm-mapping-table>
+                    <plm-oscar></plm-oscar>
+                    <plm-main-page></plm-main-page>
+                    <plm-online></plm-online>
+                </mat-accordion>
+                <div class="col-md-12" style="margin-top: 25px;">
+                    <!--<button type="button" class="btn btn-primary pull-right" [disabled]="!discountForm.form.valid">Submit</button>-->
+                    <button type="button" class="btn btn-primary pull-right" style="position: relative;top: -4px;" (click)="submitProject()"
+                        [disabled]="disableSubmit" *ngIf="!viewMode">Submit</button>
+                    <button type="button" class="btn btn-primary pull-right" style="position: relative;top: -4px;margin-right:10px;" [disabled]="disableSubmit" (click)="saveAndExit()" *ngIf="!viewMode">Save and Exit </button>
+                    <button type="submit" class="btn btn-primary pull-left" (click)="returnBack()">Back</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,474 @@
+ <!-- Second Section Starts here -->
+ <mat-expansion-panel class="form-divider panel-no-background">
+  <mat-expansion-panel-header>
+     General Information
+  </mat-expansion-panel-header>
+   
+    <div class="row">
+        <div class="row form-group">
+           <div class="col-md-6">
+              <div class="col-xs-7">
+                 <button type="button" class="btn btn-primary">Copy Offer with Mappings</button>
+              </div>
+           </div>
+        </div>
+     </div>
+  <div class="row">
+    <div class="form-group">
+           <div class="col-md-6">
+               <label class="col-sm-5 control-label">Offer ID</label>
+                 <div class="col-sm-7">
+                     <input type="text" id="OfferID" name="OfferID" class="form-control" disabled>
+                 </div>
+           </div>
+             
+           <div class="col-md-6">
+               <label class="col-sm-5 control-label">Name</label>
+                 <div class="col-sm-7">
+                     <input type="text" name="offerName" class="form-control" [(ngModel)]="offerGeneralInfo.offerName" (change)="updateSubmitData('offerName', offerGeneralInfo.offerName)"/>
+                 </div>
+           </div>
+        </div>
+  </div>
+     <div class="row margin-top-20">
+    <div class="form-group">
+           <div class="col-md-12">
+               <label class="col-sm-3 control-label" style="width:20.5%">Description</label>
+                 <div class="col-sm-5">
+                    <textarea class="form-control" name="offerDescription" rows="5" id="desc" cols="35"  [(ngModel)]="offerGeneralInfo.offerDescription" (change)="updateSubmitData('offerDescription', offerGeneralInfo.offerDescription)"></textarea>
+                 </div>
+           </div>
+             
+       
+        </div>
+  </div>
+     <div class="row margin-top-20">
+    <div class="form-group">
+           <div class="col-md-6">
+               <label class="col-sm-5 control-label">Offer Type</label>
+                 <div class="col-sm-7">
+                    <select class="form-control">
+                        <option value="">Select One</option>
+                        <option>Offer 1</option>
+                        <option>Offer 2</option>
+                     </select>
+                 </div>
+           </div>
+             
+           <div class="col-md-6">
+               <label class="col-sm-5 control-label">Default Offer</label>
+                 <div class="col-sm-7">
+                   <input type="textbox" value="" name="defaultOffer" class="form-control">
+                 </div>
+           </div>
+        </div>
+  </div>
+      <div class="row margin-top-20">
+    <div class="form-group">
+           <div class="col-md-6">
+               <label class="col-sm-5 control-label">Offer Category</label>
+                 <div class="col-sm-7">
+                    <select class="form-control">
+                        <option value="">Select One</option>
+                        <option>Offer  Category1</option>
+                        <option>Offer Category 2</option>
+                     </select>
+                 </div>
+           </div>
+             
+           <div class="col-md-6">
+               <label class="col-sm-5 control-label">PSU Category</label>
+                 <div class="col-sm-7">
+                   <select class="form-control">
+                        <option value="">Select One</option>
+                        <option>PSU Category1</option>
+                        <option>PSU Category2</option>
+                     </select>
+                 </div>
+           </div>
+        </div>
+  </div>
+      <div class="row margin-top-20">
+    <div class="form-group">
+           <div class="col-md-6">
+               <label class="col-sm-5 control-label">Bundle</label>
+                 <div class="col-sm-7">
+                    <select class="form-control">
+                        <option value="">Select One</option>
+                        <option>Bundle1</option>
+                        <option>Bundle 2</option>
+                     </select>
+                 </div>
+           </div>
+             
+           <div class="col-md-6">
+               <label class="col-sm-5 control-label">Inactive</label>
+                 <div class="col-sm-7">
+                     <input type="checkbox" value="" name="defaultOffer">
+                 </div>
+           </div>
+        </div>
+  </div>
+    <div class="row margin-top-20">
+    <div class="form-group">
+           <div class="col-md-6">
+               <label class="col-sm-5 control-label">Start Date</label>
+                 <div class="col-sm-7">
+                    <mat-form-field style="width:100%;"  class="input-group">
+                        <input name="offerStartDate" matInput class="form-control" [matDatepicker]="offerStartDate" placeholder="" [(ngModel)]="offerGeneralInfo.offerStartDate" #offerStartDate="ngModel" (ngModelChange)="updateSubmitData('offerStartDate', offerGeneralInfo.offerStartDate)">
+                        <mat-datepicker-toggle name="datePickerToggle" matSuffix [for]="offerStartDate"></mat-datepicker-toggle>
+                        <mat-datepicker #offerStartDate></mat-datepicker>
+                    </mat-form-field>
+                 </div>
+           </div>
+             
+           <div class="col-md-6">
+               <label class="col-sm-5 control-label">End Date</label>
+                <div class="col-sm-7"><mat-form-field style="width:100%;"  class="input-group">
+                        <input name="offerEndDate" matInput class="form-control" [matDatepicker]="offerEndDate" placeholder="" [(ngModel)]="offerGeneralInfo.offerEndDate" #offerEndDate="ngModel" (ngModelChange)="updateSubmitData('offerEndDate', offerGeneralInfo.offerEndDate)">
+                        <mat-datepicker-toggle name="datePickerToggle" matSuffix [for]="offerEndDate"></mat-datepicker-toggle>
+                        <mat-datepicker #offerEndDate></mat-datepicker>
+                    </mat-form-field></div>
+           </div>
+        </div>
+  </div>
+    <div class="row margin-top-20">
+    <div class="form-group">
+           <div class="col-md-6">
+               <label class="col-sm-5 control-label">Last Update Date</label>
+                 <div class="col-sm-7">
+                    <mat-form-field style="width:100%;"  class="input-group">
+                        <input name="offerStartDate" matInput class="form-control" [matDatepicker]="offerStartDates" placeholder="" [(ngModel)]="offerGeneralInfo.offerStartDate" #offerStartDates="ngModel" (ngModelChange)="updateSubmitData('offerStartDate', offerGeneralInfo.offerStartDate)" disabled>
+                        <mat-datepicker-toggle name="datePickerToggle" matSuffix [for]="offerStartDates" disabled></mat-datepicker-toggle>
+                        <mat-datepicker #offerStartDates disabled></mat-datepicker>
+                    </mat-form-field>
+                 </div>
+           </div>
+             
+           <div class="col-md-6">
+               <label class="col-sm-5 control-label">Offer History</label>
+                <div class="col-sm-7"> <a href="#">Offer History</a></div>
+           </div>
+        </div>
+  </div>
+       <div class="row margin-top-20">
+    <div class="form-group">
+           <div class="col-md-6">
+               <label class="col-sm-5 control-label">Offer Price</label>
+                 <div class="col-sm-7">
+                    <textarea class="form-control" name="offerprice" rows="5" id="offerprice" cols="35"  ></textarea>
+                 </div>
+           </div>
+             
+          
+        </div>
+  </div>
+       <div class="row margin-top-20">
+    <div class="form-group">
+           <div class="col-md-12">
+               <label class="col-sm-5 control-label">Sites</label>
+                 <div  class="col-md-12">
+              <div >
+                <span  class="checkbox-inline">
+                  <input  name="selectedAll" type="checkbox" value="" disabled="">Select All
+                </span>
+              </div>
+              <div >
+                <!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--><span  class="checkbox-inline checkbox-inline-custom col-md-2 ng-star-inserted" name="mapMarketSites">
+                  <input  name="sites" type="checkbox" value="1" disabled=""> Orange County
+                </span><span  class="checkbox-inline checkbox-inline-custom col-md-2 ng-star-inserted" name="mapMarketSites">
+                  <input  name="sites" type="checkbox" value="2" disabled=""> Las Vegas
+                </span><span  class="checkbox-inline checkbox-inline-custom col-md-2 ng-star-inserted" name="mapMarketSites">
+                  <input  name="sites" type="checkbox" value="3" disabled=""> Palos Verdes
+                </span><span  class="checkbox-inline checkbox-inline-custom col-md-2 ng-star-inserted" name="mapMarketSites">
+                  <input  name="sites" type="checkbox" value="4" disabled=""> Santa Barbara
+                </span><span  class="checkbox-inline checkbox-inline-custom col-md-2 ng-star-inserted" name="mapMarketSites">
+                  <input  name="sites" type="checkbox" value="5" disabled=""> Northern Virginia
+                </span><span  class="checkbox-inline checkbox-inline-custom col-md-2 ng-star-inserted" name="mapMarketSites">
+                  <input  name="sites" type="checkbox" value="6" disabled=""> San Diego
+                </span><span  class="checkbox-inline checkbox-inline-custom col-md-2 ng-star-inserted" name="mapMarketSites">
+                  <input  name="sites" type="checkbox" value="7" disabled=""> Phoenix
+                </span><span  class="checkbox-inline checkbox-inline-custom col-md-2 ng-star-inserted" name="mapMarketSites">
+                  <input  name="sites" type="checkbox" value="8" disabled=""> Connecticut
+                </span><span  class="checkbox-inline checkbox-inline-custom col-md-2 ng-star-inserted" name="mapMarketSites">
+                  <input  name="sites" type="checkbox" value="9" disabled=""> Rhode Island
+                </span><span  class="checkbox-inline checkbox-inline-custom col-md-2 ng-star-inserted" name="mapMarketSites">
+                  <input  name="sites" type="checkbox" value="10" disabled=""> Cleveland
+                </span><span  class="checkbox-inline checkbox-inline-custom col-md-2 ng-star-inserted" name="mapMarketSites">
+                  <input  name="sites" type="checkbox" value="11" disabled=""> Hampton Roads
+                </span><span  class="checkbox-inline checkbox-inline-custom col-md-2 ng-star-inserted" name="mapMarketSites">
+                  <input  name="sites" type="checkbox" value="12" disabled=""> Roanoke
+                </span><span  class="checkbox-inline checkbox-inline-custom col-md-2 ng-star-inserted" name="mapMarketSites">
+                  <input  name="sites" type="checkbox" value="13" disabled=""> Kansas
+                </span><span  class="checkbox-inline checkbox-inline-custom col-md-2 ng-star-inserted" name="mapMarketSites">
+                  <input  name="sites" type="checkbox" value="14" disabled=""> New Orleans
+                </span><span  class="checkbox-inline checkbox-inline-custom col-md-2 ng-star-inserted" name="mapMarketSites">
+                  <input  name="sites" type="checkbox" value="15" disabled=""> Baton Rouge
+                </span><span  class="checkbox-inline checkbox-inline-custom col-md-2 ng-star-inserted" name="mapMarketSites">
+                  <input  name="sites" type="checkbox" value="16" disabled=""> Tulsa
+                </span><span  class="checkbox-inline checkbox-inline-custom col-md-2 ng-star-inserted" name="mapMarketSites">
+                  <input  name="sites" type="checkbox" value="17" disabled=""> Omaha
+                </span><span  class="checkbox-inline checkbox-inline-custom col-md-2 ng-star-inserted" name="mapMarketSites">
+                  <input  name="sites" type="checkbox" value="18" disabled=""> Gainesville
+                </span><span  class="checkbox-inline checkbox-inline-custom col-md-2 ng-star-inserted" name="mapMarketSites">
+                  <input  name="sites" type="checkbox" value="19" disabled=""> Pensacola
+                </span><span  class="checkbox-inline checkbox-inline-custom col-md-2 ng-star-inserted" name="mapMarketSites">
+                  <input  name="sites" type="checkbox" value="20" disabled=""> Oklahoma City
+                </span><span  class="checkbox-inline checkbox-inline-custom col-md-2 ng-star-inserted" name="mapMarketSites">
+                  <input  name="sites" type="checkbox" value="21" disabled=""> Macon
+                </span>
+              </div>
+            </div>
+           </div>
+             
+           
+        </div>
+  </div>
+       <div class="row margin-top-20">
+    <div class="form-group">
+           <div class="col-md-6">
+               <label class="col-sm-5 control-label">Sales Advice</label>
+                 <div class="col-sm-7">
+                    <textarea class="form-control" name="Sales" rows="5" id="Sales" cols="35"  ></textarea>
+                 </div>
+           </div>
+             
+         
+        </div>
+  </div>
+  <!-- <div class="row">
+     <div>
+        <div class="row form-group">
+           <div class="col-md-6">
+              <div class="col-xs-7">
+                 <button type="button" class="btn btn-primary">Copy Offer with Mappings</button>
+              </div>
+           </div>
+        </div>
+        <div class="row form-group">
+           <div class="col-md-12">
+              <div class="form-group">-->
+
+                <!--  <label class="col-sm-5 control-label">Offer ID (Internal System Generated ID): {{offerGeneralInfo.offerId}} </label>-->
+                 <!-- <label class="col-sm-5 control-label">Offer ID</label>
+                 <div class="col-sm-7">
+                    
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="row form-group">
+           <div class="col-md-4">
+              <div class="form-group">
+                 <label class="col-sm-5 control-label">Name</label>
+                 <div class="col-sm-7">
+                    <input type="text" name="offerName" class="form-control" [(ngModel)]="offerGeneralInfo.offerName" (change)="updateSubmitData('offerName', offerGeneralInfo.offerName)"/>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="row form-group">
+           <div class="col-md-12">
+              <div class="form-group">
+                 <label class="col-sm-1 control-label">Description</label>
+                 <div class="col-sm-6" style="margin-left: 49px;">
+                    <textarea class="form-control" name="offerDescription" rows="5" id="" style="width: 518px;" [(ngModel)]="offerGeneralInfo.offerDescription" (change)="updateSubmitData('offerDescription', offerGeneralInfo.offerDescription)"></textarea>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="row form-group">
+           <div class="col-md-4 form-group">
+              <div class="form-group">
+                 <label class="col-sm-5 control-label">Bundle</label>
+                 <div class="col-sm-7">
+                    <select class="form-control" name="offerBundle" [(ngModel)]="offerGeneralInfo.offerBundle" (change)="updateSubmitData('offerBundle', offerGeneralInfo.offerBundle)">
+                       <option value="">Select Offer</option>
+                       <option *ngFor="let bundle of offerFormDropDown.BUNDLE_MASTER; let i= index;" [value]="bundle.key">{{ bundle.value }}</option>
+                    </select>
+                 </div>
+              </div>
+           </div>
+           <div class="col-md-4 form-group">
+              <div class="form-group">
+                 <label class="col-sm-5 control-label">Offer Type</label>
+                 <div class="col-sm-7">
+                    <select class="form-control">
+                        <option value="">Select One</option>
+                        <option>Offer 1</option>
+                        <option>Offer 2</option>
+                     </select>
+                 </div>
+              </div>
+           </div>
+           <div class="col-md-4 form-group">
+              <div class="form-group">
+                 <label class="col-sm-5 control-label">Offer Category</label>
+                 <div class="col-sm-7">
+                    <select class="form-control" name="offerCategory" [(ngModel)]="offerGeneralInfo.offerCategory" (change)="updateSubmitData('offerCategory', offerGeneralInfo.offerCategory)">
+                        <option value="">Select Category</option>
+                        <option *ngFor="let catrgory of offerFormDropDown.OFFER_CATEGORY_MASTER; let i= index;" [value]="catrgory.key">{{ catrgory.value }}</option>
+                     </select>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="row form-group">
+           <div class="col-md-4">
+              <div class="form-group">
+                 <label class="col-sm-5 control-label">Start Date</label>
+                 <div class="col-sm-7">
+                    <mat-form-field style="width:100%;"  class="input-group">
+                        <input name="offerStartDate" matInput class="form-control" [matDatepicker]="offerStartDate" placeholder="" [(ngModel)]="offerGeneralInfo.offerStartDate" #offerStartDate="ngModel" (ngModelChange)="updateSubmitData('offerStartDate', offerGeneralInfo.offerStartDate)">
+                        <mat-datepicker-toggle name="datePickerToggle" matSuffix [for]="offerStartDate"></mat-datepicker-toggle>
+                        <mat-datepicker #offerStartDate></mat-datepicker>
+                    </mat-form-field>
+                 </div>
+              </div>
+           </div>
+           <div class="col-md-4">
+              <div class="form-group">
+                 <label class="col-sm-5 control-label">End Date</label>
+                 <div class="col-sm-7">
+                    <mat-form-field style="width:100%;"  class="input-group">
+                        <input name="offerEndDate" matInput class="form-control" [matDatepicker]="offerEndDate" placeholder="" [(ngModel)]="offerGeneralInfo.offerEndDate" #offerEndDate="ngModel" (ngModelChange)="updateSubmitData('offerEndDate', offerGeneralInfo.offerEndDate)">
+                        <mat-datepicker-toggle name="datePickerToggle" matSuffix [for]="offerEndDate"></mat-datepicker-toggle>
+                        <mat-datepicker #offerEndDate></mat-datepicker>
+                    </mat-form-field>
+                 </div>
+              </div>
+           </div>
+           <div class="col-md-4">
+              <div class="form-group">
+                 <label class="col-sm-5 control-label">Last Update Date</label>
+                 <div class="col-sm-7">
+                    <mat-form-field style="width:100%;"  class="input-group">
+                        <input name="lastUpdateDate" matInput class="form-control" [matDatepicker]="lastUpdateDate" placeholder="" [(ngModel)]="offerGeneralInfo.lastUpdateDate" #lastUpdateDate="ngModel" (ngModelChange)="updateSubmitData('lastUpdateDate', offerGeneralInfo.lastUpdateDate)">
+                        <mat-datepicker-toggle name="datePickerToggle" matSuffix [for]="lastUpdateDate"></mat-datepicker-toggle>
+                        <mat-datepicker #lastUpdateDate></mat-datepicker>
+                    </mat-form-field>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="row form-group">
+           <div class="col-md-4">
+              <div class="form-group">
+                 <label class="col-sm-5 control-label">Test Date</label>
+                 <div class="col-sm-7">
+                    <mat-form-field style="width:100%;"  class="input-group">
+                        <input name="testDate" matInput class="form-control" [matDatepicker]="testDate" placeholder="" [(ngModel)]="offerGeneralInfo.testDate" #testDate="ngModel" (ngModelChange)="updateSubmitData('testDate', offerGeneralInfo.testDate)">
+                        <mat-datepicker-toggle name="datePickerToggle" matSuffix [for]="testDate"></mat-datepicker-toggle>
+                        <mat-datepicker #testDate></mat-datepicker>
+                    </mat-form-field>
+                 </div>
+              </div>
+           </div>
+           <div class="col-md-4">
+              <div class="form-group">
+                 <label class="col-sm-5 control-label">Production Launch Date</label>
+                 <div class="col-sm-7">
+                    <mat-form-field style="width:100%;"  class="input-group">
+                        <input name="productionLauanchDate" matInput class="form-control" [matDatepicker]="productionLauanchDate" placeholder="" [(ngModel)]="offerGeneralInfo.productionLauanchDate" #productionLauanchDate="ngModel" (ngModelChange)="updateSubmitData('productionLauanchDate', offerGeneralInfo.productionLauanchDate)">
+                        <mat-datepicker-toggle name="datePickerToggle" matSuffix [for]="productionLauanchDate"></mat-datepicker-toggle>
+                        <mat-datepicker #productionLauanchDate></mat-datepicker>
+                    </mat-form-field>
+                 </div>
+              </div>
+           </div>
+           <div class="col-md-4">
+              <div class="form-group">
+                 <label class="col-sm-5 control-label">Status</label>
+                 <div class="col-sm-7">
+                    <select class="form-control" name="offerStatus" [(ngModel)]="offerGeneralInfo.offerStatus" disabled (change)="updateSubmitData('offerStatus', offerGeneralInfo.offerStatus)">
+                        <option value="">Select Status</option>
+                        <option *ngFor="let status of offerFormDropDown.STATUS_MASTER; let i= index;" [value]="status.key">{{ status.value }}</option>
+                     </select>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="row form-group">
+           <div class="col-md-4">
+              <div class="form-group">
+                 <label class="col-sm-5 control-label">Version</label>
+                 <div class="col-sm-7">
+                    <input type="text" class="form-control" name="version" [(ngModel)]="offerGeneralInfo.version" disabled (change)="updateSubmitData('version', offerGeneralInfo.version)">
+                 </div>
+              </div>
+           </div>
+           <div class="col-md-4">
+              <div class="form-group">
+                 <label class="col-sm-5 control-label">Created By User</label>
+                 <div class="col-sm-7">
+                    <input type="text" class="form-control" name="createdByUser" [(ngModel)]="offerGeneralInfo.createdByUser" disabled (change)="updateSubmitData('createdByUser', offerGeneralInfo.createdByUser)">
+                 </div>
+              </div>
+           </div>
+           <div class="col-md-4">
+              <div class="form-group">
+                 <label class="col-sm-5 control-label">PSU Category</label>
+                 <div class="col-sm-7">
+                    <select class="form-control" name="psuCategory">
+                        <option value="">Select One</option>
+                        <option value="VIDEO">VIDEO</option>
+                        <option value="DATA">DATA</option>
+                        <option value="HOMELIFE">HOMELIFE</option>
+                        <option value="PHONE">PHONE</option>
+                        <option value="MULTI">MULTI</option>
+                     </select>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-2">
+            <div class="checkbox">
+              <label>
+                  <input type="checkbox" value="" name="inactive" [(ngModel)]="offerGeneralInfo.inactive" (change)="updateSubmitData('inactive', offerGeneralInfo.inactive)">Inactive
+              </label>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="checkbox">
+              <label>
+                  <input type="checkbox" value="" name="defaultOffer" [(ngModel)]="offerGeneralInfo.defaultOffer" (change)="updateSubmitData('defaultOffer', offerGeneralInfo.defaultOffer)">Default Offer
+              </label>
+            </div>
+          </div>
+       </div>
+        <div class="row">
+           <div class="col-md-12" style="margin-top: 15px;">
+              <div class="form-group">
+                 <label class="col-sm-2 control-label">Sales Advice</label>
+                 <div class="col-sm-6" style="margin-left: -30px;">
+                    <textarea class="form-control" name="salesAdvise" rows="3" id="" style="width: 518px;" [(ngModel)]="offerGeneralInfo.salesAdvise" (change)="updateSubmitData('salesAdvise', offerGeneralInfo.salesAdvise)"></textarea>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="col-md-12">
+        <label>Sites </label>
+        </div>
+        <div class="col-md-12">
+            <div>
+            <span class="checkbox-inline">
+                <input type="checkbox" name="selectedAll" value="" [(ngModel)]="isSelectAll" (change)="selectAllSites(isSelectAll)" [checked]="isAllSitesSelectedCheck()">Select All
+            </span>
+            </div>
+            <div>
+            <span class="checkbox-inline checkbox-inline-custom col-md-2" name="mapMarketSites" *ngFor="let market of formData.MARKETS; let i= index;">
+                <input type="checkbox" name="sites" [value]="market.key" [(ngModel)]="selectSite[i]" [checked]="isSitesExist(market.key, i)"  (change)="addSite(selectSite[i] ,market.key);" /> {{market.value}}
+            </span>
+            </div> -->
+            <!-- <br>
+            <div class="col-md-12" *ngIf="!sitesSelected" style="color: red;">
+                Sites Required!
+            </div> -->
+        <!-- </div>
+     </div>
+  </div> -->
+</mat-expansion-panel>
+<!-- Second Section Ends here -->

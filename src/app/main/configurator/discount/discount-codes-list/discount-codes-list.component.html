@@ -1,0 +1,179 @@
+<div>
+  <!-- Discount Code List Starts -->
+  <div>
+    <section class="row">
+      <div class="col-md-12">
+        <h1 class="page-header">Discounts</h1>
+      </div>
+      <div class="col-md-12">
+        <ul class="breadcrumb">
+          <li>
+            <a href="#" ng-click="redirectTo('dashboard')">Home</a>
+          </li>
+          <li>
+            <a href="#" ng-click="redirectTo('dashboard')">PLM Work Flow</a>
+          </li>
+          <li>
+            <a href="#" ng-click="redirectTo('dashboard')">Configurator</a>
+          </li>
+          <li class="active">Discounts Code List</li>
+        </ul>
+      </div>
+
+      <div class="col-md-12" *ngIf="sendNotificationFail">
+          <div class="alert alert-danger">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+              Send Notification to ICOMS failed!!!
+          </div>
+      </div>
+
+      <div class="col-md-12">
+        <h4 class="page-header">Intake RequestID :
+          <a (click)="moveToIntakeRequestView()">{{ projectCode }} </a>
+        </h4>
+      </div>
+    </section>
+    <div>
+      <button class="btn btn-primary btn-sm pull-right margin-bot-10" (click)="moveToAddDiscountPage('add', '')" type="button">
+        <span>Add New Discount</span>
+        <span class="fa fa-plus-circle"></span>
+      </button>
+      <div class="process">
+        <!-- Discount Code List Table Starts -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="table-responsive">
+              <table id="mytable" class="table table-bordred table-striped">
+                <thead>
+                  <tr>
+                    <th style="width:45px;">
+                      <button type="button" class="btn btn-primary btn-xs" (click)="toggleSearchIcon()">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                      </button>
+                    </th>
+                    <th class="min-width-130 align-top">ICOMS Notify</th>
+                    <th class="min-width-130">
+                      <div (click)="sort('discountID')">
+                          Discount ID
+                          <span class="glyphicon sort-icon" *ngIf="key =='discountID'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                      </div>
+                      <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterBydiscountID" [(ngModel)]="filterBydiscountID" (keyup)="updateFilterContext('filterBydiscountIDSearchObj', 'discountId', filterBydiscountID)" placeholder="By Discount ID">
+                    </th>
+                    <th class="min-width-130">
+                      <div (click)="sort('discountCode')">
+                          Discount Code
+                          <span class="glyphicon sort-icon" *ngIf="key =='discountCode'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                      </div>
+                      <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterBydiscountCode" [(ngModel)]="filterBydiscountCode" (keyup)="updateFilterContext('filterBydiscountCodeSearchObj', 'discountCode', filterBydiscountCode)" placeholder="By Discount Code">
+                    </th>
+                    <th class="min-width-130">
+                      <div (click)="sort('version')">
+                          Version
+                          <span class="glyphicon sort-icon" *ngIf="key =='version'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                      </div>
+                      <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByversion" [(ngModel)]="filterByversion" (keyup)="updateFilterContext('filterByversionSearchObj', 'version', filterByversion)" placeholder="By Version">
+                    </th>
+                    <th class="min-width-130">
+                      <div (click)="sort('startDate')">
+                          Start Date
+                          <span class="glyphicon sort-icon" *ngIf="key =='startDate'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                      </div>
+                      <div [hidden]="!showSearch">
+                          <mat-form-field class="input-group">
+                            <input matInput [matDatepicker]="startDate" class="form-control" [(ngModel)]="filterBystartDate" (ngModelChange)="updateFilterContext('filterBystartDateSearchObj', 'startDate', filterBystartDate)" name="filterBystartDate">
+                            <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                            <mat-datepicker #startDate></mat-datepicker>
+                          </mat-form-field>
+                      </div>
+                    </th>
+                    <th class="min-width-130">
+                      <div (click)="sort('endDate')">
+                          End Date
+                          <span class="glyphicon sort-icon" *ngIf="key =='endDate'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                      </div>
+                      <div [hidden]="!showSearch">
+                          <mat-form-field class="input-group">
+                            <input matInput [matDatepicker]="endDate" class="form-control" [(ngModel)]="filterByendDate" (ngModelChange)="updateFilterContext('filterByendDateSearchObj', 'endDate', filterByendDate)" name="filterByendDate">
+                            <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+                            <mat-datepicker #endDate></mat-datepicker>
+                          </mat-form-field>
+                      </div>
+                    </th>
+                    <th class="min-width-130">
+                      <div (click)="sort('createdDate')">
+                          Created Date
+                          <span class="glyphicon sort-icon" *ngIf="key =='createdDate'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                      </div>
+                      <div [hidden]="!showSearch">
+                          <mat-form-field class="input-group">
+                            <input matInput [matDatepicker]="createdDate" class="form-control" [(ngModel)]="filterBycreatedDate" (ngModelChange)="updateFilterContext('filterBycreatedDateSearchObj', 'createdDate', filterBycreatedDate)" name="filterBycreatedDate">
+                            <mat-datepicker-toggle matSuffix [for]="createdDate"></mat-datepicker-toggle>
+                            <mat-datepicker #createdDate></mat-datepicker>
+                          </mat-form-field>
+                      </div>
+                    </th>
+                    <th class="min-width-130">
+                      <div (click)="sort('status')">
+                          Status
+                          <span class="glyphicon sort-icon" *ngIf="key =='status'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                      </div>
+                      <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterBystatus" [(ngModel)]="filterBystatus" (keyup)="updateFilterContext('filterBystatusSearchObj', 'status', filterBystatus)" placeholder="By Status">
+                    </th>
+                    <th class="min-width-170">
+                      <div (click)="sort('requestDescription')">
+                          Request Description
+                          <span class="glyphicon sort-icon" *ngIf="key =='requestDescription'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                      </div>
+                      <input [hidden]="!showSearch" class="seacrh-input" type="text" name="filterByrequestDescription" [(ngModel)]="filterByrequestDescription" (keyup)="updateFilterContext('filterByrequestDescriptionSearchObj', 'description', filterByrequestDescription)" placeholder="By Request Description">
+                    </th>
+                    <th class="align-top">Edit</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let discountCode of discountCodeist | sharedFilter : filterBydiscountID | sharedFilter : filterBydiscountCode | sharedFilter : filterByversion | sharedFilter : filterBystartDate | sharedFilter : filterByendDate | sharedFilter : filterBycreatedDate | sharedFilter : filterBystatus | sharedFilter : filterByrequestDescription | orderBy: key : reverse | paginate: {itemsPerPage: 5, currentPage:page, id: 'discountCodeist'}; let i = index">
+                    <td></td>
+                    <td>
+                      <input type="checkbox" name="discountSelectForRelease" [value]="discountCode.discountId" class="discountListVal" [(ngModel)]="discountList[i]"
+                        (change)="updateDiscountForRelease(discountList[i], discountCode.discountId)" />
+                    </td>
+                    <td>{{discountCode.discountId}}</td>
+                    <td>
+                      <a (click)="moveToAddDiscountPage('view', discountCode.discountCode)">{{discountCode.discountId}}</a>
+                    </td>
+
+                    <td>{{discountCode.version}} </td>
+
+                    <td>{{discountCode.startDate | date:'MM/dd/yyyy'}}</td>
+                    <td>{{discountCode.endDate | date:'MM/dd/yyyy'}}</td>
+                    <td>{{discountCode.createdDate | date:'MM/dd/yyyy'}}</td>
+                    <td>{{discountCode.status}}</td>
+                    <td>{{discountCode.description}} </td>
+                    <td>
+                      <p data-placement="top" data-toggle="tooltip" title="Edit">
+                        <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#editIntakeRequest" (click)="moveToAddDiscountPage('edit', discountCode.discountId)">
+                          <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <pagination-controls class="pull-right" (pageChange)="page = $event" id="discountCodeist" maxSize="5" directionLinks="true"
+              autoHide="true">
+            </pagination-controls>
+          </div>
+          <div class="col-md-12" style="margin-top: 25px;">
+            <button type="submit" class="btn btn-primary pull-left" (click)="returnBack()">Back</button>
+            <button type="submit" class="btn btn-primary pull-right notify-space" (click)="submitIcomsUpdate()" [disabled]="!discountsSelected">Send Notification</button>
+
+          </div>
+        </div>
+        <!--  Discount Code List Table Starts -->
+      </div>
+    </div>
+  </div>
+  <!-- Discount Code List  Ends -->

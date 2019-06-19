@@ -1,0 +1,148 @@
+<div class="row">
+  <div class="col-md-12">
+    <!--<form #discountForm="ngForm" (ngSubmit)="onSubmit(discountForm)" class="form-horizontal">-->
+    <mat-accordion close-others="oneAtATime">
+      <mat-expansion-panel class="form-divider panel-no-background">
+        <mat-expansion-panel-header>
+          OSCAR
+        </mat-expansion-panel-header>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">OSCAR Status</label>
+              <div class="col-xs-7">
+                <angular2-multiselect *ngIf="addEditMode" name="oscarStatus" [data]="oscarStatusDropDownList" [(ngModel)]="oscarStatusSelectedItems"
+                  #intakeRequestTypeVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('oscarId', oscarStatusSelectedItems, 'single')"
+                  (onDeSelect)="onItemDeSelect('oscarId', oscarStatusSelectedItems, 'single')"
+                  (onSelectAll)="onSelectAll('oscarId', oscarStatusSelectedItems, 'single')"
+                  (onDeSelectAll)="onDeSelectAll('oscarId', oscarStatusSelectedItems, 'single')">
+                </angular2-multiselect>
+                <p *ngIf="viewMode">
+                    <span *ngFor="let oscarStatus of utilitiesService.getSelectedItemsObject(masterData, 'OSCAR_STATUS', addEditDiscountSubmitData.discMapOscar.oscarId); let i = index;">
+                        {{oscarStatus.itemName}}
+                        <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'OSCAR_STATUS', addEditDiscountSubmitData.discMapOscar.oscarId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'OSCAR_STATUS', addEditDiscountSubmitData.discMapOscar.oscarId).length))">,</span>
+                    </span>
+                </p>
+                <!--<div *ngIf="oscarStatusVal.invalid && (oscarStatusVal.dirty || oscarStatusVal.touched)" class="input-error">
+                  <div *ngIf="oscarStatusVal.errors.required">
+                  OSCAR Status is required
+                  </div>
+                </div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-xs-5 control-label">Finance Bucket Program Code</label>
+              <div class="col-xs-7">
+                <angular2-multiselect *ngIf="addEditMode" name="financeBucketProgCd" [data]="financeBucketProgramCodeDropDownList" [(ngModel)]="financeBucketProgramCodeSelectedItems"
+                  #intakeRequestTypeVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('financeBucketProgCdId', financeBucketProgramCodeSelectedItems, 'single')"
+                  (onDeSelect)="onItemDeSelect('financeBucketProgCdId', financeBucketProgramCodeSelectedItems, 'single')"
+                  (onSelectAll)="onSelectAll('financeBucketProgCdId', financeBucketProgramCodeSelectedItems, 'single')"
+                  (onDeSelectAll)="onDeSelectAll('financeBucketProgCdId', financeBucketProgramCodeSelectedItems, 'single')">
+                </angular2-multiselect>
+                <p *ngIf="viewMode">
+                    <span *ngFor="let financeBucketProgCd of utilitiesService.getSelectedItemsObject(masterData, 'FINANCE_BUCKET_PROG_CD', addEditDiscountSubmitData.discMapOscar.financeBucketProgCdId); let i = index;">
+                        {{financeBucketProgCd.itemName}}
+                        <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'FINANCE_BUCKET_PROG_CD', addEditDiscountSubmitData.discMapOscar.financeBucketProgCdId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'FINANCE_BUCKET_PROG_CD', addEditDiscountSubmitData.discMapOscar.financeBucketProgCdId).length))">,</span>
+                    </span>
+                </p>
+                <!--<div *ngIf="financeBucketProgCDVal.invalid && (financeBucketProgCDVal.dirty || financeBucketProgCDVal.touched)" class="input-error">
+               <div *ngIf="financeBucketProgCDVal.errors.required">
+                Finance Bucket Prog CD is required
+               </div>
+               </div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-xs-5 control-label">CC Sales Advice </label>
+              <div class="col-xs-7">
+                <textarea id="adviceFormula" name="adviceFormula" class="form-control" required [(ngModel)]="addEditDiscountSubmitData.discMapOscar.salesAdvise"
+                  #AdviceFormula="ngModel" *ngIf="addEditMode" (change)="convertTextAreaContentWithBreaks('salesAdvise', addEditDiscountSubmitData.discMapOscar.salesAdvise)"
+                  rows="3" i style="height: auto;"></textarea>
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapOscar.salesAdvise }}</p>
+                <!--<div *ngIf="ccSales.invalid && (ccSales.dirty || ccSales.touched)" class="input-error">
+               <div *ngIf="ccSales.errors.required">
+                CC Sales Advise is required.
+               </div>
+               </div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label class="col-xs-2 control-label">CC Sales Advice Formula </label>
+              <div class="col-xs-7" style="padding-left:5%;width:81%">
+                <p>Must Install [ Include if one: ; Include if all: ; Include if at least 0: ; Exclude if any: ; Exclude if
+                  all: ; Exclude if at least 0: ]<br/> Must Currently Have [ Include if one: ; Include if all: ; Include
+                  if at least 0: ; Exclude if any: ; Exclude if all: ; Exclude if at least 0: ]<br/> Must Retain [ Include
+                  if one: ; Include if all: ; Include if at least 0: ; Exclude if any: ; Exclude if all: ; Exclude if at
+                  least 0: ]<br/> Requires One SA: ; Exclude These SA: ; <br/> Marketing ID Include if one: ; Marketing ID
+                  Exclude if any: ; <br/> Discount Code Number of Days: 0; Discount Code include if one: ; Discount Code
+                  exclude if any: ; <br/> Other Instructions;</p>
+                <!--<textarea id="adviceFormula" name="adviceFormula" class="form-control" required [(ngModel)]="discMapOscar.ccSalesAdviseFormula"
+            #AdviceFormula="ngModel" (change)="updateSubmitData('ccSalesAdviseFormula', discMapOscar.ccSalesAdviseFormula)" rows="3" i style="height: auto;"></textarea>-->
+                <label><input type="checkbox" name="active" value="" [(ngModel)]="addEditDiscountSubmitData.discMapOscar.saRequired" #activeVal="ngModel"
+                  [checked]="addEditDiscountSubmitData.discMapOscar.saRequired" [disabled]="viewMode" (change)="updateSubmitData('saRequired', addEditDiscountSubmitData.discMapOscar.saRequired)"> Service Agreement Required</label>
+                <p *ngIf="viewMode">{{ addEditDiscountSubmitData.discMapOscar.saRequired }}</p>
+                <!--<div *ngIf="ccSales.invalid && (ccSales.dirty || ccSales.touched)" class="input-error">
+               <div *ngIf="ccSales.errors.required">
+                CC Sales Advise is required.
+               </div>
+               </div>-->
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-5 control-label">Marketing ID</label>
+              <div class="col-xs-7">
+                <angular2-multiselect *ngIf="addEditMode" name="marketingID" [data]="marketingIDDropDownList" [(ngModel)]="marketingIDSelectedItems"
+                  #intakeRequestTypeVal="ngModel" [settings]="singleSelectSettings" singleSelect (onSelect)="onItemSelect('mrktId', marketingIDSelectedItems, 'single')"
+                  (onDeSelect)="onItemDeSelect('mrktId', marketingIDSelectedItems, 'single')"
+                  (onSelectAll)="onSelectAll('mrktId', marketingIDSelectedItems, 'single')"
+                  (onDeSelectAll)="onDeSelectAll('mrktId', marketingIDSelectedItems, 'single')">
+                </angular2-multiselect>
+                <p *ngIf="viewMode">
+                    <span *ngFor="let marketingID of utilitiesService.getSelectedItemsObject(masterData, 'MARKETING_ID', addEditDiscountSubmitData.discMapOscar.mrktId); let i = index;">
+                        {{marketingID.itemName}}
+                        <span *ngIf="((utilitiesService.getSelectedItemsObject(masterData, 'MARKETING_ID', addEditDiscountSubmitData.discMapOscar.mrktId).length > 0) && (i+1 != utilitiesService.getSelectedItemsObject(masterData, 'MARKETING_ID', addEditDiscountSubmitData.discMapOscar.mrktId).length))">,</span>
+                    </span>
+                </p>
+                <!--<select class="form-control" [(ngModel)]="discMapOscar.mrktId" name="mrktId" #mrktId="ngModel" (change)="updateSubmitData('mrktId', discMapOscar.mrktId)">
+            <option value="">Select Marketing ID</option>
+            <option *ngFor="let marketing of discountFormDropDown.MARKETING_ID_DESC; let i= index;" [value]="marketing.key">{{ marketing.value }}</option>
+            </select>
+            <!--<div *ngIf="marketingIdVal.invalid && (marketingIdVal.dirty || marketingIdVal.touched)" class="input-error">
+               <div *ngIf="marketingIdVal.errors.required">
+                Marketing ID is required
+               </div>
+               </div>-->
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+    <!--</form>-->
+  </div>
+</div>

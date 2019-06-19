@@ -1,0 +1,66 @@
+{
+    "actionResult": null,
+    "actionStatus": "SUCCESS",
+    "projectMasterModel": {
+       "projectCode": "PRO_116",
+        "processId": "1L",
+        "projectTypeId": 164,
+        "projectStartDt": "2018-04-01T18:30:00.000Z",
+        "projectEndDt": "2018-04-09T18:30:00.000Z",
+        "sites": [
+            1,
+            2,
+            3
+        ],
+        "statusId": "1001",
+        "statusName": "NEW",
+        "assignedTo": null,
+        "assignedBy": null,
+        "description": "NOW",
+        "requesterName": "NOW",
+        "pricingOwnerId": 17,
+        "pricingOwnerNotes": "NOW",
+        "intakeReqName": "NOW",
+        "requesterEmail": "NOW",
+        "addUptierPaths": "NOW",
+        "popsNotes": "NOW",
+        "trgtAudienceId": 116,
+        "categoryId": 171,
+        "priorityId": 174,
+        "intakeRequestStatusId": 169,
+        "channelIds": [
+            121,
+            122,
+            123
+        ],
+        "productIds": [
+            102,
+            101
+        ],
+        "appProcessId": "1",
+        "uploadIntakeRequestDoc": "",
+        "uploadIntakeRequestDocId": 10,
+        "uploadIntakeRequestDocName": "DRAFT GTM2B 2017 offer plan v3 (pub).pptx",
+        "intakeFormReqTxnDetModel": {
+           "intakeFormId": 125,
+            "discountStartDate": "2018-04-01T18:30:00.000Z",
+            "discountExpireDate": "2018-04-09T18:30:00.000Z",
+            "stepupDuratnId": 103,
+            "stepupAmount": "1111111",
+            "durationMonths": "1",
+            "prodMustInc": "12",
+            "prodMustInstlInc": "12",
+            "prodMustRetainInc": "12",
+            "prodMustExc": "1",
+            "requirePlgId": 111,
+            "teCodeId": "117",
+            "instltnPricing": "1",
+            "prodMustRetainExc": "12",
+            "prodMustInstlExc": "12",
+            "instltnIncFlg": "Y",
+           "projectCode": "PRO_116",
+            "campCodeIds": [14, 15],
+            "tireqIds": [130, 131, 132]
+        }
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "actionResult": null,
+    "actionStatus": "SUCCESS",
+    "userName": null,
+    "plmUserModel": {
+        "userId": "3",
+        "firstname": "Nitin",
+        "lastName": "Choube",
+        "roleId": null,
+        "pwd": null,
+        "email": null,
+        "lastLogon": 1520852647229,
+        "createdOn": null,
+        "createdBy": null,
+        "modifiedOn": null,
+        "modifiedBy": null,
+        "plmWorkGroupModelLst": [
+            {
+                "workGroupId": "1",
+                "workGroupName": "Requester",
+                "isDefualt": "N"
+            },
+            {
+                "workGroupId": "2",
+                "workGroupName": "Configurator",
+                "isDefualt": "N"
+            },
+            {
+                "workGroupId": "9",
+                "workGroupName": "Administrator",
+                "isDefualt": "N"
+            }
+        ],
+        "userStatusId": 1,
+        "plmUserStatusModel": {
+            "statusId": "1",
+            "statusName": "Active"
+        },
+        "userRoleModelLst": [
+            {
+                "roleId": "2",
+                "roleName": "Administrator",
+                "desc": null,
+                "plmUser": []
+            }
+        ]
+    },
+    "plmSessionKey": "Lq\\m13d7"
+}

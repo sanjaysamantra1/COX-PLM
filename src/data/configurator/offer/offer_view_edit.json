@@ -1,0 +1,194 @@
+{
+    "actionResult": null,
+    "actionStatus": null,
+    "offerModel": {
+        "mrktingOfferTxnDet": {
+            "moId": 701,
+            "projectCode": "PRO_1519133984077",
+            "offerId": "22",
+            "createdBy": null,
+            "createdDate": "02-02-2018",
+            "offerDescription": "Test Description",
+            "offerEndDate": "02-02-2018",
+            "modifiedDate": "02-02-2018",
+            "offerType": "1",
+            "price": 100,
+            "priceSpec": "Update Description",
+            "offerStartDate": "02-02-2018",
+            "discountType": "Pro Install",
+            "psuType": "1",
+            "bundleType": "Bronze",
+            "moProductDataModel": [
+                {
+                    "prodDataId": "354",
+                    "prodDetail": "NO TIER",
+                    "psuType": "4P",
+                    "psuTypeMapId": null,
+                    "mrktingOfferTxnDetModel": null,
+                    "psuTypeMasterModel": {
+                        "psuTypeId": "101",
+                        "psuName": "DATA",
+                        "description": null
+                    }
+                },
+                {
+                    "prodDataId": "355",
+                    "prodDetail": "C2C",
+                    "psuType": "4P",
+                    "psuTypeMapId": null,
+                    "mrktingOfferTxnDetModel": null,
+                    "psuTypeMasterModel": {
+                        "psuTypeId": "102",
+                        "psuName": "PHONE",
+                        "description": null
+                    }
+                },
+                {
+                    "prodDataId": "356",
+                    "prodDetail": "OTHER",
+                    "psuType": "4P",
+                    "psuTypeMapId": null,
+                    "mrktingOfferTxnDetModel": null,
+                    "psuTypeMasterModel": {
+                        "psuTypeId": "103",
+                        "psuName": "VIDEO",
+                        "description": null
+                    }
+                },
+                {
+                    "prodDataId": "357",
+                    "prodDetail": "SEASONAL",
+                    "psuType": "4P",
+                    "psuTypeMapId": null,
+                    "mrktingOfferTxnDetModel": null,
+                    "psuTypeMasterModel": {
+                        "psuTypeId": "104",
+                        "psuName": "HOMELIFE",
+                        "description": null
+                    }
+                }
+            ]
+        },
+        "generalInfoMapTxnDet": {
+            "offerId": 22,
+            "offerName": "Offer Name Updated",
+            "offerDescription": "Offer Description Updated",
+            "offerBundle": 1,
+            "offerCategory": 1,
+            "offerStartDate": "2018-03-01",
+            "offerEndDate": "2018-03-01",
+            "lastUpdateDate": "2018-03-01",
+            "testDate": "2018-03-01",
+            "productionLauanchDate": "2018-03-01",
+            "offerStatus": 1005,
+            "version": 1,
+            "createdByUser": "User Admin",
+            "salesAdvise": "Sales Advice 1",
+            "inactive": null,
+            "defaultOffer": null,
+            "sites": [
+                1,
+                2,
+                3
+            ],
+            "releaseCd": null
+        },
+		"offerProdMapTxnDets": [
+			{
+				"prodId": null,
+				"offrPrdMapId": null,
+				"name": "",
+				"catagory": "",
+				"psu": "",
+				"icomsCode":""
+			}
+		],
+        "offerDiscMapTxnDets": [
+			{
+				"discountId": null,
+				"offrDiscountMapId": null,
+				"discountName": "",
+				"discountType": "",
+				"primaryFlag": ""
+			}
+		],
+        "offerRelRuleTxnDets": [
+			{
+				"id": null,
+				"offrRelRruleMapId": null,
+				"ruleName": "",
+				"createdDate": "",
+				"modifiedDate": "",
+				"modifiedOwner": ""
+			}
+		],
+        "offerEligRuleTxnDets": [
+			{
+				"id": null,
+				"offrRelEruleMapId": null,
+				"ruleName": "",
+				"createdDate": "",
+				"modifiedDate": "",
+				"modifiedOwner": ""
+			}
+		],
+        "offerPinpointTxnDet": {
+            "offrPinpointMapId": 9,
+            "agenttypelist": "101",
+            "anypakFlag": "Y",
+            "anypremiumFlag": "Y",
+            "campnCodeExclude": "101",
+            "campnCodeInclude": "101",
+            "dataequipOptnl": "101",
+            "dvrOptional": "101",
+            "estimatedmrc": "101",
+            "adjustedmrc": null,
+            "inbaseofferFlag": "Y",
+            "instalOptnlId": "101",
+            "mandatoryflag": "Y",
+            "ofrlevelTecode": 101,
+            "omcOfferId": "101",
+            "prismcodelist": "101",
+            "prismrestrictedFlag": "Y",
+            "proactivecode": "101",
+            "proactiveofferFlag": "Y",
+            "pylabel": "101",
+            "receiver": "101",
+            "phoneInstalType": 101,
+            "hmlifeInstalType": 101,
+            "dataInstalType": 101,
+            "videoInstalType": 101,
+            "baseofrHmlife": 101,
+            "baseofrVideo": 101,
+            "baseofrPhone": 101,
+            "baseofrData": 101,
+            "ratefrpExclusion": 101,
+            "staticintentlist": 101,
+            "subStaticintentlist": 101,
+            "paymode": 101,
+            "status": 101,
+            "channelsLabel": 101,
+            "addonType": 101,
+            "dvr": 101,
+            "dataEquip": 101,
+            "videoEquip": 101
+        },
+        "offrEcommPinpntTxnDet": {
+            "offrEcomMapId": 8,
+            "ecomOfferId": null,
+            "statActionprimary": null,
+            "statActionurlfeatured": null,
+            "statActurlCompGrp": null,
+            "statImageurlCompGroup": null,
+            "statImageurlfeatur": null,
+            "statImageurlprimary": null,
+            "statMsgtxtCompGrp": null,
+            "statMsgtxtfeatur": null,
+            "statMsgtxtprimary": null,
+            "statProductlist": null,
+            "statThemlist": null,
+            "statTreatmentlist": null,
+            "statusId": 173
+        }
+    }
+}

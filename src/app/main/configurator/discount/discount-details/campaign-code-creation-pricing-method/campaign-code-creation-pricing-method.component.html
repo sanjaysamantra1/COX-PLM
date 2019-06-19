@@ -1,0 +1,193 @@
+<div class="row" *ngIf="formLoaded">
+  <div class="col-md-12">
+    <!--<form #discountForm="ngForm" (ngSubmit)="onSubmit(discountForm)" class="form-horizontal">-->
+    <mat-accordion close-others="oneAtATime">
+      <mat-expansion-panel class="form-divider panel-no-background">
+        <mat-expansion-panel-header>
+          Pricing Method
+        </mat-expansion-panel-header>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Pricing Method</label>
+              <div class="col-xs-7">
+                <mat-form-field>
+                  <mat-select class="form-control" placeholder="Select Pricing Methods" [(ngModel)]="addEditDiscountSubmitData.discMapPriceMethod.methodId" name="pricingMethod" #pricingMethod="ngModel" (change)="onChange(addEditDiscountSubmitData.discMapPriceMethod.methodId)"
+                  required>
+                    <mat-option>Select Pricing Methods</mat-option>
+                    <mat-option *ngFor="let pricingMethod of masterData.priceMethodMasterDataList; let i = index;" [value]="pricingMethod.discPriceMethodMasterId">
+                        {{ pricingMethod.method }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+          </div>
+        </div>
+
+        <div class="row" *ngFor="let pricingMethod of masterData.priceMethodMasterDataList; let i = index;">
+          <div *ngIf="(pricingMethod.showVal == true)">
+            <div *ngIf="pricingMethod.discPriceMethodMasterDetailList.length == 1">
+              <div *ngFor="let questions of pricingMethod.discPriceMethodMasterDetailList; let j = index;">
+                <div class="col-md-12" *ngIf="questions.inputType == 'checkbox'">
+                  <label>
+                    <span *ngIf="addEditMode">
+                      <input type="checkbox" id="method{{ questions.methodId }}" name="method{{ questions.methodId }}" value="" [(ngModel)]="questions.value"
+                         (change)="updatePriceMethod(j, questions.methodId, questions.value, questions.inputType)" [checked]="questions.value">
+                        {{ pricingMethod.method }}. {{ questions.name }}
+                    </span>
+                    <span *ngIf="viewMode" >
+                      <input type="checkbox" id="method{{ questions.methodId }}" name="method{{ questions.methodId }}" value="" [(ngModel)]="questions.value"
+                        [disabled]="true" [checked]="questions.value"
+                        > {{ pricingMethod.method }}. {{ questions.name }}
+                    </span>
+                  </label>
+                </div>
+                <div class="col-md-12" *ngIf="questions.inputType == 'text'">
+                  <label class="col-sm-5 control-label pad-space">{{ pricingMethod.method }}. {{ questions.name }}</label>
+                  <div class="col-md-6">
+                      <input type="text" id="method{{ questions.methodId }}" name="method{{ questions.methodId }}" class="form-control" [(ngModel)]="questions.value"
+                      (change)="updatePriceMethod(j, questions.methodId, questions.value, questions.inputType)" *ngIf="addEditMode" />
+                      <p *ngIf="viewMode">{{ questions.value }}</p>
+                  </div>
+                </div>
+                <div class="col-md-12" *ngIf="questions.inputType == 'date'">
+                  <label class="col-sm-5 control-label pad-space">{{ pricingMethod.method }}. {{ questions.name }}</label>
+                  <div class="col-xs-7" *ngIf="addEditMode">
+                    <mat-form-field style="width:100%;" class="input-group">
+                      <input name="startDate" matInput [matDatepicker]="startDate" class="form-control" [(ngModel)]="questions.value"
+                        [min]="salesStartMinDate" #discountStartDate="ngModel" (ngModelChange)="updatePriceMethod(j, questions.methodId, questions.value, questions.inputType)">
+                      <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                      <mat-datepicker #startDate></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                  <p *ngIf="viewMode">{{ questions.value }}</p>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="pricingMethod.discPriceMethodMasterDetailList.length == 2">
+              <div *ngFor="let questions of pricingMethod.discPriceMethodMasterDetailList; let j = index;">
+                <div class="col-md-6" *ngIf="questions.inputType == 'checkbox'">
+                  <label>
+                      <span *ngIf="addEditMode">
+                        <input type="checkbox" id="method{{ questions.methodId }}" name="method{{ questions.methodId }}" value="" [(ngModel)]="questions.value"
+                           (change)="updatePriceMethod(j, questions.methodId, questions.value, questions.inputType)" [checked]="questions.value">
+                          {{ pricingMethod.method }}. {{ questions.name }}
+                      </span>
+                      <span *ngIf="viewMode" >
+                        <input type="checkbox" id="method{{ questions.methodId }}" name="method{{ questions.methodId }}" value="" [(ngModel)]="questions.value"
+                          [disabled]="true"  [checked]="questions.value" 
+                          > {{ pricingMethod.method }}. {{ questions.name }}
+                      </span>
+                  </label>
+                </div>
+                <div class="col-md-6" *ngIf="questions.inputType == 'text'">
+                  <label class="col-sm-5 control-label pad-space">{{ pricingMethod.method }}. {{ questions.name }}</label>
+                  <div class="col-md-6">
+                      <input type="text" id="method{{ questions.methodId }}" name="method{{ questions.methodId }}" class="form-control" [(ngModel)]="questions.value"
+                      (change)="updatePriceMethod(j, questions.methodId, questions.value, questions.inputType)" *ngIf="addEditMode"  />
+                      <p *ngIf="viewMode">{{ questions.value }}</p>
+                  </div>
+                </div>
+                <div class="col-md-6" *ngIf="questions.inputType == 'date'">
+                  <label class="col-sm-5 control-label pad-space">{{ pricingMethod.method }}. {{ questions.name }}</label>
+                  <div class="col-xs-7" *ngIf="addEditMode" >
+                    <mat-form-field style="width:100%;" class="input-group">
+                      <input name="startDate" matInput [matDatepicker]="startDate" class="form-control" [(ngModel)]="questions.value"
+                        [min]="salesStartMinDate" #discountStartDate="ngModel" (ngModelChange)="updatePriceMethod(j, questions.methodId, questions.value, questions.inputType)">
+                      <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                      <mat-datepicker #startDate></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                  <p *ngIf="viewMode">{{ questions.value}}</p>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="pricingMethod.discPriceMethodMasterDetailList.length == 3">
+              <div *ngFor="let questions of pricingMethod.discPriceMethodMasterDetailList; let j = index;">
+                <div class="col-md-4" *ngIf="questions.inputType == 'checkbox'">
+                  <label>
+                    <span *ngIf="addEditMode">
+                      <input type="checkbox" id="method{{ questions.methodId }}" name="method{{ questions.methodId }}" value="" [(ngModel)]="questions.value"
+                         (change)="updatePriceMethod(j, questions.methodId, questions.value, questions.inputType)" [checked]="questions.value" >
+                        {{ pricingMethod.method }}. {{ questions.name }}
+                    </span>
+                    <span *ngIf="viewMode" >
+                      <input type="checkbox" id="method{{ questions.methodId }}" name="method{{ questions.methodId }}" value="" [(ngModel)]="questions.value"
+                        [disabled]="true"  [checked]="questions.value"  
+                        > {{ pricingMethod.method }}. {{ questions.name }}
+                    </span>
+                  </label>
+                </div>
+                <div class="col-md-4" *ngIf="questions.inputType == 'text'">
+                  <label class="col-sm-5 control-label pad-space">{{ pricingMethod.method }}. {{ questions.name }}</label>
+                  <div class="col-md-6">
+                      <input type="text" id="method{{ questions.methodId }}" name="method{{ questions.methodId }}" class="form-control" [(ngModel)]="questions.value"
+                      (change)="updatePriceMethod(j, questions.methodId, questions.value, questions.inputType)" *ngIf="addEditMode"  />
+                      <p *ngIf="viewMode">{{ questions.value }}</p>
+                  </div>
+                </div>
+                <div class="col-md-4" *ngIf="questions.inputType == 'date'">
+                  <label class="col-sm-5 control-label pad-space">{{ pricingMethod.method }}. {{ questions.name }}</label>
+                  <div class="col-xs-7" *ngIf="addEditMode" >
+                    <mat-form-field style="width:100%;" class="input-group">
+                      <input name="startDate" matInput [matDatepicker]="startDate" class="form-control" [(ngModel)]="questions.value"
+                        [min]="salesStartMinDate" #discountStartDate="ngModel" (ngModelChange)="updatePriceMethod(j, questions.methodId, questions.value, questions.inputType)">
+                      <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                      <mat-datepicker #startDate></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                  <p *ngIf="viewMode">{{ questions.value}}</p>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="pricingMethod.discPriceMethodMasterDetailList.length == 4 ">
+              <div *ngFor="let questions of pricingMethod.discPriceMethodMasterDetailList; let j = index;">
+                <div class="col-md-3" *ngIf="questions.inputType == 'checkbox'">
+                  <label>
+                    <span *ngIf="addEditMode">
+                      <input type="checkbox" id="method{{ questions.methodId }}" name="method{{ questions.methodId }}" value="" [(ngModel)]="questions.value"
+                         (change)="updatePriceMethod(j, questions.methodId, questions.value, questions.inputType)" [checked]="questions.value" >
+                        {{ pricingMethod.method }}. {{ questions.name }}
+                    </span>
+                    <span *ngIf="viewMode" >
+                      <input type="checkbox" id="method{{ questions.methodId }}" name="method{{ questions.methodId }}" value="" [(ngModel)]="questions.value"
+                        [disabled]="true" [checked]="questions.value" 
+                        > {{ pricingMethod.method }}. {{ questions.name }}
+                    </span>
+                  </label>
+                </div>
+                <div class="col-md-3" *ngIf="questions.inputType == 'text'">
+                  <label class="col-sm-5 control-label pad-space">{{ pricingMethod.method }}. {{ questions.name }}</label>
+                  <div class="col-md-6">
+                      <input type="text" id="method{{ questions.methodId }}" name="method{{ questions.methodId }}" class="form-control" [(ngModel)]="questions.value"
+                      (change)="updatePriceMethod(j, questions.methodId, questions.value, questions.inputType)" *ngIf="addEditMode"  />
+                      <p *ngIf="viewMode">{{ questions.value }}</p>
+                  </div>
+                </div>
+                <div class="col-md-3" *ngIf="questions.inputType == 'date'">
+                  <label class="col-sm-5 control-label pad-space">{{ pricingMethod.method }}. {{ questions.name }}</label>
+                  <div class="col-xs-7" *ngIf="addEditMode" >
+                    <mat-form-field style="width:100%;" class="input-group">
+                      <input name="startDate" matInput [matDatepicker]="startDate" class="form-control" [(ngModel)]="questions.value"
+                        [min]="salesStartMinDate" #discountStartDate="ngModel" (ngModelChange)="updatePriceMethod(j, questions.methodId, questions.value, questions.inputType)">
+                      <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                      <mat-datepicker #startDate></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                  <p *ngIf="viewMode">{{ questions.value}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

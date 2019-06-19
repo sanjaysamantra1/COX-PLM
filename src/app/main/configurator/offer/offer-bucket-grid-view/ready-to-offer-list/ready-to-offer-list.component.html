@@ -1,0 +1,58 @@
+<div class="row margin-top-20">
+    <div class="col-md-12">
+       <div class="process">
+          <div class="row">
+             <div class="col-md-12">
+                <div>
+                   <div class="table-responsive pad15">
+                      <table id="mytable" class="table table-bordred table-striped">
+                         <thead>
+                             <tr>
+                                  <th>Project Code</th>
+                                  <th>OfferID</th>
+                                  <th>Name</th>
+                                  <th>Description</th>
+                                  <th>Site List</th>
+                                  <th>Start Date</th>
+                                  <th>End Date</th>
+                                  <th>Release Date</th>
+                                  <th>Release Status</th>
+                                  <th>Release Code</th>
+                                  <th>#</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                            <tr *ngFor="let offer of offersListChild">
+                               <td>{{offer.projectCode}}</td>
+                               <td>{{offer.offerId}}</td>
+                               <td>{{offer.name}}</td>
+                               <td>{{offer.description}}</td>
+                               <td>{{offer.siteList}}</td>
+                               <td>{{offer.startDt}}</td>
+                               <td>{{offer.endDt}}</td>
+                               <td>{{offer.releaseDt}}</td>
+                               <td>{{offer.status}}</td>
+                               <td>{{offer.releaseCd}}</td>
+                               <td>
+                                  <input type="checkbox" [value]="offer.offerId" class="offerList" [(ngModel)]="offerList[i]" (change)="updateOfferForRelease(offerList[i], offer.offerId)"/>
+                               </td>
+                            </tr>
+                         </tbody>
+                      </table>
+                      <div class="clearfix"></div>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-12 margin-bot-15">
+                <button type="button" class="btn btn-primary btn-large pull-right" (click)="releaseOffersForDistribution()" [disabled]="!noOfferSelectedForRelease">Release for Distribution </button>
+                <button type="submit" class="btn btn-primary pull-left" (click)="returnBack()">Back</button>
+             </div>
+             <div class="col-md-12 margin-bot-15"></div>
+          </div>
+       </div>
+    </div>
+ </div>
+
+
+
+ 
