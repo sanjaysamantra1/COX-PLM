@@ -12,7 +12,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-devkit/build-optimizer": "0.0.36",
+    "@angular-devkit/build-optimizer": "0.1302.1",
     "@angular-devkit/core": "0.0.22",
     "@angular-devkit/schematics": "0.0.42",
     "@angular/animations": "^5.2.3",
@@ -60,7 +60,7 @@
     "zone.js": "^0.8.20"
   },
   "devDependencies": {
-    "@angular/cli": "^1.6.5",
+    "@angular/cli": "^15.0.4",
     "@angular/compiler-cli": "^5.2.1",
     "@angular/language-service": "^5.2.1",
     "@types/highcharts": "^5.0.16",
@@ -80,6 +80,6 @@
     "ts-node": "~3.3.0",
     "tslint": "~5.8.0",
     "typescript": "~2.4.2",
-    "webpack": "^3.10.0"
+    "webpack": "^5.75.0"
   }
 }
